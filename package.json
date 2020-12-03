@@ -1,0 +1,23 @@
+{
+  "name": "web-portfolio-2021",
+  "version": "1.0.0",
+  "description": "new version of portfolio using nextjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "keywords": [
+    "interface",
+    "HCI",
+    "human-computer-interaction",
+    "design"
+  ],
+  "author": "bowei xiao",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
