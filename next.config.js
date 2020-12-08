@@ -1,4 +1,6 @@
 module.exports = {
+   // basePath: '/interactive-projects',
+
    async rewrites() {
       return [
          {
