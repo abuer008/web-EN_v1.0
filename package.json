@@ -17,9 +17,11 @@
   "author": "bowei xiao",
   "license": "ISC",
   "dependencies": {
+    "gsap": "^3.5.1",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-lottie": "^1.2.3",
     "styled-components": "^5.2.1",
     "three": "^0.123.0",
     "webgl-detector": "^1.1.11"

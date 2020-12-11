@@ -6,93 +6,122 @@ import useMousePosition from "../../components/useMousePosition";
 import ProjectTextItem from "../../components/ProjectTextItem";
 
 import { useState, useEffect } from 'react';
+import StartAnima from "../../components/StartAnima";
 
-const projectsArray = [{
-    name: "Re:Vision",
-    color: 0,
-    destination: "/revision",
-    title: "I. Re:Vision",
-    subTitle: "The Introduction of Interaction",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl. Volutpat pellentesque sed fermentum mi scelerisque orci. Mi sem vitae nibh eget quis pellentesque in mauris."
-}, {
-    name: "Visual\nData",
-    color: 1,
-    destination: "/data-visualisation",
-    title: "II. The Syrian Civil War",
-    subTitle: "Interface based on amounts of data",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl."
-}, {
-    name: "Super\nHuman",
-    color: 2,
-    destination: "/super-human",
-    title: "III. Super Human",
-    subTitle: "Speculative Design, The discuss of future Human Computer Interaction.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl."
-}, {
-    name: "Ambient Assisted Living",
-    color: 3,
-    destination: "/aal",
-    title: "IV. Ambient Assisted Living",
-    subTitle: "Part I. The implementation of future HCI.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl."
-}, {
-    name: "Virtual Kinship",
-    color: 4,
-    destination: "/connecting",
-    title: "V. Connecting",
-    subTitle: "Part II. Rethinking of future connectivity of individuals.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl."
-}]
+import * as RevisionAnima from '../../public/revisionStartAnima.json';
+import { projectsArray, interactionPageInfo } from "../../data/MainPageData";
+
 
 function InteractiveProjects() {
 
-    let [projectInfo, setProjectInfo] = useState({title: "", subTitle: "", explain: ""})
+    let [projectInfo, setProjectInfo] = useState({title: "", subTitle: "", explain: "", animaData: RevisionAnima, movePointer: 0})
     let [titleVisible, setVisible] = useState(false)
+    let [isStopped, setStopped] = useState(true)
+    let [direction, setDirection] = useState(1)
+    let [speed, setSpeed] = useState(1)
+
+    let [cachedPointer, setPointer] = useState("0%")
+    let [cachedAnima, setAnima] = useState(RevisionAnima)
+
 
     const handleMouseEnter = (e) => {
-        console.log(e.target.innerHTML)
+        console.log("enter")
         const popProject = projectsArray.find(project => project.name === e.target.innerHTML) || {}
 
-        setProjectInfo({title: popProject.title, subTitle: popProject.subTitle, explain: popProject.explain})
+        setProjectInfo({
+            title: popProject.title,
+            subTitle: popProject.subTitle,
+            explain: popProject.explain,
+            animaData: popProject.animaData,
+            movePointer: popProject.movePointer
+        })
+
+        setPointer(popProject.movePointer)
+        setAnima(popProject.animaData)
+
         setVisible(true)
+        setStopped(false)
+        setDirection(1)
+        setSpeed(1)
     }
 
     const handleMouseLeave = () => {
         console.log("leave")
-        setProjectInfo({title: "", subTitle: "", explain: ""})
+        setProjectInfo({
+            title: "",
+            subTitle: "",
+            explain: "",
+            animaData: cachedAnima,
+            movePointer: cachedPointer})
         setVisible(false)
+        setDirection(-1)
+        setSpeed(2)
     }
 
     return (
         <Layout>
-            <ProjectTextItem title={projectInfo.title}
-                             subTitle={projectInfo.subTitle}
-                             explain={projectInfo.explain}
-                             displayClass={titleVisible ? "fadeIn" : "fadeOut"}
-            />
-            {!titleVisible && <ProjectTextItem title="The Attitude towards Interactive Design."
-                             subTitle=""
-                             explain=""
-                             displayClass={titleVisible ? "fadeOut" : "fadeIn"}
-            />}
+            <MainBackground>
+                <Image src="/bkg.webp" layout="fill" objectFit="cover" />
+            </MainBackground>
             <ProjectsSqures>
                 <EnterArrow>
                     <EnterTonText>Enter</EnterTonText>
                     <EnterText>the Projects</EnterText>
                     <ArrowIcon>
-                        <Image src="/../public/Arrow.svg" width="57" height="48" />
+                        <Image src="/Arrow.svg" width="57" height="48" />
                     </ArrowIcon>
                 </EnterArrow>
+                <AnimaSection movePointer={projectInfo.movePointer}>
+                    <StartAnima animaData={projectInfo.animaData}
+                                direction={direction}
+                                isStopped={isStopped}
+                                speed={speed}
+                                movePointer={projectInfo.movePointer}
+                    />
+                </AnimaSection>
                 {
-                projectsArray.map(project => {
-                    return <NameSqure name={project.name} color={project.color} destination={project.destination} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} key={project.color} />
-                })
-            }
+                    projectsArray.map(project => {
+                        return <NameSqure name={project.name}
+                                          color={project.color}
+                                          destination={project.destination}
+                                          handleMouseEnter={handleMouseEnter}
+                                          handleMouseLeave={handleMouseLeave}
+                                          key={project.color} />
+                    })
+                }
             </ProjectsSqures>
+            <ProjectTextItem title={projectInfo.title}
+                             subTitle={projectInfo.subTitle}
+                             explain={projectInfo.explain}
+                             displayClass={titleVisible ? "fadeIn" : "fadeOut"}
+            />
+            {!titleVisible && <ProjectTextItem title={interactionPageInfo.title}
+                             subTitle={interactionPageInfo.subTitle}
+                             explain={interactionPageInfo.explain}
+                             displayClass={titleVisible ? "fadeOut" : "fadeIn"}
+            />}
         </Layout>
     )
 }
 
+
+const MainBackground = styled.div`
+//display: block;
+//  height: 100%;
+  width: 80%;
+z-index: -5;
+pointer-events: none;
+overflow: hidden;
+`
+
+const AnimaSection = styled.div`
+position: absolute;
+bottom: 70%;
+left: ${props => props.movePointer};
+z-index: 0;
+
+pointer-events: none;
+`
 
 const EnterArrow = styled.div`
   height: 140px;
@@ -110,6 +139,8 @@ const EnterArrow = styled.div`
   @media all and (max-width: 800px) {
   display: none;
   }
+  
+  pointer-events: none;
 `
 
 const EnterText = styled.h4`
@@ -145,23 +176,13 @@ const ArrowIcon = styled.div`
 const ProjectsSqures = styled.div`
 max-width: 70%;
 position: relative;
-top: 65vh;
+top: 70vh;
 left: 10%;
-//right: 0;
-//bottom: -50vh;
 
   display: flex;
   flex-flow: row;
-  //grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  //column-gap: 50px;
-  //row-gap: 20px;
   justify-content: space-around;
   align-items: flex-end;
-  //align-content: ;
-  //margin: 0;
-  //@media all and (max-width: 800px) {
-  //justify-content: flex-end;
-  //}
   
 `
 

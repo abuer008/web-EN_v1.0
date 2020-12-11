@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import Link from 'next/Link'
 
-const colorSqureArray = ["#FFEA7D", "#EA5C5C", "#4078CD", "#1F9F71", "#FF7C5E"]
+import { colorSqureArray } from "../data/MainPageData";
 
 const NameSqure = ({name, color, destination, handleMouseEnter, handleMouseLeave}) => {
+
     return (
         <Wrapper>
             <Link href={'/interactive-projects' + destination}>
@@ -17,12 +18,8 @@ const Wrapper = styled.div`
   height: 150px;
   width: 150px;
   //padding: 0 1.5em;
-  transition: transform .2s;
-  
-  :hover {
-    transform: scale(1.25);
-  }
 `
+
 
 const Title = styled.h3`
 position: relative;
@@ -34,7 +31,7 @@ height: 150px;
 width: 150px;
 //align-self: flex-end;
 
-font-family: Roboto;
+font-family: Roboto,sans-serif;
 font-style: normal;
 font-weight: 900;
 font-size: 24px;
@@ -56,9 +53,12 @@ order: 0;
 flex-grow: 1;
 margin: auto 1em;
 //padding: 1em;
+  transition: transform .2s;
+  
 
 :hover {
 cursor: pointer;
+    transform: scale(1.3);
 }
     `
 

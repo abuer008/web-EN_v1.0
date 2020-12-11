@@ -2,6 +2,8 @@ import styled from "styled-components";
 import useMousePosition from "./useMousePosition";
 import { useState, useEffect } from 'react';
 
+import { interactionPageInfo } from "../data/MainPageData";
+
 const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
 
     let [windowsWidth, setWindowsWidth] = useState(null)
@@ -22,14 +24,14 @@ const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
     return (
             <TextArea>
                 <MainTitle degX={convertY} degY={convertX} className={displayClass} style={
-                    title === "The Attitude towards Interactive Design." ?
-                        {fontSize: "7.5rem",
+                    title === interactionPageInfo.title ?
+                        {fontSize: "8rem",
                         lineHeight: "100px"}
                         :
                         {fontSize: "4.5rem",
                         lineHeight: "70px"}
                 }>{title}</MainTitle>
-                <MainSubTitle>{subTitle}</MainSubTitle>
+                <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
                 <MainText>{explain}</MainText>
             </TextArea>
     )
@@ -39,14 +41,15 @@ const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
 const TextArea = styled.div`
 display: flex;
 //height: 8vh;
-width: 850px;
+width: 880px;
 flex-flow: column nowrap;
+margin: 0;
 padding: 0;
 justify-content: space-around;
 position: absolute;
 left: 25%;
-top: 8%;
-z-index: 0;
+top: 7%;
+z-index: 2;
 transition: opacity 1s ease;
 
 .fadeOut {
@@ -95,17 +98,21 @@ text-transform: uppercase;
 transition: text-shadow .5s;
 
 :hover {
-transform: scale(1.1);
+//transform: scale(1.1);
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 `
 
 const MainSubTitle = styled(MainTitle) `
-font-size: 2rem;
+font-size: 2.7rem;
 font-weight: lighter;
 padding: 0;
 margin: 0;
+
+@media all and (max-height: 800px) {
+display: none;
+}
 `
 
 const MainText = styled.p`
