@@ -5,10 +5,14 @@ import VideoArea from "./VideoArea";
 
 import { gsap } from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import { ScrollToPlugin} from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) => {
     const bgRef = useRef(null)
     const titleRef = useRef(null)
+    const sectionRef = useRef(null)
 
     const handleBg = el => {
         el.style.top = `${-innerHeight / 2}px`
@@ -31,18 +35,37 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
             opacity: 1,
             scale: 1,
             ease: 'power3.inOut',
-            duration: 2,
-            scrub: 0
+            duration: 2
+        })
+    }
+
+    const goToSection = el => {
+        gsap.to(window, {
+            scrollTo: {y: el, autoKill: false},
+            duration: 1
         })
     }
 
     useEffect(() => {
+        if (sectionRef.current) {
+            ScrollTrigger.create({
+                trigger: sectionRef.current,
+                start: 'top center',
+                onEnter: () => goToSection(sectionRef.current)
+            })
+
+            // ScrollTrigger.create({
+            //     trigger: sectionRef.current,
+            //     start: 'bottom bottom',
+            //     onEnterBack: () => goToSection(sectionRef.current)
+            // })
+        }
         if (bgRef.current) handleBg(bgRef.current)
         if(titleRef.current) handleTitle(titleRef.current)
-    }, [bgRef, titleRef])
+    }, [sectionRef, bgRef, titleRef, goToSection, handleBg, handleTitle])
 
     return (
-        <SectionWrapper>
+        <SectionWrapper ref={sectionRef}>
             {titleSection.isActive ?
                 <React.Fragment>
                         <Image src={titleSection.source} layout='fill' objectFit='cover' className='titleImage'/>

@@ -48,7 +48,7 @@ padding: 0;
 justify-content: space-around;
 position: absolute;
 left: 25%;
-top: 7%;
+top: 10%;
 z-index: 2;
 transition: opacity 1s ease;
 

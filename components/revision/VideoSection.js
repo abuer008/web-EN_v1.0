@@ -10,7 +10,14 @@ gsap.registerPlugin(ScrollTrigger)
 const VideoSection = ({children, videoSource}) => {
     const [playing, setPlaying] = useState(false)
     const videoRef = useRef(null)
-    const transRef = useRef(null)
+
+    const goToSection = el => {
+        gsap.to(window, {
+            scrollTo: {y: el, autoKill: false},
+            duration: 1,
+            ease: 'none'
+        })
+    }
 
     const handleVideoTrigger = el => {
         ScrollTrigger.create({
@@ -18,12 +25,23 @@ const VideoSection = ({children, videoSource}) => {
             start: '-=20% top',
             onEnter: () => setPlaying(true)
         })
-        console.log(playing)
+        ScrollTrigger.create({
+            trigger: el,
+            start: 'top center',
+            onEnter: () => goToSection(el)
+        })
+        // ScrollTrigger.create({
+        //     trigger: el,
+        //     start: 'bottom bottom',
+        //     onEnterBack: () => goToSection(el)
+        // })
+        // console.log(playing)
     }
 
     useEffect(() => {
         if (videoRef.current) handleVideoTrigger(videoRef.current)
-    })
+
+    }, [videoRef, handleVideoTrigger, goToSection, setPlaying])
 
     return (
         <SectionWrapper ref={videoRef}>

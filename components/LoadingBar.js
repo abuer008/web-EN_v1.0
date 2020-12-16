@@ -53,6 +53,6 @@ window.fetch = async function (...args) {
     }
 }
 
-export default function() {
+export default function LoadingBar() {
     return null
 }

@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Revision = () => {
 
+    // const sectionsRef = useRef([])
     const subTextRef = useRef([])
     const plainTextRef = useRef([])
 
@@ -43,7 +44,35 @@ const Revision = () => {
         })
     }
 
+    const goToSection = (el, anim) => {
+        gsap.to(window, {
+            scrollTo: {y: el, autoKill: false},
+            duration: 1
+        })
+
+        if(anim) {
+            anim.restart()
+        }
+    }
+
+    const handleSnap = elArr => {
+        elArr.forEach((el, i) => {
+            ScrollTrigger.create({
+                trigger: el,
+                onEnter: () => goToSection(el)
+            })
+
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'bottom bottom',
+                onEnterBack: () => goToSection(el)
+            })
+        })
+    }
+
     useEffect(() => {
+        // if(sectionsRef.current) console.log(sectionsRef.current)
+
         if(subTextRef.current) {
             subTextRef.current.forEach((item, i) => {
                 const subEl = plainTextRef.current[i]
@@ -52,7 +81,7 @@ const Revision = () => {
                 handleText(subEl)
             })
         }
-    })
+    }, [subTextRef, plainTextRef, handleText])
 
     return (
         <Layout background="black">
@@ -96,7 +125,7 @@ const Revision = () => {
                 </TextArea>
             </VideoSection>
 
-            <VideoSection videoSource='/revision/revisionInfrared.mp4'>
+            <VideoSection videoSource='/revision/revisionInfrared.mp4' >
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Machine Cognition</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -105,7 +134,7 @@ const Revision = () => {
                 </TextArea>
             </VideoSection>
 
-            <VideoSection videoSource='/revision/revisionTactile.mp4'>
+            <VideoSection videoSource='/revision/revisionTactile.mp4' >
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Single row of haptic stimuli</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -119,7 +148,7 @@ const Revision = () => {
                 </TextArea>
             </VideoSection>
 
-            <ProductIntro className="section">
+            <ProductIntro className="section" >
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Data Translation</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>Conveying unnecessary
@@ -131,7 +160,7 @@ const Revision = () => {
                 </TextArea>
             </ProductIntro>
 
-            <PrototypeSection className="section">
+            <PrototypeSection className="section" >
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Prototype</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -140,7 +169,10 @@ const Revision = () => {
                 </TextArea>
             </PrototypeSection>
 
-            <Description className="section">
+            <Description className="section" >
+                <SubText>
+                    Description section
+                </SubText>
             </Description>
         </Layout>
     )

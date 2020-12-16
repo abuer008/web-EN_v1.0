@@ -106,7 +106,6 @@ function InteractiveProjects() {
 
 
 const MainBackground = styled.div`
-background: url('/bkg.webp');
 //display: block;
 //  height: 100%;
   width: 80%;

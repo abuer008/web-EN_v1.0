@@ -1,11 +1,7 @@
-import { useState } from 'react';
 import ReactPlayer from "react-player";
 import styled from 'styled-components';
-import Image from 'next/image';
 
-// import revisionIntro from "../../public/revision/revisionIntro.mp4"
-
-const VideoArea = ({videoSource, isPlaying, handleUpdate, handleStart}) => {
+const VideoArea = ({videoSource, isPlaying}) => {
 
     return (
         <>
