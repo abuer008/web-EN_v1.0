@@ -1,28 +1,67 @@
-import Image from 'next/image'
 import styled from 'styled-components'
 
-import Layout from '../../components/Layout'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useState, useEffect, useRef } from 'react'
 
-import { artificialSynaesthesia } from "../../data/RevisionData";
+import Layout from '../../components/Layout'
+import RevisionSection from "../../components/revision/RevisionSection";
+import VideoSection from "../../components/revision/VideoSection";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Revision = () => {
+
+    const subTextRef = useRef([])
+    const plainTextRef = useRef([])
+
+    const titleSection = {
+        isActive: true,
+        source: '/revision/revisionTitlePhoto.webp'
+    }
+    const imageSection = {
+        isActive: true,
+        imageStyle: {},
+        source: '/revision/artificial synaesthesia.webp',
+        width: 450,
+        height: 950,
+        objectFit: 'contain'
+    }
+
+    const handleText = el => {
+        gsap.from(el, {
+            opacity: 0,
+            top: '+=10%',
+            ease: 'power1.inOut',
+            duration: 1,
+            scrollTrigger: {
+                trigger: el,
+                start: 'top +180%',
+                scrub: 1
+            }
+        })
+    }
+
+    useEffect(() => {
+        if(subTextRef.current) {
+            subTextRef.current.forEach((item, i) => {
+                const subEl = plainTextRef.current[i]
+
+                handleText(item)
+                handleText(subEl)
+            })
+        }
+    })
+
     return (
         <Layout background="black">
-            <TitleSection>
-                    <Image src="/revision/revisionTitlePhoto.webp"  layout="fill" objectFit="cover"/>
-                <Title>
-                        <Image src="/revision/revision_stylingTitle.svg" width={285} height={69} className="styling"/>
-                    <Text className="subtitle">Perceptual abilities expanding</Text>
-                </Title>
-            </TitleSection>
+            <RevisionSection titleSection={titleSection} />
 
-            <IntroSection>
-                <ImageWrapper>
-                    <Image src="/revision/artificial synaesthesia.webp" width={550} height={800} objectFit="contain" />
-                </ImageWrapper>
-                <TextArea>
-                    <SubText>{artificialSynaesthesia.title}</SubText>
-                    <ExplainText>As French philosopher Roland Barthes said, there
+            <RevisionSection imageSection={imageSection}>
+                <TextArea style={{left: '24vw'}}>
+                    <SubText ref={el => subTextRef.current.push(el)}>Artificial Synaesthesia</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>As French philosopher Roland Barthes said, there
                         is no natural connection between signifier and
                         signified, the existence of an object in the objective
                         world is perceived by our sensory organs, such as
@@ -43,18 +82,66 @@ const Revision = () => {
                         artificial intelligence to expand horizons of
                         perception in humans.</ExplainText>
                 </TextArea>
-            </IntroSection>
+            </RevisionSection>
 
-            <ProductIntro>
+            <VideoSection videoSource='/revision/revisionIntro.mp4'>
                 <TextArea>
-                    <SubText>The <ToneText>RE:VISION</ToneText> Concept</SubText>
-                    <ExplainText>Humans’ vision involves more complex neural
+                    <SubText ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>Humans’ vision involves more complex neural
                         mechanisms and gathers distinctively more information
                         than the other senses, the <ToneText>Re:Vision</ToneText> attempts to translate visual
                         information into tactile “language” by artificial means, to discover the novel
-                        perceptual channel of humans. The ultimate question is how people use their own imagination to understand the subjective world.</ExplainText>
+                        perceptual channel of humans. The ultimate question is how people use their own
+                        imagination to understand the subjective world.</ExplainText>
+                </TextArea>
+            </VideoSection>
+
+            <VideoSection videoSource='/revision/revisionInfrared.mp4'>
+                <TextArea>
+                    <SubText ref={el => subTextRef.current.push(el)}>Machine Cognition</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>
+                        Using infrared rays and normal camera to capture required environmental data from front.
+                    </ExplainText>
+                </TextArea>
+            </VideoSection>
+
+            <VideoSection videoSource='/revision/revisionTactile.mp4'>
+                <TextArea>
+                    <SubText ref={el => subTextRef.current.push(el)}>Single row of haptic stimuli</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>
+                        Conveying unnecessary
+                        information about the environment can lead to a risk of
+                        sensory overload. The spatial position and the shape of objects can be
+                        represented like our visual perception with only a few
+                        stimuli in one row taking into account the limited
+                        change in the magnitude.
+                    </ExplainText>
+                </TextArea>
+            </VideoSection>
+
+            <ProductIntro className="section">
+                <TextArea>
+                    <SubText ref={el => subTextRef.current.push(el)}>Data Translation</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>Conveying unnecessary
+                        information about the environment can lead to a risk of
+                        sensory overload. The spatial position and the shape of objects can be
+                        represented like our visual perception with only a few
+                        stimuli in one row taking into account the limited
+                        change in the magnitude.</ExplainText>
                 </TextArea>
             </ProductIntro>
+
+            <PrototypeSection className="section">
+                <TextArea>
+                    <SubText ref={el => subTextRef.current.push(el)}>Prototype</SubText>
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>
+                        Prototype text.
+                    </ExplainText>
+                </TextArea>
+            </PrototypeSection>
+
+            <Description className="section">
+            </Description>
         </Layout>
     )
 }
@@ -63,17 +150,18 @@ const TitleSection = styled.div`
   //position: relative;
   height: 100vh;
   //width: 90vw;
+  margin: -8px;
   z-index: 0;
   background: black;
 `
 
 const IntroSection = styled.div`
-position: relative; 
+//position: relative; 
   z-index: 0;
   //overflow: scroll;
   background: black;
-  padding: 2em;
-  margin: -8px;
+  //padding: 2em;
+  margin: 0 -8px;
   //border: 10px;
   height: 100vh;
   //width: 90vw;
@@ -83,16 +171,39 @@ position: relative;
 `
 
 const ProductIntro = styled(IntroSection)`
-  background: white;
+//position: absolute;
+//   background: white;
+`
+
+const DataTransformSection = styled(IntroSection)`
+
+`
+
+const PrototypeSection = styled(IntroSection)`
+
+`
+
+const Description = styled(IntroSection)`
+
 `
 
 const ImageWrapper = styled.div`
-  position: absolute;
+  position: relative;
+  
   //margin-top: -8px;
   top: 11%;
   left: 10%;
 `
-const Title = styled.h1`
+
+const VideoWrapper = styled.div`
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  height: 100vh;
+   object-fit: cover;
+   //border: 1px solid red;
+`
+const Title = styled.div`
   position: absolute;
   top: 15em;
   left: 15%;
@@ -101,6 +212,7 @@ const Title = styled.h1`
 `
 
 const TextArea = styled.div`
+//opacity: 0;
 position: relative;
   font-family: Roboto, sans-serif;
   top: 35vh;

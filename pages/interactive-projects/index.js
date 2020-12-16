@@ -1,8 +1,8 @@
+import React from 'react'
 import Layout from '../../components/Layout';
 import styled from 'styled-components';
 import NameSqure from "../../components/ProjectNameSqure";
 import Image from "next/image";
-import useMousePosition from "../../components/useMousePosition";
 import ProjectTextItem from "../../components/ProjectTextItem";
 
 import { useState, useEffect } from 'react';
@@ -106,6 +106,7 @@ function InteractiveProjects() {
 
 
 const MainBackground = styled.div`
+background: url('/bkg.webp');
 //display: block;
 //  height: 100%;
   width: 80%;

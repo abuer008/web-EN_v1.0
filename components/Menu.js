@@ -39,7 +39,7 @@ left: 25%;
 position: fixed;
 margin: 1em 0;
 padding-top: 2em;
-  z-index: 1;
+  z-index: 2;
   
   display: flex;
   flex-direction: row;
