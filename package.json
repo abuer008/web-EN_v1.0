@@ -25,9 +25,7 @@
     "react-dom": "^17.0.1",
     "react-lottie": "^1.2.3",
     "react-player": "^2.7.0",
-    "styled-components": "^5.2.1",
-    "three": "^0.123.0",
-    "webgl-detector": "^1.1.11"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

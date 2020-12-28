@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import useMousePosition from "./useMousePosition";
+import useMousePosition from "../utils/useMousePosition";
 import { useState, useEffect } from 'react';
 
 import { interactionPageInfo } from "../data/MainPageData";
