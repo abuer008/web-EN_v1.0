@@ -2,47 +2,85 @@ import Image from 'next/image'
 import Layout from '../../components/Layout'
 import styled from 'styled-components'
 import { VDText } from "../../components/visualData/VDText";
+import { ShowArea } from '../../components/visualData/ShowArea'
 
 import { dataVisualisation } from "../../data/DataVisualisation"
 
 const DataVisualisation = () => {
     return (
         <Layout>
-            <ImageWrapper>
-                <Image src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover'/>
-                <BlurRect />
-            </ImageWrapper>
-            <Title>
-                <SubTitle>
-                    Data Visualisation
-                </SubTitle>
-                <MainTitle>Syrian Civil War</MainTitle>
-                <YearText>2016-2019</YearText>
-                <Button>
-                    <ButtonIcon>
-                        <Image src='/data-visualisation/buttonIcon.svg' width='42' height='42'/>
-                    </ButtonIcon>
-                    <ButtonText>Enter Interactive DEMO</ButtonText>
-                </Button>
-            </Title>
-            <VDText heading={dataVisualisation[0].heading} plainText={dataVisualisation[0].plainText} />
+            <Section>
+                    <Image src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover'/>
+                <Title>
+                    <SubTitle>
+                        Data Visualisation
+                    </SubTitle>
+                    <MainTitle>Syrian Civil War</MainTitle>
+                    <YearText>2016-2019</YearText>
+                    <Button>
+                        <ButtonIcon>
+                            <Image src='/data-visualisation/buttonIcon.svg' width='42' height='42'/>
+                        </ButtonIcon>
+                        <ButtonText>Enter Interactive DEMO</ButtonText>
+                    </Button>
+                </Title>
+            </Section>
+            <Section>
+                <ImageWrapper>
+                    <Image src='/data-visualisation/refugeesFamily.webp' width='642' height='638' />
+                </ImageWrapper>
+                <TextArea>
+                    <VDText heading={dataVisualisation[0].heading} plainText={dataVisualisation[0].plainText} />
+                </TextArea>
+            </Section>
+
+            <Section>
+                <CodeWrapper>
+                    <code style={{whiteSpace: 'pre-line'}}>{dataVisualisation[1].code}</code>
+                </CodeWrapper>
+                <TextArea>
+                    <VDText heading={dataVisualisation[1].heading} plainText={dataVisualisation[1].plainText} />
+                </TextArea>
+            </Section>
+
+            <Section>
+                <ImageWrapper>
+                    <ShowArea />
+                </ImageWrapper>
+                <TextArea>
+                    <VDText heading={dataVisualisation[2].heading} plainText={dataVisualisation[2].plainText} />
+                </TextArea>
+            </Section>
+
+            <Section>
+                <Image src='/data-visualisation/titlePhoto.png' width='640' height='360' />
+                <TextArea>
+                    <VDText heading={dataVisualisation[3].heading} plainText={dataVisualisation[3].plainText} />
+                </TextArea>
+            </Section>
         </Layout>
     )
 }
 
+const Section = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+`
+
 const ImageWrapper = styled.div`
-    //position: fixed;
-    z-index: -1;
+    position: relative;
+    max-width: 50vw;
     //filter: blur(1px);
+    top: 20%;
+    left: 10%;
 `
-
-const BlurRect = styled.div`
-  //width: 100vw;
-  //height: 100vh;
-  //
-  //backdrop-filter: blur(20px);
+const TextArea = styled.div`
+  position: relative;
+  width: 30vw;
+  left: 60vw;
+  bottom: 40vh;
 `
-
 const Title = styled.div`
   position: absolute;
   top: 30vh;
@@ -108,6 +146,16 @@ const ButtonText = styled.h6`
   color: white;
   max-width: 10vw;
   font-size: 1.2em;
+`
+
+const CodeWrapper = styled.div`
+  position: relative;
+  top: 10vh;
+  left: 15vw;
+  max-width: 30vw;
+  padding: 20px;
+  border-radius: 2em;
+  background-color: #e9e9e9
 `
 
 export default DataVisualisation

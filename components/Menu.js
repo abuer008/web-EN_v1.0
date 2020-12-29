@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import Link from 'next/Link';
 import { menuList } from '../data/MainPageData';
-
+import Image from 'next/image';
 
 function Menu() {
 
     return (
         <MenuWrapper>
+            {/*<Link href='/'>*/}
+                <Image src='/safari-pinned-tab.svg' width='24' height='24'/>
+            {/*</Link>*/}
             {menuList.map(menuItem => {
                 return <Link href={menuItem.destination} key={menuItem.id}>
                     <MenuItemActive>{menuItem.title}</MenuItemActive>
@@ -34,8 +37,8 @@ font-weight: normal;
 
 const MenuWrapper = styled.div`
 width: 100%;
-max-width: 50vw;
-left: 25%;
+max-width: 60vw;
+left: 22%;
 position: fixed;
 margin: 1em 0;
 padding-top: 2em;
@@ -44,6 +47,7 @@ padding-top: 2em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   
   font-family: Roboto,sans-serif;
 font-style: normal;

@@ -5,7 +5,7 @@ import NameSqure from "../../components/ProjectNameSqure";
 import Image from "next/image";
 import ProjectTextItem from "../../components/ProjectTextItem";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import StartAnima from "../../components/StartAnima";
 
 import * as RevisionAnima from '../../public/revisionStartAnima.json';

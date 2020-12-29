@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "gsap": "^3.5.1",
+    "react-lodash": "^0.1.2",
     "next": "^10.0.3",
     "next-transpile-modules": "^6.0.0",
     "nprogress": "^0.2.0",
