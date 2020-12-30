@@ -3,6 +3,8 @@ import Layout from '../../components/Layout'
 import styled from 'styled-components'
 import { VDText } from "../../components/visualData/VDText";
 import { ShowArea } from '../../components/visualData/ShowArea'
+import { Sphere } from '../../components/visualData/Sphere'
+import { PhotoWall } from "../../components/visualData/PhotoWall";
 
 import { dataVisualisation } from "../../data/DataVisualisation"
 
@@ -53,9 +55,16 @@ const DataVisualisation = () => {
             </Section>
 
             <Section>
-                <Image src='/data-visualisation/titlePhoto.png' width='640' height='360' />
-                <TextArea>
+                <Sphere />
+                <TextArea style={{bottom: '60vh'}}>
                     <VDText heading={dataVisualisation[3].heading} plainText={dataVisualisation[3].plainText} />
+                </TextArea>
+            </Section>
+
+            <Section>
+                <PhotoWall />
+                <TextArea style={{top: '0'}}>
+                    <VDText heading={dataVisualisation[4].heading} plainText={dataVisualisation[4].plainText} />
                 </TextArea>
             </Section>
         </Layout>
@@ -66,6 +75,7 @@ const Section = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+  //border: 1px solid black;
 `
 
 const ImageWrapper = styled.div`
@@ -74,6 +84,7 @@ const ImageWrapper = styled.div`
     //filter: blur(1px);
     top: 20%;
     left: 10%;
+    border-radius: 2em;
 `
 const TextArea = styled.div`
   position: relative;
