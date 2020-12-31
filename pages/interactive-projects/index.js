@@ -110,6 +110,7 @@ const MainBackground = styled.div`
 //  height: 100%;
   width: 80%;
 z-index: -5;
+margin: -8px;
 pointer-events: none;
 overflow: hidden;
 `
@@ -176,7 +177,7 @@ const ArrowIcon = styled.div`
 const ProjectsSqures = styled.div`
 max-width: 70%;
 position: relative;
-top: 70vh;
+top: 72vh;
 left: 10%;
 
   display: flex;

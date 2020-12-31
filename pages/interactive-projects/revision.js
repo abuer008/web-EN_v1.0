@@ -84,7 +84,7 @@ const Revision = () => {
     }, [subTextRef, plainTextRef, handleText])
 
     return (
-        <Layout background="black">
+        <Layout isBlack={false}>
             <RevisionSection titleSection={titleSection} />
 
             <RevisionSection imageSection={imageSection}>

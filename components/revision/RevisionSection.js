@@ -91,7 +91,7 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
 const SectionWrapper = styled.section`
   //z-index: 0;
   background: black;
-  margin: 0 -8px;
+  margin: -8px;
   height: 100vh;
   
   display: flex;

@@ -75,6 +75,7 @@ const Section = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+  margin: -8px;
   //border: 1px solid black;
 `
 
@@ -95,7 +96,7 @@ const TextArea = styled.div`
 const Title = styled.div`
   position: absolute;
   top: 30vh;
-  left: 52vw;
+  left: 55vw;
   
   font-family: Roboto, sans-serif;
   font-style: normal;

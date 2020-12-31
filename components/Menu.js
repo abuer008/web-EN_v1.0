@@ -3,16 +3,16 @@ import Link from 'next/Link';
 import { menuList } from '../data/MainPageData';
 import Image from 'next/image';
 
-function Menu() {
+function Menu({isBlack}) {
 
     return (
         <MenuWrapper>
             {/*<Link href='/'>*/}
-                <Image src='/safari-pinned-tab.svg' width='24' height='24'/>
+                <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='20' height='20'/>
             {/*</Link>*/}
             {menuList.map(menuItem => {
                 return <Link href={menuItem.destination} key={menuItem.id}>
-                    <MenuItemActive>{menuItem.title}</MenuItemActive>
+                    <MenuItemActive style={{color: isBlack ? 'black' : 'white'}}>{menuItem.title}</MenuItemActive>
                 </Link>
             })}
         </MenuWrapper>
@@ -20,7 +20,6 @@ function Menu() {
 }
 
 const MenuItemActive = styled.a`
-    color: black;
     
     //margin: 0 4em;
     //font-weight: bold;
@@ -37,11 +36,11 @@ font-weight: normal;
 
 const MenuWrapper = styled.div`
 width: 100%;
-max-width: 60vw;
+max-width: 56vw;
 left: 22%;
 position: fixed;
 margin: 1em 0;
-padding-top: 2em;
+padding-top: 2.5em;
   z-index: 2;
   
   display: flex;

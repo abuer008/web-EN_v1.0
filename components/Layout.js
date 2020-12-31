@@ -2,11 +2,11 @@ import Menu from './Menu';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-const Layout = ({ children, background }) => {
+const Layout = ({ children, isBlack = true }) => {
 
     return (
         <Wrapper>
-            <Menu />
+            <Menu isBlack={isBlack} />
             {children}
         </Wrapper>
     )
