@@ -5,8 +5,8 @@ export const ShowArea = () => {
 
     return (<ShowWrapper>
         <ClickArea>
-            <DeathText>119,297</DeathText>
-            <YearArea>
+            <DeathText onMouseOver={() => console.log("deathsNum hovered")}>119,297</DeathText>
+            <YearArea onMouseOver={() => console.log("year hovered")}>
                 <YText>2016</YText>
                 <YText>2017</YText>
                 <YText>2018</YText>
@@ -104,6 +104,11 @@ const YText = styled.p`
   
   text-align: right;
   margin: 2.2em 1em;
+  
+  :hover {
+    font-weight: 900;
+    color: #000;
+  }
 `
 
 const DtArea = styled.div`
@@ -127,4 +132,9 @@ const Num = styled.p`
   padding: 2px;
   text-align: center;
   margin: 15px 10px;
+  
+  :hover {
+    background-color: #000;
+    color: #fff;
+  }
 `
