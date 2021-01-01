@@ -19,7 +19,7 @@ export const Sphere = () => {
     const createSphereMesh = () => {
         const sphereGeo = new THREE.IcosahedronGeometry(0.08, 3)
         // sphereGeo.position = position
-        const sphereMat = new THREE.MeshStandardMaterial({color: 0xff5149, shininess: 30})
+        const sphereMat = new THREE.MeshStandardMaterial({color: 0xff5149})
 
         return new THREE.Mesh(sphereGeo, sphereMat)
 

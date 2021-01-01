@@ -39,7 +39,7 @@ const Revision = () => {
             scrollTrigger: {
                 trigger: el,
                 start: 'top +180%',
-                scrub: 1
+                scrub: true
             }
         })
     }
