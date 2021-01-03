@@ -21,7 +21,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const DataVisualisation = () => {
 
-
     return (
         <Layout>
                 <Reveal repeat trigger={<SectionTrigger />}>
@@ -35,7 +34,7 @@ const DataVisualisation = () => {
                             Data Visualisation
                         </SubTitle>
                         <TitleChange>
-                            <MainTitle>Syrian</MainTitle>
+                            <MainTitle>Syria</MainTitle>
                         </TitleChange>
                         <YearText>2016-2019</YearText>
                         <Button>
@@ -77,7 +76,8 @@ const DataVisualisation = () => {
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
                     <ImageWrapper>
-                        <ShowArea/>
+                        <ShowArea
+                        />
                     </ImageWrapper>
                 </Fading>
                 <TextFading>
@@ -195,12 +195,13 @@ const Button = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-out;
   
   :hover {
     transform: scale(1.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     background-color: indianred;
+    cursor: pointer;
   }
 `
 

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const VDText = ({heading, plainText}) => {
+export const VDText = ({heading, plainText, isMainText = true}) => {
     return (
         <TextWrapper>
-            <Heading>{heading}</Heading>
+            <Heading style={{fontSize: isMainText ? '3em' : '2em', marginTop: isMainText ? 0 : '20px'}}>{heading}</Heading>
             <PlainText>{plainText}</PlainText>
         </TextWrapper>
     )
@@ -20,7 +20,6 @@ const TextWrapper = styled.div`
 
 const Heading = styled.h2`
   font-weight: 900;
-  font-size: 2em;
 `
 
 const PlainText = styled.p`

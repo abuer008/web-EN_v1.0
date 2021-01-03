@@ -9,7 +9,7 @@ export const BasicEl = ({style}) => {
 const Rect = styled.div`
   position: absolute;
   
-  background: #ececea;
+  background: #efefef;
   
   box-shadow: 0px -10px 20px rgba(255, 255, 255, 0.6), 0px 10px 20px rgba(0, 0, 0, 0.25);
   filter: blur(1.2px);

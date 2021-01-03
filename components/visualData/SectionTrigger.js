@@ -16,4 +16,6 @@ const SectionWrapper = styled.div`
   height: 100vh;
   margin: -8px;
   background-color: white;
+  
+  //scroll-snap-align: start;
 `
