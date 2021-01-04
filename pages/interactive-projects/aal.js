@@ -3,6 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Layout from '../../components/Layout'
 import { BasicEl } from "../../components/aal/BasicEl";
 import { TlText } from "../../components/aal/TlText";
+import { TimeGraph } from '../../components/aal/TimeGraph'
 import styled from 'styled-components'
 import Image from 'next/image'
 import ReactPlayer from "react-player";
@@ -16,10 +17,25 @@ gsap.registerPlugin(ScrollTrigger)
 
 const AmbientAssistedLiving = () => {
 
+    const [isLock, setLock] = useState(false)
+
     const sectionRefs = useRef([])
     const video = useRef(null)
     const text = useRef([])
     const newText = useRef([])
+
+    const aalIntro = useRef([])
+    const introImg = useRef(null)
+
+    const hardwareTexts = useRef([])
+    const hardwareImgs = useRef([])
+
+    const timeGraphs = useRef([])
+    const comparisonsTexts = useRef([])
+
+    const outputImgs = useRef([])
+    const outputTexts = useRef([])
+    const outputTemp = useRef(null)
 
     const tlStyle = {
         width: '450px',
@@ -37,15 +53,17 @@ const AmbientAssistedLiving = () => {
     }
 
    const firstPageAnima = (video, text, newText) => {
-        const tl = gsap.timeline({duration: 1, scrollTrigger: {
+        const tl = gsap.timeline({
+            scrollTrigger: {
                 trigger: sectionRefs.current[0],
-                start: '10% top',
+                start: '20% top',
                 end: 'bottom center',
-                toggleActions: 'play none none reverse',
-                markers: true
-            }})
+                toggleActions: 'play none none reverse'
+            }, onStart: () => setLock(true),
+            onComplete: () => setLock(false),
+            onReverseComplete: () => setLock(false)})
         tl.to(video, {
-            opacity: 0,
+            opacity: 0
         }, "-=0.5")
             .to(text, {
                 opacity: 0,
@@ -62,15 +80,164 @@ const AmbientAssistedLiving = () => {
             }, "-=0.3")
    }
 
+   const secondPageAnima = (oldText, aalIntro, introImg) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[1],
+                start: '10% 10%',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true),
+            onComplete: () => setLock(false),
+            onReverseComplete: () => setLock(false)})
+       tl.to(oldText, {
+           opacity: 0,
+           y: -100,
+           stagger: 0.2
+       }, "-=0.5")
+           .fromTo(aalIntro, {
+               opacity: 0,
+               y: 100,
+           }, {
+               opacity: 1,
+               y: 0,
+               stagger: 0.2
+           }, "-=0.5")
+           .from(introImg, {
+               opacity: 0,
+               y: '20vh',
+               duration: 1.5,
+               ease: 'power1.out'
+           }, "-=1.2")
+   }
+
+   const thirdPageAnima = (oldTexts, oldImg, newText, newImgs) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[2],
+                start: '10% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true),
+            onComplete: () => setLock(false),
+            onReverseComplete: () => setLock(false)
+        })
+       tl
+           .to(oldTexts, {
+               opacity: 0,
+               y: -100,
+               stagger: 0.2
+           }, "-=0.5")
+           .to(oldImg, {
+               opacity: 0
+           }, "-=1")
+           .from(newText, {
+               opacity: 0,
+               y: 100,
+               stagger: 0.2
+           }, '-=1')
+           .from(newImgs, {
+               opacity: 0,
+               y: 100,
+               stagger: 0.5
+           }, '-=1.5')
+   }
+
+   const fourthPageAnima = (oldTexts, oldImgs, newTexts, newImgs) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[3],
+                start: '10% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true),
+            onComplete: () => setLock(false),
+            onReverseComplete: () => setLock(false)
+        })
+            tl.to(oldTexts, {
+                opacity: 0,
+                y: -100,
+                stagger: 0.2
+            }, '-=1')
+            .to(oldImgs, {
+                opacity: 0,
+                y: -100,
+                stagger: 0.2
+            }, '-=1')
+            .from(newImgs, {
+                opacity: 0,
+                y: 100,
+                stagger: 0.2
+            }, '-=0.8')
+            .from(newTexts, {
+                opacity: 0,
+                y: 100,
+                stagger: 0.2
+            }, "-=1")
+   }
+
+   const fifthPageAnima = (oldImgs, oldTexts, newImgs, newTexts) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[4],
+                start: '10% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true),
+            onComplete: () => setLock(false),
+            onReverseComplete: () => setLock(false)
+        })
+       tl.to(oldTexts, {
+           opacity: 0,
+           y: -100,
+           stagger: 0.2
+       })
+           .to(oldImgs, {
+               opacity: 0
+           })
+           .from(newImgs, {
+               opacity: 0,
+               y: 100,
+               stagger: 0.2
+           })
+           .from(newTexts, {
+               opacity: 0,
+               y: 100,
+               stagger: 0.2
+           })
+   }
+
    useEffect(() => {
+       gsap.defaults({ease: 'power1.inOut', duration: 0.5})
        if(video.current) {
            firstPageAnima(video.current, text.current, newText.current)
+           secondPageAnima(newText.current, aalIntro.current, introImg.current)
+           thirdPageAnima(aalIntro.current, introImg.current, hardwareTexts.current, hardwareImgs.current)
+           fourthPageAnima(hardwareTexts.current, hardwareImgs.current, comparisonsTexts.current, timeGraphs.current)
+           fifthPageAnima([timeGraphs.current[1], timeGraphs.current[2]], comparisonsTexts.current, outputImgs.current, outputTexts.current)
        }
   }, [])
+    
+    useEffect(() => {
+        if(isLock) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+    }, [isLock])
+
+    const handleWheel = e => {
+        console.log(e.deltaY)
+    }
 
     return (<Layout>
-        <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}} />
-        <Section  ref={el => sectionRefs.current.push(el)}>
+        <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
+        {/*<Section style={{height: '5px', margin: 1}} />*/}
+        <Section  ref={el => sectionRefs.current.push(el)} >
                 <VideoWrapper ref={video}>
                 <ReactPlayer
                     url='/aal/titleVideo.mp4'
@@ -121,36 +288,159 @@ const AmbientAssistedLiving = () => {
         <Section ref={el => sectionRefs.current.push(el)}>
             <ThirdPage>
                 <ThirdPageText>
-                    <TitleWrapper>
+                    <TitleWrapper ref={el => aalIntro.current.push(el)}>
                         <BasicEl style={aalIntroStyle}/>
                     <AALIntro>The Concept of <Strong>AAL</Strong></AALIntro>
                     </TitleWrapper>
-                    <ThirdSmallText>some describing text about AALsome describing text about AAL.some describing text about AAL..</ThirdSmallText>
+                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>some describing text about AALsome describing text about AAL.some describing text about AAL..</ThirdSmallText>
                 </ThirdPageText>
-                <AALImageWrapper>
+                <AALImageWrapper ref={introImg}>
                     <Image src='/aal/aalIntro.jpg' width='502' height='354'/>
                 </AALImageWrapper>
             </ThirdPage>
         </Section>
 
+        <Section ref={el => sectionRefs.current.push(el)}>
+                <FourthPageText>
+                    <FourthBigText ref={el => hardwareTexts.current.push(el)}>Wearable devices for gesture monitoring</FourthBigText>
+                    <FourthSmallText ref={el => hardwareTexts.current.push(el)}>some text for describing hardware.</FourthSmallText>
+                </FourthPageText>
+                <FourthImgWrapper>
+                    <WatchImg ref={el => hardwareImgs.current.push(el)}>
+                        <Image src='/aal/hardwareTemp.png' width='370' height='370' />
+                    </WatchImg>
+                    <PatchImg ref={el => hardwareImgs.current.push(el)}>
+                        <Image src='/aal/hardwareTemp.png' width='370' height='370' />
+                    </PatchImg>
+                </FourthImgWrapper>
+        </Section>
+
+        <Section ref={el => sectionRefs.current.push(el)}>
+            <TimeGraphWrapper>
+                <div ref={el => timeGraphs.current.push(el)}>
+                    <TimeGraph />
+                </div>
+                <div ref={el => timeGraphs.current.push(el)} style={{padding: '15em 0'}}>
+                <TimeGraph />
+                </div>
+            </TimeGraphWrapper>
+            <ArrowWrapper ref={el => timeGraphs.current.push(el)}>
+                <Image src='/aal/dataComparisonArrow.svg' width='0' height='60'/>
+            </ArrowWrapper>
+            <FifthPageText>
+                <FifthBigText ref={el => comparisonsTexts.current.push(el)}>Data comparison</FifthBigText>
+                <FifthSmallText ref={el => comparisonsTexts.current.push(el)}>some text about data comparison.</FifthSmallText>
+            </FifthPageText>
+        </Section>
+
+        <Section ref={el => sectionRefs.current.push(el)}>
+            <OutputImgWrapper>
+            {/*<div ref={el => outputImgs.current.push(el)}>*/}
+            {/*<ConcernArea*/}
+            {/*    number={20}*/}
+            {/*    numberText='times'*/}
+            {/*    top='45vh'*/}
+            {/*    textMargin='13px 23px'*/}
+            {/*    title='Health concerns'*/}
+            {/*    description='main concern text going on here'*/}
+            {/*/>*/}
+            {/*</div>*/}
+
+                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '45vh'}}>
+                    <ConcernWrapper>
+                        <BasicEl style={gStyle} />
+                        <TextWrapper style={{margin: '13px 23px'}}>
+                            <H1Number>20</H1Number>
+                            <H1Small>times</H1Small>
+                        </TextWrapper>
+                    </ConcernWrapper>
+                    <UITexts>
+                        <TlText title='Health concerns' plainText='main concern text going on here.' />
+                    </UITexts>
+                </MainConcernArea>
+
+                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '62vh'}}>
+                    <ConcernWrapper>
+                        <BasicEl style={gStyle} />
+                        <TextWrapper style={{margin: '13px 26px'}}>
+                            <H1Number>3</H1Number>
+                            <H1Small>Hours</H1Small>
+                        </TextWrapper>
+                    </ConcernWrapper>
+                    <UITexts>
+                        <TlText title='gesture concerns' plainText='The walking gesture has slightly changed.' />
+                    </UITexts>
+                </MainConcernArea>
+            {/*<div ref={el => outputImgs.current.push(el)}>*/}
+            {/*<ConcernArea*/}
+            {/*    number={3}*/}
+            {/*    numberText='Hours'*/}
+            {/*    top='62vh'*/}
+            {/*    textMargin='13px 26px'*/}
+            {/*    title='gesture concerns'*/}
+            {/*    description='The walking gesture has slightly changed.'*/}
+            {/*/>*/}
+            {/*</div>*/}
+
+                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '79vh'}}>
+                    <ConcernWrapper>
+                        <BasicEl style={gStyle} />
+                        <TextWrapper style={{margin: '13px 16px'}}>
+                            <H1Number>90</H1Number>
+                            <H1Small>minutes</H1Small>
+                        </TextWrapper>
+                    </ConcernWrapper>
+                    <UITexts>
+                        <TlText title='Activity concerns' plainText='Excessive exercises has increased by 90 minutes.' />
+                    </UITexts>
+                </MainConcernArea>
+            {/*<div ref={el => outputImgs.current.push(el)}>*/}
+            {/*<ConcernArea*/}
+            {/*    number={90}*/}
+            {/*    numberText='Minutes'*/}
+            {/*    top='79vh'*/}
+            {/*    textMargin='13px 16px'*/}
+            {/*    title='Activity concerns'*/}
+            {/*    description='Excessive exercises has increased by 90 minutes.'*/}
+            {/*/>*/}
+            {/*</div>*/}
+            </OutputImgWrapper>
+
+            <OutputWrapper>
+                <FifthBigText ref={el => outputTexts.current.push(el)}>Explicit output</FifthBigText>
+                <FifthSmallText ref={el => outputTexts.current.push(el)}>some text about output layout.</FifthSmallText>
+            </OutputWrapper>
+
+        </Section>
+        <Section></Section>
+        <Section></Section>
+        <Section></Section>
+
+
     </Layout>)
 }
+
+
+// --- Main styles ---
 
 const Section = styled.div`
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 40vh;
   margin: -8px;
   padding: 0;
   overflow: hidden;
-  border: 1px solid white;
-  //scroll-snap-align: start;
+  z-index: 0;
+  //border: 1px solid white;
   
 `
+
+// --- TitlePage ---
 
 const VideoWrapper = styled.div`
   position: fixed;
   z-index: 0;
+  //margin: -8px;
   //height: auto;
 `
 
@@ -159,6 +449,7 @@ const TlArea = styled.div`
   top: 16vh;
   left: 60vw;
   width: 426px;
+  z-index: 1;
   transition: 0.3s ease-out;
   
   :hover {
@@ -187,6 +478,7 @@ const TlContent = styled.div`
   flex-direction: row;
 `
 
+
 const IconWrapper = styled.div`
   margin: auto 40px;
 `
@@ -213,11 +505,35 @@ const H1 = styled.h1`
   line-height: 90%;
 `
 
+// --- research page ---
+
+
+
 const SecondPageText = styled.div`
   position: fixed;
   top: 20vh;
   left: 25vw;
   
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+`
+
+const BigText = styled.h2`
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0;
+`
+
+const SmallText = styled.p`
+  font-family: Roboto, sans-serif;
+  font-weight: normal;
+  font-size: 1.2em;
+`
+
+// --- AAL Intro ---
+
+const ThirdPage = styled.div`
   font-family: Roboto, sans-serif;
   font-style: normal;
 `
@@ -234,14 +550,17 @@ const TitleWrapper = styled.div`
   left: 80px;
 `
 
-const BigText = styled.h2`
-  font-weight: 900;
-  font-size: 4em;
+const AALIntro = styled(BigText)`
+  position: absolute;
+  width: 670px;
+  top: 30px;
+  left: -30px;
+  font-weight: 200;
+  text-align: right;
 `
 
-const SmallText = styled.p`
-  font-weight: normal;
-  font-size: 1.2em;
+const Strong = styled.strong`
+  font-weight: bold;
 `
 
 const ThirdSmallText = styled(SmallText)`
@@ -252,28 +571,127 @@ const ThirdSmallText = styled(SmallText)`
   top: -50px;
 `
 
-const ThirdPage = styled.div`
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-`
-
-const AALIntro = styled(BigText)`
-  position: absolute;
-  width: 670px;
-  top: -25px;
-  left: -30px;
-  font-weight: 200;
-  text-align: right;
-`
-
 const AALImageWrapper = styled.div`
   position: fixed;
   top: 32vh;
   right: 0;
 `
 
-const Strong = styled.strong`
-  font-weight: bold;
+// --- hardware page ---
+
+const FourthPageText = styled.div`
+  position: fixed;
+  top: 40vh;
+  left: 50vw;
 `
+
+const FourthBigText = styled(BigText)`
+  width: 40vw;
+`
+
+const FourthSmallText = styled(SmallText)`
+  width: 40vw;
+`
+
+const FourthImgWrapper = styled.div`
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+`
+
+const WatchImg = styled.div``
+const PatchImg = styled(WatchImg)``
+
+// --- data comparison ---
+
+const TimeGraphWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  flex-direction: column;
+`
+
+const ArrowWrapper = styled.div`
+  position: fixed;
+  top: 46.5vh;
+  left: 21vw;
+  z-index: 1;
+`
+
+const FifthPageText = styled(FourthPageText)`
+  top: 50vh;
+`
+
+const FifthBigText = styled(FourthBigText)``
+const FifthSmallText = styled(FourthSmallText)``
+
+
+// --- explicit output ---
+
+const OutputWrapper = styled(FifthPageText)`
+  top: 15vh;
+`
+
+const OutputImgWrapper = styled.div`
+  //position: fixed;
+  z-index: 1;
+`
+
+
+const MainConcernArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  position: fixed;
+  left: 18em;
+  width: 426px;
+  z-index: 1;
+  transition: 0.3s ease-out;
+  
+  :hover {
+    transform: scale(1.05);
+    cursor: default;
+  }
+`
+const ConcernWrapper = styled.div`
+`
+
+const TextWrapper = styled.div`
+  position: absolute;
+  
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  text-align: center;
+`
+
+const H1Number = styled.h1`
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0;
+`
+
+const H1Small = styled.p`
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+  
+  line-height: .5em;
+`
+
+const UITexts = styled.div`
+
+`
+
+
+// --- infographic ---
+
+// --- prototype ---
+
+// --- conclusion ---
+
+
 
 export default AmbientAssistedLiving

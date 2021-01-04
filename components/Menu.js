@@ -20,7 +20,7 @@ function Menu({isBlack}) {
 }
 
 const MenuItemActive = styled.a`
-    
+    //position: absolute;
     //margin: 0 4em;
     //font-weight: bold;
     
@@ -39,8 +39,8 @@ width: 100%;
 max-width: 56vw;
 left: 22%;
 position: fixed;
-margin: 1em 0;
-padding-top: 2.5em;
+//margin: 2.5em 0;
+padding-top: 4em;
   z-index: 2;
   
   display: flex;
