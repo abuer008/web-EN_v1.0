@@ -13,7 +13,7 @@ const Layout = ({ children, isBlack = true }) => {
 }
 
 const Wrapper = styled.div`
-  height: 90vh;
+  // height: 0vh;
   //background: black;
 `
 

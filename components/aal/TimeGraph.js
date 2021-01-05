@@ -26,5 +26,5 @@ export const TimeGraph = () => {
 // ))
 
 const Wrapper = styled.div`
-  margin: 10em 18em;
+  margin: 10em 15em;
 `

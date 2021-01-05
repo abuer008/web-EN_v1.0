@@ -37,6 +37,10 @@ const AmbientAssistedLiving = () => {
     const outputTexts = useRef([])
     const outputTemp = useRef(null)
 
+    const popUp = useRef(null)
+
+    const prototype = useRef([])
+
     const tlStyle = {
         width: '450px',
         height: '190px'
@@ -59,9 +63,10 @@ const AmbientAssistedLiving = () => {
                 start: '20% top',
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
-            }, onStart: () => setLock(true),
-            onComplete: () => setLock(false),
-            onReverseComplete: () => setLock(false)})
+            }, onUpdate: () => setLock(true)
+            // onComplete: () => setLock(false),
+            // onReverseComplete: () => setLock(false)
+            })
         tl.to(video, {
             opacity: 0
         }, "-=0.5")
@@ -88,9 +93,10 @@ const AmbientAssistedLiving = () => {
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
             },
-            onUpdate: () => setLock(true),
-            onComplete: () => setLock(false),
-            onReverseComplete: () => setLock(false)})
+            onUpdate: () => setLock(true)
+            // onComplete: () => setLock(false),
+            // onReverseComplete: () => setLock(false)
+            })
        tl.to(oldText, {
            opacity: 0,
            y: -100,
@@ -109,7 +115,7 @@ const AmbientAssistedLiving = () => {
                y: '20vh',
                duration: 1.5,
                ease: 'power1.out'
-           }, "-=1.2")
+           }, "-=0.8")
    }
 
    const thirdPageAnima = (oldTexts, oldImg, newText, newImgs) => {
@@ -120,9 +126,9 @@ const AmbientAssistedLiving = () => {
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
             },
-            onUpdate: () => setLock(true),
-            onComplete: () => setLock(false),
-            onReverseComplete: () => setLock(false)
+            onUpdate: () => setLock(true)
+            // onComplete: () => setLock(false),
+            // onReverseComplete: () => setLock(false)
         })
        tl
            .to(oldTexts, {
@@ -137,12 +143,12 @@ const AmbientAssistedLiving = () => {
                opacity: 0,
                y: 100,
                stagger: 0.2
-           }, '-=1')
+           }, '-=0.5')
            .from(newImgs, {
                opacity: 0,
                y: 100,
                stagger: 0.5
-           }, '-=1.5')
+           }, '-=1')
    }
 
    const fourthPageAnima = (oldTexts, oldImgs, newTexts, newImgs) => {
@@ -153,9 +159,9 @@ const AmbientAssistedLiving = () => {
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
             },
-            onUpdate: () => setLock(true),
-            onComplete: () => setLock(false),
-            onReverseComplete: () => setLock(false)
+            onUpdate: () => setLock(true)
+            // onComplete: () => setLock(false),
+            // onReverseComplete: () => setLock(false)
         })
             tl.to(oldTexts, {
                 opacity: 0,
@@ -166,17 +172,17 @@ const AmbientAssistedLiving = () => {
                 opacity: 0,
                 y: -100,
                 stagger: 0.2
-            }, '-=1')
+            }, '-=0.5')
             .from(newImgs, {
                 opacity: 0,
                 y: 100,
                 stagger: 0.2
-            }, '-=0.8')
+            }, '-=0.3')
             .from(newTexts, {
                 opacity: 0,
                 y: 100,
                 stagger: 0.2
-            }, "-=1")
+            }, "-=0.8")
    }
 
    const fifthPageAnima = (oldImgs, oldTexts, newImgs, newTexts) => {
@@ -187,9 +193,9 @@ const AmbientAssistedLiving = () => {
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
             },
-            onUpdate: () => setLock(true),
-            onComplete: () => setLock(false),
-            onReverseComplete: () => setLock(false)
+            onUpdate: () => setLock(true)
+            // onComplete: () => setLock(false),
+            // onReverseComplete: () => setLock(false)
         })
        tl.to(oldTexts, {
            opacity: 0,
@@ -198,36 +204,90 @@ const AmbientAssistedLiving = () => {
        })
            .to(oldImgs, {
                opacity: 0
-           })
+           }, '-=0.8')
            .from(newImgs, {
                opacity: 0,
                y: 100,
                stagger: 0.2
-           })
+           }, "-=0.5")
            .from(newTexts, {
                opacity: 0,
                y: 100,
                stagger: 0.2
+           }, '-=0.8')
+   }
+
+   const sixthPageAnima = (oldTexts, imgs, video, popUp) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[5],
+                start: '10% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true)
+        })
+       tl.to(oldTexts, {
+           x: 100,
+           opacity: 0
+       })
+           .to(imgs, {
+               x: '+=50vw',
+               ease: 'power1.inOut',
+               stagger: 0.1
+           }, '-=0.5')
+           .to(video, {
+               opacity: 1,
            })
+           .from(popUp, {
+               height: 0,
+               ease: 'power3.out'
+           }, '-=0.8')
+   }
+
+   const seventhPageAnima = (oldEls, newEls) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRefs.current[6],
+                start: '10% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            },
+            onUpdate: () => setLock(true)
+        })
+        tl.to(oldEls, {
+            opacity: 0
+        })
+            .fromTo(newEls,{
+                opacity: 0
+            }, {
+                opacity: 1,
+                stagger: 0.2
+            })
    }
 
    useEffect(() => {
-       gsap.defaults({ease: 'power1.inOut', duration: 0.5})
+       gsap.defaults({ease: 'power1.inOut', duration: 1})
        if(video.current) {
            firstPageAnima(video.current, text.current, newText.current)
            secondPageAnima(newText.current, aalIntro.current, introImg.current)
            thirdPageAnima(aalIntro.current, introImg.current, hardwareTexts.current, hardwareImgs.current)
            fourthPageAnima(hardwareTexts.current, hardwareImgs.current, comparisonsTexts.current, timeGraphs.current)
            fifthPageAnima([timeGraphs.current[1], timeGraphs.current[2]], comparisonsTexts.current, outputImgs.current, outputTexts.current)
+           sixthPageAnima(outputTexts.current, [timeGraphs.current, outputImgs.current], video.current, popUp.current)
+           seventhPageAnima([video.current, timeGraphs.current, outputImgs.current, popUp.current], prototype.current)
        }
   }, [])
     
     useEffect(() => {
         if(isLock) {
             document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'unset'
+            setTimeout( () => {
+                setLock(false)
+                document.body.style.overflow = 'unset'
+            }, 1800)
         }
+        console.log("locked animation: " + isLock)
     }, [isLock])
 
     const handleWheel = e => {
@@ -236,9 +296,8 @@ const AmbientAssistedLiving = () => {
 
     return (<Layout>
         <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
-        {/*<Section style={{height: '5px', margin: 1}} />*/}
         <Section  ref={el => sectionRefs.current.push(el)} >
-                <VideoWrapper ref={video}>
+            <VideoWrapper ref={video}>
                 <ReactPlayer
                     url='/aal/titleVideo.mp4'
                     playing
@@ -246,175 +305,175 @@ const AmbientAssistedLiving = () => {
                     height="auto"
                 />
             </VideoWrapper>
-            <TlArea ref={el => text.current.push(el)}>
-                <TlContent>
-                    <IconWrapper>
-                        <Image src='/aal/Home.svg' width='136' height='146' />
-                    </IconWrapper>
-                    <H1>Ambient Assisted Living</H1>
-                </TlContent>
-                <BasicEl style={tlStyle} />
-            </TlArea>
-
-            <GArea ref={el => text.current.push(el)}>
-                <GIconWrapper>
-                    <Image src='/aal/gestureIcon.svg' width='52' height='73'/>
-                </GIconWrapper>
-                <BasicEl style={gStyle}/>
-                <TlText title={AALData[0].title} plainText={AALData[0].plainText} />
-            </GArea>
-
-            <VArea ref={el => text.current.push(el)}>
-                <VIconWrapper>
-                    <Image src='/aal/virusIcon.svg' width='70' height='70' />
-                </VIconWrapper>
-                <BasicEl style={gStyle} />
-                <TlText title={AALData[1].title} plainText={AALData[1].plainText} />
-            </VArea>
-
-            <PArea ref={el => text.current.push(el)}>
-                <PIconWrapper>
-                    <Image src='/aal/personalIcon.svg' width='68' height='52' />
-                </PIconWrapper>
-                <BasicEl style={gStyle} />
-                <TlText title={AALData[2].title} plainText={AALData[2].plainText} />
-            </PArea>
-            <SecondPageText>
-                <BigText ref={el => newText.current.push(el)}>The crisis of elderly care services</BigText>
-                <SmallText ref={el => newText.current.push(el)}>some describing text about care services</SmallText>
-            </SecondPageText>
         </Section>
 
-        <Section ref={el => sectionRefs.current.push(el)}>
-            <ThirdPage>
-                <ThirdPageText>
-                    <TitleWrapper ref={el => aalIntro.current.push(el)}>
-                        <BasicEl style={aalIntroStyle}/>
+        <Section ref={el => sectionRefs.current.push(el)} />
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)} />
+        <Section />
+        <Section />
+
+        {/*{// --- title page --- }*/}
+
+        <TlArea ref={el => text.current.push(el)}>
+            <TlContent>
+                <IconWrapper>
+                    <Image src='/aal/Home.svg' width='136' height='146' />
+                </IconWrapper>
+                <H1>Ambient Assisted Living</H1>
+            </TlContent>
+            <BasicEl style={tlStyle} />
+        </TlArea>
+
+        <GArea ref={el => text.current.push(el)}>
+            <GIconWrapper>
+                <Image src='/aal/gestureIcon.svg' width='52' height='73'/>
+            </GIconWrapper>
+            <BasicEl style={gStyle}/>
+            <TlText title={AALData[0].title} plainText={AALData[0].plainText} />
+        </GArea>
+
+        <VArea ref={el => text.current.push(el)}>
+            <VIconWrapper>
+                <Image src='/aal/virusIcon.svg' width='70' height='70' />
+            </VIconWrapper>
+            <BasicEl style={gStyle} />
+            <TlText title={AALData[1].title} plainText={AALData[1].plainText} />
+        </VArea>
+
+        <PArea ref={el => text.current.push(el)}>
+            <PIconWrapper>
+                <Image src='/aal/personalIcon.svg' width='68' height='52' />
+            </PIconWrapper>
+            <BasicEl style={gStyle} />
+            <TlText title={AALData[2].title} plainText={AALData[2].plainText} />
+        </PArea>
+
+        {/*--- crisis of care services ---*/}
+
+        <SecondPageText>
+            <BigText ref={el => newText.current.push(el)}>The crisis of elderly care services</BigText>
+            <SmallText ref={el => newText.current.push(el)}>some describing text about care services</SmallText>
+        </SecondPageText>
+
+        {/*--- concept of aal ---*/}
+
+        <ThirdPage>
+            <ThirdPageText>
+                <TitleWrapper ref={el => aalIntro.current.push(el)}>
+                    <BasicEl style={aalIntroStyle}/>
                     <AALIntro>The Concept of <Strong>AAL</Strong></AALIntro>
-                    </TitleWrapper>
-                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>some describing text about AALsome describing text about AAL.some describing text about AAL..</ThirdSmallText>
-                </ThirdPageText>
-                <AALImageWrapper ref={introImg}>
-                    <Image src='/aal/aalIntro.jpg' width='502' height='354'/>
-                </AALImageWrapper>
-            </ThirdPage>
-        </Section>
+                </TitleWrapper>
+                <ThirdSmallText ref={el => aalIntro.current.push(el)}>some describing text about AALsome describing text about AAL.some describing text about AAL..</ThirdSmallText>
+            </ThirdPageText>
+            <AALImageWrapper ref={introImg}>
+                <Image src='/aal/aalIntro.jpg' width='502' height='354'/>
+            </AALImageWrapper>
+        </ThirdPage>
 
-        <Section ref={el => sectionRefs.current.push(el)}>
-                <FourthPageText>
-                    <FourthBigText ref={el => hardwareTexts.current.push(el)}>Wearable devices for gesture monitoring</FourthBigText>
-                    <FourthSmallText ref={el => hardwareTexts.current.push(el)}>some text for describing hardware.</FourthSmallText>
-                </FourthPageText>
-                <FourthImgWrapper>
-                    <WatchImg ref={el => hardwareImgs.current.push(el)}>
-                        <Image src='/aal/hardwareTemp.png' width='370' height='370' />
-                    </WatchImg>
-                    <PatchImg ref={el => hardwareImgs.current.push(el)}>
-                        <Image src='/aal/hardwareTemp.png' width='370' height='370' />
-                    </PatchImg>
-                </FourthImgWrapper>
-        </Section>
+        {/*--- hardware intro ---*/}
 
-        <Section ref={el => sectionRefs.current.push(el)}>
-            <TimeGraphWrapper>
-                <div ref={el => timeGraphs.current.push(el)}>
-                    <TimeGraph />
-                </div>
-                <div ref={el => timeGraphs.current.push(el)} style={{padding: '15em 0'}}>
+        <FourthPageText>
+            <FourthBigText ref={el => hardwareTexts.current.push(el)}>Wearable devices for gesture monitoring</FourthBigText>
+            <FourthSmallText ref={el => hardwareTexts.current.push(el)}>some text for describing hardware.</FourthSmallText>
+        </FourthPageText>
+        <FourthImgWrapper>
+            <WatchImg ref={el => hardwareImgs.current.push(el)}>
+                <Image src='/aal/hardwareTemp.png' width='370' height='370' />
+            </WatchImg>
+            <PatchImg ref={el => hardwareImgs.current.push(el)}>
+                <Image src='/aal/hardwareTemp.png' width='370' height='370' />
+            </PatchImg>
+        </FourthImgWrapper>
+
+        {/*--- data comparison ---*/}
+
+        <TimeGraphWrapper>
+            <div ref={el => timeGraphs.current.push(el)}>
                 <TimeGraph />
-                </div>
-            </TimeGraphWrapper>
-            <ArrowWrapper ref={el => timeGraphs.current.push(el)}>
-                <Image src='/aal/dataComparisonArrow.svg' width='0' height='60'/>
-            </ArrowWrapper>
-            <FifthPageText>
-                <FifthBigText ref={el => comparisonsTexts.current.push(el)}>Data comparison</FifthBigText>
-                <FifthSmallText ref={el => comparisonsTexts.current.push(el)}>some text about data comparison.</FifthSmallText>
-            </FifthPageText>
-        </Section>
+            </div>
+            <div ref={el => timeGraphs.current.push(el)} style={{padding: '20em 0'}}>
+                <TimeGraph />
+            </div>
+        </TimeGraphWrapper>
+        <ArrowWrapper ref={el => timeGraphs.current.push(el)}>
+            <Image src='/aal/dataComparisonArrow.svg' width='2' height='60'/>
+        </ArrowWrapper>
+        <FifthPageText>
+            <FifthBigText ref={el => comparisonsTexts.current.push(el)}>Data comparison</FifthBigText>
+            <FifthSmallText ref={el => comparisonsTexts.current.push(el)}>some text about data comparison.</FifthSmallText>
+        </FifthPageText>
 
-        <Section ref={el => sectionRefs.current.push(el)}>
-            <OutputImgWrapper>
-            {/*<div ref={el => outputImgs.current.push(el)}>*/}
-            {/*<ConcernArea*/}
-            {/*    number={20}*/}
-            {/*    numberText='times'*/}
-            {/*    top='45vh'*/}
-            {/*    textMargin='13px 23px'*/}
-            {/*    title='Health concerns'*/}
-            {/*    description='main concern text going on here'*/}
-            {/*/>*/}
-            {/*</div>*/}
+        {/*--- output ---*/}
 
-                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '45vh'}}>
-                    <ConcernWrapper>
-                        <BasicEl style={gStyle} />
-                        <TextWrapper style={{margin: '13px 23px'}}>
-                            <H1Number>20</H1Number>
-                            <H1Small>times</H1Small>
-                        </TextWrapper>
-                    </ConcernWrapper>
-                    <UITexts>
-                        <TlText title='Health concerns' plainText='main concern text going on here.' />
-                    </UITexts>
-                </MainConcernArea>
+        <OutputImgWrapper>
+            <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '45vh'}}>
+                <ConcernWrapper>
+                    <BasicEl style={gStyle} />
+                    <TextWrapper style={{margin: '13px 23px'}}>
+                        <H1Number>20</H1Number>
+                        <H1Small>times</H1Small>
+                    </TextWrapper>
+                </ConcernWrapper>
+                <UITexts>
+                    <TlText title='Health concerns' plainText='main concern text going on here.' />
+                </UITexts>
+            </MainConcernArea>
 
-                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '62vh'}}>
-                    <ConcernWrapper>
-                        <BasicEl style={gStyle} />
-                        <TextWrapper style={{margin: '13px 26px'}}>
-                            <H1Number>3</H1Number>
-                            <H1Small>Hours</H1Small>
-                        </TextWrapper>
-                    </ConcernWrapper>
-                    <UITexts>
-                        <TlText title='gesture concerns' plainText='The walking gesture has slightly changed.' />
-                    </UITexts>
-                </MainConcernArea>
-            {/*<div ref={el => outputImgs.current.push(el)}>*/}
-            {/*<ConcernArea*/}
-            {/*    number={3}*/}
-            {/*    numberText='Hours'*/}
-            {/*    top='62vh'*/}
-            {/*    textMargin='13px 26px'*/}
-            {/*    title='gesture concerns'*/}
-            {/*    description='The walking gesture has slightly changed.'*/}
-            {/*/>*/}
-            {/*</div>*/}
+            <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '62vh'}}>
+                <ConcernWrapper>
+                    <BasicEl style={gStyle} />
+                    <TextWrapper style={{margin: '13px 26px'}}>
+                        <H1Number>3</H1Number>
+                        <H1Small>Hours</H1Small>
+                    </TextWrapper>
+                </ConcernWrapper>
+                <UITexts>
+                    <TlText title='gesture concerns' plainText='The walking gesture has slightly changed.' />
+                </UITexts>
+            </MainConcernArea>
 
-                <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '79vh'}}>
-                    <ConcernWrapper>
-                        <BasicEl style={gStyle} />
-                        <TextWrapper style={{margin: '13px 16px'}}>
-                            <H1Number>90</H1Number>
-                            <H1Small>minutes</H1Small>
-                        </TextWrapper>
-                    </ConcernWrapper>
-                    <UITexts>
-                        <TlText title='Activity concerns' plainText='Excessive exercises has increased by 90 minutes.' />
-                    </UITexts>
-                </MainConcernArea>
-            {/*<div ref={el => outputImgs.current.push(el)}>*/}
-            {/*<ConcernArea*/}
-            {/*    number={90}*/}
-            {/*    numberText='Minutes'*/}
-            {/*    top='79vh'*/}
-            {/*    textMargin='13px 16px'*/}
-            {/*    title='Activity concerns'*/}
-            {/*    description='Excessive exercises has increased by 90 minutes.'*/}
-            {/*/>*/}
-            {/*</div>*/}
-            </OutputImgWrapper>
+            <MainConcernArea ref={el => outputImgs.current.push(el)} style={{top: '79vh'}}>
+                <ConcernWrapper>
+                    <BasicEl style={gStyle} />
+                    <TextWrapper style={{margin: '13px 16px'}}>
+                        <H1Number>90</H1Number>
+                        <H1Small>minutes</H1Small>
+                    </TextWrapper>
+                </ConcernWrapper>
+                <UITexts>
+                    <TlText title='Activity concerns' plainText='Excessive exercises has increased by 90 minutes.' />
+                </UITexts>
+            </MainConcernArea>
+        </OutputImgWrapper>
 
-            <OutputWrapper>
-                <FifthBigText ref={el => outputTexts.current.push(el)}>Explicit output</FifthBigText>
-                <FifthSmallText ref={el => outputTexts.current.push(el)}>some text about output layout.</FifthSmallText>
-            </OutputWrapper>
+        <OutputWrapper>
+            <FifthBigText ref={el => outputTexts.current.push(el)}>Explicit output</FifthBigText>
+            <FifthSmallText ref={el => outputTexts.current.push(el)}>some text about output layout.</FifthSmallText>
+        </OutputWrapper>
 
-        </Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
+        {/*--- particles graphic ---*/}
+
+        <PopupWrapper ref={popUp}>
+            <SixthBigText>Intuitive infographic</SixthBigText>
+            <SixthSmallText>some texts going on here.</SixthSmallText>
+        </PopupWrapper>
+
+
+        {/*--- prototype ---*/}
+
+        <ProtoWrapper>
+            <SeventhPageText>
+                <SeventhBigText ref={el => prototype.current.push(el)}>Prototype</SeventhBigText>
+                <SeventhSmallText ref={el => prototype.current.push(el)}>some text going on here.</SeventhSmallText>
+            </SeventhPageText>
+            <ProtoVideoWrapper ref={el => prototype.current.push(el)}>
+
+            </ProtoVideoWrapper>
+        </ProtoWrapper>
 
 
     </Layout>)
@@ -439,7 +498,7 @@ const Section = styled.div`
 
 const VideoWrapper = styled.div`
   position: fixed;
-  z-index: 0;
+  //z-index: 1;
   //margin: -8px;
   //height: auto;
 `
@@ -519,6 +578,8 @@ const SecondPageText = styled.div`
 `
 
 const BigText = styled.h2`
+  //position: absolute;
+  width: 35vw;
   font-family: Roboto, sans-serif;
   font-weight: 900;
   font-size: 4em;
@@ -616,8 +677,8 @@ const TimeGraphWrapper = styled.div`
 
 const ArrowWrapper = styled.div`
   position: fixed;
-  top: 46.5vh;
-  left: 21vw;
+  top: 46vh;
+  left: 19vw;
   z-index: 1;
 `
 
@@ -646,7 +707,7 @@ const MainConcernArea = styled.div`
   flex-direction: row;
   
   position: fixed;
-  left: 18em;
+  left: 15em;
   width: 426px;
   z-index: 1;
   transition: 0.3s ease-out;
@@ -688,7 +749,37 @@ const UITexts = styled.div`
 
 // --- infographic ---
 
+const PopupWrapper = styled.div`
+  position: fixed;
+  bottom: -10vh;
+  left: 10vw;
+  width: 22vw;
+  height: 40vh;
+  padding: 50px;
+  
+  background: rgba(190, 190, 190, 0.35);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 2em;
+`
+
+const SixthBigText = styled(FifthBigText)`
+  width: 22vw;
+`
+const SixthSmallText = styled(FifthSmallText)``
+
 // --- prototype ---
+
+const ProtoWrapper = styled.div`
+  
+`
+
+const SeventhPageText = styled(FifthPageText)``
+
+const SeventhBigText = styled(SixthBigText)``
+const SeventhSmallText = styled(SixthSmallText)``
+
+const ProtoVideoWrapper = styled.div``
 
 // --- conclusion ---
 
