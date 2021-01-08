@@ -8,6 +8,7 @@ import StartAnima from '../../components/StartAnima'
 import { States } from "../../components/connecting/States";
 
 import { connectingData, connectingAnima, animaState } from "../../data/Connecting";
+import * as stylingAnima from '../../public/connecting/styling.json'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,6 +19,8 @@ const Connecting = () => {
     const [looping, setLooping] = useState(false)
 
     const [isStateStopped, setStateStopped] = useState(true)
+
+    const [isStylingStopped, setStylingStopped] = useState(true)
 
     const [isLock, setLock] = useState(false)
 
@@ -239,6 +242,111 @@ const Connecting = () => {
             })
     }
 
+    const compatiToPrototype = (oldEls, newImg, newTexts) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sections.current[6],
+                start: '20% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            }, onUpdate: () => setLock(true)
+        })
+
+        tl.to(oldEls, {
+            opacity: 0,
+            y: -100
+        })
+            .fromTo(newImg, {
+                opacity: 0
+            }, {
+                opacity: 1
+            })
+            .fromTo(newTexts, {
+                opacity: 0,
+                y: -100
+            }, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.2
+            })
+    }
+
+    const prototypeToTech = (oldEls, newImg, newTexts) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sections.current[7],
+                start: '20% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            }, onUpdate: () => setLock(true)
+        })
+        tl.to(oldEls, {
+            opacity: 0,
+            y: -100,
+            stagger: 0.2
+        })
+            .fromTo(newImg, {
+                opacity: 0
+            }, {
+                opacity: 1
+            })
+
+            .fromTo(newTexts, {
+                opacity: 0,
+                y: -100
+            }, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.2
+            })
+    }
+
+    const techToStyling = (oldEls, newImg, newTexts) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sections.current[8],
+                start: '20% top',
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            }, onUpdate: () => setLock(true)
+        })
+
+        tl.to(oldEls, {
+            opacity: 0,
+            y: -100,
+            stagger: 0.2
+        })
+            .from(newImg, {
+                opacity: 0,
+                onComplete: () => setStylingStopped(false)
+            })
+            .from(newTexts, {
+                opacity: 0,
+                y: -100,
+                stagger: 0.2
+            })
+    }
+
+    const stylingToConclusion = (oldEls, newTexts) => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sections.current[9],
+                start: '20% top',
+                end: 'bottom center'
+            }, onStart: () => setLock(true)
+        })
+
+        tl.to(oldEls, {
+            opacity: 0,
+            y: -100,
+            stagger: 0.2
+        })
+            .from(newTexts, {
+                opacity: 0,
+                y: -100
+            })
+    }
+
     useEffect(() => {
         gsap.defaults({ease: 'power1.inOut', duration: 1})
         if(titleImg.current) {
@@ -248,6 +356,10 @@ const Connecting = () => {
             characterToCommunication(statesEl.current, characterTexts.current, commTexts.current, touchImg.current)
             communicationToCatalog([commTexts.current, touchImg.current], catalogTexts.current, catalogImg.current)
             catalogToCompati(catalogTexts.current, catalogImg.current, compatiTexts.current, compatiImg.current)
+            compatiToPrototype([compatiTexts.current, compatiImg.current, watchImg.current], prototypeImg.current, prototypeTexts.current.reverse())
+            prototypeToTech([prototypeImg.current, prototypeTexts.current.reverse()], techniquesImg.current, techniquesTexts.current.reverse())
+            techToStyling([techniquesTexts.current.reverse(), techniquesImg.current], stylingImg.current, stylingTexts.current.reverse())
+            stylingToConclusion([stylingTexts.current.reverse(), stylingImg.current], conclusionTexts.current.reverse())
         }
     }, [])
 
@@ -364,16 +476,53 @@ const Connecting = () => {
             </Section>
 
             <Section>
-                <PrototypeWrapper>
+                <PrototypeWrapper ref={prototypeImg}>
                     <Image src='/connecting/watchPrototype.png' layout='intrinsic' width='1180' height='687' />
                 </PrototypeWrapper>
                 <ProcessTextWrapper>
-                    <H7>process I. basic design</H7>
-                    <H3>Prototype</H3>
-                    <P3>Lorem ipsum dolor sit amet, consectetur adipiscing.</P3>
+                    <H7 ref={el => prototypeTexts.current.push(el)}>process I. basic design</H7>
+                    <H3 ref={el => prototypeTexts.current.push(el)}>Prototype</H3>
+                    <P3 ref={el => prototypeTexts.current.push(el)}>Lorem ipsum dolor sit amet, consectetur adipiscing.</P3>
                 </ProcessTextWrapper>
             </Section>
 
+            <Section>
+                <TechTextWrapper>
+                    <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
+                    <H3 ref={el => techniquesTexts.current.push(el)}>SwiftUI and SpriteKit</H3>
+                    <P3 ref={el => techniquesTexts.current.push(el)}>some texts about techniques choosing.</P3>
+                </TechTextWrapper>
+                <YBGImg ref={techniquesImg}>
+                    <Image alt='idle character with yellow background' src='/connecting/techYBGImg.svg' width='269'
+                           height='321' layout='intrinsic'/>
+                </YBGImg>
+            </Section>
+
+            <Section>
+                <StylingTextWrapper>
+                    <H7 ref={el => stylingTexts.current.push(el)}>process III. redesign</H7>
+                    <H3 ref={el => stylingTexts.current.push(el)}>Styling</H3>
+                    <P3 ref={el => stylingTexts.current.push(el)}>some texts about redesign styling.</P3>
+                </StylingTextWrapper>
+                <StylingImg ref={stylingImg}>
+                    <StartAnima
+                        animaData={stylingAnima}
+                        direction={1}
+                        isStopped={isStylingStopped}
+                        speed={1}
+                        width='75vw'
+                        height='auto'
+                        looping={true}
+                    />
+                </StylingImg>
+            </Section>
+
+            <Section>
+                <ProcessTextWrapper>
+                    <H3 ref={el => conclusionTexts.current.push(el)}>Conclusion</H3>
+                    <P3 ref={el => conclusionTexts.current.push(el)}>some texts about conclusion are going on here.</P3>
+                </ProcessTextWrapper>
+            </Section>
 
             <SectionTrigger ref={el => sections.current.push(el)} />
             <SectionTrigger ref={el => sections.current.push(el)} />
@@ -383,6 +532,11 @@ const Connecting = () => {
             <SectionTrigger ref={el => sections.current.push(el)} />
             <SectionTrigger ref={el => sections.current.push(el)} />
             <SectionTrigger ref={el => sections.current.push(el)} />
+            <SectionTrigger ref={el => sections.current.push(el)} />
+            <SectionTrigger ref={el => sections.current.push(el)} />
+            <SectionTrigger ref={el => sections.current.push(el)} />
+            <SectionTrigger />
+
         </Layout>
     )
 }
@@ -446,7 +600,7 @@ const TextWrapper = styled.div`
   position: absolute;
   top: 30vh;
   left: 20vw;
-  width: 45vw;
+  width: 60vw;
 `
 
 const H2 = styled.h2`
@@ -482,9 +636,9 @@ const WatchWrapper = styled.div`
 const IntroTextWrapper = styled.div`
   text-align: right;
   position: absolute;
-  width: 30vw;
+  width: 35vw;
   top: 40vh;
-  left: 13vw;
+  right: 59vw;
 `
 
 const IntroImg = styled.div`
@@ -529,6 +683,7 @@ const ImgWrapper = styled.div`
 const PrototypeWrapper = styled.div`
     position: absolute;
     margin: 10em 6em;
+    padding-right: 25vw;
 `
 
 const ProcessTextWrapper = styled.div`
@@ -542,6 +697,35 @@ const ProcessTextWrapper = styled.div`
 const H7 = styled(H6)`
     font-size: 2em;
     color: white;
+`
+
+// --- techniques ---
+
+const TechTextWrapper = styled.div`
+    position: absolute;
+    top: 36vh;
+    left: 38vw;
+    text-align: left;
+    width: 60vw;
+`
+
+const YBGImg = styled.div`
+    position: absolute;
+    max-width: 18vw;
+    height: auto;
+    top: 32vh;
+    left: 20vw;
+`
+
+// --- styling ---
+
+const StylingTextWrapper = styled(ProcessTextWrapper)`
+    top: 55vh;
+`
+const StylingImg = styled.div`
+    position: absolute;
+    max-width: 60vw;
+    padding: 8em 0;
 `
 
 export default Connecting
