@@ -2,9 +2,9 @@ import Lottie from 'react-lottie'
 import styled from 'styled-components'
 // import * as AnimaData from '../public/revisionStartAnima.json';
 
-const StartAnima = ({animaData, direction, isStopped, speed }) => {
+const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height = 870, looping = false }) => {
     const options = {
-        loop: false,
+        loop: looping,
         autoplay: false,
         animationData: animaData.default,
         rendererSettings: {
@@ -15,8 +15,8 @@ const StartAnima = ({animaData, direction, isStopped, speed }) => {
     return (
         <>
             <Lottie options={options}
-                    height={870}
-                    width={870}
+                    height={height}
+                    width={width}
                     isStopped={isStopped}
                     direction={direction}
                     speed={speed}

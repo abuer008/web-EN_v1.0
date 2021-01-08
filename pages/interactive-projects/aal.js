@@ -307,14 +307,6 @@ const AmbientAssistedLiving = () => {
             </VideoWrapper>
         </Section>
 
-        <Section ref={el => sectionRefs.current.push(el)} />
-        <Section ref={el => sectionRefs.current.push(el)}/>
-        <Section ref={el => sectionRefs.current.push(el)}/>
-        <Section ref={el => sectionRefs.current.push(el)}/>
-        <Section ref={el => sectionRefs.current.push(el)}/>
-        <Section ref={el => sectionRefs.current.push(el)} />
-        <Section />
-        <Section />
 
         {/*{// --- title page --- }*/}
 
@@ -475,6 +467,15 @@ const AmbientAssistedLiving = () => {
             </ProtoVideoWrapper>
         </ProtoWrapper>
 
+
+        <Section ref={el => sectionRefs.current.push(el)} />
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)}/>
+        <Section ref={el => sectionRefs.current.push(el)} />
+        <Section />
+        <Section />
 
     </Layout>)
 }
