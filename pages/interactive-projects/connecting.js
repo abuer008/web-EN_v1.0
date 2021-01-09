@@ -332,8 +332,9 @@ const Connecting = () => {
             scrollTrigger: {
                 trigger: sections.current[9],
                 start: '20% top',
-                end: 'bottom center'
-            }, onStart: () => setLock(true)
+                end: 'bottom center',
+                toggleActions: 'play none none reverse'
+            }, onUpdate: () => setLock(true)
         })
 
         tl.to(oldEls, {
@@ -536,6 +537,8 @@ const Connecting = () => {
             <SectionTrigger ref={el => sections.current.push(el)} />
             <SectionTrigger ref={el => sections.current.push(el)} />
             <SectionTrigger />
+            <SectionTrigger />
+            <SectionTrigger />
 
         </Layout>
     )
@@ -552,6 +555,7 @@ const SectionTrigger = styled.div`
   //border: 1px solid white;
   
   background-color: black;
+  scroll-snap-align: start;
 `
 
 // --- title page ---
@@ -682,14 +686,14 @@ const ImgWrapper = styled.div`
 
 const PrototypeWrapper = styled.div`
     position: absolute;
-    margin: 10em 6em;
+    margin: 15em 6em;
     padding-right: 25vw;
 `
 
 const ProcessTextWrapper = styled.div`
     position: absolute;
     top: 62vh;
-    left: 72vw;
+    right: 4vw;
     text-align: left;
     width: 25vw;
 `
