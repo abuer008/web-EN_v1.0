@@ -41,6 +41,8 @@ const AmbientAssistedLiving = () => {
 
     const prototype = useRef([])
 
+    const conclusion = useRef([])
+
     const tlStyle = {
         width: '450px',
         height: '190px'
@@ -245,10 +247,10 @@ const AmbientAssistedLiving = () => {
            }, '-=0.8')
    }
 
-   const seventhPageAnima = (oldEls, newEls) => {
+   const seventhPageAnima = (oldEls, newEls, triggerNumber) => {
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: sectionRefs.current[6],
+                trigger: sectionRefs.current[triggerNumber],
                 start: '10% top',
                 end: 'bottom center',
                 toggleActions: 'play none none reverse'
@@ -275,7 +277,8 @@ const AmbientAssistedLiving = () => {
            fourthPageAnima(hardwareTexts.current, hardwareImgs.current, comparisonsTexts.current, timeGraphs.current)
            fifthPageAnima([timeGraphs.current[1], timeGraphs.current[2]], comparisonsTexts.current, outputImgs.current, outputTexts.current)
            sixthPageAnima(outputTexts.current, [timeGraphs.current, outputImgs.current], video.current, popUp.current)
-           seventhPageAnima([video.current, timeGraphs.current, outputImgs.current, popUp.current], prototype.current)
+           seventhPageAnima([video.current, timeGraphs.current, outputImgs.current, popUp.current], prototype.current, 6)
+           seventhPageAnima(prototype.current, conclusion.current, 7)
        }
   }, [])
     
@@ -467,6 +470,13 @@ const AmbientAssistedLiving = () => {
             </ProtoVideoWrapper>
         </ProtoWrapper>
 
+        <ConclusionWrapper>
+            <EighthPageText>
+                <EighthBigText ref={el => conclusion.current.push(el)}>Conclusion</EighthBigText>
+                <EighthSmallText ref={el => conclusion.current.push(el)}>some texts are going on here.</EighthSmallText>
+            </EighthPageText>
+        </ConclusionWrapper>
+
 
         <Section ref={el => sectionRefs.current.push(el)} />
         <Section ref={el => sectionRefs.current.push(el)}/>
@@ -474,9 +484,10 @@ const AmbientAssistedLiving = () => {
         <Section ref={el => sectionRefs.current.push(el)}/>
         <Section ref={el => sectionRefs.current.push(el)}/>
         <Section ref={el => sectionRefs.current.push(el)} />
+        <Section ref={el => sectionRefs.current.push(el)} />
         <Section />
         <Section />
-
+        {/*<Section />*/}
     </Layout>)
 }
 
@@ -784,6 +795,10 @@ const ProtoVideoWrapper = styled.div``
 
 // --- conclusion ---
 
+const ConclusionWrapper = styled.div``
+const EighthPageText = styled(FifthPageText)``
+const EighthBigText = styled(SeventhBigText)``
+const EighthSmallText = styled(SeventhSmallText)``
 
 
 export default AmbientAssistedLiving

@@ -15,6 +15,7 @@ const Layout = ({ children, isBlack = true }) => {
 const Wrapper = styled.div`
   // height: 0vh;
   //background: black;
+  margin: -8px;
 `
 
 

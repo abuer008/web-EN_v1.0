@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height = 870, looping = false }) => {
     const options = {
         loop: looping,
-        autoplay: false,
+        autoplay: !isStopped,
         animationData: animaData.default,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'

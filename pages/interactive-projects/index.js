@@ -61,7 +61,7 @@ function InteractiveProjects() {
     return (
         <Layout>
             <MainBackground>
-                <Image src="/bkg.png" layout="fill" objectFit="cover" />
+                <Image src="/aboutBg.png" layout="fill" objectFit="cover" />
             </MainBackground>
             <ProjectsSqures>
                 <EnterArrow>
