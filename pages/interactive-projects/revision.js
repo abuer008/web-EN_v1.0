@@ -219,29 +219,29 @@ const Description = styled(IntroSection)`
 
 `
 
-const ImageWrapper = styled.div`
-  position: relative;
-  
-  //margin-top: -8px;
-  top: 11%;
-  left: 10%;
-`
-
-const VideoWrapper = styled.div`
-  position: absolute;
-  overflow: hidden;
-  z-index: 0;
-  height: 100vh;
-   object-fit: cover;
-   //border: 1px solid red;
-`
-const Title = styled.div`
-  position: absolute;
-  top: 15em;
-  left: 15%;
-  z-index: 2;
-  margin: 0;
-`
+// const ImageWrapper = styled.div`
+//   position: relative;
+//
+//   //margin-top: -8px;
+//   top: 11%;
+//   left: 10%;
+// `
+//
+// const VideoWrapper = styled.div`
+//   position: absolute;
+//   overflow: hidden;
+//   z-index: 0;
+//   height: 100vh;
+//    object-fit: cover;
+//    //border: 1px solid red;
+// `
+// const Title = styled.div`
+//   position: absolute;
+//   top: 15em;
+//   left: 15%;
+//   z-index: 2;
+//   margin: 0;
+// `
 
 const TextArea = styled.div`
 //opacity: 0;

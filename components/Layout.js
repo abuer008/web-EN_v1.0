@@ -18,5 +18,4 @@ const Wrapper = styled.div`
   margin: -8px;
 `
 
-
 export default Layout

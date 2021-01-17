@@ -667,10 +667,10 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 27vw;
-    height: 55vh;
+    height: 50vh;
     
     position: absolute;
-    top: 20vh;
+    top: 10vh;
     left: 60vw;
 `
 

@@ -41,7 +41,7 @@ const VideoSection = ({children, videoSource}) => {
     useEffect(() => {
         if (videoRef.current) handleVideoTrigger(videoRef.current)
 
-    }, [videoRef, handleVideoTrigger, goToSection, setPlaying])
+    }, [playing, videoRef])
 
     return (
         <SectionWrapper ref={videoRef}>
@@ -59,15 +59,16 @@ const SectionWrapper = styled.div`
   background: black;
   margin: 0 -8px;
   height: 100vh;
+  overflow: hidden;
   
   display: flex;
   flex-direction: row;
 `
 const VideoWrapper = styled.div`
   position: absolute;
-  overflow: hidden;
   z-index: 0;
   height: 100vh;
+  overflow: hidden;
   object-fit: cover;
 `
 

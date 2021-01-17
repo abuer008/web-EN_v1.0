@@ -33,6 +33,7 @@ const StateWrapper = styled.div`
   
     position: relative;
     left: -1.2em;
+  top: 2em;
   
     padding: 6em 0;
     width: 17vw;

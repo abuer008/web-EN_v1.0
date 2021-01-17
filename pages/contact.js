@@ -10,7 +10,7 @@ const Contact = () => {
             </Background>
             <TextWrapper>
                 <Front>Any thoughts, comments, or regarding works</Front>
-                <Mittle>GET IN TOUCH</Mittle>
+                <Middle>GET IN TOUCH</Middle>
                 <Bottom>x.bowei@aol.com</Bottom>
             </TextWrapper>
         </Layout>
@@ -33,16 +33,22 @@ const Front = styled.h4`
     font-weight: 300;
     font-size: 2em;
     text-transform: uppercase;
+  line-height: 1.7em;
 `
 
-const Mittle = styled.h1`
+const Middle = styled.h1`
     font-weight: 900;
     font-size: 5em;
+  line-height: 0;
 `
 
 const Bottom = styled.h6`
     font-weight: 900;
     font-size: 2em;
+  transition: 0.3s;
+  :hover {
+    color: blue;
+  }
 `
 
 export default Contact;

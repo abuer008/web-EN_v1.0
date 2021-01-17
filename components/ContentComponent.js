@@ -31,7 +31,8 @@ const ErrorWrapper = styled.div`
 
 const Oops = styled.h1`
     position: absolute;
-    left: -50vw;
+    //left: 5%;
+  right: 10vw;
     z-index: 1;
     width: 40vw;
     margin: auto;
@@ -46,14 +47,14 @@ const Oops = styled.h1`
 
 const Description = styled.p`
     position: absolute;
-    top: 38vh;
-    margin: auto -2vw;
+    top: 18em;
+    margin: auto -5em;
     text-align: right;
-    width: 25vw;
+    width: 30vw;
     height: auto;
   
     font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.3em;
 `

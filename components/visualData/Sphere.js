@@ -14,7 +14,7 @@ export const Sphere = () => {
         orbitControls = require('three/examples/jsm/controls/OrbitControls').OrbitControls
         sceneSet()
         animate()
-    }, [globeRef])
+    }, [])
 
     const createSphereMesh = () => {
         const sphereGeo = new THREE.IcosahedronGeometry(0.08, 3)

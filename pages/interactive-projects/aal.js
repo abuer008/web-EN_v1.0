@@ -234,7 +234,7 @@ const AmbientAssistedLiving = () => {
            opacity: 0
        })
            .to(imgs, {
-               x: '+=50vw',
+               x: '+=40vw',
                ease: 'power1.inOut',
                stagger: 0.1
            }, '-=0.5')
@@ -298,7 +298,7 @@ const AmbientAssistedLiving = () => {
     }
 
     return (<Layout>
-        <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
+        <Section style={{backgroundColor: '#eeeeee', position: 'fixed', height: '100vh'}}/>
         <Section  ref={el => sectionRefs.current.push(el)} >
             <VideoWrapper ref={video}>
                 <ReactPlayer
@@ -517,8 +517,8 @@ const VideoWrapper = styled.div`
 
 const TlArea = styled.div`
   position: fixed;
-  top: 16vh;
-  left: 60vw;
+  top: 13vh;
+  left: 55vw;
   width: 426px;
   z-index: 1;
   transition: 0.3s ease-out;
@@ -530,14 +530,14 @@ const TlArea = styled.div`
 `
 
 const GArea = styled(TlArea)`
-  top: 43vh;
+  top: 40vh;
 `
 
 const VArea = styled(GArea)`
-  top: 60vh;
+  top: 57vh;
 `
 const PArea = styled(GArea)`
-  top: 78vh;
+  top: 74vh;
 `
 
 const TlContent = styled.div`
@@ -584,14 +584,11 @@ const SecondPageText = styled.div`
   position: fixed;
   top: 20vh;
   left: 25vw;
-  
-  font-family: Roboto, sans-serif;
-  font-style: normal;
 `
 
 const BigText = styled.h2`
   //position: absolute;
-  width: 35vw;
+  width: 50vw;
   font-family: Roboto, sans-serif;
   font-weight: 900;
   font-size: 4em;
@@ -655,7 +652,7 @@ const AALImageWrapper = styled.div`
 const FourthPageText = styled.div`
   position: fixed;
   top: 40vh;
-  left: 50vw;
+  left: 50%;
 `
 
 const FourthBigText = styled(BigText)`
@@ -679,9 +676,10 @@ const PatchImg = styled(WatchImg)``
 
 const TimeGraphWrapper = styled.div`
   position: fixed;
-  top: 0;
+  top: 0%;
   height: 100vh;
   width: 100vw;
+  
   
   display: flex;
   flex-direction: column;

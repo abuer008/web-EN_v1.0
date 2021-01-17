@@ -90,7 +90,6 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
 
 const SectionWrapper = styled.section`
   //z-index: 0;
-  background: black;
   margin: -8px;
   height: 100vh;
   
@@ -100,6 +99,8 @@ const SectionWrapper = styled.section`
   .titleImage.titleImage {
     z-index: 1;
   }
+  
+  background-color: black;
 `
 
 const Title = styled.div`

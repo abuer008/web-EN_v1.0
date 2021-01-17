@@ -47,9 +47,12 @@ margin: 0;
 padding: 0;
 justify-content: space-around;
 position: absolute;
-left: 25%;
-top: 10%;
-z-index: 2;
+left: 50%;
+top: 38%;
+  
+  transform: translate(-50%, -50%);
+  
+z-index: 1;
 transition: opacity 1s ease;
 
 .fadeOut {

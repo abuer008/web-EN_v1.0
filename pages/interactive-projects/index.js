@@ -137,7 +137,7 @@ const EnterArrow = styled.div`
   flex-grow: 0;
   margin: 0;
   
-  @media all and (max-width: 800px) {
+  @media all and (max-width: 1270px) {
   display: none;
   }
   
@@ -175,10 +175,12 @@ const ArrowIcon = styled.div`
 `
 
 const ProjectsSqures = styled.div`
-max-width: 70%;
+max-width: 60%;
 position: relative;
 top: 72vh;
-left: 10%;
+left: 42.7%;
+  
+  transform: translate(-50%, 0);
 
   display: flex;
   flex-flow: row;

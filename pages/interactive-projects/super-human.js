@@ -6,7 +6,7 @@ const SuperHuman = () => {
     return (
         <Layout>
             <Section>
-                <Image src='/superHuman/titlePhoto.png' layout='fill' objectFit='cover' />
+                <Image src='/superHuman/titlePhoto.png' layout='fill' objectFit='cover' quality='100' />
             </Section>
             <Section>
                 <Image src='/superHuman/comp2880.png' layout='fill' objectFit='cover' />

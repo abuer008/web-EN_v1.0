@@ -16,7 +16,7 @@ export const projectsArray = [{
         "Volutpat pellentesque sed fermentum mi scelerisque orci. " +
         "Mi sem vitae nibh eget quis pellentesque in mauris.",
     animaData: RevisionAnima,
-    movePointer: "7%"
+    movePointer: "2%"
 }, {
     name: "Visual Data",
     color: 1,
@@ -25,7 +25,7 @@ export const projectsArray = [{
     subTitle: "Interaction based on amounts of data",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: VisualDataAnima,
-    movePointer: "10.5%"
+    movePointer: "6%"
 }, {
     name: "Super Human",
     color: 2,
@@ -34,7 +34,7 @@ export const projectsArray = [{
     subTitle: "Speculative Design, The discuss of future Human Computer Interaction.",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: SuperHumanAnima,
-    movePointer: "25.5%"
+    movePointer: "20%"
 }, {
     name: "Ambient Assisted Living",
     color: 3,
@@ -43,7 +43,7 @@ export const projectsArray = [{
     subTitle: "Part I. The implementation of future HCI.",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: AALAnima,
-    movePointer: "42%"
+    movePointer: "37%"
 }, {
     name: "Virtual Kinship",
     color: 4,
