@@ -91,6 +91,6 @@ export const Sphere = () => {
     }
 
     return (<>
-        <div ref={globeRef}></div>
+        <div ref={globeRef} />
     </>)
 }

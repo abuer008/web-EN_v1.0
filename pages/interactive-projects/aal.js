@@ -234,7 +234,7 @@ const AmbientAssistedLiving = () => {
            opacity: 0
        })
            .to(imgs, {
-               x: '+=40vw',
+               x: '+=45vw',
                ease: 'power1.inOut',
                stagger: 0.1
            }, '-=0.5')
@@ -302,9 +302,9 @@ const AmbientAssistedLiving = () => {
         <Section  ref={el => sectionRefs.current.push(el)} >
             <VideoWrapper ref={video}>
                 <ReactPlayer
-                    url='/aal/titleVideo.mp4'
+                    url='/aal/titleVideo_lowRes.mp4'
                     playing
-                    width="101%"
+                    width="132%"
                     height="auto"
                 />
             </VideoWrapper>
@@ -518,7 +518,7 @@ const VideoWrapper = styled.div`
 const TlArea = styled.div`
   position: fixed;
   top: 13vh;
-  left: 55vw;
+  right: 15vw;
   width: 426px;
   z-index: 1;
   transition: 0.3s ease-out;

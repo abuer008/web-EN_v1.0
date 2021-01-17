@@ -24,7 +24,7 @@ const Revision = () => {
     const imageSection = {
         isActive: true,
         imageStyle: {},
-        source: '/revision/artificial synaesthesia.webp',
+        source: '/revision/ArtificialSynaesthesia.jpg',
         width: 450,
         height: 950,
         objectFit: 'contain'
@@ -219,29 +219,6 @@ const Description = styled(IntroSection)`
 
 `
 
-// const ImageWrapper = styled.div`
-//   position: relative;
-//
-//   //margin-top: -8px;
-//   top: 11%;
-//   left: 10%;
-// `
-//
-// const VideoWrapper = styled.div`
-//   position: absolute;
-//   overflow: hidden;
-//   z-index: 0;
-//   height: 100vh;
-//    object-fit: cover;
-//    //border: 1px solid red;
-// `
-// const Title = styled.div`
-//   position: absolute;
-//   top: 15em;
-//   left: 15%;
-//   z-index: 2;
-//   margin: 0;
-// `
 
 const TextArea = styled.div`
 //opacity: 0;
@@ -287,7 +264,6 @@ const ExplainText = styled.p`
 
 const ToneText = styled.strong`
   font-weight: bold;
-  //font-size: 1.1em;
 `
 
 

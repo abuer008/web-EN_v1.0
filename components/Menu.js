@@ -23,10 +23,11 @@ const MenuItemActive = styled.a`
     //position: absolute;
     //margin: 0 4em;
     //font-weight: bold;
+  width: 80px;
     
     :hover {
     cursor: pointer;
-      font-weight: bold;
+      font-weight: 900;
     }
 `
 
