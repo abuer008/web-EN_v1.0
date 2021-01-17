@@ -1,6 +1,5 @@
 import Lottie from 'react-lottie'
 import styled from 'styled-components'
-// import * as AnimaData from '../public/revisionStartAnima.json';
 
 const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height = 870, looping = false }) => {
     const options = {

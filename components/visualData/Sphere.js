@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import {useRef, useEffect, useState} from 'react'
-// import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 
 export const Sphere = () => {
     const globeRef = useRef(null)

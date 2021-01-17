@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import VideoArea from "./VideoArea";
 
 import { gsap } from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
