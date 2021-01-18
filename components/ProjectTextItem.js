@@ -25,11 +25,11 @@ const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
             <TextArea>
                 <MainTitle degX={convertY} degY={convertX} className={displayClass} style={
                     title === interactionPageInfo.title ?
-                        {fontSize: "8rem",
-                        lineHeight: "100px"}
+                        {fontSize: "7.2vw",
+                        lineHeight: "10vh"}
                         :
-                        {fontSize: "4.5rem",
-                        lineHeight: "70px"}
+                        {fontSize: "4.5vw",
+                        lineHeight: "8vh"}
                 }>{title}</MainTitle>
                 <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
                 <MainText>{explain}</MainText>
@@ -48,7 +48,7 @@ padding: 0;
 justify-content: space-around;
 position: absolute;
 left: 50%;
-top: 38%;
+top: 40%;
   
   transform: translate(-50%, -50%);
   

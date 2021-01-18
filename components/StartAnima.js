@@ -1,7 +1,10 @@
 import Lottie from 'react-lottie'
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
+import {projectsArray} from "../data/MainPageData";
 
 const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height = 870, looping = false }) => {
+
     const options = {
         loop: looping,
         autoplay: !isStopped,
@@ -12,7 +15,7 @@ const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height
     }
 
     return (
-        <>
+        <Wrapper>
             <Lottie options={options}
                     height={height}
                     width={width}
@@ -20,12 +23,12 @@ const StartAnima = ({animaData, direction, isStopped, speed, width = 870, height
                     direction={direction}
                     speed={speed}
             />
-        </>
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-position: inherit;
+    position: relative;
 `
 
 export default StartAnima

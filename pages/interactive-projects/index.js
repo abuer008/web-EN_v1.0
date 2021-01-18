@@ -24,9 +24,8 @@ function InteractiveProjects() {
     let [cachedAnima, setAnima] = useState(RevisionAnima)
 
 
-    const handleMouseEnter = (e) => {
+    const handleMouseEnter = (popProject) => {
         console.log("enter")
-        const popProject = projectsArray.find(project => project.name === e.target.innerHTML) || {}
 
         setProjectInfo({
             title: popProject.title,
@@ -36,7 +35,7 @@ function InteractiveProjects() {
             movePointer: popProject.movePointer
         })
 
-        setPointer(popProject.movePointer)
+        // setPointer(popProject.movePointer)
         setAnima(popProject.animaData)
 
         setVisible(true)
@@ -71,14 +70,13 @@ function InteractiveProjects() {
                         <Image src="/Arrow.svg" width="57" height="48" />
                     </ArrowIcon>
                 </EnterArrow>
-                <AnimaSection movePointer={projectInfo.movePointer}>
-                    <StartAnima animaData={projectInfo.animaData}
-                                direction={direction}
-                                isStopped={isStopped}
-                                speed={speed}
-                                movePointer={projectInfo.movePointer}
-                    />
-                </AnimaSection>
+                {/*<AnimaSection>*/}
+                {/*    <StartAnima animaData={projectInfo.animaData}*/}
+                {/*                direction={direction}*/}
+                {/*                isStopped={isStopped}*/}
+                {/*                speed={speed}*/}
+                {/*    />*/}
+                {/*</AnimaSection>*/}
                 {
                     projectsArray.map(project => {
                         return <NameSqure name={project.name}
@@ -86,7 +84,9 @@ function InteractiveProjects() {
                                           destination={project.destination}
                                           handleMouseEnter={handleMouseEnter}
                                           handleMouseLeave={handleMouseLeave}
-                                          key={project.color} />
+                                          key={project.color}
+                                          animaData={project.animaData}
+                        />
                     })
                 }
             </ProjectsSqures>
@@ -175,7 +175,7 @@ const ArrowIcon = styled.div`
 `
 
 const ProjectsSqures = styled.div`
-max-width: 60%;
+max-width: 70%;
 position: relative;
 top: 72vh;
 left: 42.7%;

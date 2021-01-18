@@ -2,6 +2,7 @@ import * as RevisionAnima from "../public/revisionStartAnima.json";
 import * as VisualDataAnima from "../public/visualDataStartAnima.json";
 import * as SuperHumanAnima from "../public/superHumanStartAnima.json";
 import * as AALAnima from "../public/AALStartAnima.json";
+import * as ConnectingAnima from '../public/connectingStartAnima.json'
 
 export const projectsArray = [{
     name: "Re:Vision",
@@ -16,7 +17,7 @@ export const projectsArray = [{
         "Volutpat pellentesque sed fermentum mi scelerisque orci. " +
         "Mi sem vitae nibh eget quis pellentesque in mauris.",
     animaData: RevisionAnima,
-    movePointer: "2vw"
+    movePointer: "5%"
 }, {
     name: "Visual Data",
     color: 1,
@@ -25,7 +26,7 @@ export const projectsArray = [{
     subTitle: "Interaction based on amounts of data",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: VisualDataAnima,
-    movePointer: "3vw"
+    movePointer: "11%"
 }, {
     name: "Super Human",
     color: 2,
@@ -34,7 +35,7 @@ export const projectsArray = [{
     subTitle: "Speculative Design, The discuss of future Human Computer Interaction.",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: SuperHumanAnima,
-    movePointer: "12vw"
+    movePointer: "26%"
 }, {
     name: "Ambient Assisted Living",
     color: 3,
@@ -43,7 +44,7 @@ export const projectsArray = [{
     subTitle: "Part I. The implementation of future HCI.",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
     animaData: AALAnima,
-    movePointer: "22vw"
+    movePointer: "42%"
 }, {
     name: "Virtual Kinship",
     color: 4,
@@ -51,8 +52,8 @@ export const projectsArray = [{
     title: "V. Connecting",
     subTitle: "Part II. Rethinking of future connectivity of individuals.",
     explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
-    animaData: RevisionAnima,
-    movePointer: "42vw"
+    animaData: ConnectingAnima,
+    movePointer: "55%"
 }]
 
 export const interactionPageInfo = {
@@ -61,7 +62,7 @@ export const interactionPageInfo = {
     explain: ""
 }
 
-export const colorSqureArray = ["#FFEA7D", "#EA5C5C", "#4078CD", "#1F9F71", "#FF7C5E"]
+export const colorSqureArray = ["#FFEA7D", "#808080", "#4078CD", "#1F9F71", "#FF6A65"]
 
 export const menuList = [
     {
