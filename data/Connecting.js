@@ -45,14 +45,12 @@ export const connectingData = {
     }
 }
 
-export const connectingAnima = {
-    introduction: introAnima,
-    communication: intimatAnima,
-    cataloging: catalogAnima,
-    flexible: flexibleAnima,
-    idleExample: idleExample,
-    activeExample: activeExample,
-    sleepyExample: sleepyExample
+export const connectingAnima = [introAnima, intimatAnima, catalogAnima, flexibleAnima]
+
+export const statesExample = {
+    idle: idleExample,
+    active: activeExample,
+    sleepy: sleepyExample
 }
 
 export const animaState = {

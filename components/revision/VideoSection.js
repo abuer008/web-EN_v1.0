@@ -11,31 +11,12 @@ const VideoSection = ({children, videoSource}) => {
     const [playing, setPlaying] = useState(false)
     const videoRef = useRef(null)
 
-    const goToSection = el => {
-        gsap.to(window, {
-            scrollTo: {y: el, autoKill: false},
-            duration: 1,
-            ease: 'none'
-        })
-    }
-
     const handleVideoTrigger = el => {
         ScrollTrigger.create({
             trigger: el,
             start: '-=20% top',
             onEnter: () => setPlaying(true)
         })
-        ScrollTrigger.create({
-            trigger: el,
-            start: 'top center',
-            onEnter: () => goToSection(el)
-        })
-        // ScrollTrigger.create({
-        //     trigger: el,
-        //     start: 'bottom bottom',
-        //     onEnterBack: () => goToSection(el)
-        // })
-        // console.log(playing)
     }
 
     useEffect(() => {

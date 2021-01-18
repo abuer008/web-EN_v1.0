@@ -38,30 +38,10 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
         })
     }
 
-    const goToSection = el => {
-        gsap.to(window, {
-            scrollTo: {y: el, autoKill: false},
-            duration: 1
-        })
-    }
-
     useEffect(() => {
-        if (sectionRef.current) {
-            ScrollTrigger.create({
-                trigger: sectionRef.current,
-                start: 'top center',
-                onEnter: () => goToSection(sectionRef.current)
-            })
-
-            // ScrollTrigger.create({
-            //     trigger: sectionRef.current,
-            //     start: 'bottom bottom',
-            //     onEnterBack: () => goToSection(sectionRef.current)
-            // })
-        }
         if (bgRef.current) handleBg(bgRef.current)
         if(titleRef.current) handleTitle(titleRef.current)
-    }, [sectionRef, bgRef, titleRef, goToSection, handleBg, handleTitle])
+    }, [sectionRef, bgRef, titleRef, handleBg, handleTitle])
 
     return (
         <SectionWrapper ref={sectionRef}>

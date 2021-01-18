@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { useState, useEffect, useRef } from 'react'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
+import {useState, useEffect, useRef} from 'react'
 
 import Layout from '../../components/Layout'
 import RevisionSection from "../../components/revision/RevisionSection";
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Revision = () => {
 
-    // const sectionsRef = useRef([])
+    const sections = useRef([])
     const subTextRef = useRef([])
     const plainTextRef = useRef([])
 
@@ -47,10 +47,11 @@ const Revision = () => {
     const goToSection = (el, anim) => {
         gsap.to(window, {
             scrollTo: {y: el, autoKill: false},
+            ease: 'power1.out',
             duration: 1
         })
 
-        if(anim) {
+        if (anim) {
             anim.restart()
         }
     }
@@ -59,6 +60,7 @@ const Revision = () => {
         elArr.forEach((el, i) => {
             ScrollTrigger.create({
                 trigger: el,
+                start: 'top +=80%',
                 onEnter: () => goToSection(el)
             })
 
@@ -72,8 +74,9 @@ const Revision = () => {
 
     useEffect(() => {
         // if(sectionsRef.current) console.log(sectionsRef.current)
+        handleSnap(sections.current)
 
-        if(subTextRef.current) {
+        if (subTextRef.current) {
             subTextRef.current.forEach((item, i) => {
                 const subEl = plainTextRef.current[i]
 
@@ -81,41 +84,48 @@ const Revision = () => {
                 handleText(subEl)
             })
         }
-    }, [subTextRef, plainTextRef, handleText])
+    }, [])
 
     return (
         <Layout isBlack={false}>
-            <RevisionSection titleSection={titleSection} />
+            <div ref={el => sections.current.push(el)}>
+                <RevisionSection titleSection={titleSection}/>
+            </div>
 
-            <RevisionSection imageSection={imageSection}>
-                <TextArea style={{left: '24vw'}}>
-                    <SubText ref={el => subTextRef.current.push(el)}>Artificial Synaesthesia</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>As French philosopher Roland Barthes said, there
-                        is no natural connection between signifier and
-                        signified, the existence of an object in the objective
-                        world is perceived by our sensory organs, such as
-                        shapes, colours and temperature of objects are just
-                        our subjective perceptual language in the brain.
-                        Hearing colours, tasting alphabets, the fundamental
-                        appearance of synaesthesia is based on “nonexistent
-                        hallucination” in the brain. How to use
-                        those hallucinations to represent the information,
-                        that unnoticed or cannot be perceived because of
-                        limitation of senses in humans, is primary aim of
-                        this project. Thus, a novel head-mounted device is
-                        presented, the device gathers <ToneText>visual information </ToneText>
-                        and represents into <ToneText>pure tactile language</ToneText>, it
-                        provides a possibility: haptic as a “low-resolution”
-                        perceptual language, can be used as a new channel
-                        of senses, by means of machine cognition and
-                        artificial intelligence to expand horizons of
-                        perception in humans.</ExplainText>
-                </TextArea>
-            </RevisionSection>
+            <div ref={el => sections.current.push(el)}>
+                <RevisionSection imageSection={imageSection}>
+                    <TextArea style={{left: '24vw'}}>
+                        <SubText ref={el => subTextRef.current.push(el)}>Artificial Synaesthesia</SubText>
+                        <ExplainText ref={el => plainTextRef.current.push(el)}>As French philosopher Roland Barthes
+                            said, there
+                            is no natural connection between signifier and
+                            signified, the existence of an object in the objective
+                            world is perceived by our sensory organs, such as
+                            shapes, colours and temperature of objects are just
+                            our subjective perceptual language in the brain.
+                            Hearing colours, tasting alphabets, the fundamental
+                            appearance of synaesthesia is based on “nonexistent
+                            hallucination” in the brain. How to use
+                            those hallucinations to represent the information,
+                            that unnoticed or cannot be perceived because of
+                            limitation of senses in humans, is primary aim of
+                            this project. Thus, a novel head-mounted device is
+                            presented, the device gathers <ToneText>visual information </ToneText>
+                            and represents into <ToneText>pure tactile language</ToneText>, it
+                            provides a possibility: haptic as a “low-resolution”
+                            perceptual language, can be used as a new channel
+                            of senses, by means of machine cognition and
+                            artificial intelligence to expand horizons of
+                            perception in humans.</ExplainText>
+                    </TextArea>
+                </RevisionSection>
+            </div>
 
+            <div ref={el => sections.current.push(el)}>
             <VideoSection videoSource='/revision/revisionIntro.mp4'>
                 <TextArea>
-                    <SubText ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
+                    <SubText
+                        ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>Humans’ vision involves more complex neural
                         mechanisms and gathers distinctively more information
                         than the other senses, the <ToneText>Re:Vision</ToneText> attempts to translate visual
@@ -124,8 +134,10 @@ const Revision = () => {
                         imagination to understand the subjective world.</ExplainText>
                 </TextArea>
             </VideoSection>
+            </div>
 
-            <VideoSection videoSource='/revision/revisionInfrared.mp4' >
+            <div ref={el => sections.current.push(el)}>
+            <VideoSection videoSource='/revision/revisionInfrared.mp4'>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Machine Cognition</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -133,8 +145,10 @@ const Revision = () => {
                     </ExplainText>
                 </TextArea>
             </VideoSection>
+            </div>
 
-            <VideoSection videoSource='/revision/revisionTactile.mp4' >
+            <div ref={el => sections.current.push(el)}>
+            <VideoSection videoSource='/revision/revisionTactile.mp4'>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Single row of haptic stimuli</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -147,8 +161,9 @@ const Revision = () => {
                     </ExplainText>
                 </TextArea>
             </VideoSection>
+            </div>
 
-            <ProductIntro className="section" >
+            <ProductIntro ref={el => sections.current.push(el)}>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Data Translation</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>Conveying unnecessary
@@ -160,7 +175,7 @@ const Revision = () => {
                 </TextArea>
             </ProductIntro>
 
-            <PrototypeSection className="section" >
+            <PrototypeSection ref={el => sections.current.push(el)}>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>Prototype</SubText>
                     <ExplainText ref={el => plainTextRef.current.push(el)}>
@@ -169,7 +184,7 @@ const Revision = () => {
                 </TextArea>
             </PrototypeSection>
 
-            <Description className="section" >
+            <Description ref={el => sections.current.push(el)}>
                 <SubText>
                     Description section
                 </SubText>
@@ -188,7 +203,7 @@ const TitleSection = styled.div`
 `
 
 const IntroSection = styled.div`
-//position: relative; 
+  //position: relative; 
   z-index: 0;
   //overflow: scroll;
   background: black;
@@ -197,14 +212,14 @@ const IntroSection = styled.div`
   //border: 10px;
   height: 100vh;
   //width: 90vw;
-  
+
   display: flex;
   flex-direction: row;
 `
 
 const ProductIntro = styled(IntroSection)`
-//position: absolute;
-//   background: white;
+  //position: absolute;
+  //   background: white;
 `
 
 const DataTransformSection = styled(IntroSection)`
@@ -221,40 +236,40 @@ const Description = styled(IntroSection)`
 
 
 const TextArea = styled.div`
-//opacity: 0;
-position: relative;
+  //opacity: 0;
+  position: relative;
   font-family: Roboto, sans-serif;
   top: 35vh;
-left: 55vw;
+  left: 55vw;
   max-height: 50vh;
   //overflow: scroll;
 `
 
 const Text = styled.h4`
-  font-family: Roboto,sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1.5rem;
   margin: auto;
 `
 
 const SubText = styled(Text)`
-    margin: auto;
-    //width: 50vw;
-    //height: 10vh;
+  margin: auto;
+  //width: 50vw;
+  //height: 10vh;
 
-    font-style: normal;
-    font-weight: lighter;
-    font-size: 2.5em;
-    line-height: 0;
-    text-transform: uppercase;
-    
-    color: #fff;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 2.5em;
+  line-height: 0;
+  text-transform: uppercase;
+
+  color: #fff;
 `
 const ExplainText = styled.p`
   color: #fff;
   width: 35vw;
   position: relative;
   top: 5vh;
-  
+
   font-style: normal;
   font-weight: lighter;
   font-size: 1.2em;

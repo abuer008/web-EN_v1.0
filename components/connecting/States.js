@@ -24,6 +24,7 @@ export const States = ({animaData, isStopped, heading, plainText}) => {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
+  justify-content: flex-start;
 `
 
 const StateWrapper = styled.div`
@@ -33,7 +34,6 @@ const StateWrapper = styled.div`
   
     position: relative;
     left: -1.2em;
-  top: 2em;
   
     padding: 6em 0;
     width: 17vw;

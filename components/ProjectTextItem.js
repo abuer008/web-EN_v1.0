@@ -26,10 +26,10 @@ const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
                 <MainTitle degX={convertY} degY={convertX} className={displayClass} style={
                     title === interactionPageInfo.title ?
                         {fontSize: "7.2vw",
-                        lineHeight: "10vh"}
+                        lineHeight: "6vw"}
                         :
                         {fontSize: "4.5vw",
-                        lineHeight: "8vh"}
+                        lineHeight: "5vw"}
                 }>{title}</MainTitle>
                 <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
                 <MainText>{explain}</MainText>
@@ -41,13 +41,13 @@ const ProjectTextItem = ({ title, subTitle, explain, displayClass }) => {
 const TextArea = styled.div`
 display: flex;
 //height: 8vh;
-width: 880px;
+width: 60vw;
 flex-flow: column nowrap;
 margin: 0;
 padding: 0;
 justify-content: space-around;
 position: absolute;
-left: 50%;
+left: 55%;
 top: 40%;
   
   transform: translate(-50%, -50%);

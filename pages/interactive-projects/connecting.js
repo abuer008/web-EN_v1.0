@@ -4,18 +4,19 @@ import Layout from '../../components/Layout'
 import { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import StartAnima from '../../components/StartAnima'
 import { States } from "../../components/connecting/States";
 
-import { connectingData, connectingAnima, animaState } from "../../data/Connecting";
+import { connectingData, connectingAnima, animaState, statesExample } from "../../data/Connecting";
 import * as stylingAnima from '../../public/connecting/styling.json'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Connecting = () => {
 
     const [isStopped, setStopped] = useState(true)
-    const [watchAnima, setWatchAnima] = useState(connectingAnima.introduction)
+    const [watchAnima, setWatchAnima] = useState(connectingAnima[0])
     const [looping, setLooping] = useState(false)
 
     const [isStateStopped, setStateStopped] = useState(true)
@@ -57,311 +58,119 @@ const Connecting = () => {
 
     const conclusionTexts = useRef([])
 
-    const titleToResearch = (oldTexts, oldImg, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[0],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
 
-        tl.to(oldTexts, {
+    // new version of layout
+
+    const pinTrigger = useRef(null)
+    const pinnedWatch = useRef(null)
+
+
+    // new version of animation
+
+    const goToSection = section => {
+        gsap.to(window, {
+            scrollTo: {y: section, autoKill: false},
+            ease: 'power1.out',
+            duration: 1.5
+        })
+    }
+
+    const handleScroll = trigger => {
+        ScrollTrigger.create({
+            trigger: trigger,
+            start: 'top 80%',
+            // markers: true,
+            onEnter: () => goToSection(trigger),
+            scrub: true
+        })
+        // ScrollTrigger.create({
+        //     trigger: trigger,
+        //     start: 'center bottom',
+        //     markers: true,
+        //     onEnterBack: () => goToSection(trigger)
+        // })
+    }
+
+    const handleAnimation = (trigger, driven) => {
+        gsap.from(driven, {
             opacity: 0,
-            y: -100,
-            stagger: 0.2
-        })
-            .to(oldImg, {
-                opacity: 0
-            })
-            .from(newTexts, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            })
-    }
-
-    const researchToIntro = (oldTexts, watchImg, newTexts) => {
-        const tl = gsap.timeline({
+            top: '+=10%',
+            duration: 1,
+            stagger: 0.3,
+            // delay: 1,
             scrollTrigger: {
-                trigger: sections.current[1],
-                start: '20% top',
-                end: 'bottom center',
+                trigger: trigger,
+                start: 'top center',
+                end: 'center center',
+                // markers: true,
                 toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-
-        tl.to(oldTexts, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        }).fromTo(watchImg, {
-            opacity: 0
-        }, {
-            opacity: 1
-        }).from(newTexts, {
-            opacity: 0,
-            x: 100,
-            stagger: 0.2
+            }
         })
     }
 
-    const introToCharacter = (oldTexts, newTexts, states) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[2],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
+    const handleLottie = (trigger, watchAnima) => {
+        ScrollTrigger.create({
+            trigger: trigger,
+            onEnter: () => {
+                setWatchAnima(watchAnima)
+                setStopped(false)
+                setLooping(true)
+            },
+            onEnterBack: () => {
+                setWatchAnima(watchAnima)
+                setStopped(true)
+            }
         })
-        tl
-            .to(oldTexts, {
-                opacity: 0,
-                x: 100,
-                stagger: 0.2
-            })
-            .fromTo(newTexts, {
-                opacity: 0,
-                x: 100,
-                stagger: 0.2,
-            }, {
-                opacity: 1,
-                x: 0,
-                onStart: () => {
-                    setStopped(false)
-                }
-            })
-            .fromTo(states, {
-                opacity: 0,
-                x: -100,
-                stagger: 0.1
-            }, {
-                opacity: 1,
-                x: 0,
-                onComplete: () => {
-                    setStateStopped(false)
-                }
-            })
     }
 
-    const characterToCommunication = (states, oldTexts, newTexts, img) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[3],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
+    const handleStates = trigger => {
+        ScrollTrigger.create({
+            trigger: trigger,
+            onEnter: () => setStateStopped(false)
         })
-        tl
-            .to(states, {
-                opacity: 0,
-                x: -100
-            })
-            .to(oldTexts, {
-                opacity: 0,
-                x: 100,
-                stagger: 0.2
-            })
-            .fromTo(newTexts, {
-                opacity: 0,
-                x: 100,
-                stagger: 0.2
-            }, {
-                opacity: 1,
-                x: 0
-            })
-            .fromTo(img, {
-                opacity: 0
-            }, {
-                opacity: 1
-            })
     }
 
-    const communicationToCatalog = (oldEls, newTexts, newImg) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[4],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
+    const handleStyling = trigger => {
+        ScrollTrigger.create({
+            trigger: trigger,
+            onEnter: () => setStylingStopped(false)
         })
-        tl.to(oldEls, {
-            opacity: 0,
-            x: 100,
-            stagger: 0.2
-        })
-            .fromTo(newTexts, {
-                opacity: 0,
-                x: 100
-            }, {
-                opacity: 1,
-                x: 0,
-                stagger: 0.2
-            })
-            .fromTo(newImg, {
-                opacity: 0
-            }, {
-                opacity: 1
-            })
-    }
-
-    const catalogToCompati = (oldTexts, oldImg, newTexts, newImg) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[5],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-
-        tl.to(oldImg, {
-            opacity: 0
-        })
-            .to(oldTexts, {
-                opacity: 0,
-                x: 100,
-                stagger: 0.2
-            })
-            .fromTo(newTexts, {
-                opacity: 0,
-                x: 100
-            }, {
-                opacity: 1,
-                x: 0,
-                stagger: 0.2
-            })
-            .fromTo(newImg, {
-                opacity: 0
-            }, {
-                opacity: 1
-            })
-    }
-
-    const compatiToPrototype = (oldEls, newImg, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[6],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-
-        tl.to(oldEls, {
-            opacity: 0,
-            y: -100
-        })
-            .fromTo(newImg, {
-                opacity: 0
-            }, {
-                opacity: 1
-            })
-            .fromTo(newTexts, {
-                opacity: 0,
-                y: -100
-            }, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.2
-            })
-    }
-
-    const prototypeToTech = (oldEls, newImg, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[7],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-        tl.to(oldEls, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        })
-            .fromTo(newImg, {
-                opacity: 0
-            }, {
-                opacity: 1
-            })
-
-            .fromTo(newTexts, {
-                opacity: 0,
-                y: -100
-            }, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.2
-            })
-    }
-
-    const techToStyling = (oldEls, newImg, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[8],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-
-        tl.to(oldEls, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        })
-            .from(newImg, {
-                opacity: 0,
-                onComplete: () => setStylingStopped(false)
-            })
-            .from(newTexts, {
-                opacity: 0,
-                y: -100,
-                stagger: 0.2
-            })
-    }
-
-    const stylingToConclusion = (oldEls, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sections.current[9],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-        })
-
-        tl.to(oldEls, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        })
-            .from(newTexts, {
-                opacity: 0,
-                y: -100
-            })
     }
 
     useEffect(() => {
-        gsap.defaults({ease: 'power1.inOut', duration: 1})
-        if(titleImg.current) {
-            titleToResearch(titleTexts.current, titleImg.current, researchTexts.current)
-            researchToIntro(researchTexts.current, watchImg.current, introTexts.current)
-            introToCharacter(introTexts.current, characterTexts.current, statesEl.current)
-            characterToCommunication(statesEl.current, characterTexts.current, commTexts.current, touchImg.current)
-            communicationToCatalog([commTexts.current, touchImg.current], catalogTexts.current, catalogImg.current)
-            catalogToCompati(catalogTexts.current, catalogImg.current, compatiTexts.current, compatiImg.current)
-            compatiToPrototype([compatiTexts.current, compatiImg.current, watchImg.current], prototypeImg.current, prototypeTexts.current.reverse())
-            prototypeToTech([prototypeImg.current, prototypeTexts.current.reverse()], techniquesImg.current, techniquesTexts.current.reverse())
-            techToStyling([techniquesTexts.current.reverse(), techniquesImg.current], stylingImg.current, stylingTexts.current.reverse())
-            stylingToConclusion([stylingTexts.current.reverse(), stylingImg.current], conclusionTexts.current.reverse())
-        }
+        const drivens = [
+            [titleImg.current, titleTexts.current],
+            researchTexts.current,
+            [introTexts.current, pinnedWatch.current],
+            [characterTexts.current, statesEl.current],
+            [commTexts.current, touchImg.current],
+            [catalogTexts.current, catalogImg.current],
+            [compatiTexts.current, compatiImg.current],
+            [prototypeImg.current, prototypeTexts.current],
+            [techniquesImg.current, techniquesTexts.current],
+            [stylingImg.current, stylingTexts.current],
+            conclusionTexts.current
+        ]
+
+        ScrollTrigger.create({
+            trigger: pinTrigger.current,
+            start: 'top center',
+            end: '+=400%',
+            pin: pinnedWatch.current,
+            pinSpacing: false
+        })
+        sections.current.forEach((el, i) => {
+            handleScroll(el)
+            handleAnimation(el, drivens[i])
+        })
+
+        connectingAnima.forEach((anima, i) => {
+            handleLottie(sections.current[i + 4], anima)
+        })
+
+        handleStates(sections.current[4])
+        handleStyling(sections.current[10])
+
     }, [])
 
     useEffect(() => {
@@ -378,7 +187,7 @@ const Connecting = () => {
     return (
         <Layout isBlack={false}>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <TitleImg ref={titleImg}>
                     <Image src='/connecting/titlePhoto.png' layout='fill' objectFit='cover' />
                 </TitleImg>
@@ -388,40 +197,56 @@ const Connecting = () => {
                 </TitleWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <TextWrapper>
                     <H2 ref={el => researchTexts.current.push(el)}>{connectingData.research.heading}</H2>
                     <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText}</P>
                 </TextWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.heading}</H3>
                     <P3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.plainText}</P3>
                 </IntroTextWrapper>
+                <WatchArea ref={pinnedWatch} style={{zIndex: 1}}>
+                    <IntroImg ref={el => watchImg.current.push(el)}>
+                        <StartAnima
+                            animaData={watchAnima}
+                            direction={1}
+                            isStopped={isStopped}
+                            speed={1}
+                            width={160}
+                            height='auto'
+                            looping={looping}
+                        />
+                    </IntroImg>
+                    <WatchWrapper ref={el => watchImg.current.push(el)}>
+                        <Image src='/connecting/appleWatchFrame.png' width='230' height='400' />
+                    </WatchWrapper>
+                </WatchArea>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => characterTexts.current.push(el)}>{connectingData.character.heading}</H3>
                     <P3 ref={el => characterTexts.current.push(el)}>{connectingData.character.plainText}</P3>
                 </IntroTextWrapper>
                 <ContentWrapper ref={statesEl}>
                     <States
-                        animaData={connectingAnima.idleExample}
+                        animaData={statesExample.idle}
                         isStopped={isStateStopped}
                         heading={animaState.idle.heading}
                         plainText={animaState.idle.plainText}
                     />
                     <States
-                        animaData={connectingAnima.activeExample}
+                        animaData={statesExample.active}
                         isStopped={isStateStopped}
                         heading={animaState.active.heading}
                         plainText={animaState.active.plainText}
                     />
                     <States
-                        animaData={connectingAnima.sleepyExample}
+                        animaData={statesExample.sleepy}
                         isStopped={isStateStopped}
                         heading={animaState.sleepy.heading}
                         plainText={animaState.sleepy.plainText}
@@ -429,7 +254,7 @@ const Connecting = () => {
                 </ContentWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => commTexts.current.push(el)}>{connectingData.communication.heading}</H3>
                     <P3 ref={el => commTexts.current.push(el)}>{connectingData.communication.plainText}</P3>
@@ -439,7 +264,7 @@ const Connecting = () => {
                 </ImgWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => catalogTexts.current.push(el)}>{connectingData.cataloging.heading}</H3>
                     <P3 ref={el => catalogTexts.current.push(el)}>{connectingData.cataloging.plainText}</P3>
@@ -449,7 +274,7 @@ const Connecting = () => {
                 </ImgWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => compatiTexts.current.push(el)}>{connectingData.compatibility.heading}</H3>
                     <P3 ref={el => compatiTexts.current.push(el)}>{connectingData.compatibility.plainText}</P3>
@@ -459,24 +284,7 @@ const Connecting = () => {
                 </ImgWrapper>
             </Section>
 
-            <Section>
-                <IntroImg ref={el => watchImg.current.push(el)}>
-                    <StartAnima
-                        animaData={watchAnima}
-                        direction={1}
-                        isStopped={isStopped}
-                        speed={1}
-                        width={160}
-                        height='auto'
-                        looping={looping}
-                    />
-                </IntroImg>
-                <WatchWrapper ref={el => watchImg.current.push(el)}>
-                    <Image src='/connecting/appleWatchFrame.png' width='230' height='400' />
-                </WatchWrapper>
-            </Section>
-
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <PrototypeWrapper ref={prototypeImg}>
                     <Image src='/connecting/watchPrototype.png' layout='intrinsic' width='1180' height='687' />
                 </PrototypeWrapper>
@@ -487,7 +295,7 @@ const Connecting = () => {
                 </ProcessTextWrapper>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <TechTextWrapper>
                     <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
                     <H3 ref={el => techniquesTexts.current.push(el)}>SwiftUI and SpriteKit</H3>
@@ -499,7 +307,7 @@ const Connecting = () => {
                 </YBGImg>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <StylingTextWrapper>
                     <H7 ref={el => stylingTexts.current.push(el)}>process III. redesign</H7>
                     <H3 ref={el => stylingTexts.current.push(el)}>Styling</H3>
@@ -518,27 +326,27 @@ const Connecting = () => {
                 </StylingImg>
             </Section>
 
-            <Section>
+            <Section ref={el => sections.current.push(el)}>
                 <ProcessTextWrapper>
                     <H3 ref={el => conclusionTexts.current.push(el)}>Conclusion</H3>
                     <P3 ref={el => conclusionTexts.current.push(el)}>some texts about conclusion are going on here.</P3>
                 </ProcessTextWrapper>
             </Section>
 
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger ref={el => sections.current.push(el)} />
-            <SectionTrigger />
-            <SectionTrigger />
-            <SectionTrigger />
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
+            {/*<SectionTrigger />*/}
+            {/*<SectionTrigger />*/}
+            {/*<SectionTrigger />*/}
 
         </Layout>
     )
@@ -549,24 +357,25 @@ const Connecting = () => {
 const SectionTrigger = styled.div`
   position: relative;
   width: 100vw;
-  height: 40vh;
+  height: 100vh;
   margin: -8px;
   z-index: -1;
   //border: 1px solid white;
   
   background-color: black;
-  scroll-snap-align: start;
+  //scroll-snap-align: start;
 `
 
 // --- title page ---
 
 const Section = styled.div`
-  position: fixed;
+  position: relative;
   width: 100vw;
   height: 100vh;
   margin: -8px;
   padding: 0;
-  overflow: hidden;
+  background-color: black;
+  //overflow: hidden;
   
   //scroll-snap-align: start;
 `
@@ -629,6 +438,11 @@ const P = styled.p`
 
 // --- introduction ---
 
+const WatchArea = styled.div`
+    position: inherit;
+  top: 50%;
+`
+
 const WatchWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -664,10 +478,8 @@ const P3 = styled(P)`
 // --- characterisation ---
 
 const ContentWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
     width: 27vw;
-    height: 50vh;
+    height: 30vh;
     
     position: absolute;
     top: 10vh;

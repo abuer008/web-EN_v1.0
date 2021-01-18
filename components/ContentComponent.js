@@ -16,7 +16,7 @@ export const ContentComponent = ({statusCode, characterAnima, backgroundColor, i
 const ContentWrapper = styled.div`
     position: absolute;
     top: 20vh;
-    left: 40vw;
+    left: 40%;
 `
 
 const ErrorWrapper = styled.div`
@@ -25,22 +25,22 @@ const ErrorWrapper = styled.div`
     align-items: flex-end;
     
     position: absolute;
-    left: 24vw;
+    left: 12vw;
     top: 10vh;
 `
 
 const Oops = styled.h1`
     position: absolute;
     //left: 5%;
-  right: 10vw;
+  //right: 0%;
     z-index: 1;
-    width: 40vw;
+    min-width: 50vw;
     margin: auto;
   
     font-family: Roboto Condensed, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 9em;
+    font-size: 9vw;
     text-align: right;
     line-height: 0.8em;
 `
@@ -48,9 +48,9 @@ const Oops = styled.h1`
 const Description = styled.p`
     position: absolute;
     top: 18em;
-    margin: auto -5em;
+  margin: 1.2em -35vw;
     text-align: right;
-    width: 30vw;
+    min-width: 60vw;
     height: auto;
   
     font-family: Roboto, sans-serif;

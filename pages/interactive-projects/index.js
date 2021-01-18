@@ -175,10 +175,10 @@ const ArrowIcon = styled.div`
 `
 
 const ProjectsSqures = styled.div`
-max-width: 70%;
+max-width: 65%;
 position: relative;
 top: 72vh;
-left: 42.7%;
+left: 43.2%;
   
   transform: translate(-50%, 0);
 
