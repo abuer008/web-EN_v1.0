@@ -49,12 +49,12 @@ const DataVisualisation = () => {
                 </Reveal>
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
-                    <ImageWrapper>
+                    <ImageWrapper style={{left: '7vw'}}>
                         <Image src='/data-visualisation/refugeesFamily.webp' width='642' height='638'/>
                     </ImageWrapper>
                 </Fading>
                 <TextFading>
-                    <TextArea>
+                    <TextArea style={{bottom: '40vh'}}>
                         <VDText heading={dataVisualisation[0].heading} plainText={dataVisualisation[0].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -81,7 +81,7 @@ const DataVisualisation = () => {
                     </ImageWrapper>
                 </Fading>
                 <TextFading>
-                    <TextArea>
+                    <TextArea style={{bottom: '45vh'}}>
                         <VDText heading={dataVisualisation[2].heading} plainText={dataVisualisation[2].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -94,7 +94,7 @@ const DataVisualisation = () => {
                     </div>
                 </Fading>
                 <TextFading>
-                    <TextArea style={{bottom: '60vh'}}>
+                    <TextArea style={{bottom: '70vh'}}>
                         <VDText heading={dataVisualisation[3].heading} plainText={dataVisualisation[3].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -107,7 +107,7 @@ const DataVisualisation = () => {
                     </div>
                 </Fading>
                 <TextFading>
-                    <TextArea style={{top: '0'}}>
+                    <TextArea style={{bottom: '35vh'}}>
                         <VDText heading={dataVisualisation[4].heading} plainText={dataVisualisation[4].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -139,9 +139,9 @@ const ImageWrapper = styled.div`
 `
 const TextArea = styled.div`
   position: relative;
-  width: 30vw;
+  width: 40vw;
   left: 60vw;
-  bottom: 40vh;
+  bottom: 60vh;
 `
 const Title = styled.div`
   position: absolute;
@@ -212,12 +212,12 @@ const ButtonIcon = styled.div`
 const ButtonText = styled.h6`
   color: white;
   max-width: 10vw;
-  font-size: 1.2em;
+  font-size: 1.2vw;
 `
 
 const CodeWrapper = styled.div`
   position: relative;
-  top: 10vh;
+  //top: 15vh;
   left: 15vw;
   max-width: 30vw;
   padding: 20px;

@@ -49,7 +49,7 @@ const VideoWrapper = styled.div`
   position: absolute;
   z-index: 0;
   height: 100vh;
-  overflow: hidden;
+  //overflow-y: hidden;
   object-fit: cover;
 `
 

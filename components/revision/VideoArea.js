@@ -1,12 +1,13 @@
 import ReactPlayer from "react-player";
 import styled from 'styled-components';
 
-const VideoArea = ({videoSource, isPlaying}) => {
+const VideoArea = ({videoSource, isPlaying, showControl = false}) => {
 
     return (
         <>
             {/*<PlayerWrapper>*/}
-                <ReactPlayer
+            <ReactPlayer
+                controls={showControl}
                 url={videoSource}
                 playing={isPlaying}
                 width="auto"
@@ -38,7 +39,7 @@ const PlayerWrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
- // position: inherit;
+  // position: inherit;
   z-index: -1;
   //object-position: left bottom;
   //width: 10%;

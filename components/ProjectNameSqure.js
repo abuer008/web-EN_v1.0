@@ -91,7 +91,7 @@ const Title = styled.h3`
   /* Inside Auto Layout */
 
   flex: auto;
-  order: 0;
+  order: 5;
   flex-grow: 1;
   margin: auto 1em;
   //padding: 1em;
@@ -102,6 +102,10 @@ const Title = styled.h3`
     cursor: pointer;
     transform: scale(1.3);
   }
+  //
+  //@media all and (max-width: 1100px) {
+  //  flex-direction: column;
+  //}
 `
 
 const AnimaSection = styled.div`

@@ -1,27 +1,50 @@
-export const artificialSynaesthesia = {
-    title: "Artificial Synaesthesia",
-    text: "As French philosopher Roland Barthes said, there\n" +
-        "is no natural connection between signifier and\n" +
-        "signified, the existence of an object in the objective\n" +
-        "world is perceived by our sensory organs, such as\n" +
-        "shapes, colours and temperature of objects are just\n" +
-        "our subjective perceptual language in the brain.\n" +
-        "Hearing colours, tasting alphabets, the fundamental\n" +
-        "appearance of synaesthesia is based on “nonexistent\n" +
-        "hallucination” in the brain. How to use\n" +
-        "those hallucinations to represent the information,\n" +
-        "that unnoticed or cannot be perceived because of\n" +
-        "limitation of senses in humans, is primary aim of\n" +
-        "this project. Thus, a novel head-mounted device is\n" +
-        "presented, the device gathers visual information\n" +
-        "and represents into pure tactile language, it\n" +
-        "provides a possibility: haptic as a “low-resolution”\n" +
-        "perceptual language, can be used as a new channel\n" +
-        "of senses, by means of machine cognition and\n" +
-        "artificial intelligence to expand horizons of\n" +
-        "perception in humans."
-}
-
-export const productIntro = {
-    text: ""
+export const revisionProduct = {
+    machineCognition: {
+        heading: "Machine Cognition",
+        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
+            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
+            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
+            "orci nulla."
+    },
+    hapticStimuli: {
+        heading: "Single row of haptic stimuli",
+        plainText: "Conveying unnecessary information about the environment can lead to a risk of sensory overload. The spatial position and the shape of objects can be represented like our visual perception with only a few stimuli in one row taking into account the limited change in the magnitude."
+    },
+    dataTranslation: {
+        heading: "Data translation",
+        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
+            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
+            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
+            "orci nulla."
+    },
+    prototype: {
+        heading: "First Prototype",
+        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
+            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
+            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
+            "orci nulla."
+    },
+    assembler: {
+        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
+            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
+            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
+            "orci nulla."
+    },
+    conclusion: {
+        heading: "Conclusion",
+        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
+            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
+            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
+            "orci nulla."
+    }
 }

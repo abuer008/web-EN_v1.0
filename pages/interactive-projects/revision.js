@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
@@ -8,14 +9,22 @@ import {useState, useEffect, useRef} from 'react'
 import Layout from '../../components/Layout'
 import RevisionSection from "../../components/revision/RevisionSection";
 import VideoSection from "../../components/revision/VideoSection";
+import VideoArea from "../../components/revision/VideoArea";
+import {revisionProduct} from "../../data/RevisionData";
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Revision = () => {
 
+    const [isTransitionPlay, setPlay] = useState(false)
+
     const sections = useRef([])
     const subTextRef = useRef([])
     const plainTextRef = useRef([])
+
+    const prototypeText = useRef(null)
+    const prototypes = useRef([])
 
     const titleSection = {
         isActive: true,
@@ -64,16 +73,29 @@ const Revision = () => {
                 onEnter: () => goToSection(el)
             })
 
-            ScrollTrigger.create({
-                trigger: el,
-                start: 'bottom bottom',
-                onEnterBack: () => goToSection(el)
-            })
+        })
+    }
+
+    const handlePrototypes = () => {
+        ScrollTrigger.create({
+            trigger: sections.current[6],
+            start: 'top top',
+            end: '+=120%',
+            pin: prototypeText.current,
+            pinSpacing: false
+        })
+    }
+
+    const handleTransitionPlay = () => {
+        ScrollTrigger.create({
+            trigger: sections.current[5],
+            onEnter: () => setPlay(true),
+            onEnterBack: () => setPlay(true),
+            onLeave: () => setPlay(false)
         })
     }
 
     useEffect(() => {
-        // if(sectionsRef.current) console.log(sectionsRef.current)
         handleSnap(sections.current)
 
         if (subTextRef.current) {
@@ -84,6 +106,10 @@ const Revision = () => {
                 handleText(subEl)
             })
         }
+
+        handlePrototypes()
+        handleTransitionPlay()
+
     }, [])
 
     return (
@@ -122,72 +148,100 @@ const Revision = () => {
             </div>
 
             <div ref={el => sections.current.push(el)}>
-            <VideoSection videoSource='/revision/revisionIntro.mp4'>
-                <TextArea>
-                    <SubText
-                        ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>Humans’ vision involves more complex neural
-                        mechanisms and gathers distinctively more information
-                        than the other senses, the <ToneText>Re:Vision</ToneText> attempts to translate visual
-                        information into tactile “language” by artificial means, to discover the novel
-                        perceptual channel of humans. The ultimate question is how people use their own
-                        imagination to understand the subjective world.</ExplainText>
-                </TextArea>
-            </VideoSection>
+                <VideoSection videoSource='/revision/revisionIntro.mp4'>
+                    <TextArea>
+                        <SubText
+                            ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
+                        <ExplainText ref={el => plainTextRef.current.push(el)}>Humans’ vision involves more complex
+                            neural
+                            mechanisms and gathers distinctively more information
+                            than the other senses, the <ToneText>Re:Vision</ToneText> attempts to translate visual
+                            information into tactile “language” by artificial means, to discover the novel
+                            perceptual channel of humans. The ultimate question is how people use their own
+                            imagination to understand the subjective world.</ExplainText>
+                    </TextArea>
+                </VideoSection>
             </div>
 
             <div ref={el => sections.current.push(el)}>
-            <VideoSection videoSource='/revision/revisionInfrared.mp4'>
-                <TextArea>
-                    <SubText ref={el => subTextRef.current.push(el)}>Machine Cognition</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>
-                        Using infrared rays and normal camera to capture required environmental data from front.
-                    </ExplainText>
-                </TextArea>
-            </VideoSection>
+                <VideoSection videoSource='/revision/revisionInfrared.mp4'>
+                    <TextArea>
+                        <SubText
+                            ref={el => subTextRef.current.push(el)}>{revisionProduct.machineCognition.heading}</SubText>
+                        <ExplainText ref={el => plainTextRef.current.push(el)}>
+                            {revisionProduct.machineCognition.plainText}
+                        </ExplainText>
+                    </TextArea>
+                </VideoSection>
             </div>
 
             <div ref={el => sections.current.push(el)}>
-            <VideoSection videoSource='/revision/revisionTactile.mp4'>
-                <TextArea>
-                    <SubText ref={el => subTextRef.current.push(el)}>Single row of haptic stimuli</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>
-                        Conveying unnecessary
-                        information about the environment can lead to a risk of
-                        sensory overload. The spatial position and the shape of objects can be
-                        represented like our visual perception with only a few
-                        stimuli in one row taking into account the limited
-                        change in the magnitude.
-                    </ExplainText>
-                </TextArea>
-            </VideoSection>
+                <VideoSection videoSource='/revision/revisionTactile.mp4'>
+                    <TextArea>
+                        <SubText
+                            ref={el => subTextRef.current.push(el)}>{revisionProduct.hapticStimuli.heading}</SubText>
+                        <ExplainText ref={el => plainTextRef.current.push(el)}>
+                            {revisionProduct.hapticStimuli.plainText}
+                        </ExplainText>
+                    </TextArea>
+                </VideoSection>
             </div>
 
             <ProductIntro ref={el => sections.current.push(el)}>
+                <TranslationWrapper>
+                    <VideoWrapper>
+                        <VideoArea videoSource='/revision/translation/fundamental.mp4' isPlaying={isTransitionPlay}/>
+                    </VideoWrapper>
+                    <VideoWrapper style={{height: '34.2vh'}}>
+                        <VideoArea videoSource='/revision/translation/form.mp4' isPlaying={isTransitionPlay}/>
+                    </VideoWrapper>
+                </TranslationWrapper>
                 <TextArea>
-                    <SubText ref={el => subTextRef.current.push(el)}>Data Translation</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>Conveying unnecessary
-                        information about the environment can lead to a risk of
-                        sensory overload. The spatial position and the shape of objects can be
-                        represented like our visual perception with only a few
-                        stimuli in one row taking into account the limited
-                        change in the magnitude.</ExplainText>
+                    <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.dataTranslation.heading}</SubText>
+                    <ExplainText
+                        ref={el => plainTextRef.current.push(el)}>{revisionProduct.dataTranslation.plainText}</ExplainText>
                 </TextArea>
             </ProductIntro>
 
             <PrototypeSection ref={el => sections.current.push(el)}>
-                <TextArea>
-                    <SubText ref={el => subTextRef.current.push(el)}>Prototype</SubText>
-                    <ExplainText ref={el => plainTextRef.current.push(el)}>
-                        Prototype text.
+                <PrototypeVideo>
+                    <VideoArea
+                        videoSource='/revision/prototype/firstPrototype.mp4' isPlaying={false} showControl={true}/>
+                </PrototypeVideo>
+                <TextArea ref={prototypeText} style={{zIndex: '2'}}>
+                    <SubText>{revisionProduct.prototype.heading}</SubText>
+                    <ExplainText>
+                        {revisionProduct.prototype.plainText}
                     </ExplainText>
                 </TextArea>
             </PrototypeSection>
 
+            {/*<PrototypeSection ref={el => sections.current.push(el)}>*/}
+            {/*    <PrototypeImgWrapper>*/}
+            {/*        <Image src='/revision/prototype/IMG_0251.jpg' width='1440' height='1920'/>*/}
+            {/*    </PrototypeImgWrapper>*/}
+            {/*</PrototypeSection>*/}
+
+            <PrototypeSection ref={el => sections.current.push(el)}>
+                <PrototypeImgWrapper>
+                    <PrototypeImg ref={el => subTextRef.current.push(el)}>
+                        <Image src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
+                    </PrototypeImg>
+                    <PrototypeImg ref={el => plainTextRef.current.push(el)}>
+                        <Image src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
+                    </PrototypeImg>
+                </PrototypeImgWrapper>
+            </PrototypeSection>
+
             <Description ref={el => sections.current.push(el)}>
-                <SubText>
-                    Description section
-                </SubText>
+                <div ref={el => subTextRef.current.push(el)}>
+                    <Image src='/revision/cover0020.png' layout='fill' objectFit='cover'/>
+                </div>
+                <TextArea>
+                    <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>
+                    <ExplainText
+                        ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText}</ExplainText>
+                </TextArea>
             </Description>
         </Layout>
     )
@@ -203,18 +257,18 @@ const TitleSection = styled.div`
 `
 
 const IntroSection = styled.div`
-  //position: relative; 
-  z-index: 0;
-  //overflow: scroll;
-  background: black;
+  position: relative;
+  //z-index: 0;
+  overflow: hidden;
+  background-color: black;
   //padding: 2em;
   margin: 0 -8px;
   //border: 10px;
   height: 100vh;
   //width: 90vw;
 
-  display: flex;
-  flex-direction: row;
+  //display: flex;
+  //flex-direction: row;
 `
 
 const ProductIntro = styled(IntroSection)`
@@ -230,6 +284,36 @@ const PrototypeSection = styled(IntroSection)`
 
 `
 
+const PrototypeImg = styled.div`
+  //position: inherit;
+`
+
+const PrototypeVideo = styled.div`
+  position: absolute;
+  top: 25vh;
+  left: 10vw;
+  height: 35vh;
+`
+
+const PrototypeImgWrapper = styled.div`
+  position: absolute;
+  top: 15vh;
+  left: 10vw;
+  width: 40vw;
+  height: 77vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`
+
+const PrototypeHorizonBox = styled.div`
+  position: inherit;
+  display: flex;
+  //flex-direction: row;
+  flex-wrap: nowrap;
+`
+
 const Description = styled(IntroSection)`
 
 `
@@ -239,9 +323,10 @@ const TextArea = styled.div`
   //opacity: 0;
   position: relative;
   font-family: Roboto, sans-serif;
-  top: 35vh;
+  top: 30vh;
   left: 55vw;
   max-height: 50vh;
+  max-width: 35vw;
   //overflow: scroll;
 `
 
@@ -259,7 +344,7 @@ const SubText = styled(Text)`
   font-style: normal;
   font-weight: lighter;
   font-size: 2.5em;
-  line-height: 0;
+  line-height: 1em;
   text-transform: uppercase;
 
   color: #fff;
@@ -268,7 +353,7 @@ const ExplainText = styled.p`
   color: #fff;
   width: 35vw;
   position: relative;
-  top: 5vh;
+  top: 1vh;
 
   font-style: normal;
   font-weight: lighter;
@@ -279,6 +364,23 @@ const ExplainText = styled.p`
 
 const ToneText = styled.strong`
   font-weight: bold;
+`
+
+const TranslationWrapper = styled.div`
+  position: absolute;
+  top: 12vh;
+  left: 10vw;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`
+
+const VideoWrapper = styled.div`
+  height: 35vh;
+  
 `
 
 

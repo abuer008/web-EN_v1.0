@@ -6,55 +6,55 @@ export const ContentComponent = ({statusCode, characterAnima, backgroundColor, i
         <ContentWrapper>
             <ErrorWrapper>
                 <Oops style={{top: isError ? '13vh' : '2vh'}}>{mainText}</Oops>
-                <AnimaComponent statusCode={statusCode} backgroundColor={backgroundColor} animaData={characterAnima} />
+                <Description>{desText}</Description>
             </ErrorWrapper>
-            <Description>{desText}</Description>
+                <div>
+                    <AnimaComponent statusCode={statusCode} backgroundColor={backgroundColor}
+                                    animaData={characterAnima}/>
+                </div>
         </ContentWrapper>
     )
 }
 
 const ContentWrapper = styled.div`
-    position: absolute;
-    top: 20vh;
-    left: 40%;
+  position: absolute;
+  margin: 20% 25%;
+  
+  display: flex;
+  flex-direction: row;
 `
 
 const ErrorWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    
-    position: absolute;
-    left: 12vw;
-    top: 10vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  bottom: 10px;
+  margin: 1em;
+  
+  width: 50%;
 `
 
 const Oops = styled.h1`
-    position: absolute;
-    //left: 5%;
-  //right: 0%;
-    z-index: 1;
-    min-width: 50vw;
-    margin: auto;
-  
-    font-family: Roboto Condensed, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 9vw;
-    text-align: right;
-    line-height: 0.8em;
+  z-index: 1;
+  margin: 0;
+
+  font-family: Roboto Condensed, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 9vw;
+  text-align: right;
+  line-height: 0.8em;
 `
 
 const Description = styled.p`
-    position: absolute;
-    top: 18em;
-  margin: 1.2em -35vw;
-    text-align: right;
-    min-width: 60vw;
-    height: auto;
-  
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.3em;
+  position: relative;
+  top: 10px;
+  text-align: right;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3em;
 `

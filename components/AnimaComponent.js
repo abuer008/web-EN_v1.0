@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     position: absolute;
     width: 237px;
     height: 270px;
-  margin: 0 -180px;
+  //margin: 0 -180px;
   
     border-radius: 30px;
   

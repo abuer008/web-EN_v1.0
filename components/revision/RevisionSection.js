@@ -75,6 +75,8 @@ const SectionWrapper = styled.section`
   display: flex;
   flex-direction: row;
   
+  overflow: hidden;
+  
   .titleImage.titleImage {
     z-index: 1;
   }

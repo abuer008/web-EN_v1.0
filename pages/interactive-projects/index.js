@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import styled from 'styled-components';
 import NameSqure from "../../components/ProjectNameSqure";
 import Image from "next/image";
+import Link from "next/link"
 import ProjectTextItem from "../../components/ProjectTextItem";
 
 import { useState } from 'react';
@@ -70,13 +71,6 @@ function InteractiveProjects() {
                         <Image src="/Arrow.svg" width="57" height="48" />
                     </ArrowIcon>
                 </EnterArrow>
-                {/*<AnimaSection>*/}
-                {/*    <StartAnima animaData={projectInfo.animaData}*/}
-                {/*                direction={direction}*/}
-                {/*                isStopped={isStopped}*/}
-                {/*                speed={speed}*/}
-                {/*    />*/}
-                {/*</AnimaSection>*/}
                 {
                     projectsArray.map(project => {
                         return <NameSqure name={project.name}
@@ -100,6 +94,7 @@ function InteractiveProjects() {
                              explain={interactionPageInfo.explain}
                              displayClass={titleVisible ? "fadeOut" : "fadeIn"}
             />}
+            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio please visit <Link href='/about'><a>about</a></Link>.</WebsitePlain>
         </Layout>
     )
 }
@@ -184,9 +179,40 @@ left: 43.2%;
 
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
-  align-items: flex-end;
+  justify-content: space-evenly;
+  align-items: center;
   
+  @media all and (max-width: 1120px) {
+    //align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    top: 55vh;
+  }
+  
+  @media all and (max-width: 650px) {
+    display: none;
+  }
+`
+
+const WebsitePlain = styled.p`
+    position: absolute;
+  bottom: 0.5vh;
+  right: 25vw;
+  width: 20vw;
+  
+  font-family: Roboto Condensed, sans-serif;
+  font-style: normal;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: right;
+  
+  @media all and (max-height: 850px) {
+    display: none;
+  }
+  
+  @media all and (max-width: 1130px) {
+    display: none;
+  }
 `
 
 export default InteractiveProjects

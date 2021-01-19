@@ -8,7 +8,7 @@ function Menu({isBlack}) {
     return (
         <MenuWrapper>
             {/*<Link href='/'>*/}
-                <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='20' height='20'/>
+                <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16' height='16'/>
             {/*</Link>*/}
             {menuList.map(menuItem => {
                 return <Link href={menuItem.destination} key={menuItem.id}>
@@ -24,11 +24,16 @@ const MenuItemActive = styled.a`
     //margin: 0 4em;
     //font-weight: bold;
   width: 80px;
+  text-align: left;
     
     :hover {
     cursor: pointer;
       font-weight: 900;
     }
+  
+  @media all and (max-width: 650px) {
+    display: none;
+  }
 `
 
 const MenuItemNormal = styled(MenuItemActive)`

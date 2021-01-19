@@ -27,7 +27,7 @@ class MyDocument extends Document {
     }
     render() {
         return (
-        <Html lang="en-US" style={{scrollSnapType: "y mandatory"}}>
+        <Html lang="en-US">
         <Head>
             <meta name="description" content="A site for bowei's portfolio" />
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300&display=swap" rel="stylesheet" />

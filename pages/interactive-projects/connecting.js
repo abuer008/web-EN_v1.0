@@ -327,10 +327,10 @@ const Connecting = () => {
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
-                <ProcessTextWrapper>
+                <ConclusionTextWrapper>
                     <H3 ref={el => conclusionTexts.current.push(el)}>Conclusion</H3>
                     <P3 ref={el => conclusionTexts.current.push(el)}>some texts about conclusion are going on here.</P3>
-                </ProcessTextWrapper>
+                </ConclusionTextWrapper>
             </Section>
 
             {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
@@ -373,7 +373,8 @@ const Section = styled.div`
   width: 100vw;
   height: 100vh;
   margin: -8px;
-  padding: 0;
+  //padding: 0;
+  padding-right: 17px;
   background-color: black;
   //overflow: hidden;
   
@@ -431,7 +432,7 @@ const P = styled.p`
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: white;
   
 `
@@ -456,7 +457,7 @@ const IntroTextWrapper = styled.div`
   position: absolute;
   width: 35vw;
   top: 40vh;
-  right: 59vw;
+  right: 59%;
 `
 
 const IntroImg = styled.div`
@@ -470,6 +471,9 @@ const IntroImg = styled.div`
 
 const H3 = styled(H2)`
     line-height: 1em;
+  @media all and (max-width: 1370px) {
+    font-size: 4em;
+  }
 `
 const P3 = styled(P)`
   margin: 0.5em 0;
@@ -478,11 +482,12 @@ const P3 = styled(P)`
 // --- characterisation ---
 
 const ContentWrapper = styled.div`
-    width: 27vw;
-    height: 30vh;
+    width: 37vw;
+    height: 28vmin;
     
     position: absolute;
-    top: 10vh;
+    top: 15%;
+    margin: auto 0;
     left: 60vw;
 `
 
@@ -504,7 +509,7 @@ const PrototypeWrapper = styled.div`
 
 const ProcessTextWrapper = styled.div`
     position: absolute;
-    top: 62vh;
+    top: 25vh;
     right: 4vw;
     text-align: left;
     width: 25vw;
@@ -536,12 +541,20 @@ const YBGImg = styled.div`
 // --- styling ---
 
 const StylingTextWrapper = styled(ProcessTextWrapper)`
-    top: 55vh;
+    top: 25vh;
 `
 const StylingImg = styled.div`
     position: absolute;
     max-width: 60vw;
     padding: 8em 0;
+`
+
+// --- conclusion ---
+
+const ConclusionTextWrapper = styled(ProcessTextWrapper)`
+    top: 25vh;
+  right: 10vw;
+  width: 35vw;
 `
 
 export default Connecting
