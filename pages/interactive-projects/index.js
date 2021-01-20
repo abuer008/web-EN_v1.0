@@ -189,9 +189,10 @@ left: 43.2%;
     top: 55vh;
   }
   
-  @media all and (max-width: 650px) {
+  @media all and (max-width: 850px) {
     display: none;
   }
+  
 `
 
 const WebsitePlain = styled.p`

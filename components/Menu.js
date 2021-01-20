@@ -31,7 +31,7 @@ const MenuItemActive = styled.a`
       font-weight: 900;
     }
   
-  @media all and (max-width: 650px) {
+  @media all and (max-width: 850px) {
     display: none;
   }
 `

@@ -1,4 +1,8 @@
 node_modules
 .next/*
 .DS_Store
-.idea
+.idea/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

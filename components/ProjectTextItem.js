@@ -35,7 +35,8 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
                         lineHeight: '1em'
                     }
             }>{title}</MainTitle>
-            <Warning>The contents were temporary not optimized for mobile devices. please visit in a desktop computer.</Warning>
+            <Warning>The contents were temporary not for mobile devices optimized. please visit on a desktop
+                computer.</Warning>
             <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
             <MainText>{explain}</MainText>
         </TextArea>
@@ -51,7 +52,7 @@ const TextArea = styled.div`
   margin: 0;
   padding: 0;
   justify-content: space-between;
-    align-items: flex-start;
+  align-items: flex-start;
   position: absolute;
   left: 50%;
   top: 40%;
@@ -94,20 +95,21 @@ const TextArea = styled.div`
       }
     }
   }
-  
+
   @media all and (max-width: 1400px) {
     width: 70vw;
     height: 40vw;
     top: 40%;
     left: 60%;
-}
-  
-  @media all and (max-height: 800px) {
-    top: 60%;
   }
-  
-  @media all and (max-width: 650px) {
-    top: 40%;
+
+  @media all and (max-height: 900px) {
+    top: 32%;
+    height: 50%;
+  }
+
+  @media all and (max-width: 850px) {
+    //top: 40%;
     left: 50%;
     width: 85%;
   }
@@ -136,12 +138,12 @@ const MainTitle = styled.h1.attrs(props => ({
     //transform: scale(1.1);
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
-  
-  @media all and (max-height: 650px) {
+
+  @media all and (max-height: 680px) {
     display: none;
   }
-  
-  @media all and (max-width: 650px) {
+
+  @media all and (max-width: 850px) {
     display: none;
   }
 
@@ -154,7 +156,7 @@ const MainSubTitle = styled(MainTitle)`
   padding: 0;
   margin: auto;
 
-  @media all and (max-height: 800px) {
+  @media all and (max-height: 850px) {
     display: none;
   }
 `
@@ -163,9 +165,15 @@ const Warning = styled(MainSubTitle)`
   display: none;
   font-weight: normal;
   font-size: 2.2em;
-    @media all and (max-width: 650px) {
-      display: block;
-    }
+  @media all and (max-width: 850px) {
+    display: block;
+  }
+  
+  @media all and (max-height: 650px) {
+    display: block;
+    position: absolute;
+    top: 40%;
+  }
 `
 
 const MainText = styled.p`

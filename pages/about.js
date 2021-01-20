@@ -41,7 +41,7 @@ const ContentWrapper = styled.div`
   
   position: absolute;
   width: 80%;
-  max-width: 1100px;
+  max-width: 920px;
   top: 14%;
   left: 50%;
   

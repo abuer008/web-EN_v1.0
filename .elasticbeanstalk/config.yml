@@ -1,0 +1,22 @@
+branch-defaults:
+  main:
+    environment: boweisdesign-dev
+    group_suffix: null
+environment-defaults:
+  boweisdesign-dev:
+    branch: main
+    repository: origin
+global:
+  application_name: boweisdesign
+  branch: main
+  default_ec2_keyname: boweiRoot
+  default_platform: Node.js 12 running on 64bit Amazon Linux 2
+  default_region: eu-central-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: origin
+  sc: git
+  workspace_type: Application
