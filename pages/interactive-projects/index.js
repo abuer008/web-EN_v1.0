@@ -6,23 +6,22 @@ import Image from "next/image";
 import Link from "next/link"
 import ProjectTextItem from "../../components/ProjectTextItem";
 
-import { useState } from 'react';
-import StartAnima from "../../components/StartAnima";
+import {useState} from 'react';
 
 import * as RevisionAnima from '../../public/revisionStartAnima.json';
-import { projectsArray, interactionPageInfo } from "../../data/MainPageData";
+import {projectsArray, interactionPageInfo} from "../../data/MainPageData";
 
 
 function InteractiveProjects() {
 
-    let [projectInfo, setProjectInfo] = useState({title: "", subTitle: "", explain: "", animaData: RevisionAnima, movePointer: 0})
+    let [projectInfo, setProjectInfo] = useState({
+        title: "",
+        subTitle: "",
+        explain: "",
+        animaData: RevisionAnima,
+        movePointer: 0
+    })
     let [titleVisible, setVisible] = useState(false)
-    let [isStopped, setStopped] = useState(true)
-    let [direction, setDirection] = useState(1)
-    let [speed, setSpeed] = useState(1)
-
-    let [cachedPointer, setPointer] = useState("0%")
-    let [cachedAnima, setAnima] = useState(RevisionAnima)
 
 
     const handleMouseEnter = (popProject) => {
@@ -35,14 +34,7 @@ function InteractiveProjects() {
             animaData: popProject.animaData,
             movePointer: popProject.movePointer
         })
-
-        // setPointer(popProject.movePointer)
-        setAnima(popProject.animaData)
-
         setVisible(true)
-        setStopped(false)
-        setDirection(1)
-        setSpeed(1)
     }
 
     const handleMouseLeave = () => {
@@ -51,24 +43,21 @@ function InteractiveProjects() {
             title: "",
             subTitle: "",
             explain: "",
-            animaData: cachedAnima,
-            movePointer: cachedPointer})
+        })
         setVisible(false)
-        setDirection(-1)
-        setSpeed(2)
     }
 
     return (
         <Layout>
             <MainBackground>
-                <Image src="/aboutBg.png" layout="fill" objectFit="cover" />
+                <Image alt='dot background' src="/aboutBg.png" layout="fill" objectFit="cover"/>
             </MainBackground>
             <ProjectsSqures>
                 <EnterArrow>
                     <EnterTonText>Enter</EnterTonText>
                     <EnterText>the Projects</EnterText>
                     <ArrowIcon>
-                        <Image src="/Arrow.svg" width="57" height="48" />
+                        <Image alt='small arrow icon' src="/Arrow.svg" width="57" height="48"/>
                     </ArrowIcon>
                 </EnterArrow>
                 {
@@ -90,33 +79,31 @@ function InteractiveProjects() {
                              displayClass={titleVisible ? "fadeIn" : "fadeOut"}
             />
             {!titleVisible && <ProjectTextItem title={interactionPageInfo.title}
-                             subTitle={interactionPageInfo.subTitle}
-                             explain={interactionPageInfo.explain}
-                             displayClass={titleVisible ? "fadeOut" : "fadeIn"}
+                                               subTitle={interactionPageInfo.subTitle}
+                                               explain={interactionPageInfo.explain}
+                                               displayClass={titleVisible ? "fadeOut" : "fadeIn"}
             />}
-            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio please visit <Link href='/about'><a>about</a></Link>.</WebsitePlain>
+            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio please
+                visit <Link href='/about'><a>about</a></Link>.</WebsitePlain>
         </Layout>
     )
 }
 
 
 const MainBackground = styled.div`
-//display: block;
-//  height: 100%;
   width: 80%;
-z-index: -5;
-margin: -8px;
-pointer-events: none;
-overflow: hidden;
+  z-index: -5;
+  margin: -8px;
+  pointer-events: none;
+  overflow: hidden;
 `
 
 const AnimaSection = styled.div`
-position: absolute;
-bottom: 70%;
-left: ${props => props.movePointer};
-z-index: 0;
+  position: absolute;
+  bottom: 70%;
+  z-index: 0;
 
-pointer-events: none;
+  pointer-events: none;
 `
 
 const EnterArrow = styled.div`
@@ -126,43 +113,43 @@ const EnterArrow = styled.div`
   flex-direction: column;
   //justify-content: flex-end;
   align-items: flex-end;
-  
+
   flex: none;
   order: 0;
   flex-grow: 0;
   margin: 0;
-  
+
   @media all and (max-width: 1270px) {
-  display: none;
+    display: none;
   }
-  
+
   pointer-events: none;
 `
 
 const EnterText = styled.h4`
   position: relative;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 50%;
-margin: 0;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 50%;
+  margin: 0;
 
-font-family: Roboto,sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 28px;
-text-align: right;
-text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: right;
+  text-transform: uppercase;
 
-color: #000000;
+  color: #000000;
 `
 
 const EnterTonText = styled(EnterText)`
 
-font-weight: 900;
-font-size: 30px;
-line-height: 35px;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 35px;
 `
 
 const ArrowIcon = styled.div`
@@ -170,47 +157,47 @@ const ArrowIcon = styled.div`
 `
 
 const ProjectsSqures = styled.div`
-max-width: 65%;
-position: relative;
-top: 72vh;
-left: 43.2%;
-  
+  max-width: 65%;
+  position: relative;
+  top: 72vh;
+  left: 43.2%;
+
   transform: translate(-50%, 0);
 
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
   align-items: center;
-  
+
   @media all and (max-width: 1120px) {
     //align-items: center;
     justify-content: center;
     max-width: 100%;
     top: 55vh;
   }
-  
+
   @media all and (max-width: 850px) {
     display: none;
   }
-  
+
 `
 
 const WebsitePlain = styled.p`
-    position: absolute;
+  position: absolute;
   bottom: 0.5vh;
   right: 25vw;
   width: 20vw;
-  
+
   font-family: Roboto Condensed, sans-serif;
   font-style: normal;
   font-size: 0.8em;
   font-weight: bold;
   text-align: right;
-  
+
   @media all and (max-height: 850px) {
     display: none;
   }
-  
+
   @media all and (max-width: 1130px) {
     display: none;
   }

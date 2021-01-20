@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger)
 
-const VideoSection = ({children, videoSource}) => {
+const VideoSection = ({children, videoSource, alt}) => {
     const [playing, setPlaying] = useState(false)
     const videoRef = useRef(null)
 
@@ -27,7 +27,7 @@ const VideoSection = ({children, videoSource}) => {
     return (
         <SectionWrapper ref={videoRef}>
             <VideoWrapper>
-                <VideoArea videoSource={videoSource} isPlaying={playing} />
+                <VideoArea videoSource={videoSource} alt={alt} isPlaying={playing} />
             </VideoWrapper>
             {children}
         </SectionWrapper>

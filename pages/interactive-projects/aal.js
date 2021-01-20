@@ -303,6 +303,7 @@ const AmbientAssistedLiving = () => {
             <Section ref={el => sectionRefs.current.push(el)}>
                 <VideoWrapper ref={video}>
                     <ReactPlayer
+                        alt='point cloud human body with impaired parts'
                         url='/aal/titleVideo_lowRes.mp4'
                         playing
                         width="132%"
@@ -317,7 +318,7 @@ const AmbientAssistedLiving = () => {
             <TlArea ref={el => text.current.push(el)}>
                 <TlContent>
                     <IconWrapper>
-                        <Image src='/aal/Home.svg' width='136' height='146'/>
+                        <Image alt='home icon' src='/aal/Home.svg' width='136' height='146'/>
                     </IconWrapper>
                     <H1>Ambient Assisted Living</H1>
                 </TlContent>
@@ -326,7 +327,7 @@ const AmbientAssistedLiving = () => {
 
             <GArea ref={el => text.current.push(el)}>
                 <GIconWrapper>
-                    <Image src='/aal/gestureIcon.svg' width='52' height='73'/>
+                    <Image alt='gesture icon' src='/aal/gestureIcon.svg' width='52' height='73'/>
                 </GIconWrapper>
                 <BasicEl style={gStyle}/>
                 <TlText title={AALData[0].title} plainText={AALData[0].plainText}/>
@@ -334,7 +335,7 @@ const AmbientAssistedLiving = () => {
 
             <VArea ref={el => text.current.push(el)}>
                 <VIconWrapper>
-                    <Image src='/aal/virusIcon.svg' width='70' height='70'/>
+                    <Image alt='virus icon' src='/aal/virusIcon.svg' width='70' height='70'/>
                 </VIconWrapper>
                 <BasicEl style={gStyle}/>
                 <TlText title={AALData[1].title} plainText={AALData[1].plainText}/>
@@ -342,7 +343,7 @@ const AmbientAssistedLiving = () => {
 
             <PArea ref={el => text.current.push(el)}>
                 <PIconWrapper>
-                    <Image src='/aal/personalIcon.svg' width='68' height='52'/>
+                    <Image alt='personal icon' src='/aal/personalIcon.svg' width='68' height='52'/>
                 </PIconWrapper>
                 <BasicEl style={gStyle}/>
                 <TlText title={AALData[2].title} plainText={AALData[2].plainText}/>
@@ -367,7 +368,7 @@ const AmbientAssistedLiving = () => {
                         text about AAL.some describing text about AAL..</ThirdSmallText>
                 </ThirdPageText>
                 <AALImageWrapper ref={introImg}>
-                    <Image src='/aal/aalIntro.jpg' width='502' height='354'/>
+                    <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502' height='354'/>
                 </AALImageWrapper>
             </ThirdPage>
 
@@ -381,10 +382,10 @@ const AmbientAssistedLiving = () => {
             </FourthPageText>
             <FourthImgWrapper>
                 <WatchImg ref={el => hardwareImgs.current.push(el)}>
-                    <Image src='/aal/hardwareTemp.png' width='370' height='370'/>
+                    <Image alt='tracking patch' src='/aal/hardwareTemp.png' width='370' height='370'/>
                 </WatchImg>
                 <PatchImg ref={el => hardwareImgs.current.push(el)}>
-                    <Image src='/aal/hardwareTemp.png' width='370' height='370'/>
+                    <Image alt='wearable smart device' src='/aal/hardwareTemp.png' width='370' height='370'/>
                 </PatchImg>
             </FourthImgWrapper>
 
@@ -399,7 +400,7 @@ const AmbientAssistedLiving = () => {
                 </div>
             </TimeGraphWrapper>
             <ArrowWrapper ref={el => timeGraphs.current.push(el)}>
-                <Image src='/aal/dataComparisonArrow.svg' width='2' height='60'/>
+                <Image alt='arrow icon' src='/aal/dataComparisonArrow.svg' width='2' height='60'/>
             </ArrowWrapper>
             <FifthPageText>
                 <FifthBigText ref={el => comparisonsTexts.current.push(el)}>Data comparison</FifthBigText>

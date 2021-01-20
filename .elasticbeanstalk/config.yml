@@ -1,6 +1,6 @@
 branch-defaults:
   main:
-    environment: boweisdesign-dev
+    environment: null
     group_suffix: null
 environment-defaults:
   boweisdesign-dev:

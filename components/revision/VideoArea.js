@@ -1,12 +1,13 @@
 import ReactPlayer from "react-player";
 import styled from 'styled-components';
 
-const VideoArea = ({videoSource, isPlaying, showControl = false}) => {
+const VideoArea = ({videoSource, alt, isPlaying, showControl = false}) => {
 
     return (
         <>
             {/*<PlayerWrapper>*/}
             <ReactPlayer
+                alt={alt}
                 controls={showControl}
                 url={videoSource}
                 playing={isPlaying}

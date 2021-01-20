@@ -6,10 +6,10 @@ const SuperHuman = () => {
     return (
         <Layout>
             <Section>
-                <Image src='/superHuman/titlePhoto.png' layout='fill' objectFit='cover' quality='100' />
+                <Image alt='prothesis with voronoi fracture' src='/superHuman/titlePhoto.png' layout='fill' objectFit='cover' quality='100' />
             </Section>
             <Section>
-                <Image src='/superHuman/comp2880.png' layout='fill' objectFit='cover' />
+                <Image alt='prothesis mounted on the body' src='/superHuman/comp2880.png' layout='fill' objectFit='cover' />
             </Section>
             <Section>
 

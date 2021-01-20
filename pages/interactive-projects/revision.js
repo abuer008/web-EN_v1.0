@@ -28,11 +28,13 @@ const Revision = () => {
 
     const titleSection = {
         isActive: true,
+        alt: 'a girl wearing revision product and stare on the side',
         source: '/revision/revisionTitlePhoto.webp'
     }
     const imageSection = {
         isActive: true,
         imageStyle: {},
+        alt: 'face with oil painting',
         source: '/revision/ArtificialSynaesthesia.jpg',
         width: 450,
         height: 950,
@@ -148,7 +150,7 @@ const Revision = () => {
             </div>
 
             <div ref={el => sections.current.push(el)}>
-                <VideoSection videoSource='/revision/revisionIntro.mp4'>
+                <VideoSection videoSource='/revision/revisionIntro.mp4' alt='revision project introduction'>
                     <TextArea>
                         <SubText
                             ref={el => subTextRef.current.push(el)}>The <ToneText>RE:VISION</ToneText> Concept</SubText>
@@ -164,7 +166,7 @@ const Revision = () => {
             </div>
 
             <div ref={el => sections.current.push(el)}>
-                <VideoSection videoSource='/revision/revisionInfrared.mp4'>
+                <VideoSection videoSource='/revision/revisionInfrared.mp4' alt='machine cognition and machine vision'>
                     <TextArea>
                         <SubText
                             ref={el => subTextRef.current.push(el)}>{revisionProduct.machineCognition.heading}</SubText>
@@ -176,7 +178,7 @@ const Revision = () => {
             </div>
 
             <div ref={el => sections.current.push(el)}>
-                <VideoSection videoSource='/revision/revisionTactile.mp4'>
+                <VideoSection videoSource='/revision/revisionTactile.mp4' alt='haptic feedback'>
                     <TextArea>
                         <SubText
                             ref={el => subTextRef.current.push(el)}>{revisionProduct.hapticStimuli.heading}</SubText>
@@ -190,10 +192,10 @@ const Revision = () => {
             <ProductIntro ref={el => sections.current.push(el)}>
                 <TranslationWrapper>
                     <VideoWrapper>
-                        <VideoArea videoSource='/revision/translation/fundamental.mp4' isPlaying={isTransitionPlay}/>
+                        <VideoArea videoSource='/revision/translation/fundamental.mp4' alt='fundamental perceptual translation' isPlaying={isTransitionPlay}/>
                     </VideoWrapper>
                     <VideoWrapper style={{height: '34.2vh'}}>
-                        <VideoArea videoSource='/revision/translation/form.mp4' isPlaying={isTransitionPlay}/>
+                        <VideoArea videoSource='/revision/translation/form.mp4' alt='shape translated with haptic language' isPlaying={isTransitionPlay}/>
                     </VideoWrapper>
                 </TranslationWrapper>
                 <TextArea>
@@ -206,7 +208,7 @@ const Revision = () => {
             <PrototypeSection ref={el => sections.current.push(el)}>
                 <PrototypeVideo>
                     <VideoArea
-                        videoSource='/revision/prototype/firstPrototype.mp4' isPlaying={false} showControl={true}/>
+                        videoSource='/revision/prototype/firstPrototype.mp4' alt='the first prototype of vision translation' isPlaying={false} showControl={true}/>
                 </PrototypeVideo>
                 <TextArea ref={prototypeText} style={{zIndex: '2'}}>
                     <SubText>{revisionProduct.prototype.heading}</SubText>
@@ -225,17 +227,17 @@ const Revision = () => {
             <PrototypeSection ref={el => sections.current.push(el)}>
                 <PrototypeImgWrapper>
                     <PrototypeImg ref={el => subTextRef.current.push(el)}>
-                        <Image src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
+                        <Image alt='kinect camera and arduino board mounted on plastic helmut for functional prototype' src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
                     </PrototypeImg>
                     <PrototypeImg ref={el => plainTextRef.current.push(el)}>
-                        <Image src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
+                        <Image alt='several magnet hubs for simulation of electric stimuli on the skin' src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
                     </PrototypeImg>
                 </PrototypeImgWrapper>
             </PrototypeSection>
 
             <Description ref={el => sections.current.push(el)}>
                 <div ref={el => subTextRef.current.push(el)}>
-                    <Image src='/revision/cover0020.png' layout='fill' objectFit='cover'/>
+                    <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.png' layout='fill' objectFit='cover'/>
                 </div>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>

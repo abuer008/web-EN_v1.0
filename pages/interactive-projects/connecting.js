@@ -189,7 +189,7 @@ const Connecting = () => {
 
             <Section ref={el => sections.current.push(el)}>
                 <TitleImg ref={titleImg}>
-                    <Image src='/connecting/titlePhoto.png' layout='fill' objectFit='cover' />
+                    <Image alt='a hand wearing apple watch with connecting application active' src='/connecting/titlePhoto.png' layout='fill' objectFit='cover' />
                 </TitleImg>
                 <TitleWrapper>
                     <H6 ref={el => titleTexts.current.push(el)}>Virtual Kinship</H6>
@@ -222,7 +222,7 @@ const Connecting = () => {
                         />
                     </IntroImg>
                     <WatchWrapper ref={el => watchImg.current.push(el)}>
-                        <Image src='/connecting/appleWatchFrame.png' width='230' height='400' />
+                        <Image alt='apple watch' src='/connecting/appleWatchFrame.png' width='230' height='400' />
                     </WatchWrapper>
                 </WatchArea>
             </Section>
@@ -260,7 +260,7 @@ const Connecting = () => {
                     <P3 ref={el => commTexts.current.push(el)}>{connectingData.communication.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={touchImg}>
-                    <Image src='/connecting/touchSketch.png' width='470' height='353' />
+                    <Image alt='sketch of touching watch' src='/connecting/touchSketch.png' width='470' height='353' />
                 </ImgWrapper>
             </Section>
 
@@ -270,7 +270,7 @@ const Connecting = () => {
                     <P3 ref={el => catalogTexts.current.push(el)}>{connectingData.cataloging.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={catalogImg}>
-                    <Image src='/connecting/catalogSketch.png' width='600' height='448' />
+                    <Image alt='sketch of operating watch' src='/connecting/catalogSketch.png' width='600' height='448' />
                 </ImgWrapper>
             </Section>
 
@@ -280,13 +280,13 @@ const Connecting = () => {
                     <P3 ref={el => compatiTexts.current.push(el)}>{connectingData.compatibility.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={compatiImg} style={{top: '20vh'}}>
-                    <Image src='/connecting/familyList.png' width='308' height='666' />
+                    <Image alt='smartphone version of connecting application' src='/connecting/familyList.png' width='308' height='666' />
                 </ImgWrapper>
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
                 <PrototypeWrapper ref={prototypeImg}>
-                    <Image src='/connecting/watchPrototype.png' layout='intrinsic' width='1180' height='687' />
+                    <Image alt='connecting prototype' src='/connecting/watchPrototype.png' layout='intrinsic' width='1180' height='687' />
                 </PrototypeWrapper>
                 <ProcessTextWrapper>
                     <H7 ref={el => prototypeTexts.current.push(el)}>process I. basic design</H7>

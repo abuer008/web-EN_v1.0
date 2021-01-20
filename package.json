@@ -11,7 +11,9 @@
     "interface",
     "HCI",
     "human-computer-interaction",
-    "design"
+    "design",
+    "portfolio",
+    "muthesius"
   ],
   "author": "bowei xiao",
   "license": "ISC",
@@ -27,9 +29,9 @@
     "react-player": "^2.7.0",
     "react-three-fiber": "^5.3.10",
     "styled-components": "^5.2.1",
-    "three": "^0.124.0"
+    "three": "^0.124.0",
+    "babel-plugin-styled-components": "^1.12.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
   }
 }

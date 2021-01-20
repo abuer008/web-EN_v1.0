@@ -26,7 +26,7 @@ const DataVisualisation = () => {
                 <Reveal repeat trigger={<SectionTrigger />}>
                     {/*<Fading>*/}
                         <BackgroundWrapper>
-                            <Image src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover'/>
+                            <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover'/>
                         </BackgroundWrapper>
                     <TextFading>
                     <Title>
@@ -39,7 +39,7 @@ const DataVisualisation = () => {
                         <YearText>2016-2019</YearText>
                         <Button>
                             <ButtonIcon>
-                                <Image src='/data-visualisation/buttonIcon.svg' width='42' height='42'/>
+                                <Image alt='demo icon' src='/data-visualisation/buttonIcon.svg' width='42' height='42'/>
                             </ButtonIcon>
                             <ButtonText>Enter Interactive DEMO</ButtonText>
                         </Button>
@@ -50,7 +50,7 @@ const DataVisualisation = () => {
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
                     <ImageWrapper style={{left: '7vw'}}>
-                        <Image src='/data-visualisation/refugeesFamily.webp' width='642' height='638'/>
+                        <Image alt='syrian refugees walking on the street' src='/data-visualisation/refugeesFamily.webp' width='642' height='638'/>
                     </ImageWrapper>
                 </Fading>
                 <TextFading>

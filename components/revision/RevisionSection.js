@@ -47,9 +47,9 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
         <SectionWrapper ref={sectionRef}>
             {titleSection.isActive ?
                 <React.Fragment>
-                        <Image src={titleSection.source} layout='fill' objectFit='cover' className='titleImage'/>
+                        <Image alt={titleSection.alt} src={titleSection.source} layout='fill' objectFit='cover' className='titleImage'/>
                     <Title  ref={titleRef}>
-                        <Image src='/revision/revision_stylingTitle.svg' width={285} height={69} />
+                        <Image alt='revision title icon' src='/revision/revision_stylingTitle.svg' width={285} height={69} />
                         <Text>Perceptual abilities expanding</Text>
                     </Title>
                 </React.Fragment>
@@ -57,7 +57,7 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
                 <React.Fragment>
                     {imageSection.isActive &&
                         <ImageWrapper imageStyle={imageSection.imageStyle} ref={bgRef}>
-                            <Image src={imageSection.source} width={imageSection.width} height={imageSection.height} objectFit={imageSection.objectFit} />
+                            <Image alt={imageSection.alt} src={imageSection.source} width={imageSection.width} height={imageSection.height} objectFit={imageSection.objectFit} />
                         </ImageWrapper>
                     }
                     {children}
