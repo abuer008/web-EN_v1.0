@@ -1,8 +1,10 @@
 import Layout from '../components/Layout'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import {aboutData} from "../data/About";
+import {IconComponent} from "../components/IconComponent";
 
 const About = () => {
     return (
@@ -19,6 +21,13 @@ const About = () => {
                 </ConceptWrapper>
                 <DesignWrapper>
                     <Title>{aboutData.design.heading}</Title>
+                    <Link href='#'>
+                        <IconComponent
+                            pdfType={false}
+                            background='white'
+                            plainText='Source code'
+                        />
+                    </Link>
                 </DesignWrapper>
                 <TechWrapper>
                     <Title>{aboutData.techniques.heading}</Title>
@@ -38,23 +47,23 @@ const Background = styled.div`
 const ContentWrapper = styled.div`
   font-family: Roboto, sans-serif;
   font-style: normal;
-  
+
   position: absolute;
   width: 80%;
   max-width: 920px;
   top: 14%;
   left: 50%;
-  
+
   transform: translate(-50%, 0%)
 `
 
 const FrontTitle = styled.h6`
-    font-weight: 900;
+  font-weight: 900;
   font-size: 1.2em;
 `
 
 const FrontText = styled(FrontTitle)`
-    font-weight: 300;
+  font-weight: 300;
   font-size: 3em;
   text-transform: uppercase;
   width: 70%;

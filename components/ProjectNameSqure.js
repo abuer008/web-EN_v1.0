@@ -58,6 +58,7 @@ const Wrapper = styled.div`
   //right: 10%;
   height: 150px;
   width: 150px;
+  
   //padding: 0 1.5em;
 `
 

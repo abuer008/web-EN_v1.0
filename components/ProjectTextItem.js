@@ -182,13 +182,12 @@ const MainText = styled.p`
   //position: relative;
   //top: 1em;
   width: 100%;
-  margin: 0;
+  margin: 1em auto;
 
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
-  //line-height: 35px;
 
   .fadeOut {
     opacity: 0;

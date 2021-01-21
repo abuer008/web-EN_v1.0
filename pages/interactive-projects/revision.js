@@ -11,6 +11,7 @@ import RevisionSection from "../../components/revision/RevisionSection";
 import VideoSection from "../../components/revision/VideoSection";
 import VideoArea from "../../components/revision/VideoArea";
 import {revisionProduct} from "../../data/RevisionData";
+import {RedirectButton} from "../../components/RedirectButton";
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -18,13 +19,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const Revision = () => {
 
     const [isTransitionPlay, setPlay] = useState(false)
+    const [visible, setVisible] = useState(false)
 
     const sections = useRef([])
     const subTextRef = useRef([])
     const plainTextRef = useRef([])
 
     const prototypeText = useRef(null)
-    const prototypes = useRef([])
+
+    const redirect = useRef([])
 
     const titleSection = {
         isActive: true,
@@ -97,6 +100,20 @@ const Revision = () => {
         })
     }
 
+    const handleRedirect = el => {
+        gsap.from(el, {
+            opacity: 0,
+            duration: 0.3,
+            delay: 0.5,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: sections.current[8],
+                start: 'top +=20%',
+                toggleActions: 'play none none reverse'
+            }
+        })
+    }
+
     useEffect(() => {
         handleSnap(sections.current)
 
@@ -111,6 +128,7 @@ const Revision = () => {
 
         handlePrototypes()
         handleTransitionPlay()
+        handleRedirect(redirect.current)
 
     }, [])
 
@@ -192,10 +210,12 @@ const Revision = () => {
             <ProductIntro ref={el => sections.current.push(el)}>
                 <TranslationWrapper>
                     <VideoWrapper>
-                        <VideoArea videoSource='/revision/translation/fundamental.mp4' alt='fundamental perceptual translation' isPlaying={isTransitionPlay}/>
+                        <VideoArea videoSource='/revision/translation/fundamental.mp4'
+                                   alt='fundamental perceptual translation' isPlaying={isTransitionPlay}/>
                     </VideoWrapper>
                     <VideoWrapper style={{height: '34.2vh'}}>
-                        <VideoArea videoSource='/revision/translation/form.mp4' alt='shape translated with haptic language' isPlaying={isTransitionPlay}/>
+                        <VideoArea videoSource='/revision/translation/form.mp4'
+                                   alt='shape translated with haptic language' isPlaying={isTransitionPlay}/>
                     </VideoWrapper>
                 </TranslationWrapper>
                 <TextArea>
@@ -208,7 +228,8 @@ const Revision = () => {
             <PrototypeSection ref={el => sections.current.push(el)}>
                 <PrototypeVideo>
                     <VideoArea
-                        videoSource='/revision/prototype/firstPrototype.mp4' alt='the first prototype of vision translation' isPlaying={false} showControl={true}/>
+                        videoSource='/revision/prototype/firstPrototype.mp4'
+                        alt='the first prototype of vision translation' isPlaying={false} showControl={true}/>
                 </PrototypeVideo>
                 <TextArea ref={prototypeText} style={{zIndex: '2'}}>
                     <SubText>{revisionProduct.prototype.heading}</SubText>
@@ -227,17 +248,20 @@ const Revision = () => {
             <PrototypeSection ref={el => sections.current.push(el)}>
                 <PrototypeImgWrapper>
                     <PrototypeImg ref={el => subTextRef.current.push(el)}>
-                        <Image alt='kinect camera and arduino board mounted on plastic helmut for functional prototype' src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
+                        <Image alt='kinect camera and arduino board mounted on plastic helmut for functional prototype'
+                               src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
                     </PrototypeImg>
                     <PrototypeImg ref={el => plainTextRef.current.push(el)}>
-                        <Image alt='several magnet hubs for simulation of electric stimuli on the skin' src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
+                        <Image alt='several magnet hubs for simulation of electric stimuli on the skin'
+                               src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
                     </PrototypeImg>
                 </PrototypeImgWrapper>
             </PrototypeSection>
 
             <Description ref={el => sections.current.push(el)}>
                 <div ref={el => subTextRef.current.push(el)}>
-                    <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.png' layout='fill' objectFit='cover'/>
+                    <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.png'
+                           layout='fill' objectFit='cover'/>
                 </div>
                 <TextArea>
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>
@@ -245,9 +269,64 @@ const Revision = () => {
                         ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText}</ExplainText>
                 </TextArea>
             </Description>
+
+            <RedirectWrapper ref={el => redirect.current.push(el)}>
+                <RedirectButton textColor='white' nextProject='VISUAL DATA' />
+            </RedirectWrapper>
+
+            <Refresh ref={el => redirect.current.push(el)} onClick={() => window.location.reload(false)} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
+                {visible && <Renew>To the start</Renew>}
+                {!visible && <Image src='/about/arrowUp.svg' width='55' height='31'/>}
+            </Refresh>
         </Layout>
     )
 }
+
+const RedirectWrapper = styled.div`
+    position: fixed;
+  bottom: 5vh;
+  z-index: 1;
+  right: -5vw;
+`
+
+const Refresh = styled.div`
+  position: fixed;
+  bottom: 5vh;
+  right: 33vw;
+  z-index: 1;
+  margin-top: 10px;
+  
+  display: flex;
+  flex-direction: row;
+  
+  width: 5vh;
+  height: 5vh;
+  background-color: rgba(1, 1, 1, 0.4);
+
+  padding: 15px 20px;
+  padding-top: 20px;
+  border-radius: 25px;
+  transition: 0.3s;
+  
+  :hover {
+    transform: scale(1.05);
+    width: 7vh;
+    cursor: pointer;
+  }
+`
+
+const Renew = styled.h4`
+    font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2em;
+  
+  color: white;
+  position: relative;
+  width: 7vh;
+  bottom: 2.2vh;
+  text-align: center;
+`
 
 const TitleSection = styled.div`
   //position: relative;
@@ -382,7 +461,7 @@ const TranslationWrapper = styled.div`
 
 const VideoWrapper = styled.div`
   height: 35vh;
-  
+
 `
 
 

@@ -184,7 +184,7 @@ const ProjectsSqures = styled.div`
 
 const WebsitePlain = styled.p`
   position: absolute;
-  bottom: 0.5vh;
+  bottom: 2vh;
   right: 25vw;
   width: 20vw;
 
