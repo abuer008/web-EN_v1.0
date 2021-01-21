@@ -2,6 +2,7 @@ node_modules
 .next/*
 .DS_Store
 .idea/
+.npmrc
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
