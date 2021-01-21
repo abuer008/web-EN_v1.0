@@ -104,7 +104,7 @@ const TextArea = styled.div`
   }
 
   @media all and (max-height: 900px) {
-    top: 32%;
+    top: 35%;
     height: 50%;
   }
 

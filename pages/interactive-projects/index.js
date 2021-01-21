@@ -83,8 +83,10 @@ function InteractiveProjects() {
                                                explain={interactionPageInfo.explain}
                                                displayClass={titleVisible ? "fadeOut" : "fadeIn"}
             />}
-            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio please
+            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio
+                please
                 visit <Link href='/about'><a>about</a></Link>.</WebsitePlain>
+
         </Layout>
     )
 }
@@ -161,6 +163,7 @@ const ProjectsSqures = styled.div`
   position: relative;
   top: 72vh;
   left: 43.2%;
+  transition: 0.3s;
 
   transform: translate(-50%, 0);
 
@@ -173,11 +176,16 @@ const ProjectsSqures = styled.div`
     //align-items: center;
     justify-content: center;
     max-width: 100%;
+    left: 47.7%;
     top: 55vh;
   }
 
   @media all and (max-width: 850px) {
     display: none;
+  }
+  
+  @media all and (max-aspect-ratio: 16/10) {
+    top: 65vh;
   }
 
 `

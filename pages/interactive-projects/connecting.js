@@ -302,8 +302,8 @@ const Connecting = () => {
                     <P3 ref={el => techniquesTexts.current.push(el)}>some texts about techniques choosing.</P3>
                 </TechTextWrapper>
                 <YBGImg ref={techniquesImg}>
-                    <Image alt='idle character with yellow background' src='/connecting/techYBGImg.svg' width='269'
-                           height='321' layout='intrinsic'/>
+                    <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'
+                           height='321' layout='intrinsic' quality='100'/>
                 </YBGImg>
             </Section>
 
@@ -458,6 +458,10 @@ const IntroTextWrapper = styled.div`
   width: 35vw;
   top: 40vh;
   right: 59%;
+  
+  @media all and (max-aspect-ratio: 16/10) {
+    right: 60%;
+  }
 `
 
 const IntroImg = styled.div`
@@ -471,8 +475,8 @@ const IntroImg = styled.div`
 
 const H3 = styled(H2)`
     line-height: 1em;
-  @media all and (max-width: 1370px) {
-    font-size: 4em;
+  @media all and (max-aspect-ratio: 16/10) {
+    font-size: 4vw;
   }
 `
 const P3 = styled(P)`

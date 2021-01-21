@@ -18,6 +18,7 @@ gsap.registerPlugin(ScrollTrigger)
 const AmbientAssistedLiving = () => {
 
     const [isLock, setLock] = useState(false)
+    const [visible, setVisible] = useState(false)
 
     const sectionRefs = useRef([])
     const video = useRef(null)
@@ -268,6 +269,11 @@ const AmbientAssistedLiving = () => {
             })
     }
 
+    const disableTouchEvent = e => {
+        e.preventDefault()
+        setVisible(true)
+    }
+
     useEffect(() => {
         gsap.defaults({ease: 'power1.inOut', duration: 1})
         if (video.current) {
@@ -279,6 +285,10 @@ const AmbientAssistedLiving = () => {
             sixthPageAnima(outputTexts.current, [timeGraphs.current, outputImgs.current], video.current, popUp.current)
             seventhPageAnima([video.current, timeGraphs.current, outputImgs.current, popUp.current], prototype.current, 6)
             seventhPageAnima(prototype.current, conclusion.current, 7)
+        }
+        document.body.addEventListener('touchmove', disableTouchEvent, {passive: false})
+        return () => {
+            document.body.removeEventListener('touchmove', disableTouchEvent)
         }
     }, [])
 
@@ -325,29 +335,32 @@ const AmbientAssistedLiving = () => {
                 <BasicEl style={tlStyle}/>
             </TlArea>
 
-            <GArea ref={el => text.current.push(el)}>
-                <GIconWrapper>
-                    <Image alt='gesture icon' src='/aal/gestureIcon.svg' width='52' height='73'/>
-                </GIconWrapper>
-                <BasicEl style={gStyle}/>
-                <TlText title={AALData[0].title} plainText={AALData[0].plainText}/>
-            </GArea>
+            {visible ? <Warning>Sorry, the demonstration is not for touchscreen optimized. Please visit on a desktop computer.</Warning> : <>
+                <GArea ref={el => text.current.push(el)}>
+                    <GIconWrapper>
+                        <Image alt='gesture icon' src='/aal/gestureIcon.svg' width='52' height='73'/>
+                    </GIconWrapper>
+                    <BasicEl style={gStyle}/>
+                    <TlText title={AALData[0].title} plainText={AALData[0].plainText}/>
+                </GArea>
 
-            <VArea ref={el => text.current.push(el)}>
-                <VIconWrapper>
-                    <Image alt='virus icon' src='/aal/virusIcon.svg' width='70' height='70'/>
-                </VIconWrapper>
-                <BasicEl style={gStyle}/>
-                <TlText title={AALData[1].title} plainText={AALData[1].plainText}/>
-            </VArea>
+                <VArea ref={el => text.current.push(el)}>
+                    <VIconWrapper>
+                        <Image alt='virus icon' src='/aal/virusIcon.svg' width='70' height='70'/>
+                    </VIconWrapper>
+                    <BasicEl style={gStyle}/>
+                    <TlText title={AALData[1].title} plainText={AALData[1].plainText}/>
+                </VArea>
 
-            <PArea ref={el => text.current.push(el)}>
-                <PIconWrapper>
-                    <Image alt='personal icon' src='/aal/personalIcon.svg' width='68' height='52'/>
-                </PIconWrapper>
-                <BasicEl style={gStyle}/>
-                <TlText title={AALData[2].title} plainText={AALData[2].plainText}/>
-            </PArea>
+                <PArea ref={el => text.current.push(el)}>
+                    <PIconWrapper>
+                        <Image alt='personal icon' src='/aal/personalIcon.svg' width='68' height='52'/>
+                    </PIconWrapper>
+                    <BasicEl style={gStyle}/>
+                    <TlText title={AALData[2].title} plainText={AALData[2].plainText}/>
+                </PArea>
+            </>
+            }
 
             {/*--- crisis of care services ---*/}
 
@@ -368,7 +381,8 @@ const AmbientAssistedLiving = () => {
                         text about AAL.some describing text about AAL..</ThirdSmallText>
                 </ThirdPageText>
                 <AALImageWrapper ref={introImg}>
-                    <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502' height='354'/>
+                    <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502'
+                           height='354'/>
                 </AALImageWrapper>
             </ThirdPage>
 
@@ -513,6 +527,22 @@ const Section = styled.div`
 
 `
 
+const Warning = styled.h3`
+  position: absolute;
+  right: 11vw;
+  width: 420px;
+  margin: 0;
+  padding: 1em;
+  background-color: #888;
+  color: white;
+  border-radius: 30px;
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.4rem;
+`
+
 // --- TitlePage ---
 
 const VideoWrapper = styled.div`
@@ -597,7 +627,7 @@ const BigText = styled.h2`
   width: 50vw;
   font-family: Roboto, sans-serif;
   font-weight: 900;
-  font-size: 4vw;
+  font-size: 3.5vw;
   margin: 0;
 `
 
