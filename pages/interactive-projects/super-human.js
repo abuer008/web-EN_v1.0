@@ -23,6 +23,7 @@ const Section = styled.div`
   width: 100vw;
   height: 100vh;
   margin: -8px;
+  padding-right: 17px;
 `
 
 export default SuperHuman

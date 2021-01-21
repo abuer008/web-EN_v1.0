@@ -22,7 +22,6 @@ export const dataVisualisation = [
             "side_a_new_id: 118\n" +
             "side_a: \"Government of Syria\"\n" +
             "side_b_new_id: 4456\n" +
-            "gwnob: \"\"\n" +
             "side_b: \"Syrian insurgents\"\n" +
             "number_of_sources: 1\n" +
             "source_article: \"\"SOHR,2016-12-31,About 60 thousand were killed in 2016 and we still wa...\"\n" +
@@ -37,18 +36,6 @@ export const dataVisualisation = [
             "latitude: 35\n" +
             "longitude: 38\n" +
             "geom_wkt: \"POINT (38 35)\"\n" +
-            "priogrid_gid: 180437\n" +
-            "country: \"Syria\"\n" +
-            "country_id: 652\n" +
-            "region: \"Middle East\"\n" +
-            "event_clarity: 2\n" +
-            "date_prec: 5\n" +
-            "date_start: \"2016-01-01\"\n" +
-            "date_end: \"2016-12-31\"\n" +
-            "deaths_a: 5325\n" +
-            "deaths_b: 2854\n" +
-            "deaths_civilians: 0\n" +
-            "deaths_unknown: 0\n" +
             "low: 8179\n" +
             "best: 8179\n" +
             "high: 8179",

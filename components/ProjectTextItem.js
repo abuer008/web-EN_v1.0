@@ -186,8 +186,8 @@ const MainText = styled.p`
 
   font-family: Roboto, sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
+  font-weight: 300;
+  font-size: 2.2em;
 
   .fadeOut {
     opacity: 0;

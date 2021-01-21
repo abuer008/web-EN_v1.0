@@ -10,12 +10,7 @@ export const projectsArray = [{
     destination: "/revision",
     title: "I. Re:Vision",
     subTitle: "The Introduction of Interaction",
-    explain: "Lorem ipsum dolor sit amet, " +
-        "consectetur adipiscing elit. " +
-        "Potenti orci sit fusce neque, " +
-        "id egestas quis quisque nisl. " +
-        "Volutpat pellentesque sed fermentum mi scelerisque orci. " +
-        "Mi sem vitae nibh eget quis pellentesque in mauris.",
+    explain: "Interactive design is an language, that translating information from one into another. The re:vision project introduced the essentiality of interactive design. Let’s see how optical signals are translated into the haptic language.",
     animaData: RevisionAnima,
     movePointer: "5%"
 }, {
@@ -24,7 +19,7 @@ export const projectsArray = [{
     destination: "/data-visualisation",
     title: "II. The Syrian Civil War",
     subTitle: "Interaction based on amounts of data",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
+    explain: "Data, the foundation of interface design. Representation of data, decoration and making data more understandable to human, are the essential tasks of interface design.",
     animaData: VisualDataAnima,
     movePointer: "11%"
 }, {
@@ -33,7 +28,7 @@ export const projectsArray = [{
     destination: "/super-human",
     title: "III. Super Human",
     subTitle: "Speculative Design, The discuss of future Human Computer Interaction.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
+    explain: "What would be the future HCI looks like? In my opinion, the symbiosis between human being and machines have become realistic.",
     animaData: SuperHumanAnima,
     movePointer: "26%"
 }, {
@@ -42,7 +37,7 @@ export const projectsArray = [{
     destination: "/aal",
     title: "IV. Ambient Assisted Living",
     subTitle: "Part I. The implementation of future HCI.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
+    explain: "The embedded machine can be affected our lives deeply, and improving the authentic impairment in society - the lack of elderly care services.",
     animaData: AALAnima,
     movePointer: "42%"
 }, {
@@ -51,14 +46,14 @@ export const projectsArray = [{
     destination: "/connecting",
     title: "V. Connecting",
     subTitle: "Part II. Rethinking of future connectivity of individuals.",
-    explain: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Potenti orci sit fusce neque, id egestas quis quisque nisl.",
+    explain: "Further considerations of the influence of contemporary digitalisation, it is not only challenging how we live, but also the relationship between individuals, how we interact with others - virtual kinship, the novel form of households.",
     animaData: ConnectingAnima,
     movePointer: "55%"
 }]
 
 export const interactionPageInfo = {
     title: "The Attitude towards Interactive Design.",
-    subTitle: "Illustrated with five separate projects.",
+    subTitle: "Demonstrated with five separate projects.",
     explain: ""
 }
 

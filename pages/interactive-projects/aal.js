@@ -395,11 +395,8 @@ const AmbientAssistedLiving = () => {
                     hardware.</FourthSmallText>
             </FourthPageText>
             <FourthImgWrapper>
-                <WatchImg ref={el => hardwareImgs.current.push(el)}>
-                    <Image alt='tracking patch' src='/aal/hardwareTemp.png' width='370' height='370'/>
-                </WatchImg>
                 <PatchImg ref={el => hardwareImgs.current.push(el)}>
-                    <Image alt='wearable smart device' src='/aal/hardwareTemp.png' width='370' height='370'/>
+                    <Image alt='tracking patch' src='/aal/hardwarePatch.png' width='720' height='474'/>
                 </PatchImg>
             </FourthImgWrapper>
 
@@ -520,7 +517,7 @@ const Section = styled.div`
   width: 100vw;
   height: 40vh;
   margin: -8px;
-  padding: 0;
+  padding-right: 17px;
   overflow: hidden;
   z-index: 0;
   //border: 1px solid white;
@@ -687,8 +684,9 @@ const AALImageWrapper = styled.div`
 
 const FourthPageText = styled.div`
   position: fixed;
-  top: 40vh;
-  left: 50%;
+  top: 30vh;
+  left: 55%;
+  z-index: 1;
 `
 
 const FourthBigText = styled(BigText)`
@@ -701,8 +699,11 @@ const FourthSmallText = styled(SmallText)`
 
 const FourthImgWrapper = styled.div`
   position: fixed;
-  top: 10vh;
-  left: 10vw;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  
+  transform: translate(-50%, -50%);
 `
 
 const WatchImg = styled.div``

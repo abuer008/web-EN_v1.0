@@ -1,34 +1,38 @@
 import Image from 'next/image'
 import Layout from '../../components/Layout'
 import styled from 'styled-components'
-import { VDText } from "../../components/visualData/VDText";
-import { ShowArea } from '../../components/visualData/ShowArea'
-import { Sphere } from '../../components/visualData/Sphere'
-import { PhotoWall } from "../../components/visualData/PhotoWall";
-import { useRef, useEffect, useState } from 'react'
-import { SectionTrigger } from "../../components/visualData/SectionTrigger";
-import { Fading } from '../../components/visualData/Fading'
-import { TextFading } from '../../components/visualData/TextFading'
-import { TitleChange } from "../../components/visualData/TitleChange";
+import {VDText} from "../../components/visualData/VDText";
+import {ShowArea} from '../../components/visualData/ShowArea'
+import {Sphere} from '../../components/visualData/Sphere'
+import {PhotoWall} from "../../components/visualData/PhotoWall";
+import {useRef, useEffect, useState} from 'react'
+import {SectionTrigger} from "../../components/visualData/SectionTrigger";
+import {Fading} from '../../components/visualData/Fading'
+import {TextFading} from '../../components/visualData/TextFading'
+import {TitleChange} from "../../components/visualData/TitleChange";
 
-import { gsap } from 'gsap'
-import { ScrollTrigger} from "gsap/ScrollTrigger";
-import { Reveal } from 'react-gsap'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {Reveal} from 'react-gsap'
 
-import { dataVisualisation } from "../../data/DataVisualisation"
+import {dataVisualisation} from "../../data/DataVisualisation"
+import {RedirectButton} from "../../components/RedirectButton";
+import {RefreshButton} from "../../components/RefreshButton";
 
 gsap.registerPlugin(ScrollTrigger)
 
 const DataVisualisation = () => {
 
+
     return (
         <Layout>
-                <Reveal repeat trigger={<SectionTrigger />}>
-                    {/*<Fading>*/}
-                        <BackgroundWrapper>
-                            <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover'/>
-                        </BackgroundWrapper>
-                    <TextFading>
+            <Reveal repeat trigger={<SectionTrigger/>}>
+                {/*<Fading>*/}
+                <BackgroundWrapper>
+                    <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.png' layout='fill'
+                           objectFit='cover'/>
+                </BackgroundWrapper>
+                <TextFading>
                     <Title>
                         <SubTitle>
                             Data Visualisation
@@ -44,13 +48,14 @@ const DataVisualisation = () => {
                             <ButtonText>Enter Interactive DEMO</ButtonText>
                         </Button>
                     </Title>
-                    </TextFading>
-                    {/*</Fading>*/}
-                </Reveal>
+                </TextFading>
+                {/*</Fading>*/}
+            </Reveal>
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
                     <ImageWrapper style={{left: '7vw'}}>
-                        <Image alt='syrian refugees walking on the street' src='/data-visualisation/refugeesFamily.webp' width='642' height='638'/>
+                        <Image alt='syrian refugees walking on the street' src='/data-visualisation/refugeesFamily.webp'
+                               width='642' height='638'/>
                     </ImageWrapper>
                 </Fading>
                 <TextFading>
@@ -81,7 +86,7 @@ const DataVisualisation = () => {
                     </ImageWrapper>
                 </Fading>
                 <TextFading>
-                    <TextArea style={{bottom: '45vh'}}>
+                    <TextArea style={{bottom: '70vh'}}>
                         <VDText heading={dataVisualisation[2].heading} plainText={dataVisualisation[2].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -90,7 +95,7 @@ const DataVisualisation = () => {
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
                     <div>
-                    <Sphere/>
+                        <Sphere/>
                     </div>
                 </Fading>
                 <TextFading>
@@ -107,14 +112,41 @@ const DataVisualisation = () => {
                     </div>
                 </Fading>
                 <TextFading>
-                    <TextArea style={{bottom: '35vh'}}>
+                    <TextArea style={{bottom: '28vh'}}>
                         <VDText heading={dataVisualisation[4].heading} plainText={dataVisualisation[4].plainText}/>
                     </TextArea>
                 </TextFading>
+
+                <TextFading>
+                    <RedirectWrapper>
+                        <RedirectButton textColor='black' nextProject='SUPER HUMAN' link='super-human'/>
+                    </RedirectWrapper>
+
+                    <RefreshWrapper>
+                        <RefreshButton/>
+                    </RefreshWrapper>
+                </TextFading>
             </Reveal>
+
         </Layout>
     )
 }
+
+const RedirectWrapper = styled.div`
+  position: fixed;
+  bottom: 5vh;
+  z-index: 1;
+  right: -5vw;
+`
+
+const RefreshWrapper = styled.div`
+  position: fixed;
+  bottom: 5vh;
+  right: 50%;
+  z-index: 1;
+  margin-top: 10px;
+  transform: translate(50%, 0);
+`
 
 // const Section = styled.div`
 //   position: relative;
@@ -126,31 +158,33 @@ const DataVisualisation = () => {
 // `
 
 const BackgroundWrapper = styled.div`
-  
+
 `
 
 const ImageWrapper = styled.div`
-    position: relative;
-    max-width: 50vw;
-    //filter: blur(1px);
-    top: 20%;
-    left: 10%;
-    border-radius: 2em;
+  position: relative;
+  width: 50vw;
+  height: 70vh;
+  //overflow: hidden;
+  //filter: blur(1px);
+  top: 10%;
+  left: 10%;
+  border-radius: 2em;
 `
 const TextArea = styled.div`
   position: relative;
   width: 40vw;
   left: 60vw;
-  bottom: 60vh;
+  bottom: 55vh;
 `
 const Title = styled.div`
   position: absolute;
   top: 30vh;
   left: 55vw;
-  
+
   font-family: Roboto, sans-serif;
   font-style: normal;
-  
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -161,26 +195,26 @@ const SubTitle = styled.h3`
   font-weight: 300;
   font-size: 3em;
   line-height: 1em;
-  
+
   margin: 0;
 `
 
 const MainTitle = styled.h1`
   max-width: 470px;
   height: 162px;
-  
+
   font-weight: 900;
   font-size: 6em;
   line-height: 0.85em;
   text-transform: uppercase;
-  
+
   margin: 0;
 `
 
 const YearText = styled.h4`
   font-weight: 300;
   font-size: 4em;
-  
+
   margin: 0;
 `
 
@@ -190,13 +224,13 @@ const Button = styled.div`
   background: black;
   border-radius: 1.2em;
   margin: 2em 0;
-  
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   transition: 0.5s ease-out;
-  
+
   :hover {
     transform: scale(1.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -217,6 +251,8 @@ const ButtonText = styled.h6`
 
 const CodeWrapper = styled.div`
   position: relative;
+  heigth: 50vh;
+  overflow: hidden;
   //top: 15vh;
   left: 15vw;
   max-width: 30vw;

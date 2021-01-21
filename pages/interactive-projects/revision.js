@@ -11,7 +11,8 @@ import RevisionSection from "../../components/revision/RevisionSection";
 import VideoSection from "../../components/revision/VideoSection";
 import VideoArea from "../../components/revision/VideoArea";
 import {revisionProduct} from "../../data/RevisionData";
-import {RedirectButton} from "../../components/RedirectButton";
+import {RedirectButton, handleRedirect} from "../../components/RedirectButton";
+import {RefreshButton} from "../../components/RefreshButton";
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -100,19 +101,19 @@ const Revision = () => {
         })
     }
 
-    const handleRedirect = el => {
-        gsap.from(el, {
-            opacity: 0,
-            duration: 0.3,
-            delay: 0.5,
-            stagger: 0.3,
-            scrollTrigger: {
-                trigger: sections.current[8],
-                start: 'top +=20%',
-                toggleActions: 'play none none reverse'
-            }
-        })
-    }
+    // const handleRedirect = el => {
+    //     gsap.from(el, {
+    //         opacity: 0,
+    //         duration: 0.3,
+    //         delay: 0.5,
+    //         stagger: 0.3,
+    //         scrollTrigger: {
+    //             trigger: sections.current[8],
+    //             start: 'top +=20%',
+    //             toggleActions: 'play none none reverse'
+    //         }
+    //     })
+    // }
 
     useEffect(() => {
         handleSnap(sections.current)
@@ -128,7 +129,8 @@ const Revision = () => {
 
         handlePrototypes()
         handleTransitionPlay()
-        handleRedirect(redirect.current)
+        handleRedirect(redirect.current, sections.current[8])
+
 
     }, [])
 
@@ -239,12 +241,6 @@ const Revision = () => {
                 </TextArea>
             </PrototypeSection>
 
-            {/*<PrototypeSection ref={el => sections.current.push(el)}>*/}
-            {/*    <PrototypeImgWrapper>*/}
-            {/*        <Image src='/revision/prototype/IMG_0251.jpg' width='1440' height='1920'/>*/}
-            {/*    </PrototypeImgWrapper>*/}
-            {/*</PrototypeSection>*/}
-
             <PrototypeSection ref={el => sections.current.push(el)}>
                 <PrototypeImgWrapper>
                     <PrototypeImg ref={el => subTextRef.current.push(el)}>
@@ -271,19 +267,18 @@ const Revision = () => {
             </Description>
 
             <RedirectWrapper ref={el => redirect.current.push(el)}>
-                <RedirectButton textColor='white' nextProject='VISUAL DATA' />
+                <RedirectButton textColor='white' nextProject='VISUAL DATA' link='data-visualisation'/>
             </RedirectWrapper>
 
-            <Refresh ref={el => redirect.current.push(el)} onClick={() => window.location.reload(false)} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
-                {visible && <Renew>To the start</Renew>}
-                {!visible && <Image src='/about/arrowUp.svg' width='55' height='31'/>}
+            <Refresh ref={el => redirect.current.push(el)}>
+                <RefreshButton/>
             </Refresh>
         </Layout>
     )
 }
 
 const RedirectWrapper = styled.div`
-    position: fixed;
+  position: fixed;
   bottom: 5vh;
   z-index: 1;
   right: -5vw;
@@ -292,40 +287,13 @@ const RedirectWrapper = styled.div`
 const Refresh = styled.div`
   position: fixed;
   bottom: 5vh;
-  right: 33vw;
+  right: 50%;
   z-index: 1;
   margin-top: 10px;
-  
-  display: flex;
-  flex-direction: row;
-  
-  width: 5vh;
-  height: 5vh;
-  background-color: rgba(1, 1, 1, 0.4);
-
-  padding: 15px 20px;
-  padding-top: 20px;
-  border-radius: 25px;
-  transition: 0.3s;
-  
-  :hover {
-    transform: scale(1.05);
-    width: 7vh;
-    cursor: pointer;
-  }
+  transform: translate(50%, 0%);
 `
 
 const Renew = styled.h4`
-    font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2em;
-  
-  color: white;
-  position: relative;
-  width: 7vh;
-  bottom: 2.2vh;
-  text-align: center;
 `
 
 const TitleSection = styled.div`
@@ -372,14 +340,14 @@ const PrototypeImg = styled.div`
 const PrototypeVideo = styled.div`
   position: absolute;
   top: 25vh;
-  left: 10vw;
+  left: 5vw;
   height: 35vh;
 `
 
 const PrototypeImgWrapper = styled.div`
   position: absolute;
   top: 15vh;
-  left: 10vw;
+  left: 7vw;
   width: 40vw;
   height: 77vh;
 
@@ -450,7 +418,7 @@ const ToneText = styled.strong`
 const TranslationWrapper = styled.div`
   position: absolute;
   top: 12vh;
-  left: 10vw;
+  left: 6vw;
   height: 80vh;
 
   display: flex;
