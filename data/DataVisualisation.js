@@ -1,13 +1,7 @@
 export const dataVisualisation = [
     {
         heading: "Syrian civil war",
-        plainText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus " +
-            "laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci " +
-            "dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut " +
-            "placerat orci nulla." +
-            "projrvy inytorduction lorem ipsum dolr sit amert, socnderteurr adipiscing elit, sed do eirsmod temposre inclurdunt ut laborer et dolore magnea aileid."
+        plainText: "The Syrian Civil War is an ongoing civil war fought in Syria, so far noticed as the biggest war in the 21st century. On 2 January 2013, the UN stated that 60,000 had been killed since the civil war began, four months later, the UN’s updated figure for the death toll had reached 80,000. In the visualisation of the Syrian Civil War, it wasn’t trying to deliver the political opinion, but making people realise, that Syrian citizens, who were murdered in the battlefield, are being recorded into a piece of data but are the real brutal tragedies."
     },
     {
         code:
@@ -40,54 +34,15 @@ export const dataVisualisation = [
             "best: 8179\n" +
             "high: 8179",
         heading: "Data source",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "Data of the Syrian Civil War was provided by UCDP - The Uppsala Conflict Data Program, the world’s leading provider of data on organised violence and the oldest ongoing data collection project for civil war. The data were collecting and analysing served as the starting point for visual contents and interactions."
     }, {
         heading: "Perspective of Design",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "Each piece of data contains numbers of information, which most of them have no interest to us. The relative information we focus on is the numbers, number of deaths, and the coordinate of individual battles. Numbers are the most simple and powerful data in those data set; the number of casualties means in those battles vivid lives have been taking, uncountable families have been broken apart. Therefore, the numbers would be essential elements in the design perspective."
     }, {
         heading: "Intuitive illustration in 3D globe",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "To clarify the war situation, using coordinates, containing in the data strings, to illustrate intuitively on the three-dimensional globe, has been considered. The browser 3D techniques - webGL, and Threejs library are being implemented into visualisation."
     }, {
         heading: "Conclusion",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
-    }, {
-        heading: "The total deaths",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
-    }, {
-        heading: "The year list",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
-    }, {
-        heading: "The detail of the certain battle",
         plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
             "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
             "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
@@ -100,27 +55,12 @@ export const dataVisualisation = [
 export const hiddenText = [
     {
         heading: "The total deaths number",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "The most obvious number is on the top left, around with white background. This number indicates how many casualties were figured in a selected range."
     }, {
         heading: "The year list",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "The collected data from 2016 to 2019 contains over ten thousands of battles, the year list on the left, distributed data based on a specific time range. The visualisation on the right and interface would be changed during interaction with the list."
     }, {
         heading: "The details of certain battle",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        plainText: "A series of digits are shown on the right by clicking the list, and the numbers indicate how many casualties were figured in the selected battle. A floating card could also show the details of a particular struggle with sample click."
     }
 ]

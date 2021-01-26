@@ -77,7 +77,7 @@ const HiddenText = styled.div`
   position: absolute;
   width: 30vw;
   left: 50vw;
-  bottom: 20vh;
+  top: 25vh;
   transition: 0.5s ease-out;
   @media all and (max-height: 800px) {
     bottom: 10vh;

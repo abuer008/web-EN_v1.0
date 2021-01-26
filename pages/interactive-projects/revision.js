@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
@@ -13,6 +14,7 @@ import VideoArea from "../../components/revision/VideoArea";
 import {revisionProduct} from "../../data/RevisionData";
 import {RedirectButton, handleRedirect} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
+import { IconComponent } from "../../components/IconComponent";
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -54,7 +56,7 @@ const Revision = () => {
             scrollTrigger: {
                 trigger: el,
                 start: 'top +180%',
-                scrub: true
+                scrub: 2
             }
         })
     }
@@ -224,6 +226,8 @@ const Revision = () => {
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.dataTranslation.heading}</SubText>
                     <ExplainText
                         ref={el => plainTextRef.current.push(el)}>{revisionProduct.dataTranslation.plainText}</ExplainText>
+                    {/*<br />*/}
+                    <ExplainText ref={el => plainTextRef.current.push(el)}>{revisionProduct.dataTranslation.plainText2}</ExplainText>
                 </TextArea>
             </ProductIntro>
 
@@ -237,6 +241,10 @@ const Revision = () => {
                     <SubText>{revisionProduct.prototype.heading}</SubText>
                     <ExplainText>
                         {revisionProduct.prototype.plainText}
+                    </ExplainText>
+                    {/*<br/>*/}
+                    <ExplainText>
+                        {revisionProduct.prototype.plainText2}
                     </ExplainText>
                 </TextArea>
             </PrototypeSection>
@@ -259,10 +267,14 @@ const Revision = () => {
                     <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.png'
                            layout='fill' objectFit='cover'/>
                 </div>
-                <TextArea>
+                <TextArea style={{top: '20%'}}>
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>
                     <ExplainText
-                        ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText}</ExplainText>
+                        ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText2}</ExplainText>
+                    {/*<a href='../../public/pdfs/SIDeR2019_paper_8.pdf'>*/}
+                    {/*<IconComponent pdfType={true} background='black' plainText='Paper of SIDeR 2019' />*/}
+                    {/*/!*<ExplainText ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText2}</ExplainText>*!/*/}
+                    {/*</a>*/}
                 </TextArea>
             </Description>
 

@@ -38,7 +38,7 @@ const DataVisualisation = () => {
                             Data Visualisation
                         </SubTitle>
                         <TitleChange>
-                            <MainTitle>Syria</MainTitle>
+                            <MainTitle>الحرب الأهلية السورية‎</MainTitle>
                         </TitleChange>
                         <YearText>2016-2019</YearText>
                         <Button>
@@ -53,7 +53,7 @@ const DataVisualisation = () => {
             </Reveal>
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
-                    <ImageWrapper style={{left: '7vw'}}>
+                    <ImageWrapper style={{left: '10vw', top: '20vh'}}>
                         <Image alt='syrian refugees walking on the street' src='/data-visualisation/refugeesFamily.webp'
                                width='642' height='638'/>
                     </ImageWrapper>
@@ -72,7 +72,7 @@ const DataVisualisation = () => {
                     </CodeWrapper>
                 </Fading>
                 <TextFading>
-                    <TextArea>
+                    <TextArea style={{bottom: '40vh'}}>
                         <VDText heading={dataVisualisation[1].heading} plainText={dataVisualisation[1].plainText}/>
                     </TextArea>
                 </TextFading>
@@ -200,8 +200,8 @@ const SubTitle = styled.h3`
 `
 
 const MainTitle = styled.h1`
-  max-width: 470px;
-  height: 162px;
+  max-width: 620px;
+  height: 180px;
 
   font-weight: 900;
   font-size: 6em;
@@ -253,7 +253,7 @@ const CodeWrapper = styled.div`
   position: relative;
   heigth: 50vh;
   overflow: hidden;
-  //top: 15vh;
+  top: 15vh;
   left: 15vw;
   max-width: 30vw;
   padding: 20px;
