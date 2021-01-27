@@ -6,12 +6,13 @@ import {TlText} from "../../components/aal/TlText";
 import {TimeGraph} from '../../components/aal/TimeGraph'
 import styled from 'styled-components'
 import Image from 'next/image'
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player"
 import {useState} from 'react'
 import {useRef, useEffect} from 'react'
 
 
 import {AALData} from "../../data/AAL";
+import {AALs} from '../../data/AAL'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -365,8 +366,9 @@ const AmbientAssistedLiving = () => {
             {/*--- crisis of care services ---*/}
 
             <SecondPageText>
-                <BigText ref={el => newText.current.push(el)}>The crisis of elderly care services</BigText>
-                <SmallText ref={el => newText.current.push(el)}>some describing text about care services</SmallText>
+                <BigText ref={el => newText.current.push(el)}>{AALs.crisis.heading}</BigText>
+                <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText}</SmallText>
+                <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText2}</SmallText>
             </SecondPageText>
 
             {/*--- concept of aal ---*/}
@@ -377,8 +379,7 @@ const AmbientAssistedLiving = () => {
                         <BasicEl style={aalIntroStyle}/>
                         <AALIntro>The Concept of <Strong>AAL</Strong></AALIntro>
                     </TitleWrapper>
-                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>some describing text about AALsome describing
-                        text about AAL.some describing text about AAL..</ThirdSmallText>
+                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>{AALs.aalIntro.plainText2}</ThirdSmallText>
                 </ThirdPageText>
                 <AALImageWrapper ref={introImg}>
                     <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502'
@@ -629,6 +630,7 @@ const BigText = styled.h2`
 `
 
 const SmallText = styled.p`
+  width: 60vw;
   font-family: Roboto, sans-serif;
   font-weight: normal;
   font-size: 1.2em;
@@ -669,8 +671,8 @@ const Strong = styled.strong`
 const ThirdSmallText = styled(SmallText)`
   position: absolute;
   text-align: right;
-  width: 670px;
-  left: 70px;
+  width: 40vw;
+  left: 35px;
   top: -50px;
 `
 

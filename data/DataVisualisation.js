@@ -60,7 +60,7 @@ export const hiddenText = [
         heading: "The year list",
         plainText: "The collected data from 2016 to 2019 contains over ten thousands of battles, the year list on the left, distributed data based on a specific time range. The visualisation on the right and interface would be changed during interaction with the list."
     }, {
-        heading: "The details of certain battle",
+        heading: "The details of individual battle",
         plainText: "A series of digits are shown on the right by clicking the list, and the numbers indicate how many casualties were figured in the selected battle. A floating card could also show the details of a particular struggle with sample click."
     }
 ]
