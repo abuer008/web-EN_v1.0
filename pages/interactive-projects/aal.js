@@ -11,8 +11,7 @@ import {useState} from 'react'
 import {useRef, useEffect} from 'react'
 
 
-import {AALData} from "../../data/AAL";
-import {AALs} from '../../data/AAL'
+import {AALData, AALs, outputContents} from "../../data/AAL";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -379,7 +378,7 @@ const AmbientAssistedLiving = () => {
                         <BasicEl style={aalIntroStyle}/>
                         <AALIntro>The Concept of <Strong>AAL</Strong></AALIntro>
                     </TitleWrapper>
-                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>{AALs.aalIntro.plainText2}</ThirdSmallText>
+                    <ThirdSmallText ref={el => aalIntro.current.push(el)}>{AALs.aalIntro.plainText}</ThirdSmallText>
                 </ThirdPageText>
                 <AALImageWrapper ref={introImg}>
                     <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502'
@@ -390,10 +389,8 @@ const AmbientAssistedLiving = () => {
             {/*--- hardware intro ---*/}
 
             <FourthPageText>
-                <FourthBigText ref={el => hardwareTexts.current.push(el)}>Wearable devices for gesture
-                    monitoring</FourthBigText>
-                <FourthSmallText ref={el => hardwareTexts.current.push(el)}>some text for describing
-                    hardware.</FourthSmallText>
+                <FourthBigText ref={el => hardwareTexts.current.push(el)}>{AALs.hardware.heading}</FourthBigText>
+                <FourthSmallText ref={el => hardwareTexts.current.push(el)}>{AALs.hardware.plainText}</FourthSmallText>
             </FourthPageText>
             <FourthImgWrapper>
                 <PatchImg ref={el => hardwareImgs.current.push(el)}>
@@ -415,9 +412,8 @@ const AmbientAssistedLiving = () => {
                 <Image alt='arrow icon' src='/aal/dataComparisonArrow.svg' width='2' height='60'/>
             </ArrowWrapper>
             <FifthPageText>
-                <FifthBigText ref={el => comparisonsTexts.current.push(el)}>Data comparison</FifthBigText>
-                <FifthSmallText ref={el => comparisonsTexts.current.push(el)}>some text about data
-                    comparison.</FifthSmallText>
+                <FifthBigText ref={el => comparisonsTexts.current.push(el)}>{AALs.dataComparison.heading}</FifthBigText>
+                <FifthSmallText ref={el => comparisonsTexts.current.push(el)}>{AALs.dataComparison.plainText}</FifthSmallText>
             </FifthPageText>
 
             {/*--- output ---*/}
@@ -432,7 +428,7 @@ const AmbientAssistedLiving = () => {
                         </TextWrapper>
                     </ConcernWrapper>
                     <UITexts>
-                        <TlText title='Health concerns' plainText='main concern text going on here.'/>
+                        <TlText title={outputContents.mainConcern.heading} plainText={outputContents.mainConcern.plainText} />
                     </UITexts>
                 </MainConcernArea>
 
@@ -445,7 +441,7 @@ const AmbientAssistedLiving = () => {
                         </TextWrapper>
                     </ConcernWrapper>
                     <UITexts>
-                        <TlText title='gesture concerns' plainText='The walking gesture has slightly changed.'/>
+                        <TlText title={outputContents.gesture.heading} plainText={outputContents.gesture.plainText} />
                     </UITexts>
                 </MainConcernArea>
 
@@ -458,21 +454,21 @@ const AmbientAssistedLiving = () => {
                         </TextWrapper>
                     </ConcernWrapper>
                     <UITexts>
-                        <TlText title='Activity concerns' plainText='Excessive exercises has increased by 90 minutes.'/>
+                        <TlText title={outputContents.activity.heading} plainText={outputContents.activity.plainText} />
                     </UITexts>
                 </MainConcernArea>
             </OutputImgWrapper>
 
             <OutputWrapper>
-                <FifthBigText ref={el => outputTexts.current.push(el)}>Explicit output</FifthBigText>
-                <FifthSmallText ref={el => outputTexts.current.push(el)}>some text about output layout.</FifthSmallText>
+                <FifthBigText ref={el => outputTexts.current.push(el)}>{AALs.output.heading}</FifthBigText>
+                <FifthSmallText ref={el => outputTexts.current.push(el)}>{AALs.output.plainText}</FifthSmallText>
             </OutputWrapper>
 
             {/*--- particles graphic ---*/}
 
             <PopupWrapper ref={popUp}>
-                <SixthBigText>Intuitive infographic</SixthBigText>
-                <SixthSmallText>some texts going on here.</SixthSmallText>
+                <SixthBigText>{AALs.infographic.heading}</SixthBigText>
+                <SixthSmallText>{AALs.infographic.plainText}</SixthSmallText>
             </PopupWrapper>
 
 
@@ -480,8 +476,8 @@ const AmbientAssistedLiving = () => {
 
             <ProtoWrapper>
                 <SeventhPageText>
-                    <SeventhBigText ref={el => prototype.current.push(el)}>Prototype</SeventhBigText>
-                    <SeventhSmallText ref={el => prototype.current.push(el)}>some text going on here.</SeventhSmallText>
+                    <SeventhBigText ref={el => prototype.current.push(el)}>{AALs.prototype.heading}</SeventhBigText>
+                    <SeventhSmallText ref={el => prototype.current.push(el)}>{AALs.prototype.plainText}</SeventhSmallText>
                 </SeventhPageText>
                 <ProtoVideoWrapper ref={el => prototype.current.push(el)}>
 
@@ -490,9 +486,8 @@ const AmbientAssistedLiving = () => {
 
             <ConclusionWrapper>
                 <EighthPageText>
-                    <EighthBigText ref={el => conclusion.current.push(el)}>Conclusion</EighthBigText>
-                    <EighthSmallText ref={el => conclusion.current.push(el)}>some texts are going on
-                        here.</EighthSmallText>
+                    <EighthBigText ref={el => conclusion.current.push(el)}>{AALs.conclusion.heading}</EighthBigText>
+                    <EighthSmallText ref={el => conclusion.current.push(el)}>{AALs.conclusion.plainText}</EighthSmallText>
                 </EighthPageText>
             </ConclusionWrapper>
 
@@ -632,8 +627,9 @@ const BigText = styled.h2`
 const SmallText = styled.p`
   width: 60vw;
   font-family: Roboto, sans-serif;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 1.2em;
+  line-height: 1.4em;
 `
 
 // --- AAL Intro ---
@@ -670,7 +666,7 @@ const Strong = styled.strong`
 
 const ThirdSmallText = styled(SmallText)`
   position: absolute;
-  text-align: right;
+  text-align: justify;
   width: 40vw;
   left: 35px;
   top: -50px;
@@ -696,7 +692,8 @@ const FourthBigText = styled(BigText)`
 `
 
 const FourthSmallText = styled(SmallText)`
-  width: 40vw;
+  width: 35vw;
+  text-align: justify;
 `
 
 const FourthImgWrapper = styled.div`
@@ -732,7 +729,7 @@ const ArrowWrapper = styled.div`
 `
 
 const FifthPageText = styled(FourthPageText)`
-  top: 50vh;
+  top: 20vh;
 `
 
 const FifthBigText = styled(FourthBigText)``
@@ -792,7 +789,6 @@ const H1Small = styled.p`
 `
 
 const UITexts = styled.div`
-
 `
 
 
@@ -801,9 +797,9 @@ const UITexts = styled.div`
 const PopupWrapper = styled.div`
   position: fixed;
   bottom: -10vh;
-  left: 10vw;
-  width: 22vw;
-  height: 40vh;
+  left: 5vw;
+  width: 30vw;
+  height: 50vh;
   padding: 50px;
 
   background: rgba(190, 190, 190, 0.35);
@@ -815,7 +811,9 @@ const PopupWrapper = styled.div`
 const SixthBigText = styled(FifthBigText)`
   width: 22vw;
 `
-const SixthSmallText = styled(FifthSmallText)``
+const SixthSmallText = styled(FifthSmallText)`
+    width: 30vw;
+`
 
 // --- prototype ---
 
@@ -826,7 +824,9 @@ const ProtoWrapper = styled.div`
 const SeventhPageText = styled(FifthPageText)``
 
 const SeventhBigText = styled(SixthBigText)``
-const SeventhSmallText = styled(SixthSmallText)``
+const SeventhSmallText = styled(SixthSmallText)`
+    width: 35vw;
+`
 
 const ProtoVideoWrapper = styled.div``
 

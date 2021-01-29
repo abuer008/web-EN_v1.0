@@ -50,7 +50,7 @@ function InteractiveProjects() {
     return (
         <Layout>
             <MainBackground>
-                <Image alt='dot background' src="/aboutBg.png" layout="fill" objectFit="cover"/>
+                <Image alt='dot background' src="/aboutBgSm.png" layout="fill" objectFit="cover"/>
             </MainBackground>
             <ProjectsSqures>
                 <EnterArrow>
