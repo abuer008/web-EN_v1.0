@@ -1,18 +1,26 @@
 import Menu from './Menu';
 import styled from 'styled-components';
 
-const Layout = ({ children, isBlack = true }) => {
+const Layout = ({children, isBlack = true}) => {
 
     return (
         <Wrapper>
-            <Menu isBlack={isBlack} />
+            <Menu isBlack={isBlack}/>
             {children}
+            <style jsx global>{`
+              body {
+              background: linear-gradient(90deg, white 52px, transparent 1%) center,
+              linear-gradient(white 52px, transparent 1%) center,
+              #777;
+              background-size: 55px 55px;
+              }
+            `}</style>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-  // height: 0vh;
+   height: 0;
   //background: black;
   margin: -8px;
   //overflow-y: scroll;

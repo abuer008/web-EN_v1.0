@@ -23,9 +23,6 @@ const Contact = () => {
 
     return (
         <Layout>
-            <Background>
-                <Image src='/aboutBg.png' layout='fill' objectFit='cover' />
-            </Background>
             <TextWrapper>
                 <Front>Any thoughts, comments, or regarding works</Front>
                 <Middle>GET IN TOUCH</Middle>

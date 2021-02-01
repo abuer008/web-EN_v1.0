@@ -49,9 +49,6 @@ function InteractiveProjects() {
 
     return (
         <Layout>
-            <MainBackground>
-                <Image alt='dot background' src="/aboutBgSm.png" layout="fill" objectFit="cover"/>
-            </MainBackground>
             <ProjectsSqures>
                 <EnterArrow>
                     <EnterTonText>Enter</EnterTonText>
@@ -93,11 +90,12 @@ function InteractiveProjects() {
 
 
 const MainBackground = styled.div`
-  width: 80%;
-  z-index: -5;
-  margin: -8px;
-  pointer-events: none;
-  overflow: hidden;
+  //width: 100%;
+  //height: 100%;
+  //z-index: -5;
+  //margin: -8px;
+  //pointer-events: none;
+  //overflow: hidden;
 `
 
 const AnimaSection = styled.div`
@@ -130,9 +128,9 @@ const EnterArrow = styled.div`
 
 const EnterText = styled.h4`
   position: relative;
-  left: 0%;
-  right: 0%;
-  top: 0%;
+  left: 0;
+  right: 0;
+  top: 0;
   bottom: 50%;
   margin: 0;
 

@@ -9,9 +9,9 @@ import {IconComponent} from "../components/IconComponent";
 const About = () => {
     return (
         <Layout>
-            <Background>
-                <Image src='/aboutBg.png' layout='intrinsic' width='2880' height='4724'/>
-            </Background>
+            {/*<Background>*/}
+            {/*    <Image src='/aboutBg.png' layout='intrinsic' width='2880' height='4724'/>*/}
+            {/*</Background>*/}
             <ContentWrapper>
                 <FrontTitle>Full stack process of the interactive portfolio</FrontTitle>
                 <FrontText>{aboutData.frontText}</FrontText>
@@ -32,6 +32,7 @@ const About = () => {
                 <TechWrapper>
                     <Title>{aboutData.techniques.heading}</Title>
                 </TechWrapper>
+                <Plain>{aboutData.conceptualApproach.plainText}</Plain>
             </ContentWrapper>
         </Layout>
     )

@@ -47,7 +47,7 @@ left: 22%;
 position: fixed;
 //margin: 2.5em 0;
 padding-top: 4em;
-  z-index: 2;
+  z-index: 3;
   
   display: flex;
   flex-direction: row;

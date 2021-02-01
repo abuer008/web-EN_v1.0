@@ -19,11 +19,12 @@ export const TimeGraph = ({isMain}) => {
 }
 
 const Wrapper = styled.div`
-  margin: 15vh 10vw;
+  //position: absolute;
+  //margin: 15vh 10vw;
 `
 
 const ImgWrapper = styled.div`
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   margin: 32px 30px;
 `

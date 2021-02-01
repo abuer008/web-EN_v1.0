@@ -8,9 +8,9 @@ import * as workingAnima from '../../public/error/workingAnima.json'
 function MinorProjects() {
     return (
         <Layout>
-            <Background>
-                <Image src='/aboutBg.png' layout='fill' objectFit='cover' />
-            </Background>
+            {/*<Background>*/}
+            {/*    <Image src='/aboutBg.png' layout='fill' objectFit='cover' />*/}
+            {/*</Background>*/}
             {/*<h1>This is minor projects page.</h1>*/}
             <ContentComponent
                 statusCode='......'

@@ -75,12 +75,14 @@ const Connecting = () => {
         })
     }
 
-    const handleScroll = trigger => {
+    const handleScroll = (trigger) => {
         ScrollTrigger.create({
             trigger: trigger,
             start: 'top 80%',
             // markers: true,
-            onEnter: () => goToSection(trigger),
+            onEnter: () => {
+                goToSection(trigger)
+            },
             scrub: true
         })
         // ScrollTrigger.create({
