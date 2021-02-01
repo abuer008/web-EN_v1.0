@@ -367,7 +367,6 @@ const AmbientAssistedLiving = () => {
                 trigger: sectionRefs.current[7],
                 start: 'top 90%',
                 end: 'center center',
-                markers: true,
                 toggleActions: 'play complete none reverse',
                 onEnter: () => setIsPlay(true)
             }
