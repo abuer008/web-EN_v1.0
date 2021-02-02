@@ -20,7 +20,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const AmbientAssistedLiving = () => {
 
     const [isLock, setLock] = useState(false)
-    const [visible, setVisible] = useState(false)
     const [isPlay, setIsPlay] = useState(false)
 
     const sectionRefs = useRef([])
@@ -82,221 +81,6 @@ const AmbientAssistedLiving = () => {
             },
             scrub: true
         })
-    }
-
-    const firstPageAnima = (video, text, newText) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[0],
-                start: '20% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            }, onUpdate: () => setLock(true)
-            // onComplete: () => setLock(false),
-            // onReverseComplete: () => setLock(false)
-        })
-        tl.to(video, {
-            opacity: 0
-        }, "-=0.5")
-            .to(text, {
-                opacity: 0,
-                y: -100,
-                stagger: 0.2
-            }, "-=1")
-            .fromTo(newText, {
-                opacity: 0,
-                y: 100
-            }, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.2
-            }, "-=0.3")
-    }
-
-    const secondPageAnima = (oldText, aalIntro, introImg) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[1],
-                start: '10% 10%',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-            // onComplete: () => setLock(false),
-            // onReverseComplete: () => setLock(false)
-        })
-        tl.to(oldText, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        }, "-=0.5")
-            .fromTo(aalIntro, {
-                opacity: 0,
-                y: 100,
-            }, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.2
-            }, "-=0.5")
-            .from(introImg, {
-                opacity: 0,
-                y: '20vh',
-                duration: 1.5,
-                ease: 'power1.out'
-            }, "-=0.8")
-    }
-
-    const thirdPageAnima = (oldTexts, oldImg, newText, newImgs) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[2],
-                start: '10% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-            // onComplete: () => setLock(false),
-            // onReverseComplete: () => setLock(false)
-        })
-        tl
-            .to(oldTexts, {
-                opacity: 0,
-                y: -100,
-                stagger: 0.2
-            }, "-=0.5")
-            .to(oldImg, {
-                opacity: 0
-            }, "-=1")
-            .from(newText, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            }, '-=0.5')
-            .from(newImgs, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.5
-            }, '-=1')
-    }
-
-    const fourthPageAnima = (oldTexts, oldImgs, newTexts, newImgs) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[3],
-                start: '10% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-            // onComplete: () => setLock(false),
-            // onReverseComplete: () => setLock(false)
-        })
-        tl.to(oldTexts, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        }, '-=1')
-            .to(oldImgs, {
-                opacity: 0,
-                y: -100,
-                stagger: 0.2
-            }, '-=0.5')
-            .from(newImgs, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            }, '-=0.3')
-            .from(newTexts, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            }, "-=0.8")
-    }
-
-    const fifthPageAnima = (oldImgs, oldTexts, newImgs, newTexts) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[4],
-                start: '10% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-            // onComplete: () => setLock(false),
-            // onReverseComplete: () => setLock(false)
-        })
-        tl.to(oldTexts, {
-            opacity: 0,
-            y: -100,
-            stagger: 0.2
-        })
-            .to(oldImgs, {
-                opacity: 0
-            }, '-=0.8')
-            .from(newImgs, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            }, "-=0.5")
-            .from(newTexts, {
-                opacity: 0,
-                y: 100,
-                stagger: 0.2
-            }, '-=0.8')
-    }
-
-    const sixthPageAnima = (oldTexts, imgs, video, popUp) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[5],
-                start: '10% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-        })
-        tl.to(oldTexts, {
-            x: 100,
-            opacity: 0
-        })
-            .to(imgs, {
-                x: '+=45vw',
-                ease: 'power1.inOut',
-                stagger: 0.1
-            }, '-=0.5')
-            .to(video, {
-                opacity: 1,
-            })
-            .from(popUp, {
-                height: 0,
-                ease: 'power3.out'
-            }, '-=0.8')
-    }
-
-    const seventhPageAnima = (oldEls, newEls, triggerNumber) => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRefs.current[triggerNumber],
-                start: '10% top',
-                end: 'bottom center',
-                toggleActions: 'play none none reverse'
-            },
-            onUpdate: () => setLock(true)
-        })
-        tl.to(oldEls, {
-            opacity: 0
-        })
-            .fromTo(newEls, {
-                opacity: 0
-            }, {
-                opacity: 1,
-                stagger: 0.2
-            })
-    }
-
-    const disableTouchEvent = e => {
-        e.preventDefault()
-        setVisible(true)
     }
 
     const defaultsAnima = (driver, driven) => {
@@ -394,31 +178,15 @@ const AmbientAssistedLiving = () => {
         })
             .from(popUp.current, {
                 y: '+=100%',
-                delay: 0.5,
-                duration: 1.2,
+                duration: 1.5,
                 ease: 'elastic.out(0.2, 0.25)'
             })
     }
 
     useEffect(() => {
-        // gsap.defaults({ease: 'power1.inOut', duration: 1})
-        // if (video.current) {
-        //     firstPageAnima(video.current, text.current, newText.current)
-        //     secondPageAnima(newText.current, aalIntro.current, introImg.current)
-        //     thirdPageAnima(aalIntro.current, introImg.current, hardwareTexts.current, hardwareImgs.current)
-        //     fourthPageAnima(hardwareTexts.current, hardwareImgs.current, comparisonsTexts.current, timeGraphs.current)
-        //     fifthPageAnima([timeGraphs.current[1], timeGraphs.current[2]], comparisonsTexts.current, outputImgs.current, outputTexts.current)
-        //     sixthPageAnima(outputTexts.current, [timeGraphs.current, outputImgs.current], video.current, popUp.current)
-        //     seventhPageAnima([video.current, timeGraphs.current, outputImgs.current, popUp.current], prototype.current, 6)
-        //     seventhPageAnima(prototype.current, conclusion.current, 7)
-        // }
-        // document.body.addEventListener('touchmove', disableTouchEvent, {passive: false})
-        // return () => {
-        //     document.body.removeEventListener('touchmove', disableTouchEvent)
-        // }
-
         gsap.defaults({ease: 'power1.out'})
 
+        sectionRefs.current.forEach((ref) => handleScroll(ref))
         defaultsAnima(sectionRefs.current[2], newText.current)
         defaultsAnima(sectionRefs.current[3], [aalIntro.current, introImg.current])
         defaultsAnima(sectionRefs.current[4], [hardwareTexts.current, hardwareImgs.current])
@@ -428,7 +196,6 @@ const AmbientAssistedLiving = () => {
         dotCloudAnima()
         graphicAnima()
 
-        sectionRefs.current.forEach((ref, i) => handleScroll(ref))
 
     }, [])
 
@@ -442,10 +209,6 @@ const AmbientAssistedLiving = () => {
         }
         console.log("locked animation: " + isLock)
     }, [isLock])
-
-    const handleWheel = e => {
-        console.log(e.deltaY)
-    }
 
     return (
         <Layout>
@@ -476,8 +239,7 @@ const AmbientAssistedLiving = () => {
                     <BasicEl style={tlStyle}/>
                 </TlArea>
 
-                {visible ? <Warning>Sorry, the demonstration is not for touchscreen optimized. Please visit on a desktop
-                    computer.</Warning> : <>
+                <>
                     <GArea ref={el => text.current.push(el)}>
                         <GIconWrapper>
                             <Image alt='gesture icon' src='/aal/gestureIcon.svg' width='52' height='73'/>
@@ -502,7 +264,6 @@ const AmbientAssistedLiving = () => {
                         <TlText title={AALData[2].title} plainText={AALData[2].plainText}/>
                     </PArea>
                 </>
-                }
             </Section>
 
             {/*--- crisis of care services ---*/}
@@ -671,18 +432,6 @@ const AmbientAssistedLiving = () => {
                     </EighthPageText>
                 </ConclusionWrapper>
             </Section>
-
-
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section ref={el => sectionRefs.current.push(el)}/>*/}
-            {/*<Section/>*/}
-            {/*<Section/>*/}
-            {/*<Section />*/}
         </Layout>)
 }
 
@@ -693,11 +442,6 @@ const AnimaDriven = styled.div`
     position: relative;
   width: 480px;
   height: 120px;
-`
-
-const TSection = styled.div`
-  position: relative;
-  overflow: hidden;
 `
 
 const Section = styled.div`
@@ -835,19 +579,24 @@ const ThirdPage = styled.div`
 `
 
 const ThirdPageText = styled.div`
-  position: absolute;
+  position: relative;
   top: 50vh;
-  right: 1300px;
+  right: 10%;
+  
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
 `
 
 const TitleWrapper = styled.div`
   position: relative;
-  bottom: 200px;
-  left: 80px;
+  bottom: 12vh;
+  //left: 80px;
 `
 
 const AALIntro = styled(BigText)`
-  position: absolute;
+  position: relative;
   width: 620px;
   top: 30px;
   //left: -30px;
@@ -861,10 +610,10 @@ const Strong = styled.strong`
 
 const ThirdSmallText = styled(SmallText)`
   //position: absolute;
-  position: absolute;
+  position: relative;
   text-align: justify;
   width: 40vw;
-  left: 35px;
+  //left: 35px;
   top: -50px;
 `
 
@@ -909,9 +658,9 @@ const PatchImg = styled.div``
 const TimeGraphWrapper = styled.div`
   position: relative;
   left: 10vw;
-  //top: 10vh;
-  bottom: 30vh;
-  height: 100vh;
+  //top: 5%;
+  bottom: 25vh;
+  height: 80%;
   width: 480px;
   
   display: flex;
@@ -970,41 +719,13 @@ const MainConcernArea = styled.div`
     cursor: default;
   }
 `
-const ConcernWrapper = styled.div`
-`
-
-const TextWrapper = styled.div`
-  position: absolute;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  text-align: center;
-`
-
-const H1Number = styled.h1`
-  font-weight: 900;
-  font-size: 4em;
-  margin: 0;
-`
-
-const H1Small = styled.p`
-  font-weight: bold;
-  font-size: 1.5em;
-  margin: 0;
-
-  line-height: .5em;
-`
-
-const UITexts = styled.div`
-`
-
 
 // --- infographic ---
 
 const UIWrapper = styled.div`
   position: relative;
-  height: 100%;
-  //top: -10vh;
+  height: 85%;
+  top: 5%;
   left: 60vw;
   //display: flex;
   //flex-direction: column;
@@ -1026,7 +747,7 @@ const PopupWrapper = styled.div`
   bottom: -10vh;
   left: 5vw;
   width: 28vw;
-  height: 50vh;
+  height: 45vh;
   padding: 50px;
 
   background: rgba(190, 190, 190, 0.35);

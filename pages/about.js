@@ -1,6 +1,5 @@
 import Layout from '../components/Layout'
 import styled from 'styled-components'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import {aboutData} from "../data/About";
@@ -9,9 +8,6 @@ import {IconComponent} from "../components/IconComponent";
 const About = () => {
     return (
         <Layout>
-            {/*<Background>*/}
-            {/*    <Image src='/aboutBg.png' layout='intrinsic' width='2880' height='4724'/>*/}
-            {/*</Background>*/}
             <ContentWrapper>
                 <FrontTitle>Full stack process of the interactive portfolio</FrontTitle>
                 <FrontText>{aboutData.frontText}</FrontText>
@@ -38,20 +34,13 @@ const About = () => {
     )
 }
 
-const Background = styled.div`
-  position: absolute;
-  margin: -8px 0;
-  z-index: -1;
-  //top: -28px;
-`
-
 const ContentWrapper = styled.div`
   font-family: Roboto, sans-serif;
   font-style: normal;
 
   position: absolute;
   width: 80%;
-  max-width: 920px;
+  max-width: 950px;
   top: 14%;
   left: 50%;
 

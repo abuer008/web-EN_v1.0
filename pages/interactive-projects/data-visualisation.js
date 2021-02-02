@@ -5,21 +5,16 @@ import {VDText} from "../../components/visualData/VDText";
 import {ShowArea} from '../../components/visualData/ShowArea'
 import {Sphere} from '../../components/visualData/Sphere'
 import {PhotoWall} from "../../components/visualData/PhotoWall";
-import {useRef, useEffect, useState} from 'react'
 import {SectionTrigger} from "../../components/visualData/SectionTrigger";
 import {Fading} from '../../components/visualData/Fading'
 import {TextFading} from '../../components/visualData/TextFading'
 import {TitleChange} from "../../components/visualData/TitleChange";
 
-import {gsap} from 'gsap'
-import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {Reveal} from 'react-gsap'
 
 import {dataVisualisation} from "../../data/DataVisualisation"
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
-
-gsap.registerPlugin(ScrollTrigger)
 
 const DataVisualisation = () => {
 
@@ -251,7 +246,7 @@ const ButtonText = styled.h6`
 
 const CodeWrapper = styled.div`
   position: relative;
-  heigth: 50vh;
+  height: 50vh;
   overflow: hidden;
   top: 15vh;
   left: 15vw;

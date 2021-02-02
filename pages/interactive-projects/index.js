@@ -89,29 +89,11 @@ function InteractiveProjects() {
 }
 
 
-const MainBackground = styled.div`
-  //width: 100%;
-  //height: 100%;
-  //z-index: -5;
-  //margin: -8px;
-  //pointer-events: none;
-  //overflow: hidden;
-`
-
-const AnimaSection = styled.div`
-  position: absolute;
-  bottom: 70%;
-  z-index: 0;
-
-  pointer-events: none;
-`
-
 const EnterArrow = styled.div`
   height: 140px;
   width: 156px;
   display: flex;
   flex-direction: column;
-  //justify-content: flex-end;
   align-items: flex-end;
 
   flex: none;
@@ -171,7 +153,6 @@ const ProjectsSqures = styled.div`
   align-items: center;
 
   @media all and (max-width: 1120px) {
-    //align-items: center;
     justify-content: center;
     max-width: 100%;
     left: 47.7%;

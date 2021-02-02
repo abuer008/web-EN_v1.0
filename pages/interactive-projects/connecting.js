@@ -23,8 +23,6 @@ const Connecting = () => {
 
     const [isStylingStopped, setStylingStopped] = useState(true)
 
-    const [isLock, setLock] = useState(false)
-
     const sections = useRef([])
 
     const titleImg = useRef(null)
@@ -118,6 +116,9 @@ const Connecting = () => {
                 setStopped(false)
                 setLooping(true)
             },
+            onLeave: () => {
+                setStopped(true)
+            },
             onEnterBack: () => {
                 setWatchAnima(watchAnima)
                 setStopped(true)
@@ -175,16 +176,16 @@ const Connecting = () => {
 
     }, [])
 
-    useEffect(() => {
-        if(isLock) {
-            document.body.style.overflow = 'hidden'
-            setTimeout(() => {
-                setLock(false)
-                document.body.style.overflow = 'unset'
-            }, 1800)
-        }
-
-    }, [isLock])
+    // useEffect(() => {
+    //     if(isLock) {
+    //         document.body.style.overflow = 'hidden'
+    //         setTimeout(() => {
+    //             setLock(false)
+    //             document.body.style.overflow = 'unset'
+    //         }, 1800)
+    //     }
+    //
+    // }, [isLock])
 
     return (
         <Layout isBlack={false}>
@@ -203,14 +204,18 @@ const Connecting = () => {
                 <TextWrapper>
                     <H2 ref={el => researchTexts.current.push(el)}>{connectingData.research.heading}</H2>
                     <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText}</P>
+                    <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText2}</P>
                 </TextWrapper>
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
                 <IntroTextWrapper>
                     <H3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.heading}</H3>
-                    <P3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.plainText}</P3>
+                    <P3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.plainText2}</P3>
                 </IntroTextWrapper>
+                {/*<DescribeWrapper ref={el => introTexts.current.push(el)}>*/}
+                {/*    <IntroText>{connectingData.introduction.plainText}</IntroText>*/}
+                {/*</DescribeWrapper>*/}
                 <WatchArea ref={pinnedWatch} style={{zIndex: 1}}>
                     <IntroImg ref={el => watchImg.current.push(el)}>
                         <StartAnima
@@ -292,16 +297,16 @@ const Connecting = () => {
                 </PrototypeWrapper>
                 <ProcessTextWrapper>
                     <H7 ref={el => prototypeTexts.current.push(el)}>process I. basic design</H7>
-                    <H3 ref={el => prototypeTexts.current.push(el)}>Prototype</H3>
-                    <P3 ref={el => prototypeTexts.current.push(el)}>Lorem ipsum dolor sit amet, consectetur adipiscing.</P3>
+                    <H3 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.heading}</H3>
+                    <P4 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.plainText}</P4>
                 </ProcessTextWrapper>
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
                 <TechTextWrapper>
                     <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
-                    <H3 ref={el => techniquesTexts.current.push(el)}>SwiftUI and SpriteKit</H3>
-                    <P3 ref={el => techniquesTexts.current.push(el)}>some texts about techniques choosing.</P3>
+                    <H3 ref={el => techniquesTexts.current.push(el)}>{connectingData.techniques.heading}</H3>
+                    <P4 ref={el => techniquesTexts.current.push(el)} style={{maxWidth: '80%'}}>{connectingData.techniques.plainText}</P4>
                 </TechTextWrapper>
                 <YBGImg ref={techniquesImg}>
                     <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'
@@ -312,8 +317,8 @@ const Connecting = () => {
             <Section ref={el => sections.current.push(el)}>
                 <StylingTextWrapper>
                     <H7 ref={el => stylingTexts.current.push(el)}>process III. redesign</H7>
-                    <H3 ref={el => stylingTexts.current.push(el)}>Styling</H3>
-                    <P3 ref={el => stylingTexts.current.push(el)}>some texts about redesign styling.</P3>
+                    <H3 ref={el => stylingTexts.current.push(el)}>{connectingData.redesign.heading}</H3>
+                    <P4 ref={el => stylingTexts.current.push(el)}>{connectingData.redesign.plainText}</P4>
                 </StylingTextWrapper>
                 <StylingImg ref={stylingImg}>
                     <StartAnima
@@ -329,44 +334,19 @@ const Connecting = () => {
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
+                <ConclusionImgWrapper>
+                    <Image src='/connecting/artTechScience.png' width='350' height='340' layout='intrinsic' />
+                </ConclusionImgWrapper>
                 <ConclusionTextWrapper>
-                    <H3 ref={el => conclusionTexts.current.push(el)}>Conclusion</H3>
-                    <P3 ref={el => conclusionTexts.current.push(el)}>some texts about conclusion are going on here.</P3>
+                    <H3 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.heading}</H3>
+                    <P4 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.plainText}</P4>
+                    <P4 ref={el => conclusionTexts.current.push(el)} style={{margin: '1.5em 0'}}>{connectingData.conclusion.plainText2}</P4>
                 </ConclusionTextWrapper>
             </Section>
-
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger ref={el => sections.current.push(el)} />*/}
-            {/*<SectionTrigger />*/}
-            {/*<SectionTrigger />*/}
-            {/*<SectionTrigger />*/}
 
         </Layout>
     )
 }
-
-// --- global ---
-
-const SectionTrigger = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  margin: -8px;
-  z-index: -1;
-  //border: 1px solid white;
-  
-  background-color: black;
-  //scroll-snap-align: start;
-`
 
 // --- title page ---
 
@@ -424,6 +404,7 @@ const H2 = styled.h2`
   font-style: normal;
   font-weight: 900;
   font-size: 4.5em;
+  width: 100%;
   
   margin: 0;
   padding: 0;
@@ -434,10 +415,25 @@ const P = styled.p`
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  line-height: 1.4em;
   color: white;
   
 `
+
+// const DescribeWrapper = styled.div`
+//     position: absolute;
+//   top: 35vh;
+//   left: 60vw;
+//   width: 25%;
+// `
+//
+// const IntroText = styled.h3`
+//     color: #555;
+//   font-weight: 300;
+//   font-size: 1.6em;
+//   line-height: 1.4em;
+// `
 
 // --- introduction ---
 
@@ -483,6 +479,10 @@ const H3 = styled(H2)`
 `
 const P3 = styled(P)`
   margin: 0.5em 0;
+`
+
+const P4 = styled(P3)`
+    text-align: justify;
 `
 
 // --- characterisation ---
@@ -557,10 +557,16 @@ const StylingImg = styled.div`
 
 // --- conclusion ---
 
+const ConclusionImgWrapper = styled.div`
+    position: absolute;
+  top: 40vh;
+  left: 15vw;
+`
+
 const ConclusionTextWrapper = styled(ProcessTextWrapper)`
-    top: 25vh;
-  right: 10vw;
-  width: 35vw;
+    top: 20vh;
+  right: 5vw;
+  width: 45%;
 `
 
 export default Connecting

@@ -13,6 +13,9 @@ const Layout = ({children, isBlack = true}) => {
               linear-gradient(white 52px, transparent 1%) center,
               #777;
               background-size: 55px 55px;
+              
+              font-family: Roboto, sans-serif;
+              font-style: normal;
               }
             `}</style>
         </Wrapper>

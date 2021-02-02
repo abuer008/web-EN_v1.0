@@ -15,8 +15,8 @@ export const AALData = [
 export const AALs = {
     crisis: {
         heading: "The crisis of elderly care services",
-        plainText: 'Europe has one of the highest shares of elderly people in the world. In 2016, already 19% of the European population1 was 65 years and over. Looking at the prognoses, this share will increase to 29% by 2070; meaning that more than 1 in 4 people in Europe will be 65 years or over. As people grow older, it is expected that there will be more people with age-related chronic diseases and in need of long-term care.',
-        plainText2: 'Changing family structures and the growing participation of women in the labour market put the reliance on informal caregivers at risk. In addition, providing care to kin can be burdening and negatively affect the informal caregivers\' health and well- being. Formal care organisations also suffer from a shrinking workforce and major budget cuts, thereby endangering the access and quality of care and putting even more pressure on informal caregivers.'
+        plainText: 'Europe has one of the highest shares of elderly people in the world. In 2016, already 19% of the European population was 65 years and over. Looking at the prognoses, this share will increase to 29% by 2070; meaning that more than 1 in 4 people in Europe will be 65 years or over. As people grow older, it is expected that there will be more people with age-related chronic diseases and in need of long-term care.',
+        plainText2: 'Changing family structures and the growing participation of women in the labour market put the reliance on informal caregivers at risk. In addition, providing care to kin can be burdening and negatively affect the informal caregivers\' health and well-being. Formal care organisations also suffer from a shrinking workforce and major budget cuts, thereby endangering the access and quality of care and putting even more pressure on informal caregivers.'
     },
     aalIntro: {
         heading: "The Concept of AAL",
@@ -25,7 +25,7 @@ export const AALs = {
     },
     hardware: {
         heading: "Wearable devices for gesture monitoring",
-        plainText: "Monitoring the posture can get many extraordinary results to assist people at home. For instance, lying down at a specific time can infer the user’s sleep time and sleep quality; sudden posture changes combined with heart rate changes can infer whether the user is in a dangerous situation. In this particular project, gesture monitoring will be used as the primary data input source to automatically calculate the activity information and measurable data such as heart rate. Wearable smart bracelets will be the main input device, and the patch-type motion sensor sticks on the limbs to calculate comparable data."
+        plainText: "Monitoring the posture can get many extraordinary results to assist people at home. For instance, lying down at a specific time can infer the user’s sleep time and sleep quality; sudden posture changes combined with heart rate changes can infer whether the user is in a dangerous situation. In this particular project, posture monitoring will be used as the primary data input source to automatically calculate the activity information and measurable data such as heart rate. Wearable smart bracelets will be the main input device, and the patch-type motion sensor sticks on the limbs to calculate comparable data."
     },
     dataComparison: {
         heading: "Data comparison",
@@ -37,7 +37,7 @@ export const AALs = {
     },
     infographic: {
         heading: "Intuitive Infographic",
-        plainText: "On the left side of the screen, the point clouds animations point out posture changes intuitively. For example, through the posture change trend for consecutive days, the potential risk areas are clearly marked in red. The user’s health status can be roughly understood, and the suggestions for improvement are pointed out. It is worth to mention that the information will not be displayed in the user’s interface for those predictions of serious health condition. It will be directly submitted to relatives or personal doctors to prevent panic."
+        plainText: "On the left side of the screen, the point clouds animations point out posture changes intuitively. Through the posture change trend for consecutive days, the potential risk areas are clearly marked in red. And it is worth to mention that the information will not be displayed in the user’s interface for those predictions of serious health condition. It will be directly submitted to relatives or personal doctors to prevent panic."
     },
     prototype: {
         heading: "Prototype",

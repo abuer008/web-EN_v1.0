@@ -134,10 +134,10 @@ const MainTitle = styled.h1.attrs(props => ({
 
   transition: text-shadow .5s;
 
-  :hover {
-    //transform: scale(1.1);
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
+  //:hover {
+  //  transform: scale(1.1);
+  //  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  //}
 
   @media all and (max-height: 680px) {
     display: none;
@@ -156,7 +156,7 @@ const MainSubTitle = styled(MainTitle)`
   padding: 0;
   margin: auto;
 
-  @media all and (max-height: 850px) {
+  @media all and (min-aspect-ratio: 24/11) {
     display: none;
   }
 `
@@ -193,7 +193,7 @@ const MainText = styled.p`
     opacity: 0;
   }
 
-  @media all and (max-height: 800px) {
+  @media all and (min-aspect-ratio: 24/11) {
     display: none;
   }
 `

@@ -1,8 +1,4 @@
 import {Tween} from 'react-gsap'
-import { ScrollTrigger} from "gsap/ScrollTrigger";
-import { gsap } from 'gsap'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export const TextFading = ({children}) => {
     return (
@@ -10,6 +6,7 @@ export const TextFading = ({children}) => {
                ease='power1.inOut'
                duration={1}
                delay={0.3}
+               stagger={0.3}
         >
             {children}
         </Tween>

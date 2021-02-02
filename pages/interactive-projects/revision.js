@@ -22,7 +22,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const Revision = () => {
 
     const [isTransitionPlay, setPlay] = useState(false)
-    const [visible, setVisible] = useState(false)
 
     const sections = useRef([])
     const subTextRef = useRef([])
@@ -74,7 +73,7 @@ const Revision = () => {
     }
 
     const handleSnap = elArr => {
-        elArr.forEach((el, i) => {
+        elArr.forEach((el) => {
             ScrollTrigger.create({
                 trigger: el,
                 start: 'top +=80%',
@@ -102,20 +101,6 @@ const Revision = () => {
             onLeave: () => setPlay(false)
         })
     }
-
-    // const handleRedirect = el => {
-    //     gsap.from(el, {
-    //         opacity: 0,
-    //         duration: 0.3,
-    //         delay: 0.5,
-    //         stagger: 0.3,
-    //         scrollTrigger: {
-    //             trigger: sections.current[8],
-    //             start: 'top +=20%',
-    //             toggleActions: 'play none none reverse'
-    //         }
-    //     })
-    // }
 
     useEffect(() => {
         handleSnap(sections.current)
@@ -226,7 +211,6 @@ const Revision = () => {
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.dataTranslation.heading}</SubText>
                     <ExplainText
                         ref={el => plainTextRef.current.push(el)}>{revisionProduct.dataTranslation.plainText}</ExplainText>
-                    {/*<br />*/}
                     <ExplainText ref={el => plainTextRef.current.push(el)}>{revisionProduct.dataTranslation.plainText2}</ExplainText>
                 </TextArea>
             </ProductIntro>
@@ -242,7 +226,6 @@ const Revision = () => {
                     <ExplainText>
                         {revisionProduct.prototype.plainText}
                     </ExplainText>
-                    {/*<br/>*/}
                     <ExplainText>
                         {revisionProduct.prototype.plainText2}
                     </ExplainText>
@@ -271,10 +254,6 @@ const Revision = () => {
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>
                     <ExplainText
                         ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText2}</ExplainText>
-                    {/*<a href='../../public/pdfs/SIDeR2019_paper_8.pdf'>*/}
-                    {/*<IconComponent pdfType={true} background='black' plainText='Paper of SIDeR 2019' />*/}
-                    {/*/!*<ExplainText ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText2}</ExplainText>*!/*/}
-                    {/*</a>*/}
                 </TextArea>
             </Description>
 
@@ -305,18 +284,6 @@ const Refresh = styled.div`
   transform: translate(50%, 0%);
 `
 
-const Renew = styled.h4`
-`
-
-const TitleSection = styled.div`
-  //position: relative;
-  height: 100vh;
-  //width: 90vw;
-  margin: -8px;
-  z-index: 0;
-  background: black;
-`
-
 const IntroSection = styled.div`
   position: relative;
   //z-index: 0;
@@ -337,16 +304,11 @@ const ProductIntro = styled(IntroSection)`
   //   background: white;
 `
 
-const DataTransformSection = styled(IntroSection)`
-
-`
-
 const PrototypeSection = styled(IntroSection)`
 
 `
 
 const PrototypeImg = styled.div`
-  //position: inherit;
 `
 
 const PrototypeVideo = styled.div`
@@ -368,27 +330,18 @@ const PrototypeImgWrapper = styled.div`
   justify-content: space-around;
 `
 
-const PrototypeHorizonBox = styled.div`
-  position: inherit;
-  display: flex;
-  //flex-direction: row;
-  flex-wrap: nowrap;
-`
-
 const Description = styled(IntroSection)`
 
 `
 
 
 const TextArea = styled.div`
-  //opacity: 0;
   position: relative;
   font-family: Roboto, sans-serif;
   top: 30vh;
   left: 55vw;
   max-height: 50vh;
   max-width: 35vw;
-  //overflow: scroll;
 `
 
 const Text = styled.h4`
@@ -399,8 +352,6 @@ const Text = styled.h4`
 
 const SubText = styled(Text)`
   margin: auto;
-  //width: 50vw;
-  //height: 10vh;
 
   font-style: normal;
   font-weight: lighter;
