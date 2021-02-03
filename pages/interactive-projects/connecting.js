@@ -10,6 +10,8 @@ import { States } from "../../components/connecting/States";
 
 import { connectingData, connectingAnima, animaState, statesExample } from "../../data/Connecting";
 import * as stylingAnima from '../../public/connecting/styling.json'
+import {RedirectButton} from "../../components/RedirectButton";
+import {RefreshButton} from "../../components/RefreshButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -56,6 +58,8 @@ const Connecting = () => {
 
     const conclusionTexts = useRef([])
 
+    const redirect = useRef([])
+    const redirectDriver = useRef(null)
 
     // new version of layout
 
@@ -140,6 +144,16 @@ const Connecting = () => {
         })
     }
 
+    const handleRedirect = () => {
+        gsap.from(redirect.current, {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: redirectDriver.current,
+                toggleActions: 'play none none reverse'
+            }
+        })
+    }
+
     useEffect(() => {
         const drivens = [
             [titleImg.current, titleTexts.current],
@@ -152,7 +166,7 @@ const Connecting = () => {
             [prototypeImg.current, prototypeTexts.current],
             [techniquesImg.current, techniquesTexts.current],
             [stylingImg.current, stylingTexts.current],
-            conclusionTexts.current
+            conclusionTexts.current,
         ]
 
         ScrollTrigger.create({
@@ -173,6 +187,7 @@ const Connecting = () => {
 
         handleStates(sections.current[4])
         handleStyling(sections.current[10])
+        handleRedirect()
 
     }, [])
 
@@ -344,9 +359,32 @@ const Connecting = () => {
                 </ConclusionTextWrapper>
             </Section>
 
+            <Section style={{height: '10vh'}} ref={redirectDriver}>
+                <RedirectWrapper ref={el => redirect.current.push(el)}>
+                    <RedirectButton checkAbout={true} textColor='white'/>
+                </RedirectWrapper>
+                <RefreshWrapper ref={el => redirect.current.push(el)}>
+                    <RefreshButton />
+                </RefreshWrapper>
+            </Section>
+
         </Layout>
     )
 }
+
+const RedirectWrapper = styled.div`
+    position: fixed;
+  bottom: 5vh;
+  right: -5vw;
+`
+
+const RefreshWrapper = styled.div`
+    position: fixed;
+  bottom: 5vh;
+  right: 50%;
+  margin-top: 10px;
+  transform: translate(50%, 0);
+`
 
 // --- title page ---
 
@@ -421,20 +459,6 @@ const P = styled.p`
   
 `
 
-// const DescribeWrapper = styled.div`
-//     position: absolute;
-//   top: 35vh;
-//   left: 60vw;
-//   width: 25%;
-// `
-//
-// const IntroText = styled.h3`
-//     color: #555;
-//   font-weight: 300;
-//   font-size: 1.6em;
-//   line-height: 1.4em;
-// `
-
 // --- introduction ---
 
 const WatchArea = styled.div`
@@ -488,7 +512,7 @@ const P4 = styled(P3)`
 // --- characterisation ---
 
 const ContentWrapper = styled.div`
-    width: 37vw;
+    width: 30vw;
     height: 28vmin;
     
     position: absolute;

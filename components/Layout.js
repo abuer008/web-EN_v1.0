@@ -11,7 +11,7 @@ const Layout = ({children, isBlack = true}) => {
               body {
               background: linear-gradient(90deg, white 52px, transparent 1%) center,
               linear-gradient(white 52px, transparent 1%) center,
-              #777;
+              #999;
               background-size: 55px 55px;
               
               font-family: Roboto, sans-serif;

@@ -26,7 +26,7 @@ export const connectingData = {
         plainText: "With a simple touch on hand wrist, the tactile signals will be delivered to the target and performed directly."
     },
     cataloging: {
-        heading: 'Cataloging and visualisation',
+        heading: 'Measurable kinship',
         plainText: "Communication was being catalogued and visualised, and the system will encourage the user to communicate and improve the quality of communication."
     },
     compatibility: {
@@ -63,7 +63,7 @@ export const statesExample = {
 export const animaState = {
     idle: {
         heading: 'Idle state',
-        plainText: 'The normal state, when the character hasn’t received any state information or receiving the ordinary data. In this state, the user can interact with the character normally.'
+        plainText: 'The normal state - the user can interact with the character normally.'
     },
     active: {
         heading: 'Active state',
@@ -71,6 +71,6 @@ export const animaState = {
     },
     sleepy: {
         heading: 'Sleepy state',
-        plainText: 'The state shows target are hoping to interact with the user.'
+        plainText: 'The state shows target is hoping to interact with the user.'
     }
 }

@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="description" content="the personal understanding of interactive design." />
                 <meta name="boweis-interactive-portfolio" content="Boweis' Interactive Design"/>
                 <meta name="msapplication-TileColor" content="#d91d47"/>
-                <meta name="theme-color" content="#ffffff"/>
+                <meta name="theme-color" content="#000"/>
             </Head>
             <LoadingBar />
             <Component {...pageProps} />

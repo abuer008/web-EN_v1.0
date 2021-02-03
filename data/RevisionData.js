@@ -26,7 +26,7 @@ export const revisionProduct = {
             "orci nulla."
     },
     conclusion: {
-        heading: "Conclusion",
+        heading: "Perceptual substitution",
         plainText: "Such as shapes, colours, etc., the subjective description of objects, are actually a perceptual language of our brain. Inspired by that this project designs a prototype, that represents visual information into tactile language. The successful visual substitution proves that the natural sensory organs' information can be perceived in another form through manual intervention.",
         plainText2: "Machine cognition, artificial intelligence, the common research topics in recent years, show us how people’s daily lives would be like, the interaction between people and machines, and the external world becomes more complex. This project aims to propose a possibility: haptic as a kind of “low-res” perceptual language, can be described such quantity of information like vision. It can also be used as a new channel of the senses, using artificial sensors expand perception in humans."
     }

@@ -7,16 +7,18 @@ import {SectionTrigger} from "../../components/superHuman/SectionTrigger";
 import {Reveal} from 'react-gsap'
 import {TextFading} from "../../components/visualData/TextFading";
 import {Fading} from "../../components/visualData/Fading";
+import {RefreshButton} from "../../components/RefreshButton";
+import {RedirectButton} from "../../components/RedirectButton";
 
 const SuperHuman = () => {
     return (
         <Layout>
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
-                <div>
-                    <Image alt='prothesis with voronoi fracture' src='/superHuman/titlePhoto.png' layout='fill'
-                           objectFit='cover' quality='100'/>
-                </div>
+                    <div>
+                        <Image alt='prothesis with voronoi fracture' src='/superHuman/titlePhoto.png' layout='fill'
+                               objectFit='cover' quality='100'/>
+                    </div>
                 </Fading>
                 <TitleWrapper>
                     <TextFading>
@@ -58,6 +60,19 @@ const SuperHuman = () => {
                         <Plain>{superHumanData.conclusion.plainText}</Plain>
                     </TextFading>
                 </InterfaceWrapper>
+
+            </Reveal>
+
+            <Reveal repeat trigger={<div />}>
+                <TextFading>
+                    <RedirectWrapper>
+                        <RedirectButton nextProject='Ambient Assisted Living' link='aal'/>
+                    </RedirectWrapper>
+
+                    <RefreshWrapper>
+                        <RefreshButton/>
+                    </RefreshWrapper>
+                </TextFading>
             </Reveal>
         </Layout>
     )
@@ -123,5 +138,21 @@ const InterfaceTitle = styled.h1`
 `
 
 // --- conclusion ---
+
+const RedirectWrapper = styled.div`
+  position: fixed;
+  bottom: 5vh;
+  z-index: 1;
+  right: -5vw;
+`
+
+const RefreshWrapper = styled.div`
+  position: fixed;
+  bottom: 5vh;
+  right: 50%;
+  z-index: 1;
+  margin-top: 10px;
+  transform: translate(50%, 0);
+`
 
 export default SuperHuman

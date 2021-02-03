@@ -6,12 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export const RedirectButton = ({textColor, nextProject, link}) => {
+export const RedirectButton = ({textColor, nextProject, link, checkAbout = false}) => {
 
     return (
-        <Link href={`/interactive-projects/${link}`}>
+        <Link href={checkAbout ? `/about` : `/interactive-projects/${link}`}>
             <Wrapper>
-                <Text style={{color: textColor}}>Continue on the next project {nextProject}</Text>
+                <Text style={{color: textColor}}>{checkAbout ? `The story of the PORTFOLIO` : `Continue on the next project ${nextProject}`}</Text>
                 <IconBox>
                     <Img>
                         <Image src='/about/arrowRight.svg' width='35' height='60'/>

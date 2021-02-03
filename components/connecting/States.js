@@ -22,34 +22,32 @@ export const States = ({animaData, isStopped, heading, plainText}) => {
 }
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
 `
 
 const StateWrapper = styled.div`
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    text-align: left;
-  
-    position: relative;
+  text-align: left;
+
+  position: relative;
   top: 6em;
-    left: -2em;
-  
-    padding: 0;
-    width: 17vw;
-  
-    color: white;
+  left: -2em;
+
+  padding: 0;
+  width: 100%;
+
+  color: white;
 `
 
 const H4 = styled.h4`
-    font-weight: 900;
-    font-size: 1.8em;
-    margin: 0;
+  font-weight: 900;
+  font-size: 1.8em;
+  margin: 0;
 `
 
 const P4 = styled.p`
-    font-weight: normal;
-    font-size: 1em;
-    margin: 0;
+  font-weight: normal;
+  font-size: 1em;
+  margin: 0;
 `

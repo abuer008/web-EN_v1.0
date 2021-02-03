@@ -116,8 +116,6 @@ const EnterText = styled.h4`
   bottom: 50%;
   margin: 0;
 
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 22px;
   line-height: 28px;
@@ -176,7 +174,6 @@ const WebsitePlain = styled.p`
   width: 20vw;
 
   font-family: Roboto Condensed, sans-serif;
-  font-style: normal;
   font-size: 0.8em;
   font-weight: bold;
   text-align: right;

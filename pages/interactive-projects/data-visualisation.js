@@ -143,15 +143,6 @@ const RefreshWrapper = styled.div`
   transform: translate(50%, 0);
 `
 
-// const Section = styled.div`
-//   position: relative;
-//   width: 100vw;
-//   height: 100vh;
-//   margin: -8px;
-//   background-color: white;
-//   //border: 1px solid black;
-// `
-
 const BackgroundWrapper = styled.div`
 
 `
@@ -160,8 +151,6 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 50vw;
   height: 70vh;
-  //overflow: hidden;
-  //filter: blur(1px);
   top: 10%;
   left: 10%;
   border-radius: 2em;
@@ -176,9 +165,6 @@ const Title = styled.div`
   position: absolute;
   top: 30vh;
   left: 55vw;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
 
   display: flex;
   flex-direction: column;

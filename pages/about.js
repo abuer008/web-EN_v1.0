@@ -35,8 +35,6 @@ const About = () => {
 }
 
 const ContentWrapper = styled.div`
-  font-family: Roboto, sans-serif;
-  font-style: normal;
 
   position: absolute;
   width: 80%;
@@ -56,7 +54,7 @@ const FrontText = styled(FrontTitle)`
   font-weight: 300;
   font-size: 3em;
   text-transform: uppercase;
-  width: 70%;
+  width: 80%;
   margin: auto 0;
   padding-bottom: 80px;
 `
@@ -69,6 +67,11 @@ const TechWrapper = styled(DesignWrapper)``
 
 const Title = styled.h1``
 
-const Plain = styled.p``
+const Plain = styled.p`
+    font-size: 1.1em;
+  line-height: 1.4em;
+  margin-bottom: 4em;
+`
+
 
 export default About

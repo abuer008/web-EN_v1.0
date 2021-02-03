@@ -50,8 +50,6 @@ const TextWrapper = styled.div`
   
   transform: translate(-50%, -50%);
   
-    font-family: Roboto, sans-serif;
-    font-style: normal;
     line-height: 1em;
 `
 
@@ -90,8 +88,6 @@ const ToolTip = styled.span`
   color: white;
   border-radius: 7px;
   padding: 5px;
-  //opacity: 0;
-  //visibility: hidden;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   
   transition: opacity 0.3s;

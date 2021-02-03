@@ -1,7 +1,7 @@
 export const dataVisualisation = [
     {
         heading: "Syrian civil war",
-        plainText: "The Syrian Civil War is an ongoing civil war fought in Syria, so far noticed as the biggest war in the 21st century. On 2 January 2013, the UN stated that 60,000 had been killed since the civil war began, four months later, the UN’s updated figure for the death toll had reached 80,000. In the visualisation of the Syrian Civil War, it wasn’t trying to deliver the political opinion, but making people realise, that Syrian citizens, who were murdered in the battlefield, are being recorded into a piece of data but are the real brutal tragedies."
+        plainText: "The Syrian Civil War is an ongoing civil war fought in Syria, so far noticed as the biggest war in the 21st century. On 2 January 2013, the UN stated that 60,000 had been killed since the civil war began, four months later, the UN’s updated figure for the death toll had reached 80,000. In the visualisation of the Syrian Civil War, it wasn’t trying to deliver any political opinion, but making people realise, that Syrian citizens, who were murdered in the battlefield, are being recorded into a piece of data but are the real brutal tragedies."
     },
     {
         code:

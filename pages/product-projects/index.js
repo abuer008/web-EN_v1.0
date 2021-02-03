@@ -32,7 +32,6 @@ const TitleWrapper = styled.div`
 
 const Think = styled.h1`
     font-family: Roboto Condensed, sans-serif;
-    font-style: normal;
     font-weight: 300;
     font-size: 6em;
     line-height: 0;
@@ -41,7 +40,6 @@ const Think = styled.h1`
 
 const Title = styled(Think)`
     position: inherit;
-    font-family: Roboto, sans-serif;
     font-weight: 900;
     left: 1em;
 `
@@ -53,8 +51,6 @@ const Mittle = styled.p`
   padding: 0;
   margin: auto 0;
   
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: 300;
   font-size: 2em;
 `

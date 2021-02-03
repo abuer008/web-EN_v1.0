@@ -286,22 +286,14 @@ const Refresh = styled.div`
 
 const IntroSection = styled.div`
   position: relative;
-  //z-index: 0;
   overflow: hidden;
   background-color: black;
-  //padding: 2em;
   margin: 0 -8px;
-  //border: 10px;
   height: 100vh;
-  //width: 90vw;
 
-  //display: flex;
-  //flex-direction: row;
 `
 
 const ProductIntro = styled(IntroSection)`
-  //position: absolute;
-  //   background: white;
 `
 
 const PrototypeSection = styled(IntroSection)`
@@ -337,7 +329,6 @@ const Description = styled(IntroSection)`
 
 const TextArea = styled.div`
   position: relative;
-  font-family: Roboto, sans-serif;
   top: 30vh;
   left: 55vw;
   max-height: 50vh;
@@ -345,7 +336,6 @@ const TextArea = styled.div`
 `
 
 const Text = styled.h4`
-  font-family: Roboto, sans-serif;
   font-size: 1.5rem;
   margin: auto;
 `

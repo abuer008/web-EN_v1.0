@@ -14,6 +14,8 @@ import {useRef, useEffect} from 'react'
 
 import {AALData, AALs, outputContents} from "../../data/AAL";
 import {OutputComponent} from "../../components/aal/OutputComponent";
+import {RedirectButton} from "../../components/RedirectButton";
+import {RefreshButton} from "../../components/RefreshButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -48,6 +50,9 @@ const AmbientAssistedLiving = () => {
     const prototype = useRef([])
 
     const conclusion = useRef([])
+
+    const redirect = useRef(null)
+    const redirectDrivens = useRef([])
 
     const tlStyle = {
         width: '450px',
@@ -107,20 +112,6 @@ const AmbientAssistedLiving = () => {
             pin: pinEl.current,
             pinSpacing: false,
         })
-        // gsap.fromTo(timeGraphs.current, {
-        //     opacity: 1,
-        //     y: 0,
-        //     stagger: 0.2,
-        //     scrollTrigger: {
-        //         trigger: sectionRefs.current[6],
-        //         start: 'top 90%',
-        //         end: 'bottom center',
-        //         toggleActions: 'play none none reverse'
-        //     }
-        // }, {
-        //     opacity: 0,
-        //     y: 100
-        // })
     }
 
     const outputAnima = () => {
@@ -163,24 +154,37 @@ const AmbientAssistedLiving = () => {
     }
 
     const graphicAnima = () => {
-        gsap.timeline({duration: 1, scrollTrigger: {
-            trigger: sectionRefs.current[7],
+        gsap.timeline({
+            duration: 1, scrollTrigger: {
+                trigger: sectionRefs.current[7],
                 start: 'top 50%',
                 end: 'bottom center',
                 toggleActions: 'play complete none reverse',
                 onEnter: () => setIsPlay(true)
-            }})
-        .from(UIImgs.current, {
-            opacity: 0,
-            y: 100,
-            stagger: 0.2,
-            duration: 1,
+            }
         })
+            .from(UIImgs.current, {
+                opacity: 0,
+                y: 100,
+                stagger: 0.2,
+                duration: 1,
+            })
             .from(popUp.current, {
                 y: '+=100%',
                 duration: 1.5,
                 ease: 'elastic.out(0.2, 0.25)'
             })
+    }
+
+    const redirectAnima = () => {
+        gsap.from(redirectDrivens.current, {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: redirect.current,
+                toggleActions: 'play none none reverse'
+            },
+
+        })
     }
 
     useEffect(() => {
@@ -195,7 +199,7 @@ const AmbientAssistedLiving = () => {
         outputAnima()
         dotCloudAnima()
         graphicAnima()
-
+        redirectAnima()
 
     }, [])
 
@@ -213,7 +217,8 @@ const AmbientAssistedLiving = () => {
     return (
         <Layout>
             <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
-            <Section ref={el => sectionRefs.current.push(el)} style={{position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0)', width: '100%', zIndex: '0'}}>
+            <Section ref={el => sectionRefs.current.push(el)}
+                     style={{position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0)', width: '100%', zIndex: '0'}}>
                 <VideoWrapper ref={video}>
                     <ReactPlayer
                         alt='point cloud human body with impaired parts'
@@ -432,14 +437,38 @@ const AmbientAssistedLiving = () => {
                     </EighthPageText>
                 </ConclusionWrapper>
             </Section>
+
+            <Section style={{height: '20vh', zIndex: '2', bottom: '20vh'}} ref={redirect}>
+                <RedirectWrapper ref={el => redirectDrivens.current.push(el)}>
+                    <RedirectButton nextProject='The CONNECTING' link='connecting'/>
+                </RedirectWrapper>
+                <RefreshWrapper ref={el => redirectDrivens.current.push(el)}>
+                    <RefreshButton/>
+                </RefreshWrapper>
+            </Section>
         </Layout>)
 }
 
 
 // --- Main styles ---
 
+const RedirectWrapper = styled.div`
+    position: fixed;
+  bottom: 5vh;
+  z-index: 1;
+  right: -5vw;
+`
+
+const RefreshWrapper = styled.div`
+    position: fixed;
+  bottom: 5vh;
+  right: 50%;
+  margin-top: 10px;
+  transform: translate(50%, 0);
+`
+
 const AnimaDriven = styled.div`
-    position: relative;
+  position: relative;
   width: 480px;
   height: 120px;
 `
@@ -451,26 +480,8 @@ const Section = styled.div`
   margin: -8px;
   padding-right: 17px;
   overflow: hidden;
-  //z-index: 0;
   background-color: #efefef;
-  //border: 1px solid #555;
 
-`
-
-const Warning = styled.h3`
-  position: absolute;
-  right: 11vw;
-  width: 420px;
-  margin: 0;
-  padding: 1em;
-  background-color: #888;
-  color: white;
-  border-radius: 30px;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2.4rem;
 `
 
 // --- TitlePage ---
@@ -482,11 +493,9 @@ const VideoWrapper = styled.div`
 `
 
 const TlArea = styled.div`
-  //position: fixed;
   position: relative;
   top: 13vh;
   left: 62vw;
-  //right: 15vw;
   width: 426px;
   z-index: 1;
   transition: 0.3s ease-out;
@@ -536,9 +545,6 @@ const PIconWrapper = styled(GIconWrapper)`
 `
 
 const H1 = styled.h1`
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: 900;
   font-size: 3em;
   line-height: 90%;
@@ -548,16 +554,13 @@ const H1 = styled.h1`
 
 
 const SecondPageText = styled.div`
-  //position: fixed;
   position: relative;
   top: 20vh;
   left: 25vw;
 `
 
 const BigText = styled.h2`
-  //position: absolute;
   width: 50vw;
-  font-family: Roboto, sans-serif;
   font-weight: 900;
   font-size: 3.5vw;
   margin: 0;
@@ -565,7 +568,6 @@ const BigText = styled.h2`
 
 const SmallText = styled.p`
   width: 60vw;
-  font-family: Roboto, sans-serif;
   font-weight: 300;
   font-size: 1.2em;
   line-height: 1.4em;
@@ -574,25 +576,22 @@ const SmallText = styled.p`
 // --- AAL Intro ---
 
 const ThirdPage = styled.div`
-  font-family: Roboto, sans-serif;
-  font-style: normal;
 `
 
 const ThirdPageText = styled.div`
   position: relative;
   top: 50vh;
   right: 10%;
-  
+
   display: flex;
   flex-direction: column;
-  
+
   align-items: center;
 `
 
 const TitleWrapper = styled.div`
   position: relative;
   bottom: 12vh;
-  //left: 80px;
 `
 
 const AALIntro = styled(BigText)`
@@ -609,16 +608,13 @@ const Strong = styled.strong`
 `
 
 const ThirdSmallText = styled(SmallText)`
-  //position: absolute;
   position: relative;
   text-align: justify;
   width: 40vw;
-  //left: 35px;
   top: -50px;
 `
 
 const AALImageWrapper = styled.div`
-  //position: fixed;
   position: absolute;
   top: 32vh;
   right: 0;
@@ -656,17 +652,16 @@ const PatchImg = styled.div``
 // --- data comparison ---
 
 const TimeGraphWrapper = styled.div`
-  position: relative;
+  position: absolute;
   left: 10vw;
-  //top: 5%;
-  bottom: 25vh;
-  height: 80%;
+  top: 15vh;
+  height: 100%;
   width: 480px;
-  
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  
+
   justify-content: space-evenly;
   align-items: center;
 
@@ -675,9 +670,6 @@ const TimeGraphWrapper = styled.div`
 const ArrowWrapper = styled.div`
   position: absolute;
   margin: auto;
-  //top: 46vh;
-  //left: 23vw;
-  //z-index: 1;
 `
 
 const FifthPageText = styled(FourthPageText)`
@@ -688,7 +680,7 @@ const FifthBigText = styled(FourthBigText)``
 const FifthSmallText = styled(FourthSmallText)``
 
 const Text = styled(SmallText)`
-    font-weight: normal;
+  font-weight: normal;
   margin-top: 25vh;
 `
 
@@ -727,11 +719,6 @@ const UIWrapper = styled.div`
   height: 85%;
   top: 5%;
   left: 60vw;
-  //display: flex;
-  //flex-direction: column;
-
-  //align-items: center;
-  //justify-content: flex-end;
 `
 const GraphicUIWrapper = styled.div`
   height: 65%;
@@ -770,7 +757,6 @@ const SixthBigText = styled.h2`
 `
 const SixthSmallText = styled.p`
   position: relative;
-  //margin: auto;
   width: 100%;
   text-align: justify;
 
@@ -779,7 +765,6 @@ const SixthSmallText = styled.p`
   font-weight: 300;
   font-size: 1.2em;
   line-height: 1.4em;
-  //width: 20vw;
 `
 
 // --- prototype ---
