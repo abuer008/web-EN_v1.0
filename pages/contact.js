@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import styled from 'styled-components'
+import {ContactIcon} from "../components/contact/ContactIcon";
 
 const Contact = () => {
     const [ visible, setVisible ] = useState(false)
@@ -26,22 +27,24 @@ const Contact = () => {
             <TextWrapper>
                 <Front>Any thoughts, comments, or regarding works</Front>
                 <Middle>GET IN TOUCH</Middle>
-                <Bottom
-                    onMouseEnter={() => setVisible(true)}
-                    onMouseLeave={() => {
-                        setVisible(false)
-                        setCopy(false)
-                    }}
-                    onClick={handleCopy}
-                    ref={email}
-                >x.bowei@aol.com</Bottom>
-                <ToolTip style={{visibility: visible ? 'visible' : 'hidden', opacity: visible ? 1 : 0, backgroundColor: copied ? '#4caf50' : '#aaa'}} ref={toolTip}>{copied ? "Success copied!" : "Copy to Clipboard"}</ToolTip>
+                <ContactWrapper>
+                <ContactIcon content='email' />
+                <ContactIcon content='linkedin' />
+                <ContactIcon content='github' />
+                </ContactWrapper>
             </TextWrapper>
         </Layout>
     )
 }
 
-const Background = styled.div``
+
+const ContactWrapper = styled.div`
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  width: 35%;
+`
 
 const TextWrapper = styled.div`
     position: absolute;
@@ -78,19 +81,5 @@ const Bottom = styled.h6`
   }
 `
 
-const ToolTip = styled.span`
-    position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 140px;
-  z-index: 1;
-  background-color: #aaa;
-  color: white;
-  border-radius: 7px;
-  padding: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  
-  transition: opacity 0.3s;
-`
 
 export default Contact;
