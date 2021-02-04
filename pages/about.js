@@ -17,13 +17,13 @@ const About = () => {
                 </ConceptWrapper>
                 <DesignWrapper>
                     <Title>{aboutData.design.heading}</Title>
-                    <Link href='#'>
+                    {/*<Link href='/'>*/}
                         <IconComponent
                             pdfType={false}
                             background='white'
                             plainText='Source code'
                         />
-                    </Link>
+                    {/*</Link>*/}
                 </DesignWrapper>
                 <TechWrapper>
                     <Title>{aboutData.techniques.heading}</Title>

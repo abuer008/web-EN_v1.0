@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link"
 import ProjectTextItem from "../../components/ProjectTextItem";
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 import * as RevisionAnima from '../../public/revisionStartAnima.json';
 import {projectsArray, interactionPageInfo} from "../../data/MainPageData";
@@ -46,6 +46,7 @@ function InteractiveProjects() {
         })
         setVisible(false)
     }
+
 
     return (
         <Layout>

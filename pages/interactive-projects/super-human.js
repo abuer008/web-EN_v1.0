@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import { useEffect } from 'react'
 import Layout from "../../components/Layout";
 import {superHumanData} from "../../data/SuperHuman";
 import {SectionTrigger} from "../../components/superHuman/SectionTrigger";
@@ -11,6 +12,11 @@ import {RefreshButton} from "../../components/RefreshButton";
 import {RedirectButton} from "../../components/RedirectButton";
 
 const SuperHuman = () => {
+    useEffect(() => {
+        return () => {
+            window.location.reload(true)
+        }
+    })
     return (
         <Layout>
             <Reveal repeat trigger={<SectionTrigger/>}>

@@ -188,31 +188,26 @@ const AmbientAssistedLiving = () => {
     }
 
     useEffect(() => {
-        gsap.defaults({ease: 'power1.out'})
 
-        sectionRefs.current.forEach((ref) => handleScroll(ref))
-        defaultsAnima(sectionRefs.current[2], newText.current)
-        defaultsAnima(sectionRefs.current[3], [aalIntro.current, introImg.current])
-        defaultsAnima(sectionRefs.current[4], [hardwareTexts.current, hardwareImgs.current])
-        defaultsAnima(sectionRefs.current[5], [comparisonsTexts.current, timeGraphs.current])
-        dotsAnima()
-        outputAnima()
-        dotCloudAnima()
-        graphicAnima()
-        redirectAnima()
+        if(sectionRefs.current) {
+            gsap.defaults({ease: 'power1.out'})
+            sectionRefs.current.forEach((ref) => handleScroll(ref))
+            defaultsAnima(sectionRefs.current[2], newText.current)
+            defaultsAnima(sectionRefs.current[3], [aalIntro.current, introImg.current])
+            defaultsAnima(sectionRefs.current[4], [hardwareTexts.current, hardwareImgs.current])
+            defaultsAnima(sectionRefs.current[5], [comparisonsTexts.current, timeGraphs.current])
+            dotsAnima()
+            outputAnima()
+            dotCloudAnima()
+            graphicAnima()
+            redirectAnima()
+        }
 
+        return () => {
+            window.location.reload(true)
+        }
     }, [])
 
-    useEffect(() => {
-        if (isLock) {
-            document.body.style.overflow = 'hidden'
-            setTimeout(() => {
-                setLock(false)
-                document.body.style.overflow = 'unset'
-            }, 1800)
-        }
-        console.log("locked animation: " + isLock)
-    }, [isLock])
 
     return (
         <Layout>

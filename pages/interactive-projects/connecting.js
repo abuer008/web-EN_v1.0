@@ -189,6 +189,10 @@ const Connecting = () => {
         handleStyling(sections.current[10])
         handleRedirect()
 
+        return () => {
+            window.location.reload(true)
+        }
+
     }, [])
 
     // useEffect(() => {
@@ -354,8 +358,8 @@ const Connecting = () => {
                 </ConclusionImgWrapper>
                 <ConclusionTextWrapper>
                     <H3 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.heading}</H3>
-                    <P4 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.plainText}</P4>
-                    <P4 ref={el => conclusionTexts.current.push(el)} style={{margin: '1.5em 0'}}>{connectingData.conclusion.plainText2}</P4>
+                    <P4 ref={el => conclusionTexts.current.push(el)} style={{fontSize: '1.1em'}}>{connectingData.conclusion.plainText}</P4>
+                    <P4 ref={el => conclusionTexts.current.push(el)} style={{margin: '1.5em 0', fontSize: '1.1em'}}>{connectingData.conclusion.plainText2}</P4>
                 </ConclusionTextWrapper>
             </Section>
 
@@ -453,7 +457,7 @@ const P = styled.p`
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.3em;
+  font-size: 1.2em;
   line-height: 1.4em;
   color: white;
   

@@ -14,7 +14,7 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
     useEffect(() => {
         setWindowsWidth(window.innerWidth)
         setWindowsHeight(window.innerHeight)
-    })
+    }, [])
     const perX = (x / windowsWidth).toFixed(2)
     const perY = (y / windowsHeight).toFixed(2)
 
@@ -178,14 +178,8 @@ const Warning = styled(MainSubTitle)`
 
 const MainText = styled.p`
   z-index: 1;
-  //display: block;
-  //position: relative;
-  //top: 1em;
   width: 100%;
   margin: 1em auto;
-
-  font-family: Roboto, sans-serif;
-  font-style: normal;
   font-weight: 300;
   font-size: 2.2em;
 

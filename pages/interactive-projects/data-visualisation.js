@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {useEffect} from 'react'
 import Layout from '../../components/Layout'
 import styled from 'styled-components'
 import {VDText} from "../../components/visualData/VDText";
@@ -18,11 +19,15 @@ import {RefreshButton} from "../../components/RefreshButton";
 
 const DataVisualisation = () => {
 
-
+    useEffect(() => {
+        return () => {
+            window.location.reload(true)
+        }
+    })
     return (
         <Layout>
             <Reveal repeat trigger={<SectionTrigger/>}>
-                {/*<Fading>*/}
+                <Fading>
                 <BackgroundWrapper>
                     <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.png' layout='fill'
                            objectFit='cover'/>
@@ -44,7 +49,7 @@ const DataVisualisation = () => {
                         </Button>
                     </Title>
                 </TextFading>
-                {/*</Fading>*/}
+                </Fading>
             </Reveal>
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>

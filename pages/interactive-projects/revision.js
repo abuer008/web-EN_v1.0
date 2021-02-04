@@ -48,9 +48,9 @@ const Revision = () => {
 
     const handleText = el => {
         gsap.from(el, {
-            opacity: 0,
             top: '+=10%',
             ease: 'power1.inOut',
+            paused: true,
             duration: 1,
             scrollTrigger: {
                 trigger: el,
@@ -103,20 +103,24 @@ const Revision = () => {
     }
 
     useEffect(() => {
-        handleSnap(sections.current)
 
         if (subTextRef.current) {
-            subTextRef.current.forEach((item, i) => {
-                const subEl = plainTextRef.current[i]
+            // subTextRef.current.forEach((item, i) => {
+            //     const subEl = plainTextRef.current[i]
+            //
+            //     handleText(item)
+            //     handleText(subEl)
+            // })
+            handleSnap(sections.current)
 
-                handleText(item)
-                handleText(subEl)
-            })
         }
 
         handlePrototypes()
         handleTransitionPlay()
         handleRedirect(redirect.current, sections.current[8])
+        return () => {
+            window.location.reload(true)
+        }
 
 
     }, [])
