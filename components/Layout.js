@@ -16,6 +16,12 @@ const Layout = ({children, isBlack = true}) => {
               
               font-family: Roboto, sans-serif;
               font-style: normal;
+
+
+              }
+              
+              .roundImage {
+                border-radius: 5%;
               }
             `}</style>
         </Wrapper>

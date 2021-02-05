@@ -25,7 +25,6 @@ function InteractiveProjects() {
 
 
     const handleMouseEnter = (popProject) => {
-        console.log("enter")
 
         setProjectInfo({
             title: popProject.title,
@@ -38,7 +37,6 @@ function InteractiveProjects() {
     }
 
     const handleMouseLeave = () => {
-        console.log("leave")
         setProjectInfo({
             title: "",
             subTitle: "",

@@ -63,3 +63,10 @@ export const outputContents = {
         plainText: "Excessive exercises has increased by 90 minutes compared with the past week."
     }
 }
+
+export const protoImgs = [
+    {source: '/aal/prototype/Start.Page.png', text: 'the lock screen'},
+    {source: '/aal/prototype/General.Info.Page.png', text: 'the main page'},
+    {source: '/aal/prototype/Health.Concerns.Page.png', text: 'the detail of health concerns'},
+    {source: '/aal/prototype/Monthly.report.Page.png', text: 'the monthly report'}
+]

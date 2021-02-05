@@ -45,18 +45,13 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
 
 
 const TextArea = styled.div`
-  //display: flex;
   height: 600px;
   width: 50vw;
-  flex-flow: column nowrap;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
-  align-items: flex-start;
   position: absolute;
   left: 50%;
   top: 40%;
-  //border: 2px solid black;
 
   transform: translate(-50%, -50%);
 
@@ -64,7 +59,6 @@ const TextArea = styled.div`
 
   .fadeOut {
     opacity: 1;
-    //font-size: 7.5rem;
     animation: fadeOut 1s ease;;
 
     @keyframes fadeOut {
@@ -79,8 +73,6 @@ const TextArea = styled.div`
   }
 
   .fadeIn {
-    //font-size: 4.5rem;
-    //line-height: 70px;
     animation: fadeIn 1s ease;
 
     @keyframes fadeIn {
@@ -120,24 +112,16 @@ const MainTitle = styled.h1.attrs(props => ({
         transform: `rotateX(${props.degX}deg) rotateY(${props.degY}deg)`,
     }
 }))`
-  //z-index: 0;
   width: 100%;
   margin: 0;
   padding-top: 7vh;
 
   font-family: Roboto, sans-serif;
   font-weight: 900;
-  //font-size: 7rem;
-  //line-height: 117px;
   text-transform: uppercase;
 
 
   transition: text-shadow .5s;
-
-  //:hover {
-  //  transform: scale(1.1);
-  //  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  //}
 
   @media all and (max-height: 680px) {
     display: none;

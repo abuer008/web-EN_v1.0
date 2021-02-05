@@ -95,7 +95,7 @@ const ImgWrapper = styled.div`
 
 const Text = styled.p`
   font-family: Roboto Condensed, sans-serif;
-  font-size: 1.1em;
+  font-size: 1.1vw;
   margin: 10px auto;
 
 `
@@ -105,7 +105,7 @@ const ToolTip = styled.span`
   display: inline-block;
   text-align: center;
   width: 140px;
-  top: 25vh;
+  top: 90%;
   z-index: 1;
   background-color: #aaa;
   color: white;

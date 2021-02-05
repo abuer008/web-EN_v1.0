@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import {useEffect} from 'react'
 import Layout from "../../components/Layout";
 import {superHumanData} from "../../data/SuperHuman";
 import {SectionTrigger} from "../../components/superHuman/SectionTrigger";
@@ -8,6 +8,7 @@ import {SectionTrigger} from "../../components/superHuman/SectionTrigger";
 import {Reveal} from 'react-gsap'
 import {TextFading} from "../../components/visualData/TextFading";
 import {Fading} from "../../components/visualData/Fading";
+import VideoArea from "../../components/revision/VideoArea";
 import {RefreshButton} from "../../components/RefreshButton";
 import {RedirectButton} from "../../components/RedirectButton";
 
@@ -52,6 +53,10 @@ const SuperHuman = () => {
                 </HardwareWrapper>
             </Reveal>
             <Reveal repeat trigger={<SectionTrigger/>}>
+                <VideoWrapper>
+                    <VideoArea videoSource='/superHuman/UIDemo.mp4' alt='virtual reality interface video demo'
+                               isPlaying={false} showControl={true}/>
+                </VideoWrapper>
                 <InterfaceWrapper>
                     <TextFading>
                         <InterfaceTitle>{superHumanData.VRInterface.heading}</InterfaceTitle>
@@ -69,7 +74,7 @@ const SuperHuman = () => {
 
             </Reveal>
 
-            <Reveal repeat trigger={<div />}>
+            <Reveal repeat trigger={<div/>}>
                 <TextFading>
                     <RedirectWrapper>
                         <RedirectButton nextProject='Ambient Assisted Living' link='aal'/>
@@ -141,6 +146,13 @@ const InterfaceWrapper = styled.div`
 `
 const InterfaceTitle = styled.h1`
   font-size: 2.5em;
+`
+
+const VideoWrapper = styled.div`
+    position: absolute;
+  transform: translate(5%, -50%);
+  top: 50%;
+  height: 25vw;
 `
 
 // --- conclusion ---

@@ -12,16 +12,16 @@ import {useState} from 'react'
 import {useRef, useEffect} from 'react'
 
 
-import {AALData, AALs, outputContents} from "../../data/AAL";
+import {AALData, AALs, outputContents, protoImgs} from "../../data/AAL";
 import {OutputComponent} from "../../components/aal/OutputComponent";
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
+import {PrototypeEl} from "../../components/aal/PrototypeEl";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const AmbientAssistedLiving = () => {
 
-    const [isLock, setLock] = useState(false)
     const [isPlay, setIsPlay] = useState(false)
 
     const sectionRefs = useRef([])
@@ -411,6 +411,11 @@ const AmbientAssistedLiving = () => {
             {/*--- prototype ---*/}
 
             <Section ref={el => sectionRefs.current.push(el)}>
+                <ProtoImgWrapper>
+                    {protoImgs && protoImgs.map((el, i) => {
+                        return <PrototypeEl key={i} imgSource={el.source} index={i} text={el.text} />
+                    })}
+                </ProtoImgWrapper>
                 <ProtoWrapper>
                     <SeventhPageText>
                         <SeventhBigText ref={el => prototype.current.push(el)}>{AALs.prototype.heading}</SeventhBigText>
@@ -650,7 +655,7 @@ const TimeGraphWrapper = styled.div`
   position: absolute;
   left: 10vw;
   top: 15vh;
-  height: 100%;
+  height: 90%;
   width: 480px;
 
   display: flex;
@@ -763,6 +768,10 @@ const SixthSmallText = styled.p`
 `
 
 // --- prototype ---
+
+const ProtoImgWrapper = styled.div`
+    
+`
 
 const ProtoWrapper = styled.div`
 

@@ -11,6 +11,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Menu({isBlack}) {
 
+    const [event, setEvent] = useState(true)
+
     const trigger = useRef(null)
     const menuItems = useRef([])
     const img = useRef(null)
@@ -21,11 +23,12 @@ function Menu({isBlack}) {
             .to(menuItems.current.reverse(), {
                 x: '-=100',
                 opacity: 0,
+                pointerEvents: 'none',
                 stagger: 0.1,
-                ease: 'power2.in'
+                ease: 'power2.in',
             }).progress(0)
             .to(img.current, {
-                scale: 1.3,
+                scale: 1.2,
                 ease: 'elastic.out(1.2, 0.45)'
             }, '-=0.1').progress(0)
 
@@ -50,7 +53,7 @@ function Menu({isBlack}) {
             </Link>
             {menuList.map(menuItem => {
                 return <Link href={menuItem.destination} key={menuItem.id}>
-                    <MenuItemActive style={{color: isBlack ? 'black' : 'white'}} ref={el => menuItems.current.push(el)}>{menuItem.title}</MenuItemActive>
+                    <MenuItemActive style={{color: isBlack ? 'black' : 'white', pointerEvents: event ? 'default' : 'none'}} ref={el => menuItems.current.push(el)}>{menuItem.title}</MenuItemActive>
                 </Link>
             })}
         </MenuWrapper>
@@ -58,9 +61,6 @@ function Menu({isBlack}) {
 }
 
 const MenuItemActive = styled.a`
-  //position: absolute;
-  //margin: 0 4em;
-  //font-weight: bold;
   width: 80px;
   text-align: left;
 
@@ -74,12 +74,7 @@ const MenuItemActive = styled.a`
   }
 `
 
-const MenuItemNormal = styled(MenuItemActive)`
-  font-weight: normal;
-`
-
 const ImgWrapper = styled.div`
-  //transition: transform 0.3s;
     :hover {
       cursor: pointer;
     }
@@ -90,7 +85,6 @@ const MenuWrapper = styled.div`
   max-width: 56vw;
   left: 22%;
   position: fixed;
-  //margin: 2.5em 0;
   padding-top: 4em;
   z-index: 3;
 

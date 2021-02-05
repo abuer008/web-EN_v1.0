@@ -204,11 +204,11 @@ const Revision = () => {
                 <TranslationWrapper>
                     <VideoWrapper>
                         <VideoArea videoSource='/revision/translation/fundamental.mp4'
-                                   alt='fundamental perceptual translation' isPlaying={isTransitionPlay}/>
+                                   alt='fundamental perceptual translation' isPlaying={isTransitionPlay} showControl={true} light={true}/>
                     </VideoWrapper>
                     <VideoWrapper style={{height: '34.2vh'}}>
                         <VideoArea videoSource='/revision/translation/form.mp4'
-                                   alt='shape translated with haptic language' isPlaying={isTransitionPlay}/>
+                                   alt='shape translated with haptic language' isPlaying={isTransitionPlay} showControl={true} light={true}/>
                     </VideoWrapper>
                 </TranslationWrapper>
                 <TextArea>
@@ -309,9 +309,9 @@ const PrototypeImg = styled.div`
 
 const PrototypeVideo = styled.div`
   position: absolute;
-  top: 25vh;
-  left: 5vw;
-  height: 35vh;
+  top: 50%;
+  transform: translate(15%, -50%);
+  height: 22vw;
 `
 
 const PrototypeImgWrapper = styled.div`
@@ -374,9 +374,9 @@ const ToneText = styled.strong`
 
 const TranslationWrapper = styled.div`
   position: absolute;
-  top: 12vh;
-  left: 6vw;
+  top: 50%;
   height: 80vh;
+  transform: translate(15%, -50%);
 
   display: flex;
   flex-direction: column;
