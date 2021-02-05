@@ -42,13 +42,8 @@ export const dataVisualisation = [
         heading: "Intuitive illustration in 3D globe",
         plainText: "To clarify the war situation, using coordinates, containing in the data strings, to illustrate intuitively on the three-dimensional globe, has been considered. The browser 3D techniques - webGL, and Threejs library are being implemented into visualisation."
     }, {
-        heading: "Conclusion",
-        plainText: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-            "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-            "Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. " +
-            "Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus " +
-            "ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat " +
-            "orci nulla."
+        heading: "Rethinking of design and techniques",
+        plainText: "Data, the foundation of the interface design. Representing data, decoration and make the data more understandable to a human, are the essential tasks of interface design. In this particular project, through the experience of handling data, I’m realised that in a productive project, the role of techniques should be involved in more critical parts. Taking techniques into consideration from the design perspective makes the process more efficient and realistic. Most importantly, the conceptual idea can be implemented consistently in the final product."
     }
 ]
 

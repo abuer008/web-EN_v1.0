@@ -13,7 +13,7 @@ export const superHumanData = {
         plainText: "Keyboard, mouse, click, and slide are the most common basic interaction methods and have stagnated for a long time. While humans and machines are more closely developing to meet the core goal of symbiosis, efficient and intuitive interactive methods are put forward. I illustrate the interactive elements that no longer following flat patterns but completely 3D dynamic elements based on VR's three-dimensional interface. In terms of interactive means, hands or fingers are completely abandoned, and the rotation of the eyeball and head is used as a new interactive language."
     },
     conclusion: {
-        heading: "Conclusion",
-        plainText: ""
+        heading: "Symbiosis",
+        plainText: "In the context of the ideal and speculative project, we discussed the future of products and interaction. The inevitable progress of miniaturisation and intelligence let amounts of traditional products been disappeared. To satisfy the essential needs of users, the symbiotic relationship between human and machine become realistic. Thus, the conventional interaction must be innovated, and the “Semantic” and “Intuitive” would be the critical features for the future interactive methods."
     }
 }

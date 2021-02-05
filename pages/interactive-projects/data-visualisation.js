@@ -179,19 +179,19 @@ const Title = styled.div`
 const SubTitle = styled.h3`
   font-family: Roboto Condensed, sans-serif;
   font-weight: 300;
-  font-size: 3em;
-  line-height: 1em;
+  font-size: 2.7vw;
+  line-height: 2.7vw;
 
   margin: 0;
 `
 
 const MainTitle = styled.h1`
-  max-width: 620px;
-  height: 180px;
+  max-width: 35vw;
+  height: 8.9vw;
 
   font-weight: 900;
-  font-size: 6em;
-  line-height: 0.85em;
+  font-size: 5vw;
+  line-height: 4.2vw;
   text-transform: uppercase;
 
   margin: 0;
@@ -199,7 +199,7 @@ const MainTitle = styled.h1`
 
 const YearText = styled.h4`
   font-weight: 300;
-  font-size: 4em;
+  font-size: 3.5vw;
 
   margin: 0;
 `

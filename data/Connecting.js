@@ -10,7 +10,7 @@ export const connectingData = {
     research: {
         heading: "The development of contemporary kinship",
         plainText: "In the last project, we discussed the lack of elderly care services and tried to alleviate using “Ambient Assisted Living”. Nevertheless, the deeper reason that causes this problem was never set foot on - the collapse of the traditional family. Since the mid-1960s, the family in Germany - like in other highly developed industrial societies, has undergone pronounced change processes. Many social scientists believe that marriage and family are going through a crisis; there is even occasional talk of the “death of the family”.",
-        plainText2: "Childlessness, single-parent family, and ageing population, the collapse of traditional family form has caused series of social problems and financial crisis; more children and adolescents no longer grow up during their entire childhood and adolescence with both birth parents, the kinship of modern generations become weaker. The straight consequence is, few relatives willing to take care of their own kins."
+        plainText2: "Childlessness, single-parent family, and ageing population, the collapse of traditional family form has caused series of social problems and financial crisis; more children and adolescents no longer grow up during their entire childhood and adolescence with both birth parents, the kinship of modern generations become weaker. What would be the alternative form to the conventional households - will be discussed in this project."
     },
     introduction: {
         heading: "The Connecting",

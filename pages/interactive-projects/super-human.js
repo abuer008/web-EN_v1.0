@@ -67,8 +67,8 @@ const SuperHuman = () => {
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <InterfaceWrapper>
                     <TextFading>
-                        <InterfaceTitle>{superHumanData.conclusion.heading}</InterfaceTitle>
-                        <Plain>{superHumanData.conclusion.plainText}</Plain>
+                        <InterfaceTitle style={{textTransform: 'uppercase', fontSize: '3.2vw'}}>{superHumanData.conclusion.heading}</InterfaceTitle>
+                        <Plain style={{fontSize: '1.4em', fontWeight: 'normal', margin: '0'}}>{superHumanData.conclusion.plainText}</Plain>
                     </TextFading>
                 </InterfaceWrapper>
 
@@ -118,7 +118,7 @@ const SubHeadline = styled.h2`
 `
 
 const Plain = styled.p`
-  margin: 3.2em 0;
+  margin: 3vw 0;
   width: 75%;
   text-align: justify;
   font-size: 1.1em;

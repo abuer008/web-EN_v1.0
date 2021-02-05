@@ -87,26 +87,18 @@ const Connecting = () => {
             },
             scrub: true
         })
-        // ScrollTrigger.create({
-        //     trigger: trigger,
-        //     start: 'center bottom',
-        //     markers: true,
-        //     onEnterBack: () => goToSection(trigger)
-        // })
     }
 
     const handleAnimation = (trigger, driven) => {
         gsap.from(driven, {
             opacity: 0,
             top: '+=10%',
-            duration: 1,
+            duration: 0.75,
             stagger: 0.3,
-            // delay: 1,
             scrollTrigger: {
                 trigger: trigger,
                 start: 'top center',
                 end: 'center center',
-                // markers: true,
                 toggleActions: 'play none none reverse'
             }
         })
@@ -195,17 +187,6 @@ const Connecting = () => {
 
     }, [])
 
-    // useEffect(() => {
-    //     if(isLock) {
-    //         document.body.style.overflow = 'hidden'
-    //         setTimeout(() => {
-    //             setLock(false)
-    //             document.body.style.overflow = 'unset'
-    //         }, 1800)
-    //     }
-    //
-    // }, [isLock])
-
     return (
         <Layout isBlack={false}>
 
@@ -232,9 +213,6 @@ const Connecting = () => {
                     <H3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.heading}</H3>
                     <P3 ref={el => introTexts.current.push(el)}>{connectingData.introduction.plainText2}</P3>
                 </IntroTextWrapper>
-                {/*<DescribeWrapper ref={el => introTexts.current.push(el)}>*/}
-                {/*    <IntroText>{connectingData.introduction.plainText}</IntroText>*/}
-                {/*</DescribeWrapper>*/}
                 <WatchArea ref={pinnedWatch} style={{zIndex: 1}}>
                     <IntroImg ref={el => watchImg.current.push(el)}>
                         <StartAnima
