@@ -41,12 +41,14 @@ const DataVisualisation = () => {
                             <MainTitle>الحرب الأهلية السورية‎</MainTitle>
                         </TitleChange>
                         <YearText>2016-2019</YearText>
+                        <A href='http://52.28.78.213' alt='link to interactive demo'>
                         <Button>
                             <ButtonIcon>
                                 <Image alt='demo icon' src='/data-visualisation/buttonIcon.svg' width='42' height='42'/>
                             </ButtonIcon>
                             <ButtonText>Enter Interactive DEMO</ButtonText>
                         </Button>
+                        </A>
                     </Title>
                 </TextFading>
                 </Fading>
@@ -202,6 +204,10 @@ const YearText = styled.h4`
   font-size: 3.5vw;
 
   margin: 0;
+`
+
+const A = styled.a`
+    text-decoration: none;
 `
 
 const Button = styled.div`

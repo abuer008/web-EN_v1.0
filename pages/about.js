@@ -9,6 +9,7 @@ const About = () => {
     return (
         <Layout>
             <ContentWrapper>
+                <FrontTitle style={{color: 'red'}}>This page is not finishing yet.</FrontTitle>
                 <FrontTitle>Full stack process of the interactive portfolio</FrontTitle>
                 <FrontText>{aboutData.frontText}</FrontText>
                 <ConceptWrapper>
