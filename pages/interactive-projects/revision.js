@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+// import paperLink from '../../public/pdfs/SIDeR2019_paper_8.pdf'
 
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
@@ -258,6 +259,7 @@ const Revision = () => {
                     <SubText ref={el => subTextRef.current.push(el)}>{revisionProduct.conclusion.heading}</SubText>
                     <ExplainText
                         ref={el => plainTextRef.current.push(el)}>{revisionProduct.conclusion.plainText2}</ExplainText>
+                    <IconComponent pdfType='pdf' background='white' plainText='Paper for SIDeR conference 2019' href='/pdfs/SIDeR2019_paper_8.pdf'/>
                 </TextArea>
             </Description>
 

@@ -16,6 +16,7 @@ import {Reveal} from 'react-gsap'
 import {dataVisualisation} from "../../data/DataVisualisation"
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
+import {IconComponent} from "../../components/IconComponent";
 
 const DataVisualisation = () => {
 
@@ -116,6 +117,7 @@ const DataVisualisation = () => {
                 <TextFading>
                     <TextArea style={{bottom: '28vh'}}>
                         <VDText heading={dataVisualisation[4].heading} plainText={dataVisualisation[4].plainText}/>
+                        <IconComponent pdfType='github' background='black' plainText='Source code' href='https://github.com/abuer008/syrian-civil-war-visualisation.git'/>
                     </TextArea>
                 </TextFading>
 

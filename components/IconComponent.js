@@ -1,55 +1,75 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 import {useState, useEffect} from 'react'
 
-export const IconComponent = ({pdfType, background, plainText}) => {
+export const IconComponent = ({pdfType, background, plainText, href}) => {
     const pdf = {
-        link: '/about/pdfLogo.svg',
-        left: 6,
-        top: 20,
+        link: '/revision/PaperLogo.svg',
+        width: 34,
         height: 40
     }
 
     const github = {
-        link: '/about/githubLogo.png',
-        left: 10,
-        top: 18,
-        height: 46
+        link: background === 'white' ? '/about/githubWhite.png' : '/about/githubLogo.png',
+        width: 40,
+        height: 40
+    }
+
+    const figma = {
+        link: '/about/figmaLogo.svg',
+        width: 26,
+        height: 40
     }
 
     const [imgSrc, setImg] = useState(pdf)
 
     useEffect(() => {
-        if (pdfType) {
-            setImg(pdf)
-        } else {
-            setImg(github)
+        switch (pdfType) {
+            case 'pdf':
+                setImg(pdf);
+                return;
+            case 'github':
+                setImg(github);
+                return;
+            default:
+                setImg(figma);
+                return;
         }
     }, [])
 
     return (
+        <Link href={href}>
+        <a style={{textDecoration: 'none', color: background === 'white' ? 'black' : 'white'}} target="_blank">
         <Wrapper>
             <Icon>
-                <BorderWrapper>
-                    <Image src={background === 'white' ? '/about/folderLogo.svg' : '/about/folderWhiteLogo.svg'}
-                           width='67' height='73'/>
-                </BorderWrapper>
-                <IconWrapper style={{left: imgSrc.left, top: imgSrc.top}}>
-                    <Image src={imgSrc.link} width='46' height={imgSrc.height}/>
+                <IconWrapper>
+                    <Image src={imgSrc.link} width={imgSrc.width} height={imgSrc.height}/>
                 </IconWrapper>
             </Icon>
-            <Text>{plainText}</Text>
+            <Text style={{color: background}}>{plainText}</Text>
         </Wrapper>
+        </a>
+        </Link>
     )
 }
 
+const FrontRect = styled.div`
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #fff;
+    border-radius: 20%;
+`
+
 const Wrapper = styled.div`
   position: relative;
-  width: 120px;
-  height: auto;
+  width: 240px;
+  height: 10%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
+  cursor: pointer;
   
   transition: transform 0.3s;
 
@@ -75,9 +95,8 @@ const BorderWrapper = styled.div`
 `
 
 const Text = styled.h4`
-    text-align: center;
-  margin-top: 0.5em;
   padding: 0;
+  margin: 1em;
   position: relative;
   width: 100%;
   

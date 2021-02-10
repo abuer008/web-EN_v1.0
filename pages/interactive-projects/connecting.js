@@ -12,6 +12,7 @@ import { connectingData, connectingAnima, animaState, statesExample } from "../.
 import * as stylingAnima from '../../public/connecting/styling.json'
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
+import {IconComponent} from "../../components/IconComponent";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -304,6 +305,7 @@ const Connecting = () => {
                     <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
                     <H3 ref={el => techniquesTexts.current.push(el)}>{connectingData.techniques.heading}</H3>
                     <P4 ref={el => techniquesTexts.current.push(el)} style={{maxWidth: '80%'}}>{connectingData.techniques.plainText}</P4>
+                    <IconComponent pdfType='github' background='white' plainText='Source code' href='https://github.com/abuer008/Connecting.git'/>
                 </TechTextWrapper>
                 <YBGImg ref={techniquesImg}>
                     <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'
