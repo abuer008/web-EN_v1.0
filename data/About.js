@@ -2,7 +2,7 @@ export const aboutData = {
     frontText: "This portfolio is designed, developed, and published by bowei xiao independently.",
     conceptualApproach: {
         heading: "I. Conceptual approach",
-        plainText: "After establishing the epistemology of interactive design, this portfolio would be a productive project to introduce my thinking - What is interactive design? Why is the data import from the design’s perspective? What is the idea of future Human-Computer Interaction? And how to implement the trend of interactive design? Those questions and the answers have pronounced the personal opinion of interactive design - to demonstrate the conceptual idea of the project, the consistency of design should be inseparably conjunct with the integration of techniques."
+        plainText: "After establishing the epistemology of interactive design, this portfolio would be a productive project to introduce my thinking - What is interactive design? Why is the data import from the design’s perspective? What is the idea of future Human-Machine Interaction? And how to implement the trend of interactive design? Those questions and the answers have pronounced the personal opinion of interactive design - to demonstrate the conceptual idea of the project, the consistency of design should be inseparably conjunct with the integration of techniques."
     },
     design: {
         heading: "II. Consistency of design",

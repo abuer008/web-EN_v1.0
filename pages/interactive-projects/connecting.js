@@ -297,6 +297,9 @@ const Connecting = () => {
                     <H7 ref={el => prototypeTexts.current.push(el)}>process I. basic design</H7>
                     <H3 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.heading}</H3>
                     <P4 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.plainText}</P4>
+                    <div ref={el => prototypeTexts.current.push(el)}>
+                    <IconComponent pdfType='pdf' background='white' plainText='the scenarios study' href='/pdfs/connecting_scenarios.pdf' />
+                    </div>
                 </ProcessTextWrapper>
             </Section>
 
@@ -305,7 +308,9 @@ const Connecting = () => {
                     <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
                     <H3 ref={el => techniquesTexts.current.push(el)}>{connectingData.techniques.heading}</H3>
                     <P4 ref={el => techniquesTexts.current.push(el)} style={{maxWidth: '80%'}}>{connectingData.techniques.plainText}</P4>
+                    <div ref={el => techniquesTexts.current.push(el)}>
                     <IconComponent pdfType='github' background='white' plainText='Source code' href='https://github.com/abuer008/Connecting.git'/>
+                    </div>
                 </TechTextWrapper>
                 <YBGImg ref={techniquesImg}>
                     <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'
@@ -340,6 +345,7 @@ const Connecting = () => {
                     <H3 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.heading}</H3>
                     <P4 ref={el => conclusionTexts.current.push(el)} style={{fontSize: '1.1em'}}>{connectingData.conclusion.plainText}</P4>
                     <P4 ref={el => conclusionTexts.current.push(el)} style={{margin: '1.5em 0', fontSize: '1.1em'}}>{connectingData.conclusion.plainText2}</P4>
+                    <IconComponent pdfType='pdf' background='white' plainText='the documentation with complete research and processes' href='/pdfs/connecting_docu.pdf' />
                 </ConclusionTextWrapper>
             </Section>
 

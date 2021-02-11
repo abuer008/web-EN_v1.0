@@ -27,8 +27,8 @@ export const projectsArray = [{
     color: 2,
     destination: "/super-human",
     title: "III. Super Human",
-    subTitle: "Speculative Design, The discuss of future Human Computer Interaction.",
-    explain: "What would be the future HCI looks like? In my opinion, the symbiosis between human being and machines in the future have become realistic.",
+    subTitle: "Speculative Design, The discuss of future Human Machine Interaction.",
+    explain: "What would be the future HMI looks like? In my opinion, the symbiosis between human being and machines in the future have become realistic.",
     animaData: SuperHumanAnima,
     movePointer: "26%"
 }, {
@@ -36,7 +36,7 @@ export const projectsArray = [{
     color: 3,
     destination: "/aal",
     title: "IV. Ambient Assisted Living",
-    subTitle: "Part I. The implementation of future HCI.",
+    subTitle: "Part I. The implementation of future HMI.",
     explain: "The embedded machine can be deeply affected our lives, and improving the authentic impairment in society - the lack of elderly care services.",
     animaData: AALAnima,
     movePointer: "42%"
