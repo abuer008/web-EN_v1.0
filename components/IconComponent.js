@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 
 export const IconComponent = ({pdfType, background, plainText, href}) => {
     const pdf = {
-        link: '/revision/PaperLogo.svg',
+        link: background === 'white' ? '/revision/PaperLogo.svg' : '/revision/PaperLogoBlack.svg',
         width: 34,
         height: 40
     }

@@ -17,6 +17,7 @@ import {OutputComponent} from "../../components/aal/OutputComponent";
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import {PrototypeEl} from "../../components/aal/PrototypeEl";
+import {IconComponent} from "../../components/IconComponent";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -273,6 +274,7 @@ const AmbientAssistedLiving = () => {
                     <BigText ref={el => newText.current.push(el)}>{AALs.crisis.heading}</BigText>
                     <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText}</SmallText>
                     <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText2}</SmallText>
+                    <IconComponent pdfType='pdf' background='black' plainText='The research of elderly care services' href='https://boweixiao.myportfolio.com/ambient-assisted-living' />
                 </SecondPageText>
             </Section>
 
