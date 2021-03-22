@@ -7,7 +7,7 @@ import {SDPTexts} from "../../data/SDP";
 
 const SDP = () => {
     return (
-        <Layout>
+        <Layout backgroundColor='#f5f5f5'>
             <ContentWrapper>
                 <HorizonWrapper>
                     <ImageWrapper>
@@ -42,8 +42,12 @@ const SDP = () => {
                     <Image src='/works/wireframe.png' width='1192' height='1099' />
                 </Wireframe>
                 </Link>
+                <Section>
+                    <SectionTitle>{SDPTexts.prototype.title}</SectionTitle>
+                    <SectionPlain>{SDPTexts.prototype.plain}</SectionPlain>
+                </Section>
                 <Wireframe>
-                    <Image src='/works/Mockups.png' width='926' height='451' />
+                    <Image src='/works/Mockups.png' width='915' height='501' />
                 </Wireframe>
             </ContentWrapper>
         </Layout>

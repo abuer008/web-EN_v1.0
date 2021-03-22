@@ -1,7 +1,7 @@
 import Menu from './Menu';
 import styled from 'styled-components';
 
-const Layout = ({children, isBlack = true}) => {
+const Layout = ({children, isBlack = true, backgroundColor = '#fff'}) => {
 
     return (
         <Wrapper>
@@ -9,8 +9,8 @@ const Layout = ({children, isBlack = true}) => {
             {children}
             <style jsx global>{`
               body {
-              background: linear-gradient(90deg, white 52px, transparent 1%) center,
-              linear-gradient(white 52px, transparent 1%) center,
+              background: linear-gradient(90deg, ${backgroundColor} 52px, transparent 1%) center,
+              linear-gradient(${backgroundColor} 52px, transparent 1%) center,
               #999;
               background-size: 55px 55px;
               

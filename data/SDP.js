@@ -20,6 +20,7 @@ export const SDPTexts = {
         title: 'Wireframe'
     },
     prototype: {
-        title: 'High-fidelity Prototype'
+        title: 'High-fidelity Prototype',
+        plain: 'The high-fidelity prototypes were started with basic color styles, as defining a consistent design style is important for the aesthetic sense of the final product. The most distinct idea of interaction design is how users can interact with the published project: Projects created by enterprise users are represented in the enterprise and distribution platform with a unique set of colors, the color stripes displayed at the end of the project elements indicate the basic logic of interaction - swiping left or tapping on the color stripes could pop up the main operations for the project.'
     }
 }

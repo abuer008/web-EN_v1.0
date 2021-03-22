@@ -15,7 +15,6 @@ const Works = () => {
                 <TextWrapper>
                     <Title>Salaries Distribution Platform</Title>
                     <SubTitle>Legal tax avoidance is one of the most efficient tricks for increasing the revenues of enterprises.</SubTitle>
-                    <SubTitle>On Broad: 23.03.2021</SubTitle>
                     <IconWrapper>
                     <Image src='/works/SDP.PlatformIcon.png' width='80' height='80'/>
                     <IconText>Specific Operation Platform</IconText>
