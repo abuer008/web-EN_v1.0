@@ -11,7 +11,7 @@ const SDP = () => {
             <ContentWrapper>
                 <HorizonWrapper>
                     <ImageWrapper>
-                <Image src='/works/mockup.distributor.png' width='300' height='486' />
+                        <Image src='/works/mockup.distributor.png' width='300' height='486'/>
                     </ImageWrapper>
                     <Section>
                         <SectionTitle>
@@ -25,7 +25,7 @@ const SDP = () => {
                     <SectionTitle>{SDPTexts.research.title}</SectionTitle>
                     <SectionPlain>{SDPTexts.research.plain}</SectionPlain>
                     <ResearchWrapper>
-                        <Image src='/works/Stakeholders.png' width='661' height='790' />
+                        <Image src='/works/Stakeholders.png' width='661' height='790'/>
                     </ResearchWrapper>
                 </Section>
                 <Section style={{width: '70%'}}>
@@ -38,16 +38,22 @@ const SDP = () => {
                     <SectionPlain>{SDPTexts.challenges.c3Plain}</SectionPlain>
                 </Section>
                 <Link href='/works/wireframe.png'>
-                <Wireframe>
-                    <Image src='/works/wireframe.png' width='1192' height='1099' />
-                </Wireframe>
+                    <Wireframe>
+                        <SubTitle>Wireframe</SubTitle>
+                        <Image src='/works/wireframe.png' width='1192' height='1099'/>
+                    </Wireframe>
                 </Link>
                 <Section>
                     <SectionTitle>{SDPTexts.prototype.title}</SectionTitle>
                     <SectionPlain>{SDPTexts.prototype.plain}</SectionPlain>
                 </Section>
                 <Wireframe>
-                    <Image src='/works/Mockups.png' width='915' height='501' />
+                    <SubTitle>Design Language</SubTitle>
+                    <Image src='/works/design.language.png' width='825' height='301' />
+                </Wireframe>
+                <Wireframe>
+                    <SubTitle>Visual design</SubTitle>
+                    <Image src='/works/Mockups.png' width='915' height='501'/>
                 </Wireframe>
             </ContentWrapper>
         </Layout>
@@ -60,22 +66,23 @@ const ContentWrapper = styled.div`
   max-width: 950px;
   top: 20%;
   left: 50%;
+  padding-bottom: 10%;
 
   transform: translate(-50%, 0%)
 `
 
 const HorizonWrapper = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: row;
 `
 
 const ImageWrapper = styled.div`
-    position: relative;
+  position: relative;
   width: 200%;
 `
 
 const ResearchWrapper = styled.div`
-    position: relative;
+  position: relative;
   padding: 0 10%;
 `
 
@@ -85,21 +92,22 @@ const Section = styled.div`
 `
 
 const Wireframe = styled.div`
-    position: relative;
-  padding: 10% 0;
-  
+  position: relative;
+  //padding: 10% 0;
+  margin-top: 20%;
+
   :hover {
     cursor: pointer;
   }
 `
 
 const SectionTitle = styled.h2`
-    font-weight: 300;
+  font-weight: 300;
   font-size: 2.5em;
 `
 
 const SubTitle = styled.h3`
-    margin: auto;
+  margin: auto;
   padding-top: 1em;
 `
 
