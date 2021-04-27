@@ -10,9 +10,35 @@ import {useState, useEffect} from 'react';
 
 import * as RevisionAnima from '../../public/revisionStartAnima.json';
 import {projectsArray, interactionPageInfo} from "../../data/MainPageData";
+import {ContentsList} from "../../components/phoneComponents/ContentsList";
+import {InteractiveProjectsData} from "../../data/CardData";
+import { usePhoneVersion } from "../../components/usePhoneVersion";
+
+const InteractiveProjects = () => {
+    const phoneVersion = usePhoneVersion()
+
+    return (
+        <>
+            {phoneVersion ?
+                <PhoneContents/>
+                :
+                <StandardContents/>
+            }
+        </>
+    )
+}
+
+const PhoneContents = () => {
+    return (
+        <Layout>
+            <TitleText>The Attitude towards Interactive design.</TitleText>
+            <ContentsList contentsData={InteractiveProjectsData} show={false}/>
+        </Layout>
+    )
+}
 
 
-function InteractiveProjects() {
+function StandardContents() {
 
     let [projectInfo, setProjectInfo] = useState({
         title: "",
@@ -47,10 +73,11 @@ function InteractiveProjects() {
 
 
     return (
-        <Layout>
-            <ProjectsSqures>
-                <EnterArrow>
-                    <EnterTonText>Enter</EnterTonText>
+        <
+            Layout>
+            < ProjectsSqures>
+                < EnterArrow>
+                    < EnterTonText> Enter < /EnterTonText>
                     <EnterText>the Projects</EnterText>
                     <ArrowIcon>
                         <Image alt='small arrow icon' src="/Arrow.svg" width="57" height="48"/>
@@ -159,7 +186,7 @@ const ProjectsSqures = styled.div`
   @media all and (max-width: 850px) {
     display: none;
   }
-  
+
   @media all and (max-aspect-ratio: 16/10) {
     top: 65vh;
   }
@@ -184,6 +211,17 @@ const WebsitePlain = styled.p`
   @media all and (max-width: 1130px) {
     display: none;
   }
+`
+
+
+// -------------------------------------------------
+
+const TitleText = styled.h1`
+  margin: auto 0.7em;
+  padding-top: 2.4em;
+  font-size: 12vw;
+  line-height: 1em;
+  text-transform: uppercase;
 `
 
 export default InteractiveProjects

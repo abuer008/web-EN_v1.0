@@ -17,10 +17,24 @@ import {RedirectButton, handleRedirect} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import { IconComponent } from "../../components/IconComponent";
 
+import { PhoneRevision } from "../../components/phoneComponents/PhoneRevision"
+import { usePhoneVersion } from "../../components/usePhoneVersion";
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Revision = () => {
+    const phoneVersion = usePhoneVersion();
+
+    return (
+        <Layout isBlack={false} backgroundColor='black'>
+            {phoneVersion && <PhoneRevision />}
+            {!phoneVersion && <StandardRevision phoneVersion={phoneVersion} />}
+        </Layout>
+    )
+}
+
+const StandardRevision = ({phoneVersion}) => {
 
     const [isTransitionPlay, setPlay] = useState(false)
 
@@ -119,15 +133,10 @@ const Revision = () => {
         handlePrototypes()
         handleTransitionPlay()
         handleRedirect(redirect.current, sections.current[8])
-        return () => {
-            window.location.reload(true)
-        }
-
-
     }, [])
 
     return (
-        <Layout isBlack={false}>
+        <>
             <div ref={el => sections.current.push(el)}>
                 <RevisionSection titleSection={titleSection}/>
             </div>
@@ -270,7 +279,7 @@ const Revision = () => {
             <Refresh ref={el => redirect.current.push(el)}>
                 <RefreshButton/>
             </Refresh>
-        </Layout>
+        </>
     )
 }
 

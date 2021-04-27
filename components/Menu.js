@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import {menuList} from '../data/MainPageData';
+import {PhoneMenu} from "./phoneComponents/PhoneMenu";
 import Image from 'next/image';
 import {useState, useEffect, useRef} from 'react'
 
@@ -9,9 +10,10 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function Menu({isBlack}) {
+function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
 
     const [event, setEvent] = useState(true)
+    const [showing, setShowMenu] = useState(false)
 
     const trigger = useRef(null)
     const menuItems = useRef([])
@@ -35,70 +37,118 @@ function Menu({isBlack}) {
         ScrollTrigger.create({
             start: 'top -=10%',
             end: 999999,
-            onUpdate: ( self ) => { self.direction === 1 ? hideNav.play() : hideNav.reverse()}
+            onUpdate: (self) => {
+                self.direction === 1 ? hideNav.play() : hideNav.reverse()
+            }
         })
     }
 
+    const handlePopup = () => {
+        showing ? setShowMenu(false) : setShowMenu(true)
+        showing ? handleShowMenu(true) : handleShowMenu(false)
+    }
+
     useEffect(() => {
-        handleDisplay()
+        if (!phoneVersion) {
+            handleDisplay()
+        }
     }, [])
 
     return (
-        <MenuWrapper ref={trigger}>
-            <Link href='/interactive-projects'>
-                <ImgWrapper ref={img}>
-                    <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
-                           height='16'/>
-                </ImgWrapper>
-            </Link>
-            {menuList.map(menuItem => {
-                return <Link href={menuItem.destination} key={menuItem.id}>
-                    <MenuItemActive style={{color: isBlack ? 'black' : 'white', pointerEvents: event ? 'default' : 'none'}} ref={el => menuItems.current.push(el)}>{menuItem.title}</MenuItemActive>
-                </Link>
-            })}
-        </MenuWrapper>
+        <>
+            {phoneVersion ?
+                <div>
+                <PhoneMenuWrapper>
+                    <ImgWrapper>
+                        <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='20'
+                               height='20'/>
+                    </ImgWrapper>
+                    <ImgWrapper onClick={handleShowMenu}>
+                        <Image src={isBlack ? '/hamburgerMenu_black.svg' : '/hamburgerMenu_white.svg'} width='32'
+                               height='32'/>
+                    </ImgWrapper>
+                </PhoneMenuWrapper>
+                    {showMenu && <PhoneMenu/>}
+                </div>
+                :
+                <MenuWrapper ref={trigger}>
+                    <Link href='/interactive-projects'>
+                        <ImgWrapper ref={img}>
+                            <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
+                                   height='16'/>
+                        </ImgWrapper>
+                    </Link>
+                    {menuList.map(menuItem => {
+                        return <Link href={menuItem.destination} key={menuItem.id}>
+                            <MenuItemActive
+                                style={{color: isBlack ? 'black' : 'white', pointerEvents: event ? 'default' : 'none'}}
+                                ref={el => menuItems.current.push(el)}>{menuItem.title}</MenuItemActive>
+                        </Link>
+                    })}
+                </MenuWrapper>
+            }
+        </>
     )
 }
 
 const MenuItemActive = styled.a`
-  width: 80px;
-  text-align: left;
+width: 80px;
+text-align: left;
 
-  :hover {
+:hover
+{
     cursor: pointer;
     font-weight: 900;
-  }
+}
 
-  @media all and (max-width: 850px) {
+@media all and (max-width: 850px)
+{
     display: none;
-  }
+}
 `
 
 const ImgWrapper = styled.div`
-    :hover {
-      cursor: pointer;
-    }
+:hover
+{
+    cursor: pointer;
+}
+`
+
+const PhoneMenuWrapper = styled.div`
+position: fixed;
+z-index: 3;
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+width: 80%;
+padding-top: 32px;
+
+left: 50%;
+transform: translate(-50%, 0)
 `
 
 const MenuWrapper = styled.div`
-  width: 100%;
-  max-width: 56vw;
-  left: 22%;
-  position: fixed;
-  padding-top: 4em;
-  z-index: 3;
+width: 100%;
+max-width: 56vw;
+left: 22%;
+position: fixed;
+padding-top: 4em;
+z-index: 3;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
 
-  font-family: Roboto, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 14px;
-  text-align: center;
+font-family: Roboto, sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 14px;
+text-align: center;
 
 `
 

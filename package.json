@@ -28,9 +28,10 @@
     "react-gsap": "^2.2.1",
     "react-lottie": "^1.2.3",
     "react-player": "^2.7.0",
+    "react-slick": "^0.28.1",
     "react-three-fiber": "^5.3.10",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1",
     "three": "^0.124.0"
-  },
-  "devDependencies": {}
+  }
 }
