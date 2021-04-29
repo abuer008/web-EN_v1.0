@@ -60,7 +60,8 @@ export const PhoneMenu = () => {
 export const SiteMap = ({isBlack}) => {
     return (
         <SiteWrapper style={{color: isBlack ? 'black' : 'white'}}>
-        <SiteTitle style={{borderBottom: `1px solid ${isBlack ? 'white' : 'black'}`}}>SiteMap</SiteTitle>
+            <Break style={{borderColor: isBlack ? 'black' : 'white'}} />
+        <SiteTitle>SiteMap</SiteTitle>
         <Ul>
             <Li><spand>Work</spand>
                 <Ul>
@@ -155,4 +156,10 @@ const Li = styled.li`
 
 const SubLi = styled(Li)`
     font-weight: 300;
+`
+
+const Break = styled.div`
+    width: 100%;
+  margin-top: 5em;
+  border-bottom: 1px solid;
 `

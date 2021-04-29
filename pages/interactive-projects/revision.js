@@ -27,7 +27,7 @@ const Revision = () => {
     const phoneVersion = usePhoneVersion();
 
     return (
-        <Layout isBlack={false} backgroundColor='black'>
+        <Layout isBlack={false} backgroundColor='black' overwrite>
             {phoneVersion && <PhoneRevision />}
             {!phoneVersion && <StandardRevision phoneVersion={phoneVersion} />}
         </Layout>
@@ -214,11 +214,11 @@ const StandardRevision = ({phoneVersion}) => {
                 <TranslationWrapper>
                     <VideoWrapper>
                         <VideoArea videoSource='/revision/translation/fundamental.mp4'
-                                   alt='fundamental perceptual translation' isPlaying={isTransitionPlay} showControl={true} light={true}/>
+                                   alt='fundamental perceptual translation' isPlaying={isTransitionPlay} showControl={true} />
                     </VideoWrapper>
                     <VideoWrapper style={{height: '34.2vh'}}>
                         <VideoArea videoSource='/revision/translation/form.mp4'
-                                   alt='shape translated with haptic language' isPlaying={isTransitionPlay} showControl={true} light={true}/>
+                                   alt='shape translated with haptic language' isPlaying={isTransitionPlay} showControl={true} />
                     </VideoWrapper>
                 </TranslationWrapper>
                 <TextArea>

@@ -1,15 +1,18 @@
 import * as THREE from 'three';
 import {useRef, useEffect, useState} from 'react'
+import {usePhoneVersion} from "../usePhoneVersion";
 
 export const Sphere = () => {
     const globeRef = useRef(null)
+    const phoneVersion = usePhoneVersion()
     let w = 0, h = 0;
     let scene, camera, renderer, globe;
     let orbitControls;
 
     useEffect(() => {
-        w = window.offsetWidth / 1.65 || window.innerWidth / 1.65
-        h = window.offsetHeight || window.innerHeight
+        const wBias = phoneVersion ? 1.65 : 1
+        w = window.offsetWidth || window.innerWidth
+        h = window.offsetHeight / 1.25 || window.innerHeight / 1.25
         orbitControls = require('three/examples/jsm/controls/OrbitControls').OrbitControls
         sceneSet()
         animate()
@@ -29,7 +32,7 @@ export const Sphere = () => {
 
         scene = new THREE.Scene()
         camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000)
-        renderer = new THREE.WebGLRenderer({antialias: true})
+        renderer = new THREE.WebGLRenderer({antialias: true, alpha: true})
 
         const geometry = new THREE.IcosahedronGeometry(radius, 2);
         const material = new THREE.MeshBasicMaterial({color: 0xCCCCCC});
@@ -56,7 +59,8 @@ export const Sphere = () => {
         s3.position.x = 1.4
         globe.add(s3)
 
-        scene.background = new THREE.Color(0xffffff)
+        // scene.background = new THREE.Color(0xffffff)
+        scene.background = null
         scene.fog = new THREE.Fog(0xffffff, 2.2, 4.7)
 
         const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.8)
@@ -76,6 +80,7 @@ export const Sphere = () => {
         scene.add(globe)
         camera.position.z = 5;
         renderer.setSize(w, h)
+        renderer.setClearColor(0xffffff, 0)
 
         globeRef.current.appendChild(renderer.domElement)
 

@@ -5,7 +5,7 @@ import React from 'react'
 import {SiteMap} from "./phoneComponents/PhoneMenu";
 import {usePhoneVersion} from "./usePhoneVersion";
 
-const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33px', backgroundPixel = '35px'}) => {
+const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33px', backgroundPixel = '35px', overwrite = false}) => {
 
     const [show, setShow] = useState(false)
     const phoneVersion = usePhoneVersion()
@@ -28,6 +28,7 @@ const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33
               linear-gradient(${backgroundColor} ${pixel}, transparent 1%) center,
               #999;
               background-size: ${backgroundPixel} ${backgroundPixel};
+                background: ${overwrite ? backgroundColor : ''};
               
               font-family: Roboto, sans-serif;
               font-style: normal;

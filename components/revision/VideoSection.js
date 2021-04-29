@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger)
 
-const VideoSection = ({children, videoSource, alt}) => {
+const VideoSection = ({children, videoSource, alt, phoneVersion = false}) => {
     const [playing, setPlaying] = useState(false)
     const videoRef = useRef(null)
 

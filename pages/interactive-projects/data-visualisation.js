@@ -17,16 +17,28 @@ import {dataVisualisation} from "../../data/DataVisualisation"
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import {IconComponent} from "../../components/IconComponent";
+import { usePhoneVersion } from "../../components/usePhoneVersion";
+import {PhoneVisualData} from "../../components/phoneComponents/PhoneVisualData";
 
 const DataVisualisation = () => {
+    const phoneVersion = usePhoneVersion();
+
+    return (
+        <Layout>
+            {phoneVersion ? <PhoneVisualData /> : <StandardVisualData />}
+        </Layout>
+    )
+}
+
+const StandardVisualData = () => {
 
     useEffect(() => {
         return () => {
-            window.location.reload(true)
+            // window.location.reload(true)
         }
     })
     return (
-        <Layout>
+        <>
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
                 <BackgroundWrapper>
@@ -97,9 +109,9 @@ const DataVisualisation = () => {
 
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
-                    <div>
+                    <ThreeWrapper>
                         <Sphere/>
-                    </div>
+                    </ThreeWrapper>
                 </Fading>
                 <TextFading>
                     <TextArea style={{bottom: '70vh'}}>
@@ -132,9 +144,13 @@ const DataVisualisation = () => {
                 </TextFading>
             </Reveal>
 
-        </Layout>
+        </>
     )
 }
+
+const ThreeWrapper = styled.div`
+    z-index: -1;
+`
 
 const RedirectWrapper = styled.div`
   position: fixed;

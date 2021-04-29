@@ -10,8 +10,9 @@ const VideoArea = ({videoSource, alt, isPlaying, showControl = false, light = fa
                 controls={showControl}
                 url={videoSource}
                 playing={isPlaying}
-                width="auto"
-                height="100%"
+                width='100%'
+                height='100%'
+                light={light}
             />
         </>
     )

@@ -11,15 +11,27 @@ import {Fading} from "../../components/visualData/Fading";
 import VideoArea from "../../components/revision/VideoArea";
 import {RefreshButton} from "../../components/RefreshButton";
 import {RedirectButton} from "../../components/RedirectButton";
+import {usePhoneVersion} from "../../components/usePhoneVersion";
+import {PhoneSuperHuman} from "../../components/phoneComponents/PhoneSuperHuman";
 
 const SuperHuman = () => {
+    const phoneVersion = usePhoneVersion()
+
+    return (
+        <Layout>
+            {phoneVersion ? <PhoneSuperHuman /> : <StandardSuperHuman />}
+        </Layout>
+    )
+}
+
+const StandardSuperHuman = () => {
     useEffect(() => {
         return () => {
-            window.location.reload(true)
+            // window.location.reload(true)
         }
     })
     return (
-        <Layout>
+        <>
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
                     <div>
@@ -85,7 +97,7 @@ const SuperHuman = () => {
                     </RefreshWrapper>
                 </TextFading>
             </Reveal>
-        </Layout>
+        </>
     )
 }
 

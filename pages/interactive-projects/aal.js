@@ -18,10 +18,22 @@ import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import {PrototypeEl} from "../../components/aal/PrototypeEl";
 import {IconComponent} from "../../components/IconComponent";
+import {usePhoneVersion} from "../../components/usePhoneVersion";
+import {PhoneAal} from "../../components/phoneComponents/PhoneAal";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const AmbientAssistedLiving = () => {
+    const phoneVersion = usePhoneVersion()
+
+    return (
+        <Layout backgroundColor='#efefef' overwrite>
+            {phoneVersion ? <PhoneAal /> : <StandardAal />}
+        </Layout>
+    )
+}
+
+const StandardAal = () => {
 
     const [isPlay, setIsPlay] = useState(false)
 
@@ -205,13 +217,13 @@ const AmbientAssistedLiving = () => {
         }
 
         return () => {
-            window.location.reload(true)
+            // window.location.reload(true)
         }
     }, [])
 
 
     return (
-        <Layout>
+        <>
             <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
             <Section ref={el => sectionRefs.current.push(el)}
                      style={{position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0)', width: '100%', zIndex: '0'}}>
@@ -448,7 +460,7 @@ const AmbientAssistedLiving = () => {
                     <RefreshButton/>
                 </RefreshWrapper>
             </Section>
-        </Layout>)
+        </>)
 }
 
 

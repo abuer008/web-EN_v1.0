@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   height: 10%;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   cursor: pointer;
   
   transition: transform 0.3s;
