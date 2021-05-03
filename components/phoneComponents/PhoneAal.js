@@ -22,7 +22,7 @@ export const PhoneAal = () => {
             <TitleWrapper>
                 <ImgWrapper>
                     <Image alt='walking cloud animation example' src='/aal/walkingCloudStill.png' width='950'
-                           height='1488' objectFit='cover'/>
+                           height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 <TextWrapper black style={{textAlign: 'right', width: '50%', left: '38%'}}>
                     <H1>Ambient Assisted Living</H1>
@@ -38,7 +38,7 @@ export const PhoneAal = () => {
                         29% by 2070; meaning that more than 1 in 4 people in Europe will be 65 years or over. As people
                         grow older, it is expected that there will be more people with age-related chronic diseases and
                         in need of long-term care.</P>
-                    <IconComponent pdfType='pdf' background='black' plainText="The comprehensive case study of elderly care services" href='/' />
+                    <IconComponent pdfType='pdf' background='black' plainText="The comprehensive case study of elderly care services" href='/interactive-projects/pflegemangel' />
                 </PlainTextWrapper>
             </ArtiWrapper>
 

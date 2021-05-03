@@ -6,12 +6,13 @@ export const usePhoneVersion = () => {
     useEffect(() => {
         const w = window.innerWidth || window.clientWidth
 
+
         if (w <= 835) {
             setPhoneVersion(true)
         } else {
             setPhoneVersion(false)
         }
-    })
+    }, [])
 
     return phoneVersion
 }

@@ -5,6 +5,8 @@ import Image from 'next/image'
 const SlideComponent = ({dataSource}) => {
     return (
         <Wrapper>
+            <Link href={dataSource.link}>
+                <div>
             <TextWrapper style={{
                 color: dataSource.isBlack ? 'black' : 'white',
                 paddingLeft: dataSource?.padding,
@@ -17,6 +19,8 @@ const SlideComponent = ({dataSource}) => {
             <ImgWrapper>
                 <Image src={dataSource.imgSrc} width='950' height='1688' />
             </ImgWrapper>
+                </div>
+            </Link>
         </Wrapper>
     )
 }

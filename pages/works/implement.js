@@ -6,7 +6,7 @@ import { ImplementCardData } from "../../data/CardData";
 
 const Implement = () => {
     return (
-        <Layout isBlack={false}>
+        <Layout>
             <Slides initialSlide={1} />
             <ContentsList contentsData={ImplementCardData} listTitle='Frontend Implementation' />
         </Layout>

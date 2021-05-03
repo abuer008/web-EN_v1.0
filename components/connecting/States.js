@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import StartAnima from "../StartAnima";
 
-export const States = ({animaData, isStopped, heading, plainText}) => {
+export const States = ({animaData, isStopped, heading, plainText = ''}) => {
     return (
         <Wrapper>
             <StartAnima

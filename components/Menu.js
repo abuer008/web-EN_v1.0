@@ -58,16 +58,19 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
         <>
             {phoneVersion ?
                 <div>
-                <PhoneMenuWrapper>
-                    <ImgWrapper>
-                        <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='20'
-                               height='20'/>
-                    </ImgWrapper>
-                    <ImgWrapper onClick={handleShowMenu}>
-                        <Image src={isBlack ? '/hamburgerMenu_black.svg' : '/hamburgerMenu_white.svg'} width='32'
-                               height='32'/>
-                    </ImgWrapper>
-                </PhoneMenuWrapper>
+                    <PhoneMenuWrapper>
+                        <Link href='/works'>
+                            <ImgWrapper>
+                                <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'}
+                                       width='20'
+                                       height='20'/>
+                            </ImgWrapper>
+                        </Link>
+                        <ImgWrapper onClick={handleShowMenu}>
+                            <Image src={isBlack ? '/hamburgerMenu_black.svg' : '/hamburgerMenu_white.svg'} width='32'
+                                   height='32'/>
+                        </ImgWrapper>
+                    </PhoneMenuWrapper>
                     {showMenu && <PhoneMenu/>}
                 </div>
                 :
@@ -92,63 +95,62 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
 }
 
 const MenuItemActive = styled.a`
-width: 80px;
-text-align: left;
+  width: 80px;
+  text-align: left;
 
-:hover
-{
+  :hover {
     cursor: pointer;
     font-weight: 900;
-}
+  }
 
-@media all and (max-width: 850px)
-{
+  @media all and (max-width: 850px) {
     display: none;
-}
+  }
 `
 
 const ImgWrapper = styled.div`
-:hover
-{
+  transition: 0.3s;
+  :hover {
+    transform: scale(0.8);
     cursor: pointer;
-}
+  }
 `
 
 const PhoneMenuWrapper = styled.div`
-position: fixed;
-z-index: 3;
+  position: fixed;
+  z-index: 3;
 
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-width: 80%;
-padding-top: 32px;
+  width: 80%;
+  padding-top: 32px;
 
-left: 50%;
-transform: translate(-50%, 0)
+  left: 50%;
+  transform: translate(-50%, 0)
 `
 
 const MenuWrapper = styled.div`
-width: 100%;
-max-width: 56vw;
-left: 22%;
-position: fixed;
-padding-top: 4em;
-z-index: 3;
+  width: 100%;
+  max-width: 56vw;
+  left: 22%;
+  position: fixed;
+  padding-top: 4em;
+  z-index: 3;
 
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
-font-family: Roboto, sans-serif;
-font-style: normal;
-font-weight: normal;
-font-size: 13px;
-line-height: 14px;
-text-align: center;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 14px;
+  text-align: center;
 
 `
 

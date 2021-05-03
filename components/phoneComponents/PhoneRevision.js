@@ -10,7 +10,7 @@ export const PhoneRevision = () => {
         <>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image src='/revision/revisionPhoneVersion.png' width='950' height='1488' objectFit='cover'/>
+                    <Image src='/revision/revisionPhoneVersion.png' width='950' height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <MainTitle>
@@ -142,7 +142,7 @@ const PlainImgWrapper = styled.div`
 
 export const TextWrapper = styled.div`
     position: absolute;
-  top: 55vh;
+  top: 40vh;
   left: 2.4em;
   color: ${props => props.black ? 'black' : 'white'}
 `

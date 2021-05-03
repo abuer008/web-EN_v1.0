@@ -36,7 +36,7 @@ const About = () => {
                 <TechWrapper>
                     <Title>{aboutData.techniques.heading}</Title>
                     <DesignImgWrapper>
-                        <ImgWrapper style={{border: 'none', textAlign: 'right', width: '150%'}}>
+                        <ImgWrapper style={{border: 'none', textAlign: 'left', width: '150%'}}>
                             <Image src='/about/nextjsLogo.png' width='200' height='120' layout='intrinsic'/>
                         </ImgWrapper>
                         <Plain>{aboutData.techniques.plainText}</Plain>
@@ -89,6 +89,10 @@ const GridWrapper = styled.div`
   flex-direction: row;
   width: 100%;
   margin: 4em auto;
+  
+  @media all and (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ProjectTitle = styled.h2`
@@ -113,15 +117,20 @@ const TextWrapper = styled.div`
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  
+  @media all and (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ContentWrapper = styled.div`
 
-  position: absolute;
+  position: relative;
   width: 80%;
   max-width: 950px;
   top: 14%;
   left: 50%;
+  padding: 10vh 0;
 
   transform: translate(-50%, 0%)
 `
@@ -138,6 +147,11 @@ const FrontText = styled(FrontTitle)`
   width: 80%;
   margin: auto 0;
   padding-bottom: 80px;
+  
+  @media all and (max-width: 850px) {
+    font-size: 1.4em;
+    padding-bottom: 20px;
+  }
 `
 
 const ConceptWrapper = styled.div``
@@ -149,19 +163,33 @@ const DesignImgWrapper = styled.div`
   flex-direction: row;
   margin-top: 5%;
   margin-bottom: 10%;
+  justify-content: flex-start;
+  
+  @media all and (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ImgWrapper = styled.div`
   width: 200%;
   height: 50%;
   border: 1px solid black;
-  margin-right: 5%;
   padding: 0;
+  margin: 0 20px;
+  
+  @media all and (max-width: 850px) {
+    width: 100%;
+    margin: auto;
+  }
 `
 
 const TechWrapper = styled(DesignWrapper)``
 
-const Title = styled.h1``
+const Title = styled.h1`
+    @media all and (max-width: 850px) {
+      font-size: 1.7em;
+    }
+`
 
 const Plain = styled.p`
   font-size: 1.1em;

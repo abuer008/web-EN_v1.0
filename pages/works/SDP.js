@@ -4,8 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import {SDPTexts} from "../../data/SDP";
+import {usePhoneVersion} from "../../components/usePhoneVersion";
+import { PhoneSDP } from "../../components/phoneComponents/PhoneSDP";
 
 const SDP = () => {
+    const phoneVersion = usePhoneVersion()
+
+    return (
+        <Layout backgroundColor='#f5f5f5'>
+            {phoneVersion ? <PhoneSDP /> : <StandardSDP />}
+        </Layout>
+    )
+}
+
+const StandardSDP = () => {
     return (
         <Layout backgroundColor='#f5f5f5'>
             <ContentWrapper>

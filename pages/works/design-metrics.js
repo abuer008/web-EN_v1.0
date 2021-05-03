@@ -5,7 +5,7 @@ import { ContentsList } from "../../components/phoneComponents/ContentsList";
 
 const DesignMetrics = () => {
     return (
-        <Layout isBlack={false}>
+        <Layout>
             <Slides initialSlide={3} />
             <ContentsList contentsData={DesignMetricsData} listTitle='Design Metrics' />
         </Layout>

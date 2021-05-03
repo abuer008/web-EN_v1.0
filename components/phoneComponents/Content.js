@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Content = ({contentData}) => {
     return (
@@ -8,12 +9,14 @@ export const Content = ({contentData}) => {
                 <H2>{contentData.title}</H2>
                 <P2>{contentData.text}</P2>
             </TextWrapper>
+            <Link href={contentData.link}>
             <Area>
                 <Icon style={{backgroundColor: contentData.backgroundColor, borderRadius: '1em', boxShadow: `0px 5px 15px ${contentData.shadowColor}`}}>
                     <Image src={contentData.imgSrc} width='164' height='80' objectFit='cover' />
                     <H3>{contentData.cardName}</H3>
                 </Icon>
             </Area>
+            </Link>
         </Wrapper>
     )
 }
@@ -30,6 +33,11 @@ const Area = styled.div`
   position: relative;
   width: 164px;
   height: 80px;
+  transition: 0.3s;
+
+  :hover {
+    transform: scale(1.1)
+  };
 `
 
 const H2 = styled.h2`

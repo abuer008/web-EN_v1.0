@@ -65,6 +65,7 @@ export const ContactIcon = ({content}) => {
             <ImgWrapper onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
                 <Image src={imgUrl} width='71' height='65'/>
             </ImgWrapper>
+
             {visible ? <ToolTip style={{
                 visibility: visible ? 'visible' : 'hidden',
                 opacity: visible ? 1 : 0,
@@ -97,6 +98,10 @@ const Text = styled.p`
   font-family: Roboto Condensed, sans-serif;
   font-size: 1.1vw;
   margin: 10px auto;
+  
+  @media all and (max-width: 850px) {
+    font-size: 1em;
+  }
 
 `
 
@@ -105,12 +110,12 @@ const ToolTip = styled.span`
   display: inline-block;
   text-align: center;
   width: 140px;
-  top: 90%;
+  //top: 90%;
   z-index: 1;
   background-color: #aaa;
   color: white;
   border-radius: 7px;
-  padding: 5px;
+  padding: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
   transition: opacity 0.3s;

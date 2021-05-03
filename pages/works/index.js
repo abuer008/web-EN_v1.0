@@ -26,7 +26,7 @@ const Works = () => {
     }
 
     return (
-        <Layout isBlack={!phoneVersion}>
+        <Layout>
             {!phoneVersion ?
                 <SDPWrapper>
                     <Link href='/works/SDP'>
@@ -46,7 +46,6 @@ const Works = () => {
                 </SDPWrapper>
                 :
                 <div>
-                    {/*<SlideComponent dataSource={SlideData.revision}/>*/}
                     <Slides initialSlide={randomSlide} />
                     <ContentsList contentsData={DesignCardData} listTitle='Comprehensive design process'/>
                 </div>

@@ -10,7 +10,7 @@ export const PhoneVisualData = () => {
         <>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image src='/data-visualisation/visualData.png' width='950' height='1488' objectFit='cover' />
+                    <Image src='/data-visualisation/visualData.png' width='950' height='1088' objectFit='cover' />
                 </ImgWrapper>
                 <TextWrapper black>
                     <MainTitle style={{width: '60%'}}>

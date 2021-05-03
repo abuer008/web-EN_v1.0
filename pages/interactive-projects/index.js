@@ -12,7 +12,7 @@ import * as RevisionAnima from '../../public/revisionStartAnima.json';
 import {projectsArray, interactionPageInfo} from "../../data/MainPageData";
 import {ContentsList} from "../../components/phoneComponents/ContentsList";
 import {InteractiveProjectsData} from "../../data/CardData";
-import { usePhoneVersion } from "../../components/usePhoneVersion";
+import {usePhoneVersion} from "../../components/usePhoneVersion";
 
 const InteractiveProjects = () => {
     const phoneVersion = usePhoneVersion()

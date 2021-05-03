@@ -13,10 +13,21 @@ import * as stylingAnima from '../../public/connecting/styling.json'
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import {IconComponent} from "../../components/IconComponent";
+import { usePhoneVersion } from "../../components/usePhoneVersion";
+import {PhoneConnecting} from "../../components/phoneComponents/PhoneConnecting";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Connecting = () => {
+    const phoneVersion = usePhoneVersion()
+    return (
+        <Layout isBlack={false} backgroundColor='black' overwrite>
+            {phoneVersion ? <PhoneConnecting /> : <StandardConnecting />}
+        </Layout>
+    )
+}
+
+const StandardConnecting = () => {
 
     const [isStopped, setStopped] = useState(true)
     const [watchAnima, setWatchAnima] = useState(connectingAnima[0])
@@ -183,7 +194,7 @@ const Connecting = () => {
         handleRedirect()
 
         return () => {
-            window.location.reload(true)
+            // window.location.reload(true)
         }
 
     }, [])
@@ -451,12 +462,12 @@ const P = styled.p`
 
 // --- introduction ---
 
-const WatchArea = styled.div`
+export const WatchArea = styled.div`
     position: inherit;
   top: 50%;
 `
 
-const WatchWrapper = styled.div`
+export const WatchWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -476,11 +487,11 @@ const IntroTextWrapper = styled.div`
   }
 `
 
-const IntroImg = styled.div`
+export const IntroImg = styled.div`
   position: absolute;
   top: 50.1%;
   left: 49.73%;
-  border: 1px solid black;
+  //border: 1px solid black;
   
   transform: translate(-50%, -50%);
 `
