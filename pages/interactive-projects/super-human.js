@@ -165,6 +165,7 @@ const VideoWrapper = styled.div`
   transform: translate(5%, -50%);
   top: 50%;
   height: 25vw;
+  width: 40%;
 `
 
 // --- conclusion ---

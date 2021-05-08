@@ -2,11 +2,16 @@ import Head from 'next/head';
 import 'nprogress/nprogress.css'
 import dynamic from "next/dynamic";
 
+import { Provider } from 'react-redux'
+import { createWrapper } from 'next-redux-wrapper'
+import store from '../store/store'
+import { createStore } from 'redux';
+
 const LoadingBar = dynamic(() => {
     return import('../components/LoadingBar')
 }, {ssr: false})
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
@@ -18,7 +23,15 @@ export default function MyApp({ Component, pageProps }) {
                 <meta name="theme-color" content="#000"/>
             </Head>
             <LoadingBar />
-            <Component {...pageProps} />
+            <Provider store={store}>
+                <Component {...pageProps} />
+                </Provider>
         </>
     )
 }
+
+const makeStore = () => store
+
+const wrapper = createWrapper(makeStore)
+
+export default wrapper.withRedux(MyApp)

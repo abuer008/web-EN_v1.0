@@ -10,7 +10,7 @@ export const Slides = ({initialSlide}) => {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -45,7 +45,7 @@ export const Slides = ({initialSlide}) => {
 const Dots = styled.div`
     position: absolute;
   top: 85%;
-  margin: 0 auto;
+  margin: auto;
   padding: 0;
 `
 const Ul = styled.ul`

@@ -323,6 +323,7 @@ const PrototypeVideo = styled.div`
   top: 50%;
   transform: translate(15%, -50%);
   height: 22vw;
+  width: 40%;
 `
 
 const PrototypeImgWrapper = styled.div`
@@ -348,6 +349,8 @@ const TextArea = styled.div`
   left: 55vw;
   max-height: 50vh;
   max-width: 35vw;
+  
+  transition: 0s;
 `
 
 const Text = styled.h4`
@@ -387,6 +390,7 @@ const TranslationWrapper = styled.div`
   position: absolute;
   top: 50%;
   height: 80vh;
+  width: 40%;
   transform: translate(15%, -50%);
 
   display: flex;

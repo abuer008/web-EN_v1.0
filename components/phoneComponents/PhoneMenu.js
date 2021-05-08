@@ -3,10 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {useRouter} from "next/router";
 
+import { useState, useEffect } from 'react'
+
 import {PhoneMenuData} from "../../data/MenuData";
+import { useDispatch, useSelector } from 'react-redux';
+import { switchLanguage } from '../../store/actions/switchAction';
 
 const MenuItem = ({item, translate = false, href}) => {
     const router = useRouter()
+    const {language} = useSelector(state => state.language)
 
     return (
         <>
@@ -16,7 +21,7 @@ const MenuItem = ({item, translate = false, href}) => {
                 <IconWrapper>
                     <Image src={item.iconSrc} width={item.width} height={item.height}/>
                 </IconWrapper>
-                <Span>{item.name}</Span>
+                <Span>{ language === 'CN' ? item.CNname : item.name}</Span>
             </ItemWrapper>
             </Link>
         </>
@@ -61,6 +66,7 @@ export const PhoneMenu = () => {
                 </Ul>
             </NavMenu>
             <NavFooter>
+                <SwitchLanguage />
             </NavFooter>
         </Wrapper>
     )
@@ -72,42 +78,89 @@ const SiteMapItem = ({link, children}) => (
     </Link>
 )
 
+const SwitchLanguage = ({isBlack = false}) => {
+    const dispatch = useDispatch()
+    const {language} = useSelector(state => state.language)
+    const [isEnglish, setIsEnglish] = useState(true)
+    const [scale, setScale] = useState(1)
+
+    const handleClick = async () => {
+        setIsEnglish(!isEnglish)
+        dispatch(switchLanguage(isEnglish))
+    }
+
+    const handleTouchStart = () => {
+        setScale(0.9)
+        setIsEnglish(!isEnglish)
+        dispatch(switchLanguage(isEnglish))
+    }
+
+    const handleTouchEnd = () => {
+        setScale(1)
+    }
+
+    useEffect(() => {
+        if (language === 'EN') {
+            setIsEnglish(true)
+        } else {
+            setIsEnglish(false)
+        }
+    }, [])
+
+    return (
+        <TranslateWrapper onTouchStart={handleClick} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{transform: `scale(${scale})`}}>
+            <IconWrapper>
+                <Image alt='globe icon' src={isBlack ? '/Translate.Icon.png' : '/Translate.Icon.white.png'} width='36' height='36' />
+            </IconWrapper>
+            <Span style={{color: isBlack ? 'black' : 'white'}}><La style={{fontWeight: isEnglish ? '900' : 'normal' }}>EN</La>/<La style={{fontWeight: isEnglish ? 'normal' : '900'}}>CN</La></Span>
+        </TranslateWrapper>
+    )
+}
+
 export const SiteMap = ({isBlack}) => {
+    const {language} = useSelector(state => state.language)
+    const [isEnglish, setIsEnglish] = useState(language === 'EN')
+
+    useEffect(() => {
+        language === 'CN' ? setIsEnglish(false) : setIsEnglish(true)
+    })
+
     return (
         <SiteWrapper style={{color: isBlack ? 'black' : 'white'}}>
             <Break style={{borderColor: isBlack ? 'black' : 'white'}}/>
-            <SiteTitle>SiteMap</SiteTitle>
+            <SiteTitle>{isEnglish ? 'Site map' : '网站地图'}</SiteTitle>
             <Ul>
                 <Li>
-                    <spand>Work</spand>
+                    <span>{isEnglish ? 'Work' : '工作流'}</span>
                     <Ul>
                         <SiteMapItem link={PhoneMenuData.designProcess.link}>
-                            <SubLi>Design process</SubLi>
+                            <SubLi>{isEnglish ? 'Design process' : '设计流程'}</SubLi>
                         </SiteMapItem>
                         <SiteMapItem link={PhoneMenuData.implementation.link}>
-                        <SubLi>Implementation</SubLi>
+                        <SubLi>{isEnglish ? 'Implementation' : '技术实现'}</SubLi>
                         </SiteMapItem>
                         <SiteMapItem link={PhoneMenuData.designMetrics.link}>
-                        <SubLi>Design metrics</SubLi>
+                        <SubLi>{isEnglish ? 'Design metrics' : '产品反馈'}</SubLi>
                         </SiteMapItem>
                     </Ul>
                 </Li>
                 <SiteMapItem link={PhoneMenuData.interactiveProjects.link}>
-                <Li>Interactive Projects</Li>
+                <Li>{isEnglish ? 'Interactive projects' : '交互设计'}</Li>
                 </SiteMapItem>
                 <SiteMapItem link={PhoneMenuData.productDesign.link}>
-                <Li>Product Design</Li>
+                <Li>{isEnglish ? 'Product design' : '产品设计'}</Li>
                 </SiteMapItem>
                 <SiteMapItem link={PhoneMenuData.miniProjects.link}>
-                <Li>Mini-projects</Li>
+                <Li>{isEnglish ? 'Mini projects' : '其他'}</Li>
                 </SiteMapItem>
                 <SiteMapItem link={PhoneMenuData.about.link}>
-                <Li>About</Li>
+                <Li>{isEnglish ? 'About' : '关于'}</Li>
                 </SiteMapItem>
                 <SiteMapItem link={PhoneMenuData.contact.link}>
-                <Li>Contact</Li>
+                <Li>{isEnglish ? 'Contact' : '联系我们'}</Li>
                 </SiteMapItem>
             </Ul>
+            <SwitchLanguage isBlack={isBlack} />
         </SiteWrapper>
     )
 }
@@ -115,14 +168,36 @@ export const SiteMap = ({isBlack}) => {
 const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+  height: 20px;
 `
 
 const IconWrapper = styled.div`
   margin-right: 0.7em;
 `
 
-const Span = styled.span``
+const TranslateWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    transform-origin: left center;
+
+    transition: 0.3s;
+`
+
+const Span = styled.span`
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    font-weight: bold;
+`
+
+const La = styled.p`
+    transition: 0.1s;
+`
 
 // --------------------
 
@@ -145,7 +220,7 @@ const Wrapper = styled.div`
 
   max-width: 360px;
   min-width: 240px;
-  height: 31em;
+  /* height: 31em; */
   right: 10%;
   top: 13%;
 
@@ -171,7 +246,7 @@ const NavFooter = styled.footer`
   height: 3.4em;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 0 2em;
+  padding: 0 1em;
 `
 
 const Ul = styled.ul`

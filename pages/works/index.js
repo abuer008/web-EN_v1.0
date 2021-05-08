@@ -11,14 +11,17 @@ import {SlideData} from "../../data/SlideData";
 import {DesignCardData} from '../../data/CardData'
 import {PhoneMenu} from "../../components/phoneComponents/PhoneMenu";
 import {usePhoneVersion} from "../../components/usePhoneVersion";
+import { useDispatch, useSelector } from 'react-redux'
+import { switchLanguage } from '../../store/actions/switchAction'
 
 const Works = () => {
     const [randomSlide, setRandomSlide] = useState(0)
     const phoneVersion = usePhoneVersion()
+    const {language} = useSelector(state => state.language)
 
     useEffect(() => {
         setRandomSlide(getRandomInt(5))
-    })
+    }, [])
 
 
     const getRandomInt = max => {

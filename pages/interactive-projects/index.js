@@ -13,6 +13,7 @@ import {projectsArray, interactionPageInfo} from "../../data/MainPageData";
 import {ContentsList} from "../../components/phoneComponents/ContentsList";
 import {InteractiveProjectsData} from "../../data/CardData";
 import {usePhoneVersion} from "../../components/usePhoneVersion";
+import { useSelector } from 'react-redux';
 
 const InteractiveProjects = () => {
     const phoneVersion = usePhoneVersion()
@@ -29,9 +30,15 @@ const InteractiveProjects = () => {
 }
 
 const PhoneContents = () => {
+  const {language} = useSelector(state => state.language)
     return (
         <Layout>
-            <TitleText>The Attitude towards Interactive design.</TitleText>
+          {
+          language === 'CN' ? 
+          <CNTitleText>发现<br/>次世代的<br/>交互设计。</CNTitleText>
+          :
+          <TitleText>The Attitude towards Interactive design.</TitleText>
+          }
             <ContentsList contentsData={InteractiveProjectsData} show={false}/>
         </Layout>
     )
@@ -73,11 +80,10 @@ function StandardContents() {
 
 
     return (
-        <
-            Layout>
-            < ProjectsSqures>
-                < EnterArrow>
-                    < EnterTonText> Enter < /EnterTonText>
+        <Layout>
+            <ProjectsSqures>
+                <EnterArrow>
+                    <EnterTonText>Enter</EnterTonText>
                     <EnterText>the Projects</EnterText>
                     <ArrowIcon>
                         <Image alt='small arrow icon' src="/Arrow.svg" width="57" height="48"/>
@@ -216,12 +222,22 @@ const WebsitePlain = styled.p`
 
 // -------------------------------------------------
 
+
 const TitleText = styled.h1`
   margin: auto 0.7em;
   padding-top: 2.4em;
   font-size: 12vw;
   line-height: 1em;
   text-transform: uppercase;
+`
+
+const CNTitleText = styled(TitleText)`
+padding-top: 2em;
+  font-family: Noto Sans SC;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15vw;
+  line-height: 1em;
 `
 
 export default InteractiveProjects

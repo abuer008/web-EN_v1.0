@@ -14,6 +14,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
 
     const [event, setEvent] = useState(true)
     const [showing, setShowMenu] = useState(false)
+    const [touching, setTouching] = useState(false)
 
     const trigger = useRef(null)
     const menuItems = useRef([])
@@ -48,6 +49,14 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
         showing ? handleShowMenu(true) : handleShowMenu(false)
     }
 
+    const handleTouchStart = () => {
+        setTouching(true)
+    }
+
+    const handleTouchEnd = () => {
+        setTouching(false)
+    }
+
     useEffect(() => {
         if (!phoneVersion) {
             handleDisplay()
@@ -60,9 +69,9 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                 <div>
                     <PhoneMenuWrapper>
                         <Link href='/works'>
-                            <ImgWrapper>
-                                <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'}
-                                       width='20'
+                            <ImgWrapper onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{transform: `scale(${touching ? '0.95' : '1'})`}}>
+                                <Image src={isBlack ? '/phoneLogo.black.png' : '/phoneLogo.white.png'}
+                                       width='46'
                                        height='20'/>
                             </ImgWrapper>
                         </Link>
