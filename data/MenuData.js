@@ -11,7 +11,7 @@ export const PhoneMenuData = {
         name: 'Design process',
         CNname: '设计流程',
         iconSrc: '/menu/DesignIcon.png',
-        link: '/works',
+        link: '/work',
         width: '16',
         height: '16'
     },
@@ -19,7 +19,7 @@ export const PhoneMenuData = {
         name: 'Implementation',
         CNname: '技术实现',
         iconSrc: '/menu/ImplementIcon.png',
-        link: '/works/implement',
+        link: '/work/implement',
         width: '16',
         height: '12'
     },
@@ -27,7 +27,7 @@ export const PhoneMenuData = {
         name: 'Design Metrics',
         CNname: '产品反馈',
         iconSrc: '/menu/MetricsIcon.png',
-        link: '/works/design-metrics',
+        link: '/work/design-metrics',
         width: '16',
         height: '10'
     },

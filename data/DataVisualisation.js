@@ -43,7 +43,7 @@ export const dataVisualisation = [
         plainText: "To clarify the war situation, using coordinates, containing in the data strings, to illustrate intuitively on the three-dimensional globe, has been considered. The browser 3D techniques - webGL, and Threejs library are being implemented into visualisation."
     }, {
         heading: "Rethinking of design and techniques",
-        plainText: "Data, the foundation of the interface design. Representing data, decoration and make the data more understandable to a human, are the essential tasks of interface design. In this particular project, through the experience of handling data, I’m realised that in a productive project, the role of techniques should be involved in more critical parts. Taking techniques into consideration from the design perspective makes the process more efficient and realistic. Most importantly, the conceptual idea can be implemented consistently in the final product."
+        plainText: "UX design should not be divorced from technology, and the data visualisation project is a perfect example of the impact of technology in UX design. Data that more than 100,000 rows put great performance pressure on the visualisation with a browser platform. Hence, it was crucial to design a feasible user interface that meets the technical requirements based on understanding the operation of the data. The focus on and use of various emerging technologies also elevated UX design to a new level. In this case, the adoption of real-time 3D rendering technology made the visualization more interactive."
     }
 ]
 

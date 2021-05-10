@@ -110,7 +110,7 @@ const ToolTip = styled.span`
   display: inline-block;
   text-align: center;
   width: 140px;
-  //top: 90%;
+  top: 90%;
   z-index: 1;
   background-color: #aaa;
   color: white;

@@ -216,7 +216,7 @@ const StandardConnecting = () => {
                 <TextWrapper>
                     <H2 ref={el => researchTexts.current.push(el)}>{connectingData.research.heading}</H2>
                     <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText}</P>
-                    <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText2}</P>
+                    <P style={{fontWeight: 'bold'}} ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText2}</P>
                 </TextWrapper>
             </Section>
 

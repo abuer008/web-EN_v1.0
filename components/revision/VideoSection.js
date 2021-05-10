@@ -22,7 +22,7 @@ const VideoSection = ({children, videoSource, alt, phoneVersion = false}) => {
     useEffect(() => {
         if (videoRef.current) handleVideoTrigger(videoRef.current)
 
-    }, [playing, videoRef])
+    }, [])
 
     return (
         <SectionWrapper ref={videoRef}>

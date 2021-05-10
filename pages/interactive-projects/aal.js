@@ -285,7 +285,7 @@ const StandardAal = () => {
                 <SecondPageText>
                     <BigText ref={el => newText.current.push(el)}>{AALs.crisis.heading}</BigText>
                     <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText}</SmallText>
-                    <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText2}</SmallText>
+                    <SmallText style={{fontWeight: 'bold'}} ref={el => newText.current.push(el)}>{AALs.crisis.plainText2}</SmallText>
                     <IconComponent pdfType='pdf' background='black' plainText='The research of elderly care services' href='https://boweixiao.myportfolio.com/ambient-assisted-living' />
                 </SecondPageText>
             </Section>

@@ -82,9 +82,9 @@ const StandardRevision = ({phoneVersion}) => {
             duration: 1
         })
 
-        if (anim) {
-            anim.restart()
-        }
+        // if (anim) {
+        //     anim.restart()
+        // }
     }
 
     const handleSnap = elArr => {
@@ -120,19 +120,13 @@ const StandardRevision = ({phoneVersion}) => {
     useEffect(() => {
 
         if (subTextRef.current) {
-            // subTextRef.current.forEach((item, i) => {
-            //     const subEl = plainTextRef.current[i]
-            //
-            //     handleText(item)
-            //     handleText(subEl)
-            // })
             handleSnap(sections.current)
-
         }
 
         handlePrototypes()
         handleTransitionPlay()
         handleRedirect(redirect.current, sections.current[8])
+
     }, [])
 
     return (

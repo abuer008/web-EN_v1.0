@@ -9,25 +9,25 @@ import * as sleepyExample from '../public/connecting/sleepyExample.json'
 export const connectingData = {
     research: {
         heading: "The development of contemporary kinship",
-        plainText: "In the last project, we discussed the lack of elderly care services and tried to alleviate using “Ambient Assisted Living”. Nevertheless, the deeper reason that causes this problem was never set foot on - the collapse of the traditional family. Since the mid-1960s, the family in Germany - like in other highly developed industrial societies, has undergone pronounced change processes. Many social scientists believe that marriage and family are going through a crisis; there is even occasional talk of the “death of the family”.",
-        plainText2: "Childlessness, single-parent family, and ageing population, the collapse of traditional family form has caused series of social problems and financial crisis; more children and adolescents no longer grow up during their entire childhood and adolescence with both birth parents, the kinship of modern generations become weaker. What would be the alternative form to the conventional households - will be discussed in this project."
+        plainText: "In the last project, we discussed the lack of elderly care services and tried to alleviate using “Ambient Assisted Living”. Nevertheless, the deeper reason that causes this problem was never set foot on - the collapse of the traditional family. Since the mid-1960s, the family in Germany - like in other highly developed industrial societies, has undergone pronounced change processes. Many social scientists believe that marriage and family are going through a crisis; there is even occasional talk of the “death of the family”. Childlessness, single-parent family, and ageing population, the collapse of traditional family form has caused series of social problems and financial crisis; more children and adolescents no longer grow up during their entire childhood and adolescence with both birth parents.",
+        plainText2: "So, in this inevitable trend, what impact will the new generation of digital and interaction design have on developing relationships between individuals?"
     },
     introduction: {
         heading: "The Connecting",
         plainText: "This project's focus points are now on us and on next generations reshaping the family forms in sociality, looking for the novel opportunity that digitalisation changed our family forms and the binding between individuals. And eventually to build a familial connection between strangers.",
-        plainText2: "The connecting is a digital platform, and the family members can automatically bond. With the customised wearable smart bracelet, users can actually perceive and touch family members' hand wrist without physical boundaries."
+        plainText2: "The rise of social networking has shown that virtualization is an important way to build connections in the future. Making virtual relationships more natural through more semantic means of interaction is the main innovation of this product. The Connecting is a wearable connectivity platform that enables a direct virtual relationship between two individuals in any location."
     },
     character: {
         heading: 'Characterisation',
-        plainText: "The actual person will be illustrated as a 2D character, and the user can check the state and interact with him directly. The character will be animated smoothly and has three types of states."
+        plainText: "In the CONNECTING platform, users automatically create their own personalized personas. Through the information collected by the bracelet sensors, the virtual character with a unique personality would be created to interact. To protect the user's privacy, the virtual persona can only present three basic simulated states."
     },
     communication: {
         heading: 'Intimate Communication',
-        plainText: "With a simple touch on hand wrist, the tactile signals will be delivered to the target and performed directly."
+        plainText: "The Connecting bracelet offers a unique direct interaction method. Touch the bracelet anywhere, anytime, and the close to skin haptic sensors will instantly simulate real touch to create a space-independent interaction experience."
     },
     cataloging: {
         heading: 'Measurable kinship',
-        plainText: "Communication was being catalogued and visualised, and the system will encourage the user to communicate and improve the quality of communication."
+        plainText: "It quantifies unfathomable communication while ensuring privacy and provides at-a-glance relationship charts while optimizing kinship through big data calculations."
     },
     compatibility: {
         heading: 'Flexible compatibility',

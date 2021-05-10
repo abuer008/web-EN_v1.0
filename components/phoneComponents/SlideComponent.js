@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 85vh;
   top: 0;
+  
 `
 
 const ImgWrapper = styled.div`

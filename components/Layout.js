@@ -23,6 +23,7 @@ const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33
             </footer>
             </div>}
             <style jsx global>{`
+  
               body {
               background: linear-gradient(90deg, ${backgroundColor} ${pixel}, transparent 1%) right,
               linear-gradient(${backgroundColor} ${pixel}, transparent 1%) center,

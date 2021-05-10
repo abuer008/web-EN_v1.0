@@ -62,8 +62,8 @@ export const colorSqureArray = ["#FFEA7D", "#808080", "#4078CD", "#1F9F71", "#FF
 export const menuList = [
     {
         id: 0,
-        title: "Works",
-        destination: "/works",
+        title: "Work",
+        destination: "/work",
         isActive: false
     },
     {

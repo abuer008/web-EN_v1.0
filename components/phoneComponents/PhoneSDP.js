@@ -5,7 +5,7 @@ import {ArtiWrapper, PlainTextWrapper, ImgWrapper, Strong, P, MainTitle} from ".
 export const PhoneSDP = () => (
     <>
         <ArtiWrapper>
-            <PlainTextWrapper style={{marginTop: '10vh'}}>
+            <PlainTextWrapper black style={{marginTop: '10vh'}}>
                 <TitleWrapper>
                     <ImgWrapper>
                         <Image alt='mockup of SDP' src='/works/mockup.distributor.png' width='495' height='793'
@@ -31,7 +31,7 @@ export const PhoneSDP = () => (
         </ArtiWrapper>
 
         <ArtiWrapper>
-            <PlainTextWrapper>
+            <PlainTextWrapper black>
                 <Subtitle>User Research</Subtitle>
                 <P>We had a long-term communication with the company engaging the salary distribution services,
                     discussed the existing business model and identified noticeable obstacles and errors that occurred
@@ -42,7 +42,7 @@ export const PhoneSDP = () => (
             <ImgWrapper style={{width: '80%'}}>
                 <Image alt='user research for SDP' src='/works/Stakeholders.png' width='661' height='790'/>
             </ImgWrapper>
-            <PlainTextWrapper>
+            <PlainTextWrapper black>
                 <P>We must develop and test in the specific platform. From the perspective of a designer, the
                     mini-program has a less usable and focusable area in different devices and more distracted clickable
                     buttons on the top.</P>
@@ -50,7 +50,7 @@ export const PhoneSDP = () => (
         </ArtiWrapper>
 
         <ArtiWrapper>
-            <PlainTextWrapper>
+            <PlainTextWrapper black>
                 <Subtitle>Userflow and wireframe</Subtitle>
             </PlainTextWrapper>
             <ImgWrapper style={{margin: '0 auto', width: '80%'}}>
@@ -59,7 +59,7 @@ export const PhoneSDP = () => (
         </ArtiWrapper>
 
         <ArtiWrapper>
-            <PlainTextWrapper>
+            <PlainTextWrapper black>
                 <Subtitle>High fidelity prototype</Subtitle>
                 <P>The high-fidelity prototypes were started with basic color styles, as defining a consistent design
                     style is important for the aesthetic sense of the final product. The most distinct idea of

@@ -1,7 +1,7 @@
 import * as types from '../types'
 
 const initialState = {
-    language: 'EN',
+    language: 'CN',
     switching: false,
     error: null
 }

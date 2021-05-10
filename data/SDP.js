@@ -1,6 +1,6 @@
 export const SDPTexts = {
     introduction: {
-        title: 'Salaries Distribution Platform',
+        title: 'Bonus Distribution Platform',
         plain: 'The Hainan Free Trade Port is the most advanced and largest trade market in South China and would become the largest world trade port in the 2050s. Many advantageous tax policies have been introduced in this economic development zone, enabling enterprises to reduce tax expenses legally. The qualified distribution company can delegate the salary distribution services from the companies all over the country; there are huge benefits for both the company and the employees.'
     },
     research: {

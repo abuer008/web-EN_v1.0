@@ -1,34 +1,58 @@
-import {useState, useRef} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import styled from 'styled-components'
 import {ContactIcon} from "../components/contact/ContactIcon";
+import { useSelector } from 'react-redux'
 import { usePhoneVersion } from "../components/usePhoneVersion";
 
+import { PhoneContact } from "../components/phoneComponents/PhoneContact";
+
 const Contact = () => {
-    const [visible, setVisible] = useState(false)
-    const [copied, setCopy] = useState(false)
-    const toolTip = useRef(null)
-    const email = useRef(null)
+    const { language } = useSelector(state => state.language)
+    const [isEnglish, setLanguage] = useState(true)
+    const isPhoneVersion = usePhoneVersion()
 
-    const handleCopy = e => {
-        window.getSelection().removeAllRanges()
-        let range = document.createRange()
-        range.selectNode(email.current)
-        window.getSelection().addRange(range)
-
-        document.execCommand("copy")
-        window.getSelection().removeAllRanges()
-
-        setCopy(true)
-    }
+    useEffect(() => {
+        if(language === 'CN' && isPhoneVersion) {
+            setLanguage(false)
+        } else {
+            setLanguage(true)
+        }
+    })
 
     return (
         <Layout>
+            {isEnglish ? <StandardContact /> : <PhoneContact />}
+        </Layout>
+    )
+}
+
+const StandardContact = () => {
+    // const [visible, setVisible] = useState(false)
+    // const [copied, setCopy] = useState(false)
+    // const toolTip = useRef(null)
+    // const email = useRef(null)
+
+    // const handleCopy = e => {
+    //     window.getSelection().removeAllRanges()
+    //     let range = document.createRange()
+    //     range.selectNode(email.current)
+    //     window.getSelection().addRange(range)
+    //
+    //     document.execCommand("copy")
+    //     window.getSelection().removeAllRanges()
+    //
+    //     setCopy(true)
+    // }
+
+
+    return (
+        <>
             <TextWrapper>
                 <Front>Any thoughts, comments, or regarding works</Front>
                 <Middle>GET IN TOUCH</Middle>
-                { usePhoneVersion() ?
+                {usePhoneVersion() ?
                     <Bottom>
                         x.bowei@aol.com
                     </Bottom>
@@ -40,7 +64,7 @@ const Contact = () => {
                     </ContactWrapper>
                 }
             </TextWrapper>
-        </Layout>
+        </>
     )
 }
 
@@ -54,17 +78,33 @@ const ContactWrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-  position: relative;
-  top: 30vh;
-  margin: 0 auto;
-  padding: 0;
-  width: 80%;
-  text-align: left;
-  height: 60vh;
+  position: absolute;
 
-  //transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
 
   line-height: 1vw;
+
+  @media all and (max-width: 850px) {
+    position: relative;
+    top: 30vh;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    height: 60vh;
+    transform: translate(-60%, 0);
+  }
+`
+
+const ImgWrapper = styled.div`
+  width: 50%;
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  top: 20vh;
+  max-width: 200px;
 `
 
 const Front = styled.h4`
@@ -73,7 +113,7 @@ const Front = styled.h4`
   text-transform: uppercase;
   line-height: 1.5vw;
   margin: 0.7em auto;
-  
+
   @media all and (max-width: 850px) {
     font-size: 1.4em;
     line-height: 1em;
@@ -85,7 +125,7 @@ const Middle = styled.h1`
   font-size: 4.5vw;
   line-height: 5vw;
   margin: auto;
-  
+
   @media all and (max-width: 850px) {
     font-size: 2.4em;
     line-height: 1em;

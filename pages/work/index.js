@@ -32,13 +32,13 @@ const Works = () => {
         <Layout>
             {!phoneVersion ?
                 <SDPWrapper>
-                    <Link href='/works/SDP'>
+                    <Link href='/work/SDP'>
                         <ImageWrapper>
                             <Image src='/works/Login.Mockup.png' width='340' height='578'/>
                         </ImageWrapper>
                     </Link>
                     <TextWrapper>
-                        <Title>Salaries Distribution Platform</Title>
+                        <Title>Bonus Distribution Platform</Title>
                         <SubTitle>Legal tax avoidance is one of the most efficient tricks for increasing the revenues of
                             enterprises.</SubTitle>
                         <IconWrapper>
@@ -48,7 +48,7 @@ const Works = () => {
                     </TextWrapper>
                 </SDPWrapper>
                 :
-                <div>
+                <div style={{overflow: 'hidden'}}>
                     <Slides initialSlide={randomSlide} />
                     <ContentsList contentsData={DesignCardData} listTitle='Comprehensive design process'/>
                 </div>
