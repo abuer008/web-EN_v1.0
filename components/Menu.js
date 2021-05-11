@@ -76,7 +76,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                             </ImgWrapper>
                         </Link>
                         <ImgWrapper onClick={handleShowMenu}>
-                            <Image src={isBlack ? '/hamburgerMenu_black.svg' : '/hamburgerMenu_white.svg'} width='32'
+                            <Image src={isBlack ? '/hamburger_black.png' : '/hamburger_white.png'} width='32'
                                    height='32'/>
                         </ImgWrapper>
                     </PhoneMenuWrapper>
@@ -119,10 +119,10 @@ const MenuItemActive = styled.a`
 
 const ImgWrapper = styled.div`
   transition: 0.3s;
-  :hover {
-    transform: scale(0.8);
-    cursor: pointer;
-  }
+  //:hover {
+  //  transform: scale(0.8);
+  //  cursor: pointer;
+  //}
 `
 
 const PhoneMenuWrapper = styled.div`
