@@ -28,7 +28,7 @@ const SlideComponent = ({dataSource}) => {
               }
             </TextWrapper>
             <ImgWrapper>
-                <Image src={dataSource.imgSrc} width='950' height='1488' objectFit='cover' />
+                <Image src={dataSource.imgSrc} width='950' height='1288' objectFit='cover' />
             </ImgWrapper>
                 </div>
             </Link>
@@ -39,7 +39,7 @@ const SlideComponent = ({dataSource}) => {
 const Wrapper = styled.div`
   //position: absolute;
   width: 100vw;
-  height: 85vh;
+  height: 70vh;
   top: 0;
   
 `

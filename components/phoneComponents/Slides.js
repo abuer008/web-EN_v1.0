@@ -44,11 +44,13 @@ export const Slides = ({initialSlide}) => {
 
 const Dots = styled.div`
     position: absolute;
-  top: 85%;
+  top: 65%;
   margin: auto;
   padding: 0;
+  height: 0;
 `
 const Ul = styled.ul`
   position: relative;
-    margin: 0 auto;
+    margin: auto;
+  padding: 0;
 `

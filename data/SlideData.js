@@ -41,7 +41,7 @@ export const SlideData = {
         imgSrc: '/aal/aal.png',
         isBlack: false,
         padding: '12vw',
-        margin: '48vh'
+        margin: '40vh'
     },
     connecting: {
         title: 'Virtual Connection of Kinship',
