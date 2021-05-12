@@ -37,6 +37,10 @@ const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33
 
               }
               
+              h4 {
+                font-size: 1.2em;
+              }
+              
               .roundImage {
                 border-radius: 5%;
               }

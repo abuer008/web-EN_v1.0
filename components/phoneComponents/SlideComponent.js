@@ -6,9 +6,8 @@ import { useSelector } from 'react-redux'
 const SlideComponent = ({dataSource}) => {
   const {language} = useSelector(state => state.language)
     return (
-        <Wrapper>
             <Link href={dataSource.link}>
-                <div>
+                <Wrapper>
             <TextWrapper style={{
                 color: dataSource.isBlack ? 'black' : 'white',
                 paddingLeft: dataSource?.padding,
@@ -30,28 +29,28 @@ const SlideComponent = ({dataSource}) => {
             <ImgWrapper>
                 <Image src={dataSource.imgSrc} width='950' height='1288' objectFit='cover' />
             </ImgWrapper>
-                </div>
+                </Wrapper>
             </Link>
-        </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-  //position: absolute;
+  position: relative;
   width: 100vw;
-  height: 70vh;
+  //height: 70vh;
   top: 0;
-  
+  overflow: hidden;
 `
 
 const ImgWrapper = styled.div`
     //position: absolute;
   width: 100vw;
+  margin: auto;
 `
 
 const TextWrapper = styled.div`
   position: absolute;
-  width: 50vw;
+  //width: 50vw;
   z-index: 1;
 `
 

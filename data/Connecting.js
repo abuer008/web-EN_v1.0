@@ -34,16 +34,16 @@ export const connectingData = {
         plainText: 'It also contains the smartphone version with full access, for most flexibilities in different scenarios.'
     },
     prototype: {
-        heading: "Prototype",
-        plainText: "As the final project of series topics, I want to experience the complete production processes and improve it. The first process is Design phase, through design methods such as scenarios visualising, the prototype of minimised screens was designed, the functions and relations of interface element were also established."
+        heading: "Wearable kinship",
+        plainText: "Improve the interaction logic of the product according to various design methods such as persona and scenario, and consider the technical requirements together with the details to meet the project concept as much as possible within the framework of technology."
     },
     techniques: {
         heading: 'SwiftUI and SpriteKit',
         plainText: "The second process is based on the finished design to decide how to realise the idea in the design phase. SwiftUI is finally chosen as the UI framework for interface development in both platforms - smartphone and smartwatch. The Spritekit, the native framework for 2D animations is responsible for the 2D character and its movement. For more technical details, please visit my GitHub repository."
     },
     redesign: {
-        heading: "Styling",
-        plainText: "Finally, the big difference from traditional processes is the redesign phase. After the decision of techniques, the design must be improved for a higher standard and performance. To animate the character smoothly and naturally in Spritekit framework; and switch nicely the character states, that receive by target and interaction; the movements of character have been redesigned with strict technical requirements. For now, over 60 movements are being exported for random performing."
+        heading: "Character with unique personality",
+        plainText: "Using the latest SwiftUI framework and Spritkit framework, combined with motion design, hundreds of character animations were created and graded according to their characteristics in order to create virtual characters with unique personalities."
     },
     conclusion: {
         heading: "The epistemology of interactive design",

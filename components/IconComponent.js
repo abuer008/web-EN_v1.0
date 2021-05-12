@@ -94,7 +94,7 @@ const BorderWrapper = styled.div`
   position: absolute;
 `
 
-const Text = styled.h4`
+const Text = styled.p`
   padding: 0;
   margin: 1em;
   position: relative;

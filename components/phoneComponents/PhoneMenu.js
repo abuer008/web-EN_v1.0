@@ -185,18 +185,21 @@ const TranslateWrapper = styled.div`
     transform-origin: left center;
 
     transition: 0.3s;
+  
+  margin-top: 0.5em;
 `
 
 const Span = styled.span`
     display: flex;
     flex-direction: row;
 
-    align-items: center;
+    //align-items: center;
     font-weight: bold;
 `
 
 const La = styled.p`
     transition: 0.1s;
+  margin: auto;
 `
 
 // --------------------

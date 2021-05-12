@@ -165,3 +165,19 @@ export const InteractiveProjectsData = {
         shadowColor: 'rgba(100, 194, 186, 0.3)'
     }
 }
+
+export const pflegemangelData = {
+    tangibleDesign: {
+        title: 'Tangible design',
+        CNtitle: 'Tangible design',
+        text: 'Follow a rigorous design methodology and mindset to propose unique and systematic solutions.',
+        CNtext: 'Follow a rigorous design methodology and mindset to propose unique and systematic solutions.',
+        imgSrc: '/aal/AalMask.svg',
+        link: '/interactive-projects/aal',
+        cardName: 'Ambient Assisted Living',
+        CNcardName: 'Ambient Assisted Living',
+        backgroundColor: '#1F9F71',
+        shadowColor: 'rgba(31, 159, 113, 0.3)'
+
+    }
+}

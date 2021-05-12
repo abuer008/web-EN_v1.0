@@ -31,7 +31,7 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
                     }
                     :
                     {
-                        fontSize: "3.5vw",
+                        fontSize: "3.2vw",
                         lineHeight: '1em'
                     }
             }>{title}</MainTitle>
@@ -139,6 +139,7 @@ const MainSubTitle = styled(MainTitle)`
   font-weight: lighter;
   padding: 0;
   margin: auto;
+  width: 100%;
 
   @media all and (min-aspect-ratio: 24/11) {
     display: none;
@@ -166,6 +167,7 @@ const MainText = styled.p`
   margin: 1em auto;
   font-weight: 300;
   font-size: 2.2em;
+  line-height: 1.2em;
 
   .fadeOut {
     opacity: 0;

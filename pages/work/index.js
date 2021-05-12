@@ -67,8 +67,8 @@ const ImageWrapper = styled.div`
   position: relative;
   top: 55vh;
   left: 38vw;
-  width: 22vw;
-  height: auto;
+   width: 22vw;
+   height: auto;
 
   :hover {
     cursor: pointer;

@@ -63,7 +63,8 @@ const ShowWrapper = styled.div`
   min-width: 640px;
   height: 80vh;
   max-height: 900px;
-  margin: 0;
+  margin: auto;
+  padding: 2em 0;
   position: absolute;
   overflow: hidden;
   bottom: 10vh;

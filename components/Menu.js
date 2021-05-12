@@ -68,7 +68,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
             {phoneVersion ?
                 <div>
                     <PhoneMenuWrapper>
-                        <Link href='/works'>
+                        <Link href='/work'>
                             <ImgWrapper onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} style={{transform: `scale(${touching ? '0.95' : '1'})`}}>
                                 <Image src={isBlack ? '/phoneLogo.black.png' : '/phoneLogo.white.png'}
                                        width='46'

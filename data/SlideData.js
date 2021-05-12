@@ -7,7 +7,7 @@ export const SlideData = {
         link: '/interactive-projects/revision',
         imgSrc: '/revision/revisionPhoneVersion.png',
         isBlack: false,
-        padding: '12vw',
+        padding: '10vw',
         margin: '18vh'
     },
     visualData: {
@@ -23,13 +23,13 @@ export const SlideData = {
     },
     superHuman: {
         title: 'Future Interaction',
-        CNtitle: '未来交互思辨设计',
+        CNtitle: '未来交互的思辨设计',
         text: 'Symbiosis of machine and person',
         CNtext: '个体与机器的共存',
         link: '/interactive-projects/super-human',
         imgSrc: '/superHuman/superHuman.png',
         isBlack: true,
-        margin: '32vw',
+        margin: '30vw',
         padding: '20vh'
     },
     aal: {

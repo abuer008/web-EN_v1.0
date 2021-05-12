@@ -83,7 +83,7 @@ const StandardVisualData = () => {
             <Reveal repeat threshold={0.5} trigger={<SectionTrigger/>}>
                 <Fading>
                     <CodeWrapper>
-                        <code style={{whiteSpace: 'pre-line'}}>{dataVisualisation[1].code}</code>
+                        <code style={{whiteSpace: 'pre-line', color: '#6c6c6c'}}>{dataVisualisation[1].code}</code>
                     </CodeWrapper>
                 </Fading>
                 <TextFading>
@@ -268,7 +268,7 @@ const CodeWrapper = styled.div`
   max-width: 30vw;
   padding: 20px;
   border-radius: 2em;
-  background-color: #e9e9e9
+  background-color: #e9e9e9;
 `
 
 export default DataVisualisation

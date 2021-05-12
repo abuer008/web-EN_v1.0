@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Layout from '../../components/Layout'
-import { useRef, useEffect, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import {useRef, useEffect, useState} from 'react'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
 import StartAnima from '../../components/StartAnima'
-import { States } from "../../components/connecting/States";
+import {States} from "../../components/connecting/States";
 
-import { connectingData, connectingAnima, animaState, statesExample } from "../../data/Connecting";
+import {connectingData, connectingAnima, animaState, statesExample} from "../../data/Connecting";
 import * as stylingAnima from '../../public/connecting/styling.json'
 import {RedirectButton} from "../../components/RedirectButton";
 import {RefreshButton} from "../../components/RefreshButton";
 import {IconComponent} from "../../components/IconComponent";
-import { usePhoneVersion } from "../../components/usePhoneVersion";
+import {usePhoneVersion} from "../../components/usePhoneVersion";
 import {PhoneConnecting} from "../../components/phoneComponents/PhoneConnecting";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -22,7 +22,7 @@ const Connecting = () => {
     const phoneVersion = usePhoneVersion()
     return (
         <Layout isBlack={false} backgroundColor='black' overwrite>
-            {phoneVersion ? <PhoneConnecting /> : <StandardConnecting />}
+            {phoneVersion ? <PhoneConnecting/> : <StandardConnecting/>}
         </Layout>
     )
 }
@@ -168,7 +168,7 @@ const StandardConnecting = () => {
             [catalogTexts.current, catalogImg.current],
             [compatiTexts.current, compatiImg.current],
             [prototypeImg.current, prototypeTexts.current],
-            [techniquesImg.current, techniquesTexts.current],
+            // [techniquesImg.current, techniquesTexts.current],
             [stylingImg.current, stylingTexts.current],
             conclusionTexts.current,
         ]
@@ -200,11 +200,12 @@ const StandardConnecting = () => {
     }, [])
 
     return (
-        <Layout isBlack={false}>
+        <>
 
             <Section ref={el => sections.current.push(el)}>
                 <TitleImg ref={titleImg}>
-                    <Image alt='a hand wearing apple watch with connecting application active' src='/connecting/titlePhoto.png' layout='fill' objectFit='cover' />
+                    <Image alt='a hand wearing apple watch with connecting application active'
+                           src='/connecting/titlePhoto.png' layout='fill' objectFit='cover'/>
                 </TitleImg>
                 <TitleWrapper>
                     <H6 ref={el => titleTexts.current.push(el)}>Virtual Kinship</H6>
@@ -216,7 +217,8 @@ const StandardConnecting = () => {
                 <TextWrapper>
                     <H2 ref={el => researchTexts.current.push(el)}>{connectingData.research.heading}</H2>
                     <P ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText}</P>
-                    <P style={{fontWeight: 'bold'}} ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText2}</P>
+                    <P style={{fontWeight: 'bold'}}
+                       ref={el => researchTexts.current.push(el)}>{connectingData.research.plainText2}</P>
                 </TextWrapper>
             </Section>
 
@@ -238,7 +240,7 @@ const StandardConnecting = () => {
                         />
                     </IntroImg>
                     <WatchWrapper ref={el => watchImg.current.push(el)}>
-                        <Image alt='apple watch' src='/connecting/appleWatchFrame.png' width='230' height='400' />
+                        <Image alt='apple watch' src='/connecting/appleWatchFrame.png' width='230' height='400'/>
                     </WatchWrapper>
                 </WatchArea>
             </Section>
@@ -276,7 +278,7 @@ const StandardConnecting = () => {
                     <P3 ref={el => commTexts.current.push(el)}>{connectingData.communication.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={touchImg}>
-                    <Image alt='sketch of touching watch' src='/connecting/touchSketch.png' width='470' height='353' />
+                    <Image alt='sketch of touching watch' src='/connecting/touchSketch.png' width='470' height='353'/>
                 </ImgWrapper>
             </Section>
 
@@ -286,7 +288,8 @@ const StandardConnecting = () => {
                     <P3 ref={el => catalogTexts.current.push(el)}>{connectingData.cataloging.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={catalogImg}>
-                    <Image alt='sketch of operating watch' src='/connecting/catalogSketch.png' width='600' height='448' />
+                    <Image alt='sketch of operating watch' src='/connecting/catalogSketch.png' width='600'
+                           height='448'/>
                 </ImgWrapper>
             </Section>
 
@@ -296,44 +299,64 @@ const StandardConnecting = () => {
                     <P3 ref={el => compatiTexts.current.push(el)}>{connectingData.compatibility.plainText}</P3>
                 </IntroTextWrapper>
                 <ImgWrapper ref={compatiImg} style={{top: '20vh'}}>
-                    <Image alt='smartphone version of connecting application' src='/connecting/familyList.png' width='308' height='666' />
+                    <Image alt='smartphone version of connecting application' src='/connecting/familyList.png'
+                           width='308' height='666'/>
                 </ImgWrapper>
             </Section>
 
             <Section ref={el => sections.current.push(el)}>
+                <TextWrapper>
+                    <H7>Process I. Conceptual Idea</H7>
+                    <H2>The utopian family form</H2>
+                    <P>The decline of legitimate marriage institution is inevitable, in view of the ongoing social
+                        shift, does the modern family form still have a future? which alternative forms of family and
+                        relationships are most compatible with the processes of social change and can possibly replace
+                        the modern small family?</P>
+                    <P>The key prerequisite for replacing the traditional family model, therefore, is whether children
+                        and adolescents can grow up psychological and physical healthily without a family environment or
+                        in a extraordinary family environment (such as single-parent family, stepfamily), and can the
+                        new form of social structure provide reliable social support for the elderly who living alone or
+                        without kins.</P>
+                </TextWrapper>
+            </Section>
+
+            <Section ref={el => sections.current.push(el)}>
                 <PrototypeWrapper ref={prototypeImg}>
-                    <Image alt='connecting prototype' src='/connecting/watchPrototype.png' layout='intrinsic' width='1180' height='687' />
+                    <Image alt='connecting prototype' src='/connecting/watchPrototype.png' layout='intrinsic'
+                           width='1180' height='687'/>
                 </PrototypeWrapper>
                 <ProcessTextWrapper>
-                    <H7 ref={el => prototypeTexts.current.push(el)}>process I. basic design</H7>
+                    <H7 ref={el => prototypeTexts.current.push(el)}>process II. Tangible Design</H7>
                     <H3 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.heading}</H3>
                     <P4 ref={el => prototypeTexts.current.push(el)}>{connectingData.prototype.plainText}</P4>
                     <div ref={el => prototypeTexts.current.push(el)}>
-                    <IconComponent pdfType='pdf' background='white' plainText='the scenarios study' href='/pdfs/connecting_scenarios.pdf' />
+                        <IconComponent pdfType='pdf' background='white' plainText='the scenarios study'
+                                       href='/pdfs/connecting_scenarios.pdf'/>
                     </div>
                 </ProcessTextWrapper>
             </Section>
 
-            <Section ref={el => sections.current.push(el)}>
-                <TechTextWrapper>
-                    <H7 ref={el => techniquesTexts.current.push(el)}>process II. techniques</H7>
-                    <H3 ref={el => techniquesTexts.current.push(el)}>{connectingData.techniques.heading}</H3>
-                    <P4 ref={el => techniquesTexts.current.push(el)} style={{maxWidth: '80%'}}>{connectingData.techniques.plainText}</P4>
-                    <div ref={el => techniquesTexts.current.push(el)}>
-                    <IconComponent pdfType='github' background='white' plainText='Source code' href='https://github.com/abuer008/Connecting.git'/>
-                    </div>
-                </TechTextWrapper>
-                <YBGImg ref={techniquesImg}>
-                    <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'
-                           height='321' layout='intrinsic' quality='100'/>
-                </YBGImg>
-            </Section>
+            {/*<Section ref={el => sections.current.push(el)}>*/}
+            {/*    <TechTextWrapper>*/}
+            {/*        <H7 ref={el => techniquesTexts.current.push(el)}>process III. Technical Implementation</H7>*/}
+            {/*        <H3 ref={el => techniquesTexts.current.push(el)}>{connectingData.techniques.heading}</H3>*/}
+            {/*        <P4 ref={el => techniquesTexts.current.push(el)} style={{maxWidth: '80%'}}>{connectingData.techniques.plainText}</P4>*/}
+            {/*        <div ref={el => techniquesTexts.current.push(el)}>*/}
+            {/*        </div>*/}
+            {/*    </TechTextWrapper>*/}
+            {/*    <YBGImg ref={techniquesImg}>*/}
+            {/*        <Image alt='idle character with yellow background' src='/connecting/techBBGImg.png' width='269'*/}
+            {/*               height='321' layout='intrinsic' quality='100'/>*/}
+            {/*    </YBGImg>*/}
+            {/*</Section>*/}
 
             <Section ref={el => sections.current.push(el)}>
                 <StylingTextWrapper>
-                    <H7 ref={el => stylingTexts.current.push(el)}>process III. redesign</H7>
+                    <H7 ref={el => stylingTexts.current.push(el)}>process III. Technical Implementation</H7>
                     <H3 ref={el => stylingTexts.current.push(el)}>{connectingData.redesign.heading}</H3>
                     <P4 ref={el => stylingTexts.current.push(el)}>{connectingData.redesign.plainText}</P4>
+                    <IconComponent pdfType='github' background='white' plainText='Source code'
+                                   href='https://github.com/abuer008/Connecting.git'/>
                 </StylingTextWrapper>
                 <StylingImg ref={stylingImg}>
                     <StartAnima
@@ -341,7 +364,7 @@ const StandardConnecting = () => {
                         direction={1}
                         isStopped={isStylingStopped}
                         speed={1}
-                        width='75vw'
+                        width='55vw'
                         height='auto'
                         looping={true}
                     />
@@ -350,13 +373,17 @@ const StandardConnecting = () => {
 
             <Section ref={el => sections.current.push(el)}>
                 <ConclusionImgWrapper>
-                    <Image src='/connecting/artTechScience.png' width='350' height='340' layout='intrinsic' />
+                    <Image src='/connecting/artTechScience.png' width='350' height='340' layout='intrinsic'/>
                 </ConclusionImgWrapper>
                 <ConclusionTextWrapper>
                     <H3 ref={el => conclusionTexts.current.push(el)}>{connectingData.conclusion.heading}</H3>
-                    <P4 ref={el => conclusionTexts.current.push(el)} style={{fontSize: '1.1em'}}>{connectingData.conclusion.plainText}</P4>
-                    <P4 ref={el => conclusionTexts.current.push(el)} style={{margin: '1.5em 0', fontSize: '1.1em'}}>{connectingData.conclusion.plainText2}</P4>
-                    <IconComponent pdfType='pdf' background='white' plainText='the documentation with complete research and processes' href='/pdfs/connecting_docu.pdf' />
+                    <P4 ref={el => conclusionTexts.current.push(el)}
+                        style={{fontSize: '1.1em'}}>{connectingData.conclusion.plainText}</P4>
+                    <P4 ref={el => conclusionTexts.current.push(el)}
+                        style={{margin: '1.5em 0', fontSize: '1.1em'}}>{connectingData.conclusion.plainText2}</P4>
+                    <IconComponent pdfType='pdf' background='white'
+                                   plainText='the documentation with complete research and processes'
+                                   href='/pdfs/connecting_docu.pdf'/>
                 </ConclusionTextWrapper>
             </Section>
 
@@ -365,22 +392,22 @@ const StandardConnecting = () => {
                     <RedirectButton checkAbout={true} textColor='white'/>
                 </RedirectWrapper>
                 <RefreshWrapper ref={el => redirect.current.push(el)}>
-                    <RefreshButton />
+                    <RefreshButton/>
                 </RefreshWrapper>
             </Section>
 
-        </Layout>
+        </>
     )
 }
 
 const RedirectWrapper = styled.div`
-    position: fixed;
+  position: fixed;
   bottom: 5vh;
   right: -5vw;
 `
 
 const RefreshWrapper = styled.div`
-    position: fixed;
+  position: fixed;
   bottom: 5vh;
   right: 50%;
   margin-top: 10px;
@@ -398,7 +425,7 @@ const Section = styled.div`
   padding-right: 17px;
   background-color: black;
   //overflow: hidden;
-  
+
   //scroll-snap-align: start;
 `
 
@@ -408,7 +435,7 @@ const TitleWrapper = styled.div`
   position: absolute;
   top: 70vh;
   left: 12vw;
-  
+
   font-family: Roboto, sans-serif;
   font-style: normal;
   color: white;
@@ -444,7 +471,7 @@ const H2 = styled.h2`
   font-weight: 900;
   font-size: 4.5em;
   width: 100%;
-  
+
   margin: 0;
   padding: 0;
   text-transform: none;
@@ -457,13 +484,13 @@ const P = styled.p`
   font-size: 1.2em;
   line-height: 1.4em;
   color: white;
-  
+
 `
 
 // --- introduction ---
 
 export const WatchArea = styled.div`
-    position: inherit;
+  position: inherit;
   top: 50%;
 `
 
@@ -471,7 +498,7 @@ export const WatchWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  
+
   transform: translate(-50%, -50%);
 `
 
@@ -481,7 +508,7 @@ const IntroTextWrapper = styled.div`
   width: 35vw;
   top: 40vh;
   right: 59%;
-  
+
   @media all and (max-aspect-ratio: 16/10) {
     right: 60%;
   }
@@ -492,12 +519,12 @@ export const IntroImg = styled.div`
   top: 50.1%;
   left: 49.73%;
   //border: 1px solid black;
-  
+
   transform: translate(-50%, -50%);
 `
 
 const H3 = styled(H2)`
-    line-height: 1em;
+  line-height: 1em;
   @media all and (max-aspect-ratio: 16/10) {
     font-size: 4vw;
   }
@@ -507,89 +534,92 @@ const P3 = styled(P)`
 `
 
 const P4 = styled(P3)`
-    text-align: justify;
+  text-align: justify;
 `
 
 // --- characterisation ---
 
 const ContentWrapper = styled.div`
-    width: 30vw;
-    height: 28vmin;
-    
-    position: absolute;
-    top: 15%;
-    margin: auto 0;
-    left: 60vw;
+  width: 30vw;
+  height: 28vmin;
+
+  position: absolute;
+  top: 15%;
+  margin: auto 0;
+  left: 60vw;
 `
 
 // --- intimate communication --- && --- cataloging--- && --- compatibility ---
 
 const ImgWrapper = styled.div`
-    position: absolute;
-    top: 35vh;
-    left: 65vw;
+  position: absolute;
+  top: 35vh;
+  left: 65vw;
 `
+
 
 // --- prototype ---
 
 const PrototypeWrapper = styled.div`
-    position: absolute;
-    margin: 15em 6em;
-    padding-right: 25vw;
+  position: absolute;
+  margin: 15em 6em;
+  padding-right: 25vw;
+  width: 50%;
 `
 
 const ProcessTextWrapper = styled.div`
-    position: absolute;
-    top: 25vh;
-    right: 4vw;
-    text-align: left;
-    width: 25vw;
+  position: absolute;
+  top: 25vh;
+  right: 4vw;
+  text-align: left;
+  width: 35vw;
 `
 
 const H7 = styled(H6)`
-    font-size: 2em;
-    color: white;
+  font-size: 2em;
+  color: white;
 `
 
 // --- techniques ---
 
 const TechTextWrapper = styled.div`
-    position: absolute;
-    top: 36vh;
-    left: 38vw;
-    text-align: left;
-    width: 60vw;
+  position: absolute;
+  top: 36vh;
+  left: 38vw;
+  text-align: left;
+  width: 60vw;
 `
 
 const YBGImg = styled.div`
-    position: absolute;
-    max-width: 18vw;
-    height: auto;
-    top: 32vh;
-    left: 20vw;
+  position: absolute;
+  max-width: 18vw;
+  height: auto;
+  top: 32vh;
+  left: 20vw;
 `
 
 // --- styling ---
 
 const StylingTextWrapper = styled(ProcessTextWrapper)`
-    top: 25vh;
+  top: 25vh;
+  width: 40%;
 `
 const StylingImg = styled.div`
-    position: absolute;
-    max-width: 60vw;
-    padding: 8em 0;
+  position: absolute;
+  //max-width: 50vw;
+  padding: 8em 0;
 `
 
 // --- conclusion ---
 
 const ConclusionImgWrapper = styled.div`
-    position: absolute;
+  position: absolute;
   top: 40vh;
   left: 15vw;
 `
 
 const ConclusionTextWrapper = styled(ProcessTextWrapper)`
-    top: 20vh;
+  top: 20vh;
   right: 5vw;
   width: 45%;
 `

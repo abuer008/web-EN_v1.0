@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { Reveal, Tween } from 'react-gsap'
+import {useState, useEffect} from 'react'
+import {useSelector} from 'react-redux'
+import {Reveal, Tween} from 'react-gsap'
 
 const Animation = ({children}) => (
     <Tween
@@ -20,7 +20,7 @@ export const Content = ({contentData}) => {
     const [isEnglish, setIsEnglish] = useState(true)
 
     useEffect(() => {
-        if(language === 'CN') {
+        if (language === 'CN') {
             setIsEnglish(false)
         } else {
             setIsEnglish(true)
@@ -31,27 +31,32 @@ export const Content = ({contentData}) => {
     return (
         <Wrapper>
             <Reveal repeat>
-            {isEnglish ?
-            <TextWrapper>
-                <H2>{contentData.title}</H2>
-                <P2>{contentData.text}</P2>
-            </TextWrapper>
-            :
-            <CNTextWrapper>
-                <H2>{contentData.CNtitle}</H2>
-                <P2>{contentData.CNtext}</P2>
-            </CNTextWrapper>
-            }
-            <Link href={contentData.link}>
-            <Area>
-            <Animation>
-                <Icon style={{backgroundColor: contentData.backgroundColor, borderRadius: '1em', boxShadow: `0px 5px 15px ${contentData.shadowColor}`}}>
-                    <Image src={contentData.imgSrc} width='164' height='80' objectFit='cover' />
-                    <H3>{isEnglish ? contentData.cardName : contentData.CNcardName}</H3>
-                </Icon>
-                </Animation>
-            </Area>
-            </Link>
+                {
+                    isEnglish ?
+                        <TextWrapper>
+                            <H2>{contentData.title}</H2>
+                            <P2>{contentData.text}</P2>
+                        </TextWrapper>
+                        :
+                        <CNTextWrapper>
+                            <H2>{contentData.CNtitle}</H2>
+                            <P2>{contentData.CNtext}</P2>
+                        </CNTextWrapper>
+                }
+                <Link href={contentData.link}>
+                    <Area>
+                        <Animation>
+                            <Icon style={{
+                                backgroundColor: contentData.backgroundColor,
+                                borderRadius: '1em',
+                                boxShadow: `0px 5px 15px ${contentData.shadowColor}`
+                            }}>
+                                <Image src={contentData.imgSrc} width='164' height='80' objectFit='cover'/>
+                                <H3>{isEnglish ? contentData.cardName : contentData.CNcardName}</H3>
+                            </Icon>
+                        </Animation>
+                    </Area>
+                </Link>
             </Reveal>
         </Wrapper>
     )
@@ -62,12 +67,12 @@ const Wrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-    position: relative;
+  position: relative;
 `
 const CNTextWrapper = styled(TextWrapper)`
-    font-family: Noto Sans SC;
-    font-style: normal;
-    font-weight: bold;
+  font-family: Noto Sans SC;
+  font-style: normal;
+  font-weight: bold;
 `
 
 const Area = styled.div`
@@ -78,25 +83,28 @@ const Area = styled.div`
 
   :hover {
     transform: scale(1.1)
-  };
+  }
+;
 `
 
 const H2 = styled.h2`
-    margin: auto;
+  margin: auto;
 `
 
 const P2 = styled.p`
-    margin: 1em 0;
+  margin: 1em 0;
 `
 
 const Icon = styled.div`
-    margin: 1.7em 0;
+  margin: 1.7em 0;
 `
 
-const H3 = styled.h3`
-    position: absolute;
-  margin: auto 1em;
+const H3 = styled.h4`
+  position: absolute;
+  margin: 0.5em;
   bottom: 0.3em;
   color: white;
   width: 70%;
+  text-align: left;
+  font-size: 1.2em;
 `

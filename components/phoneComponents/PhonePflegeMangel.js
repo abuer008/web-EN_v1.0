@@ -56,9 +56,7 @@ export const PhonePflegeMangel = () => {
                 {isEnglish ?
                     <PlainTextWrapper>
                         <PSub>Interviewing in nursing home</PSub>
-                        <P>At the beginning of the Ambient Assisted Living project, we have arranged to visit the
-                            municipal hospital in Kiel, seeing the actual conditions of elderly care services
-                            personally, and interviewing the nurses about critical opinions.</P>
+                        <P>During an interview at the Kiel Municipal Hospital, we were surprised to discover the shortage of nursing services through our interviews with the nursing staff and our personal experience of the facilities and services in the care centre, to gather information about the various difficulties encountered in the nursing process, and to realize the impact of the ageing population on the entire nursing profession. The main topic of this project, therefore, is how to change the barriers in nursing services and how to improve the current situation of elderly care structurally.</P>
                     </PlainTextWrapper>
                     :
                     <PlainTextWrapper>
