@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Layout from '../../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
+import {Carousel} from 'react-bootstrap'
 
 import {useState, useEffect} from 'react'
 import SlideComponent from "../../components/phoneComponents/SlideComponent";
@@ -47,6 +48,20 @@ const Works = () => {
                         </IconWrapper>
                     </TextWrapper>
                 </SDPWrapper>
+                // <div>
+                //     <Carousel>
+                //         <Carousel.Item>
+                //             <ImgWrapper>
+                //             <Image src='/revision/revisionTitlePhoto.webp' layout='fill' objectFit='cover' />
+                //             </ImgWrapper>
+                //         </Carousel.Item>
+                //         <Carousel.Item>
+                //             <ImgWrapper>
+                //             <Image src='/data-visualisation/titlePhoto.png' layout='fill' objectFit='cover' />
+                //             </ImgWrapper>
+                //         </Carousel.Item>
+                //     </Carousel>
+                // </div>
                 :
                 <div style={{overflow: 'hidden'}}>
                     <Slides initialSlide={randomSlide} />
@@ -61,6 +76,10 @@ const Works = () => {
 const SDPWrapper = styled.div`
   display: flex;
   flex-direction: row;
+`
+
+const ImgWrapper = styled.div`
+    width: 100vw;
 `
 
 const ImageWrapper = styled.div`

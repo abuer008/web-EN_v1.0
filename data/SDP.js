@@ -1,11 +1,15 @@
 export const SDPTexts = {
     introduction: {
         title: 'Bonus Distribution Platform',
-        plain: 'The Hainan Free Trade Port is the most advanced and largest trade market in South China and would become the largest world trade port in the 2050s. Many advantageous tax policies have been introduced in this economic development zone, enabling enterprises to reduce tax expenses legally. The qualified distribution company can delegate the salary distribution services from the companies all over the country; there are huge benefits for both the company and the employees.'
+        plain: 'The tax incentives of the Hainan Freeport offer a variety of tax avoidance possibilities for enterprises and individuals. The main functions of the collection platform are paying corporate income tax on behalf of enterprises through a project-specific management platform and distributing project dividends to employees, thereby reducing tax expenses.'
     },
     research: {
-        title: 'User Research',
-        plain: 'We had a long-term communication with the company engaging the salary distribution services, discussed the existing business model and identified noticeable obstacles and errors that occurred in the traditional user flows. After interviewing the different roles of the target audience, we statistically framed the needs of all potential stakeholders and the challenges to design the complete salary distribution platform.'
+        title: 'User interviews',
+        plain: 'We had a long-term communication with the company engaging the salary distribution services, discussed the existing business model and identified noticeable obstacles and errors that occurred in the traditional user flows. After interviewing the different roles of the target audience, we statistically framed the needs of all potential stakeholders and the challenges to design the complete distribution platform.'
+    },
+    painPoints: {
+        title: 'The pain points',
+        plain: ''
     },
     challenges: {
         title: 'Challenges',
@@ -24,3 +28,30 @@ export const SDPTexts = {
         plain: 'The high-fidelity prototypes were started with basic color styles, as defining a consistent design style is important for the aesthetic sense of the final product. The most distinct idea of interaction design is how users can interact with the published project: Projects created by enterprise users are represented in the enterprise and distribution platform with a unique set of colors, the color stripes displayed at the end of the project elements indicate the basic logic of interaction - swiping left or tapping on the color stripes could pop up the main operations for the project.'
     }
 }
+
+export const ToolSetData = [
+    {
+        title: 'Sketch',
+        logoImg: '/works/sketchLogo.png',
+        width: '50',
+        height: '45'
+    },
+    {
+        title: 'Anima for Sketch',
+        logoImg: '/works/animaToolkit.png',
+        width: '45',
+        height: '45'
+    },
+    {
+        title: 'Bootstrap design system',
+        logoImg: '/works/bootstrapLogo.png',
+        width: '56',
+        height: '45'
+    },
+    {
+        title: 'Mini program platform',
+        logoImg: '/works/wechatLogo.png',
+        width: '60',
+        height: '45'
+    }
+]
