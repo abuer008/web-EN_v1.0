@@ -13,19 +13,39 @@ export const SDPTexts = {
     },
     challenges: {
         title: 'Challenges',
-        c1Title: 'WeChat Mini-program platform',
-        c1Plain: 'As clients request, we must develop and test in the specific platform. From the perspective of a designer, the mini-program has a less usable and focusable area in different devices and more distracted clickable buttons on the top.',
-        c2Title: 'Strict authorization process and protocols',
-        c2Plain: 'The tax-related app requires strict authorisation process based on the tax office’s policies.',
-        c3Title: 'Employees as the important stakeholders in the redesigned solution',
-        c3Plain: 'The app was only used by distributors and companies with the existing solution. How to get employees involved and valued in the process as well is the key consideration for next-generation apps.'
+        c1Title: 'Simple',
+        c1Plain: 'A simplified registration and authentication process is an effective way to attract new customers (Adoption).',
+        c2Title: 'Reduce',
+        c2Plain: 'Repeated manual data entry is the main cause of errors.',
+        c3Title: 'Unified',
+        c3Plain: 'Frequent switching of the platforms in the current user flow decrease the user experience.'
     },
     wireframe: {
-        title: 'Wireframe'
+        title: 'Wireframe',
+        plain: 'The functional partitioning, the general layout and functionality of each page were shown in the wireframe clearly. Through several discussion, the whole product structure is roughly divided into three sections.',
+        c1Title: 'The registration and validation process',
+        c1Plain: 'Securing the account while obtaining important information about the user, such as ID number, bank details, etc.',
+        c2Title: 'Project creation process',
+        c2Plain: 'How to simplify information entry and automate the generation of the required excel sheets.',
+        c3Title: 'The project management process',
+        c3Plain: 'A mobile platform that allows staff to monitor the status of projects in real-time and communicate instantly with project creators.'
     },
     prototype: {
-        title: 'High-fidelity Prototype',
-        plain: 'The high-fidelity prototypes were started with basic color styles, as defining a consistent design style is important for the aesthetic sense of the final product. The most distinct idea of interaction design is how users can interact with the published project: Projects created by enterprise users are represented in the enterprise and distribution platform with a unique set of colors, the color stripes displayed at the end of the project elements indicate the basic logic of interaction - swiping left or tapping on the color stripes could pop up the main operations for the project.'
+        title: 'Design language',
+        plain: 'The complete design language were started with basic color styles, as defining a consistent design style is important for the aesthetic sense of the final product. The most distinct idea of interaction design is how users can interact with the published project: Projects created by enterprise users are represented in the enterprise and distribution platform with a unique set of colors, the color stripes displayed at the end of the project elements indicate the basic logic of interaction - swiping left or tapping on the color stripes could pop up the main operations for the project.'
+    },
+    final: {
+        title: 'High-fidelity prototype',
+        loginTitle: 'The first page - Login/register page',
+        loginPlain: 'In the traditional platform, users must repeatedly enter their account password at each login. In contrast, in the development environment of the mini-program, the platform account can be directly linked to the account of social media, eliminating the need for account and password input.',
+        validationTitle: 'Initial certification process',
+        validationPlain: 'Clearly divides mobile phone authentication, ID card authentication and business authentication into three steps, collecting the necessary user information while ID authenticating and preparing for employee list automatic generation.',
+        homeTitle: 'The homepages of three type of users',
+        homePlain: 'Customised homepages with specific colours and functions for different user audiences allow the users to focus on the features and modules they need, maximising the efficiency of project management.',
+        operationTitle: 'the unique project management interactions',
+        operationPlain: 'The unique interaction design makes it intuitive for the user to understand the options for specific items, making it easy to get started even for first-time users.',
+        creationTitle: 'New project creation process',
+        creationPlain: 'The new project creation process allows operators accustomed to traditional project management processes to add new projects traditionally, incorporating semi-automatic input options to avoid errors.'
     }
 }
 

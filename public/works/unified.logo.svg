@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>unified.logo</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="analysis" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g filter="url(#filter-1)" id="unified.logo">
+            <g>
+                <rect id="Rectangle-Copy-10" x="0" y="0" width="88" height="88"></rect>
+                <text id="􀟜" font-family="SFProText-Regular, SF Pro Text" font-size="60" font-weight="normal" letter-spacing="-0.96" fill="#000000">
+                    <tspan x="14" y="65">􀟜</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
