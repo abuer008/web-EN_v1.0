@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import React from 'react'
 import {SiteMap} from "./phoneComponents/PhoneMenu";
-import {Footer} from './Footer'
+import {Footer} from './footer'
 import {usePhoneVersion} from "./usePhoneVersion";
 
 const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33px', backgroundPixel = '35px', overwrite = false, showFooter = false}) => {
