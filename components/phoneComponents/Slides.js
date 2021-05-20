@@ -1,12 +1,8 @@
 import styled from 'styled-components'
 import SlideComponent from "./SlideComponent";
 import {SlideData} from "../../data/SlideData";
-import Image from 'next/image'
-import Link from 'next/link'
-// import 'bootstrap/dist/css/bootstrap.css'
 
 import Slider from 'react-slick'
-import { Carousel } from 'react-bootstrap'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 

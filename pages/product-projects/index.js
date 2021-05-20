@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function ProductProjects() {
     return (
-        <Layout>
+        <Layout showFooter>
             <Section>
                 <Image src='/productDesign/bgHelm.png' width='2880' height='6344' layout='intrinsic' quality={100} />
             </Section>

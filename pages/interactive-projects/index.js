@@ -14,6 +14,8 @@ import {ContentsList} from "../../components/phoneComponents/ContentsList";
 import {InteractiveProjectsData} from "../../data/CardData";
 import {usePhoneVersion} from "../../components/usePhoneVersion";
 import { useSelector } from 'react-redux';
+import {ContentList} from "../../components/contentList";
+import {designContents, implementData, metricsData} from "../../data/contentListData";
 
 const InteractiveProjects = () => {
     const phoneVersion = usePhoneVersion()

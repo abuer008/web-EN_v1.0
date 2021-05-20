@@ -228,6 +228,11 @@ const StandardSDP = () => {
                     <PrototypeWrapper>
                         <Image src='/works/creationProcess.png' width='1721' height='1197' objectFit='cover' />
                     </PrototypeWrapper>
+                    <H3>{SDPTexts.final.dashboardTitle}</H3>
+                    <SectionPlain>{SDPTexts.final.dashboardPlain}</SectionPlain>
+                    <PrototypeWrapper>
+                        {/*<Image src='/works/' />*/}
+                    </PrototypeWrapper>
                 </Section>
             </ContentWrapper>
         </Layout>

@@ -16,6 +16,7 @@ function MinorProjects() {
                     <MotionTitle>Motion design, mini projects coming soon...</MotionTitle>
                 </Wrapper>
                 :
+
                 <ContentComponent
                     statusCode='......'
                     characterAnima={workingAnima}

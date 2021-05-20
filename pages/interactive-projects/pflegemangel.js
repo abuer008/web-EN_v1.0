@@ -4,7 +4,6 @@ import {PhonePflegeMangel} from "../../components/phoneComponents/PhonePflegeMan
 import {usePhoneVersion} from "../../components/usePhoneVersion";
 import Layout from '../../components/Layout'
 
-import {Container, Row, Col} from 'react-bootstrap'
 import {Content} from '../../components/phoneComponents/Content'
 import {SectionBreak} from "../../components/phoneComponents/PhoneConnecting";
 import {pflegemangelData} from "../../data/CardData";

@@ -2,9 +2,8 @@ import styled from 'styled-components'
 import Layout from '../../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
-import {Carousel} from 'react-bootstrap'
 
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import SlideComponent from "../../components/phoneComponents/SlideComponent";
 import { Slides } from '../../components/phoneComponents/Slides'
 import {ContentsList} from '../../components/phoneComponents/ContentsList'
@@ -14,6 +13,8 @@ import {PhoneMenu} from "../../components/phoneComponents/PhoneMenu";
 import {usePhoneVersion} from "../../components/usePhoneVersion";
 import { useDispatch, useSelector } from 'react-redux'
 import { switchLanguage } from '../../store/actions/switchAction'
+import {ContentList} from "../../components/contentList";
+import {designContents, implementData, metricsData} from "../../data/contentListData";
 
 const Works = () => {
     const [randomSlide, setRandomSlide] = useState(0)
@@ -32,6 +33,7 @@ const Works = () => {
     return (
         <Layout>
             {!phoneVersion ?
+
                 <SDPWrapper>
                     <Link href='/work/SDP'>
                         <ImageWrapper>
@@ -73,9 +75,12 @@ const Works = () => {
     )
 }
 
+
+
 const SDPWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 `
 
 const ImgWrapper = styled.div`
@@ -88,6 +93,7 @@ const ImageWrapper = styled.div`
   left: 38vw;
    width: 22vw;
    height: auto;
+  min-width: 200px;
 
   :hover {
     cursor: pointer;

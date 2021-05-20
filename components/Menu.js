@@ -84,7 +84,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                 </div>
                 :
                 <MenuWrapper ref={trigger}>
-                    <Link href='/interactive-projects'>
+                    <Link href='/'>
                         <ImgWrapper ref={img}>
                             <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
                                    height='16'/>
@@ -147,7 +147,7 @@ const MenuWrapper = styled.div`
   left: 22%;
   position: fixed;
   padding-top: 4em;
-  z-index: 3;
+  z-index: 1000;
 
   display: flex;
   flex-direction: row;

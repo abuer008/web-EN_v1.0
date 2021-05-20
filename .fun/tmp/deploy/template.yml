@@ -1,0 +1,21 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  web-portfolio-2021:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: This is FC service
+      Role: >-
+        acs:ram::1857220734496155:role/aliyunfcgeneratedrole-cn-shanghai-web-portfolio-2021
+      VpcConfig:
+        VpcId: vpc-uf6pg2cco77vup5wklbvi
+        VSwitchIds:
+          - vsw-uf67051el6mbswyk0yvfd
+        SecurityGroupId: sg-uf6jee026drepnx1sj78
+      NasConfig:
+        UserId: 10003
+        GroupId: 10003
+        MountPoints:
+          - ServerAddr: '3322d4addf-xur17.cn-shanghai.nas.aliyuncs.com:/web-portfolio-2021'
+            MountDir: /mnt/auto
+      InternetAccess: true

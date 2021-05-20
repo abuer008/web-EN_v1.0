@@ -34,7 +34,7 @@ const Revision = () => {
     )
 }
 
-const StandardRevision = ({phoneVersion}) => {
+const StandardRevision = () => {
 
     const [isTransitionPlay, setPlay] = useState(false)
 

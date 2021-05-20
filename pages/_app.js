@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import { createWrapper } from 'next-redux-wrapper'
 import store from '../store/store'
 import { createStore } from 'redux';
-// import 'bootstrap/dist/css/bootstrap.min.css'
 
 const LoadingBar = dynamic(() => {
     return import('../components/LoadingBar')

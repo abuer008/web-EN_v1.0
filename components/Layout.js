@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import React from 'react'
 import {SiteMap} from "./phoneComponents/PhoneMenu";
+import {Footer} from './Footer'
 import {usePhoneVersion} from "./usePhoneVersion";
 
-const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33px', backgroundPixel = '35px', overwrite = false}) => {
+const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33px', backgroundPixel = '35px', overwrite = false, showFooter = false}) => {
 
     const [show, setShow] = useState(false)
     const phoneVersion = usePhoneVersion()
@@ -16,12 +17,15 @@ const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33
             <Menu isBlack={isBlack} phoneVersion={phoneVersion} showMenu={show} handleShowMenu={() => setShow(!show)}/>
             {show && <Cover onClick={() => setShow(false)} />}
             {children}
-            {phoneVersion && <div>
+            {phoneVersion ? <div>
             <SiteMap isBlack={isBlack} />
             <footer style={{backgroundColor: isBlack ? 'black' : 'white', height: '4em'}}>
                 <p style={{color: isBlack ? 'white' : 'black', fontFamily: 'Roboto Condensed, sans-serif', textAlign: 'center', paddingTop: '0.5em'}}>&copy; 2021 Boweisdesign.com All Right Reserved</p>
             </footer>
-            </div>}
+            </div>
+                :
+                showFooter && <Footer />
+            }
             <style jsx global>{`
   
               body {

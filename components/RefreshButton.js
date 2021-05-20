@@ -3,7 +3,6 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import {Button} from 'react-bootstrap'
 
 gsap.registerPlugin(ScrollToPlugin)
 
