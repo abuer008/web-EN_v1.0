@@ -26,7 +26,7 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
             <MainTitle degX={convertY} degY={convertX} className={displayClass} style={
                 title === interactionPageInfo.title ?
                     {
-                        fontSize: "7vw",
+                        fontSize: "6vw",
                         lineHeight: "0.8em"
                     }
                     :
@@ -35,8 +35,7 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
                         lineHeight: '1em'
                     }
             }>{title}</MainTitle>
-            <Warning>The contents were temporary not for mobile devices optimized. please visit on a desktop
-                computer.</Warning>
+            <Warning>Please <strong>REFRESH</strong> the page</Warning>
             <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
             <MainText>{explain}</MainText>
         </TextArea>
@@ -114,7 +113,7 @@ const MainTitle = styled.h1.attrs(props => ({
 }))`
   width: 100%;
   margin: 0;
-  padding-top: 7vh;
+  padding-top: 10vh;
 
   font-family: Roboto, sans-serif;
   font-weight: 900;
@@ -166,7 +165,7 @@ const MainText = styled.p`
   width: 100%;
   margin: 1em auto;
   font-weight: 300;
-  font-size: 2.2em;
+  font-size: 1.7rem;
   line-height: 1.2em;
 
   .fadeOut {

@@ -64,7 +64,7 @@ export const designContents = [
             CNtitle: '可实施设计方案',
             title: 'Operation',
             CNplain: '贯彻实施独有的设计语言与风格，提供与维护设计库的一致性与可扩展性',
-            text: 'Implement the unique design language and style, provide and maintain the consistency and scalability of the design library',
+            text: 'Implement the unique design language and style, provide and maintain the consistency and scalability of the design outcomes',
             btnCNTxt: '税务代征平台',
             cardName: 'Bonus Distribution Platform',
             link: '/work/SDP',

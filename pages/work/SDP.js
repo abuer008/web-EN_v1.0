@@ -20,7 +20,7 @@ const SDP = () => {
 
 const StandardSDP = () => {
     return (
-        <Layout backgroundColor='#f5f5f5'>
+        <Layout backgroundColor='#f5f5f5' showFooter>
             <ContentWrapper>
                 <HorizonWrapper>
                     <ImageWrapper>
@@ -262,10 +262,10 @@ const DesignWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  position: absolute;
+  position: relative;
   width: 80%;
   max-width: 950px;
-  top: 20%;
+  top: 20vh;
   left: 50%;
   padding-bottom: 10%;
 
