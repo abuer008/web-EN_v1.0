@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
                 <meta name="boweis-interactive-projects" content="Boweis' Interactive Design"/>
                 <meta name="msapplication-TileColor" content="#d91d47"/>
                 <meta name="theme-color" content="#000"/>
+                <link rel="stylesheet" href="https://use.typekit.net/fmk2zhj.css" />
             </Head>
             <LoadingBar />
             <Provider store={store}>

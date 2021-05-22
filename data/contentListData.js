@@ -19,7 +19,7 @@ export const designContents = [
             animaData: SuperHumanAnima
         },
         img: {
-            src: '/work/strategicBg.svg',
+            src: '/work/strategicBg.png',
             alt: 'strategic illustration'
         }
     },
@@ -32,12 +32,12 @@ export const designContents = [
             btnCNTxt: '老年护理需求研究',
             cardName: 'Pflegemangel',
             link: '/interactive-projects/pflegemangel',
-            btnCr: '#63A57F',
+            btnCr: '#17A2B8',
             btnShadow: 'rgba(99, 165, 127, 0.4)',
             animaData: AALAnima
         },
         img: {
-            src: '/work/framingBg.svg',
+            src: '/work/framingBg.png',
             alt: 'user study illustration'
         }
     },
@@ -55,7 +55,7 @@ export const designContents = [
             animaData: AALAnima
         },
         img: {
-            src: '/work/solutionBg.svg',
+            src: '/work/solutionBg.png',
             alt: 'feasible illustration'
         }
     },
@@ -72,7 +72,7 @@ export const designContents = [
             btnShadow: 'rgba(51, 51, 51, 0.3)'
         },
         img: {
-            src: '/work/tangleBg.svg',
+            src: '/work/tangleBg.png',
             alt: 'tangle design illustration'
         }
     }
@@ -93,7 +93,7 @@ export const implementData = [
             animaData: VisualDataAnima
         },
         img: {
-            src: '/work/dataBg.svg',
+            src: '/work/dataBg.png',
             alt: 'data-driven prototype illustration'
         }
     },
@@ -111,7 +111,7 @@ export const implementData = [
             animaData: ConnectingAnima
         },
         img: {
-            src: '/work/frontendBg.svg',
+            src: '/work/frontendBg.png',
             alt: 'frontend implementation illustration'
         }
     }
@@ -131,7 +131,7 @@ export const metricsData = [
             btnShadow: 'rgba(51, 51, 51, 0.38)'
         },
         img: {
-            src: '/work/metricsBg.svg',
+            src: '/work/metricsBg.png',
             alt: 'design metrics illustration'
         }
     },
@@ -144,7 +144,7 @@ export const metricsData = [
             btnTxt: ''
         },
         img: {
-            src: '/work/iterationBg.svg',
+            src: '/work/iterationBg.png',
             alt: 'design iteration illustration'
         }
     }

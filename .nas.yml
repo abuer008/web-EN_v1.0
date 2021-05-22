@@ -1,4 +1,7 @@
 nasMappings:
+  boweisdesign:
+    - localNasDir: node_modules
+      remoteNasDir: /mnt/auto/node_modules
   web-portfolio-2021:
     - localNasDir: node_modules
       remoteNasDir: /mnt/auto/node_modules
