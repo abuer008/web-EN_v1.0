@@ -19,13 +19,13 @@ export const Footer = () => {
 
                 <ListWrapper>
                     <PS>UX Projects</PS>
-                    <B link='/work/SDP' name='Bonus Distribution Platform' />
-                    <B link='/interactive-projects/revision' name='Re:Vision' />
-                    <B link='/interactive-projects/data-visualisation' name='Syrian civil war' />
-                    <B link='/interactive-projects/super-human' name='SuperHuman' />
-                    <B link='/interactive-projects/pflegemangel' name='Pflegemangel case study' />
-                    <B link='/interactive-projects/aal' name='Ambient assisted living' />
-                    <B link='/interactive-projects/connecting' name='Connecting - Virtual kinship' />
+                    <B link='/SDP' name='Bonus Distribution Platform' />
+                    <B link='/revision' name='Re:Vision' />
+                    <B link='/data-visualisation' name='Syrian civil war' />
+                    <B link='/super-human' name='SuperHuman' />
+                    <B link='/pflegemangel' name='Pflegemangel case study' />
+                    <B link='/aal' name='Ambient assisted living' />
+                    <B link='/connecting' name='Connecting - Virtual kinship' />
                 </ListWrapper>
 
                 <ListWrapper>

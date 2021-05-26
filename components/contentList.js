@@ -141,7 +141,7 @@ const ListTitle = styled.h3`
 
 const H1 = styled.h1`
   margin: auto 0;
-  font-family: source-han-serif-sc, serif;
+  //font-family: source-han-serif-sc, serif;
 `
 
 const P = styled.p`

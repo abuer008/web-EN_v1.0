@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import Layout from '../../components/Layout'
+import Layout from '../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {SDPTexts, ToolSetData} from "../../data/SDP";
-import {usePhoneVersion} from "../../components/usePhoneVersion";
-import {PhoneSDP} from "../../components/phoneComponents/PhoneSDP";
-import {ToolsetItem} from "../../components/work/ToolsetItem";
+import {SDPTexts, ToolSetData} from "../data/SDP";
+import {usePhoneVersion} from "../components/usePhoneVersion";
+import {PhoneSDP} from "../components/phoneComponents/PhoneSDP";
+import {ToolsetItem} from "../components/work/ToolsetItem";
 
 const SDP = () => {
     const phoneVersion = usePhoneVersion()

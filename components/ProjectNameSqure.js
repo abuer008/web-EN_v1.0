@@ -34,7 +34,7 @@ const NameSqure = ({name, color, destination, handleMouseEnter, handleMouseLeave
 
     return (
         <Wrapper>
-            <Link href={'/interactive-projects' + destination} >
+            <Link href={destination} >
                 <Title color={colorSqureArray[color]} onMouseEnter={handleHoverIn}
                        onMouseLeave={handleHoverOut}>{name}</Title>
             </Link>

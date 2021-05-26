@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import {PhonePflegeMangel} from "../../components/phoneComponents/PhonePflegeMangel";
-import {usePhoneVersion} from "../../components/usePhoneVersion";
-import Layout from '../../components/Layout'
+import {PhonePflegeMangel} from "../components/phoneComponents/PhonePflegeMangel";
+import {usePhoneVersion} from "../components/usePhoneVersion";
+import Layout from '../components/Layout'
 
-import {Content} from '../../components/phoneComponents/Content'
-import {SectionBreak} from "../../components/phoneComponents/PhoneConnecting";
-import {pflegemangelData} from "../../data/CardData";
+import {Content} from '../components/phoneComponents/Content'
+import {SectionBreak} from "../components/phoneComponents/PhoneConnecting";
+import {pflegemangelData} from "../data/CardData";
 
 const PflegeMangel = () => {
     const phoneVersion = usePhoneVersion()
@@ -207,7 +207,7 @@ const StandardPflegemangel = () => {
 
 const Title = styled.div`
   height: 25vh;
-  font-family: source-han-serif-sc, serif;
+  //font-family: source-han-serif-sc, serif;
 `
 
 const GoalWrapper = styled.div`
@@ -224,7 +224,7 @@ const Li = styled.li`
 `
 
 const H2 = styled.h2`
-  font-family: source-han-serif-sc, serif;
+  //font-family: source-han-serif-sc, serif;
   font-weight: 400;
   font-size: 1.8rem;
 `
@@ -243,7 +243,7 @@ const H1 = styled.h1`
 `
 const H3 = styled.h3`
   font-size: 2rem;
-  font-family: source-han-serif-sc, serif;
+  //font-family: source-han-serif-sc, serif;
   font-weight: 400;
   margin: auto;
 `

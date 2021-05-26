@@ -37,6 +37,8 @@ const Layout = ({children, isBlack = true, backgroundColor = '#fff', pixel = '33
               
               font-family: Roboto, sans-serif;
               font-style: normal;
+              
+              -webkit-font-smoothing: antialiased;
 
 
               }

@@ -35,7 +35,7 @@ const Works = () => {
             {!phoneVersion ?
 
                 <SDPWrapper>
-                    <Link href='/work/SDP'>
+                    <Link href='/SDP'>
                         <ImageWrapper>
                             <Image src='/works/Login.Mockup.png' width='340' height='578'/>
                         </ImageWrapper>

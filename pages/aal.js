@@ -1,10 +1,10 @@
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
-import Layout from '../../components/Layout'
-import {BasicEl} from "../../components/aal/BasicEl";
-import {TlText} from "../../components/aal/TlText";
-import {TimeGraph} from '../../components/aal/TimeGraph'
+import Layout from '../components/Layout'
+import {BasicEl} from "../components/aal/BasicEl";
+import {TlText} from "../components/aal/TlText";
+import {TimeGraph} from '../components/aal/TimeGraph'
 import styled from 'styled-components'
 import Image from 'next/image'
 import ReactPlayer from "react-player"
@@ -12,14 +12,14 @@ import {useState} from 'react'
 import {useRef, useEffect} from 'react'
 
 
-import {AALData, AALs, outputContents, protoImgs} from "../../data/AAL";
-import {OutputComponent} from "../../components/aal/OutputComponent";
-import {RedirectButton} from "../../components/RedirectButton";
-import {RefreshButton} from "../../components/RefreshButton";
-import {PrototypeEl} from "../../components/aal/PrototypeEl";
-import {IconComponent} from "../../components/IconComponent";
-import {usePhoneVersion} from "../../components/usePhoneVersion";
-import {PhoneAal} from "../../components/phoneComponents/PhoneAal";
+import {AALData, AALs, outputContents, protoImgs} from "../data/AAL";
+import {OutputComponent} from "../components/aal/OutputComponent";
+import {RedirectButton} from "../components/RedirectButton";
+import {RefreshButton} from "../components/RefreshButton";
+import {PrototypeEl} from "../components/aal/PrototypeEl";
+import {IconComponent} from "../components/IconComponent";
+import {usePhoneVersion} from "../components/usePhoneVersion";
+import {PhoneAal} from "../components/phoneComponents/PhoneAal";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 

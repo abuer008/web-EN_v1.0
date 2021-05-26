@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import {useEffect} from 'react'
-import Layout from "../../components/Layout";
-import {superHumanData} from "../../data/SuperHuman";
-import {SectionTrigger} from "../../components/superHuman/SectionTrigger";
+import Layout from "../components/Layout";
+import {superHumanData} from "../data/SuperHuman";
+import {SectionTrigger} from "../components/superHuman/SectionTrigger";
 
 import {Reveal} from 'react-gsap'
-import {TextFading} from "../../components/visualData/TextFading";
-import {Fading} from "../../components/visualData/Fading";
-import VideoArea from "../../components/revision/VideoArea";
-import {RefreshButton} from "../../components/RefreshButton";
-import {RedirectButton} from "../../components/RedirectButton";
-import {usePhoneVersion} from "../../components/usePhoneVersion";
-import {PhoneSuperHuman} from "../../components/phoneComponents/PhoneSuperHuman";
+import {TextFading} from "../components/visualData/TextFading";
+import {Fading} from "../components/visualData/Fading";
+import VideoArea from "../components/revision/VideoArea";
+import {RefreshButton} from "../components/RefreshButton";
+import {RedirectButton} from "../components/RedirectButton";
+import {usePhoneVersion} from "../components/usePhoneVersion";
+import {PhoneSuperHuman} from "../components/phoneComponents/PhoneSuperHuman";
 
 const SuperHuman = () => {
     const phoneVersion = usePhoneVersion()

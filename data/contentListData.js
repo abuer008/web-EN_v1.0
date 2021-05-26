@@ -13,7 +13,7 @@ export const designContents = [
             text: 'Focuses on the future and user needs to provide products with sustainable and irreplaceable competitive advantages',
             btnCNTxt: '未来交互的思辨设计',
             cardName: 'SuperHuman',
-            link: '/interactive-projects/super-human',
+            link: '/super-human',
             btnCr: '#4078CD',
             btnShadow: 'rgba(64, 120, 205, 0.38)',
             animaData: SuperHumanAnima
@@ -31,7 +31,7 @@ export const designContents = [
             text: 'Find critical challenges and effective solutions from the complex user experience problems and business needs',
             btnCNTxt: '老年护理需求研究',
             cardName: 'Pflegemangel',
-            link: '/interactive-projects/pflegemangel',
+            link: '/pflegemangel',
             btnCr: '#17A2B8',
             btnShadow: 'rgba(99, 165, 127, 0.4)',
             animaData: AALAnima
@@ -49,7 +49,7 @@ export const designContents = [
             text: 'Provide systematic solutions based on cutting-edge technologies and fastidious sense of design',
             btnCNTxt: '智能环境辅助',
             cardName: 'Ambient Assisted Living',
-            link: '/interactive-projects/aal',
+            link: '/aal',
             btnCr: '#1F9F71',
             btnShadow: 'rgba(31, 159, 113, 0.3)',
             animaData: AALAnima
@@ -67,7 +67,7 @@ export const designContents = [
             text: 'Implement the unique design language and style, provide and maintain the consistency and scalability of the design outcomes',
             btnCNTxt: '税务代征平台',
             cardName: 'Bonus Distribution Platform',
-            link: '/work/SDP',
+            link: '/SDP',
             btnCr: '#333333',
             btnShadow: 'rgba(51, 51, 51, 0.3)'
         },
@@ -87,7 +87,7 @@ export const implementData = [
             text: 'Provide data-driven, interactive, high-fidelity prototypes and front-end examples from a technical and design perspective',
             btnCNTxt: '战争数据可视化',
             cardName: 'Syrian civil war',
-            link: '/interactive-projects/data-visualisation',
+            link: '/data-visualisation',
             btnCr: '#9A9A9A',
             btnShadow: 'rgba(154, 154, 154, 0.3)',
             animaData: VisualDataAnima
@@ -105,7 +105,7 @@ export const implementData = [
             text: 'Maintain sensitivity to front-end technology and consistency of design goals, providing a comprehensive user experience with a unique design process that guarantees the quality of the final product',
             btnCNTxt: '虚拟智能互联',
             cardName: 'Virtual Connection of Kinship',
-            link: '/interactive-projects/connecting',
+            link: '/connecting',
             btnCr: '#FF6A65',
             btnShadow: 'rgba(255, 106, 101, 0.38)',
             animaData: ConnectingAnima
@@ -126,7 +126,7 @@ export const metricsData = [
             text: 'Use HEART framework, SUS (System Usability Scale) and KPI to collect user feedback systematically and continuously improve product interaction experience.',
             btnCNTxt: '税务代征平台',
             cardName: 'Bonus Distribution Platform',
-            link: '/work/SDP',
+            link: '/SDP',
             btnCr: '#333',
             btnShadow: 'rgba(51, 51, 51, 0.38)'
         },

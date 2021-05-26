@@ -1,20 +1,20 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import Layout from '../../components/Layout'
+import Layout from '../components/Layout'
 import {useRef, useEffect, useState} from 'react'
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
-import StartAnima from '../../components/StartAnima'
-import {States} from "../../components/connecting/States";
+import StartAnima from '../components/StartAnima'
+import {States} from "../components/connecting/States";
 
-import {connectingData, connectingAnima, animaState, statesExample} from "../../data/Connecting";
-import * as stylingAnima from '../../public/connecting/styling.json'
-import {RedirectButton} from "../../components/RedirectButton";
-import {RefreshButton} from "../../components/RefreshButton";
-import {IconComponent} from "../../components/IconComponent";
-import {usePhoneVersion} from "../../components/usePhoneVersion";
-import {PhoneConnecting} from "../../components/phoneComponents/PhoneConnecting";
+import {connectingData, connectingAnima, animaState, statesExample} from "../data/Connecting";
+import * as stylingAnima from '../public/connecting/styling.json'
+import {RedirectButton} from "../components/RedirectButton";
+import {RefreshButton} from "../components/RefreshButton";
+import {IconComponent} from "../components/IconComponent";
+import {usePhoneVersion} from "../components/usePhoneVersion";
+import {PhoneConnecting} from "../components/phoneComponents/PhoneConnecting";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 

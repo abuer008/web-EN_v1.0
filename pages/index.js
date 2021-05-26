@@ -27,7 +27,7 @@ const StandardContents = () => {
                 <BgWrapper>
                     <div style={{position: 'absolute', top: '20vh'}}>
                         {/*<Image src='/work/work_titleBG.svg' alt='illustration of landing page' width='1080' height='399' />*/}
-                        <StartAnima animaData={LandingAnima} direction={1} isStopped={false} speed={0.5} width='100%' height='auto' />
+                        <StartAnima animaData={LandingAnima} direction={1} isStopped={false} speed={0.7} width='100%' height='auto' />
                     </div>
                 </BgWrapper>
             </Landing>

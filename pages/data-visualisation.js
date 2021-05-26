@@ -1,24 +1,24 @@
 import Image from 'next/image'
 import {useEffect} from 'react'
-import Layout from '../../components/Layout'
+import Layout from '../components/Layout'
 import styled from 'styled-components'
-import {VDText} from "../../components/visualData/VDText";
-import {ShowArea} from '../../components/visualData/ShowArea'
-import {Sphere} from '../../components/visualData/Sphere'
-import {PhotoWall} from "../../components/visualData/PhotoWall";
-import {SectionTrigger} from "../../components/visualData/SectionTrigger";
-import {Fading} from '../../components/visualData/Fading'
-import {TextFading} from '../../components/visualData/TextFading'
-import {TitleChange} from "../../components/visualData/TitleChange";
+import {VDText} from "../components/visualData/VDText";
+import {ShowArea} from '../components/visualData/ShowArea'
+import {Sphere} from '../components/visualData/Sphere'
+import {PhotoWall} from "../components/visualData/PhotoWall";
+import {SectionTrigger} from "../components/visualData/SectionTrigger";
+import {Fading} from '../components/visualData/Fading'
+import {TextFading} from '../components/visualData/TextFading'
+import {TitleChange} from "../components/visualData/TitleChange";
 
 import {Reveal} from 'react-gsap'
 
-import {dataVisualisation} from "../../data/DataVisualisation"
-import {RedirectButton} from "../../components/RedirectButton";
-import {RefreshButton} from "../../components/RefreshButton";
-import {IconComponent} from "../../components/IconComponent";
-import { usePhoneVersion } from "../../components/usePhoneVersion";
-import {PhoneVisualData} from "../../components/phoneComponents/PhoneVisualData";
+import {dataVisualisation} from "../data/DataVisualisation"
+import {RedirectButton} from "../components/RedirectButton";
+import {RefreshButton} from "../components/RefreshButton";
+import {IconComponent} from "../components/IconComponent";
+import { usePhoneVersion } from "../components/usePhoneVersion";
+import {PhoneVisualData} from "../components/phoneComponents/PhoneVisualData";
 
 const DataVisualisation = () => {
     const phoneVersion = usePhoneVersion();

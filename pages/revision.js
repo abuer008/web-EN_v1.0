@@ -8,17 +8,17 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {useState, useEffect, useRef} from 'react'
 
-import Layout from '../../components/Layout'
-import RevisionSection from "../../components/revision/RevisionSection";
-import VideoSection from "../../components/revision/VideoSection";
-import VideoArea from "../../components/revision/VideoArea";
-import {revisionProduct} from "../../data/RevisionData";
-import {RedirectButton, handleRedirect} from "../../components/RedirectButton";
-import {RefreshButton} from "../../components/RefreshButton";
-import { IconComponent } from "../../components/IconComponent";
+import Layout from '../components/Layout'
+import RevisionSection from "../components/revision/RevisionSection";
+import VideoSection from "../components/revision/VideoSection";
+import VideoArea from "../components/revision/VideoArea";
+import {revisionProduct} from "../data/RevisionData";
+import {RedirectButton, handleRedirect} from "../components/RedirectButton";
+import {RefreshButton} from "../components/RefreshButton";
+import { IconComponent } from "../components/IconComponent";
 
-import { PhoneRevision } from "../../components/phoneComponents/PhoneRevision"
-import { usePhoneVersion } from "../../components/usePhoneVersion";
+import { PhoneRevision } from "../components/phoneComponents/PhoneRevision"
+import { usePhoneVersion } from "../components/usePhoneVersion";
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
