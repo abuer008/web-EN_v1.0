@@ -31,7 +31,7 @@ export const PhoneVisualData = () => {
         <>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image src='/data-visualisation/visualData.png' width='950' height='1088' objectFit='cover' />
+                    <Image src='/data-visualisation/visualData.webp' width='950' height='1088' objectFit='cover' />
                 </ImgWrapper>
                 { isEnglish ?
                     <TextWrapper black>
@@ -82,7 +82,7 @@ export const PhoneVisualData = () => {
                     }
                 </PlainTextWrapper>
                 <ImgWrapper small>
-                    <Image alt='the example of data source' src='/data-visualisation/sourceOfTruth.png' width='598' height='432' />
+                    <Image alt='the example of data source' src='/data-visualisation/sourceOfTruth.webp' width='598' height='432' />
                 </ImgWrapper>
                 <PlainTextWrapper black>
                     { isEnglish ?
@@ -105,7 +105,7 @@ export const PhoneVisualData = () => {
                     }
                 </PlainTextWrapper>
                 <ImgWrapper small>
-                    <Image alt='the example of design' src='/data-visualisation/perspectiveOfDesign.png' width='598' height='468' />
+                    <Image alt='the example of design' src='/data-visualisation/perspectiveOfDesign.webp' width='598' height='468' />
                 </ImgWrapper>
                 <PlainTextWrapper black>
                     {

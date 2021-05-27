@@ -20,6 +20,12 @@ import {designContents, implementData, metricsData} from "../../data/contentList
 const InteractiveProjects = () => {
     const phoneVersion = usePhoneVersion()
 
+    useEffect(() => {
+        return () => {
+            window.location.reload(true)
+        }
+    })
+
     return (
         <>
             {phoneVersion ?

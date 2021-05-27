@@ -28,7 +28,7 @@ const StandardPflegemangel = () => {
             <Section>Background</Section>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/aal/aalIntro.jpg' width='1126' height='794' objectFit='cover'/>
+                    <Image src='/aal/aalIntro.webp' width='1126' height='794' objectFit='cover'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>Interviewing in nursing home</H3>
@@ -100,7 +100,7 @@ const StandardPflegemangel = () => {
             </ImgWrapper>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/research1.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/research1.webp' width='720' height='405'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>Interviews, customer journey and role play</H3>
@@ -111,7 +111,7 @@ const StandardPflegemangel = () => {
             </MediaWrapper>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/research2.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/research2.webp' width='720' height='405'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>Competitive analysis</H3>

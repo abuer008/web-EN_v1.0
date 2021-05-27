@@ -24,7 +24,7 @@ const StandardSDP = () => {
             <ContentWrapper>
                 <HorizonWrapper>
                     <ImageWrapper>
-                        <Image src='/works/mockup.distributor.png' width='300' height='486'/>
+                        <Image src='/works/mockup.distributor.webp' width='300' height='486'/>
                     </ImageWrapper>
                     <Section style={{width: '60%', top: '5vh'}}>
                         <SectionTitle>
@@ -76,7 +76,7 @@ const StandardSDP = () => {
                         analysed the existing user processes and the various nodes through the customer journey
                         map.</SectionPlain>
                     <CustomerJourney>
-                        <Image alt='the current customer journey analysis' src='/works/currentCustomerJourney.png'
+                        <Image alt='the current customer journey analysis' src='/works/currentCustomerJourney.webp'
                                width='1772' height='1925'/>
                     </CustomerJourney>
 
@@ -125,7 +125,7 @@ const StandardSDP = () => {
                         taking potential additional stakeholders into account based on satisfying the product service
                         and pointing the way to the sustainable development of future products.</SectionPlain>
                     <ResearchWrapper>
-                        <Image src='/works/Stakeholders.png' width='661' height='790'/>
+                        <Image src='/works/Stakeholders.webp' width='661' height='790'/>
                     </ResearchWrapper>
 
                     <Wrapper>
@@ -173,7 +173,7 @@ const StandardSDP = () => {
                     </ul>
                     <Wireframe>
                         {/*<Link href='/works/wireframe.png'>*/}
-                            <Image src='/works/wireframe.png' width='1192' height='1099'/>
+                            <Image src='/works/wireframe.webp' width='1192' height='1099'/>
                         {/*</Link>*/}
                     </Wireframe>
                 </Section>
@@ -190,14 +190,14 @@ const StandardSDP = () => {
                     <SectionPlain>{SDPTexts.prototype.plain}</SectionPlain>
                     <DesignWrapper>
                         <H3>Typography</H3>
-                        <Image src='/works/typography.png' width='2632' height='1778'/>
+                        <Image src='/works/typography.webp' width='2632' height='1778'/>
                     </DesignWrapper>
                     <DesignWrapper>
                         <H3>Reuseable components</H3>
-                        <Image src='/works/symbols.png' width='2430' height='882' />
+                        <Image src='/works/symbols.webp' width='2430' height='882' />
                     </DesignWrapper>
                     <PrototypeWrapper width='80%'>
-                        <Image src='/works/Mockups.png' width='1607' height='880' />
+                        <Image src='/works/Mockups.webp' width='1607' height='880' />
                     </PrototypeWrapper>
                 </Section>
 
@@ -206,27 +206,27 @@ const StandardSDP = () => {
                     <H3>{SDPTexts.final.loginTitle}</H3>
                     <SectionPlain>{SDPTexts.final.loginPlain}</SectionPlain>
                     <PrototypeWrapper>
-                        <Image src='/works/registerProcess.png' width='1720' height='1197' objectFit='cover' />
+                        <Image src='/works/registerProcess.webp' width='1720' height='1197' objectFit='cover' />
                     </PrototypeWrapper>
                     <H3>{SDPTexts.final.validationTitle}</H3>
                     <SectionPlain>{SDPTexts.final.validationPlain}</SectionPlain>
                     <PrototypeWrapper>
-                        <Image src='/works/validationProcess.png' width='2075' height='1198' objectFit='cover' />
+                        <Image src='/works/validationProcess.webp' width='2075' height='1198' objectFit='cover' />
                     </PrototypeWrapper>
                     <H3>{SDPTexts.final.homeTitle}</H3>
                     <SectionPlain>{SDPTexts.final.homePlain}</SectionPlain>
                     <PrototypeWrapper>
-                        <Image src='/works/homePages.png' width='2529' height='1197' objectFit='cover' />
+                        <Image src='/works/homePages.webp' width='2529' height='1197' objectFit='cover' />
                     </PrototypeWrapper>
                     <H3>{SDPTexts.final.operationTitle}</H3>
                     <SectionPlain>{SDPTexts.final.operationPlain}</SectionPlain>
                     <PrototypeWrapper>
-                        <Image src='/works/projectOperation.png' width='1721' height='1197' objectFit='cover' />
+                        <Image src='/works/projectOperation.webp' width='1721' height='1197' objectFit='cover' />
                     </PrototypeWrapper>
                     <H3>{SDPTexts.final.creationTitle}</H3>
                     <SectionPlain>{SDPTexts.final.creationPlain}</SectionPlain>
                     <PrototypeWrapper>
-                        <Image src='/works/creationProcess.png' width='1721' height='1197' objectFit='cover' />
+                        <Image src='/works/creationProcess.webp' width='1721' height='1197' objectFit='cover' />
                     </PrototypeWrapper>
                     <H3>{SDPTexts.final.dashboardTitle}</H3>
                     <SectionPlain>{SDPTexts.final.dashboardPlain}</SectionPlain>

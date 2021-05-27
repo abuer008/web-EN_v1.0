@@ -38,7 +38,7 @@ export const PhoneConnecting = () => {
         <div style={{overflow: 'hidden'}}>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image src='/connecting/phoneConnecting.png' width='950' height='1088' objectFit='cover'/>
+                    <Image src='/connecting/phoneConnecting.webp' width='950' height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 <TextWrapper style={{top: '40vh'}}>
                     <MainTitle>
@@ -134,7 +134,7 @@ export const PhoneConnecting = () => {
                         <CNP2>Connecting手环提供了独一无二的直接交互方式，随时随地的触碰手环，贴近皮肤的触觉传感器会即时模拟真实触觉，建立无视空间的交互体验。</CNP2>
                     }
                     <ImgWrapper>
-                        <Image alt='sketch for touch interaction' src='/connecting/touchSketch.png' width='470' height='353' objectFit='scale-down' />
+                        <Image alt='sketch for touch interaction' src='/connecting/touchSketch.webp' width='470' height='353' objectFit='scale-down' />
                     </ImgWrapper>
                 </PlainTextWrapper>
             </WArtiWrapper>
@@ -159,7 +159,7 @@ export const PhoneConnecting = () => {
                         <CNP2>在保证隐私的同时，将不可琢磨的交流量化，提供一目了然的关系图表的同时，通过大数据的计算优化亲属关系。</CNP2>
                     }
                     <ImgWrapper>
-                        <Image alt='sketch for relationship statistics' src='/connecting/catalogSketch.png' width='600' height='448' objectFit='scale-down' />
+                        <Image alt='sketch for relationship statistics' src='/connecting/catalogSketch.webp' width='600' height='448' objectFit='scale-down' />
                     </ImgWrapper>
                 </PlainTextWrapper>
             </WArtiWrapper>

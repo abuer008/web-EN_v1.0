@@ -173,13 +173,13 @@ const WhoTextWrapper = styled.div`
 `
 
 const Who = styled.h2`
-    font-family: source-han-serif-sc, serif;
+    //font-family: source-han-serif-sc, serif;
   font-size: 2.7rem;
   margin: auto 0;
 `
 
 const WhoPlain = styled.p`
-  font-family: source-han-serif-sc, serif;
+  //font-family: source-han-serif-sc, serif;
     font-size: 1.4rem;
   line-height: 1.7rem;
 `

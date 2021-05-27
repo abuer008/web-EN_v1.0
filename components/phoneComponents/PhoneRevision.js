@@ -19,7 +19,7 @@ export const PhoneRevision = () => {
         <>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image src='/revision/revisionPhoneVersion.png' width='950' height='1088' objectFit='cover'/>
+                    <Image src='/revision/revisionPhoneVersion.webp' width='950' height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <MainTitle>
@@ -31,7 +31,7 @@ export const PhoneRevision = () => {
 
             <WArtiWrapper>
                 <PlainImgWrapper>
-                    <Image src='/revision/artificialSynasthesia.png' width='360' height='203' objectFit='cover'/>
+                    <Image src='/revision/artificialSynasthesia.webp' width='360' height='203' objectFit='cover'/>
                 </PlainImgWrapper>
                 {
                     isEnglish ?
@@ -54,7 +54,7 @@ export const PhoneRevision = () => {
 
             <WArtiWrapper>
                 <PlainImgWrapper>
-                    <Image src='/revision/revisionPhoneIntro.png' width='2285' height='1800' objectFit='cover' />
+                    <Image src='/revision/revisionPhoneIntro.webp' width='2285' height='1800' objectFit='cover' />
                 </PlainImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper>
@@ -76,7 +76,7 @@ export const PhoneRevision = () => {
 
             <WArtiWrapper>
                 <PlainImgWrapper>
-                    <Image src='/revision/revisionPhoneInfrared.png' width='2285' height='1800' objectFit='cover' />
+                    <Image src='/revision/revisionPhoneInfrared.webp' width='2285' height='1800' objectFit='cover' />
                 </PlainImgWrapper>
                 {
                     isEnglish ?
@@ -99,7 +99,7 @@ export const PhoneRevision = () => {
 
             <WArtiWrapper>
                 <PlainImgWrapper>
-                    <Image src='/revision/revisionPhoneTactile.png' width='2285' height='1800' objectFit='cover' />
+                    <Image src='/revision/revisionPhoneTactile.webp' width='2285' height='1800' objectFit='cover' />
                 </PlainImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper>
@@ -185,7 +185,7 @@ export const PhoneRevision = () => {
                     }
                 </PlainTextWrapper>
                 <PlainImgWrapper>
-                    <Image src='/revision/prototype/IMG_0238.jpg' width='1440' height='774' />
+                    <Image src='/revision/prototype/IMG_0238.webp' width='1440' height='774' />
                 </PlainImgWrapper>
                 <PlainTextWrapper>
                     { isEnglish ?

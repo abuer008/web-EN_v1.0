@@ -141,19 +141,19 @@ export const PhonePflegeMangel = () => {
 
             <WArtiWrapper>
                 <ImgWrapper>
-                    <Image alt='customer journey requests view' src='/pflegemangel/research1.png' width='720'
+                    <Image alt='customer journey requests view' src='/pflegemangel/research1.webp' width='720'
                            height='404'/>
                 </ImgWrapper>
                 <ImgWrapper>
-                    <Image alt='customer journey received view' src='/pflegemangel/research2.png' width='720'
+                    <Image alt='customer journey received view' src='/pflegemangel/research2.webp' width='720'
                            height='404'/>
                 </ImgWrapper>
                 <ImgWrapper>
-                    <Image alt='customer journey active helping' src='/pflegemangel/research3.png' width='720'
+                    <Image alt='customer journey active helping' src='/pflegemangel/research3.webp' width='720'
                            height='404'/>
                 </ImgWrapper>
                 <ImgWrapper>
-                    <Image alt='customer journey medications' src='/pflegemangel/research4.png' width='720'
+                    <Image alt='customer journey medications' src='/pflegemangel/research4.webp' width='720'
                            height='404'/>
                 </ImgWrapper>
             </WArtiWrapper>

@@ -30,7 +30,7 @@ export const PhoneSuperHuman = () => {
         <>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image alt='prothesis with voronoi fracture' src='/superHuman/superHuman.png' width='950'
+                    <Image alt='prothesis with voronoi fracture' src='/superHuman/superHuman.webp' width='950'
                            height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 { isEnglish ?

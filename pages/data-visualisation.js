@@ -42,7 +42,7 @@ const StandardVisualData = () => {
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
                 <BackgroundWrapper>
-                    <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.png' layout='fill'
+                    <Image alt='syrian map with red pointers' src='/data-visualisation/titlePhoto.webp' layout='fill'
                            objectFit='cover'/>
                 </BackgroundWrapper>
                 <TextFading>

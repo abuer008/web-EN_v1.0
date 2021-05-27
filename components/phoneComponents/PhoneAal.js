@@ -30,7 +30,7 @@ export const PhoneAal = () => {
         <Wrapper>
             <TitleWrapper>
                 <ImgWrapper>
-                    <Image alt='walking cloud animation example' src='/aal/walkingCloudStill.png' width='950'
+                    <Image alt='walking cloud animation example' src='/aal/walkingCloudStill.webp' width='950'
                            height='1088' objectFit='cover'/>
                 </ImgWrapper>
                 { isEnglish ?
@@ -75,7 +75,7 @@ export const PhoneAal = () => {
 
             <ArtiWrapper>
                 <ImgWrapper>
-                    <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502' height='320' objectFit='cover' />
+                    <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.webp' width='502' height='320' objectFit='cover' />
                 </ImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper black>
@@ -95,7 +95,7 @@ export const PhoneAal = () => {
 
             <ArtiWrapper>
                 <ImgWrapper>
-                    <Image alt='tracking patch' src='/aal/hardwarePatch.png' width='720' height='450' objectFit='cover' />
+                    <Image alt='tracking patch' src='/aal/hardwarePatch.webp' width='720' height='450' objectFit='cover' />
                 </ImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper black>
@@ -118,7 +118,7 @@ export const PhoneAal = () => {
 
             <ArtiWrapper>
                 <ImgWrapper>
-                    <Image alt='output example photo' src='/aal/outputStill.png' width='720' height='910' />
+                    <Image alt='output example photo' src='/aal/outputStill.webp' width='720' height='910' />
                 </ImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper black>
@@ -142,7 +142,7 @@ export const PhoneAal = () => {
 
             <ArtiWrapper>
                 <ImgWrapper>
-                    <Image alt='prototype examples' src='/aal/prototypeStill.png' width='720' height='672' />
+                    <Image alt='prototype examples' src='/aal/prototypeStill.webp' width='720' height='672' />
                 </ImgWrapper>
                 { isEnglish ?
                     <PlainTextWrapper black>

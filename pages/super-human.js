@@ -35,7 +35,7 @@ const StandardSuperHuman = () => {
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
                     <div>
-                        <Image alt='prothesis with voronoi fracture' src='/superHuman/titlePhoto.png' layout='fill'
+                        <Image alt='prothesis with voronoi fracture' src='/superHuman/titlePhoto.webp' layout='fill'
                                objectFit='cover' quality='100'/>
                     </div>
                 </Fading>
@@ -54,7 +54,7 @@ const StandardSuperHuman = () => {
             </Reveal>
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <Fading>
-                    <Image alt='prothesis mounted on the body' src='/superHuman/comp2880.png' layout='fill'
+                    <Image alt='prothesis mounted on the body' src='/superHuman/comp2880.webp' layout='fill'
                            objectFit='cover'/>
                 </Fading>
                 <HardwareWrapper>
@@ -79,8 +79,8 @@ const StandardSuperHuman = () => {
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <InterfaceWrapper>
                     <TextFading>
-                        <InterfaceTitle style={{textTransform: 'uppercase', fontSize: '3.2vw'}}>{superHumanData.conclusion.heading}</InterfaceTitle>
-                        <Plain style={{fontSize: '1.4em', fontWeight: 'normal', margin: '0'}}>{superHumanData.conclusion.plainText}</Plain>
+                        <InterfaceTitle>{superHumanData.conclusion.heading}</InterfaceTitle>
+                        <Plain>{superHumanData.conclusion.plainText}</Plain>
                     </TextFading>
                 </InterfaceWrapper>
 

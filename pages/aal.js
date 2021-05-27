@@ -302,7 +302,7 @@ const StandardAal = () => {
                         <ThirdSmallText ref={el => aalIntro.current.push(el)}>{AALs.aalIntro.plainText}</ThirdSmallText>
                     </ThirdPageText>
                     <AALImageWrapper ref={introImg}>
-                        <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.jpg' width='502'
+                        <Image alt='old lady with an nurse operating an ipad' src='/aal/aalIntro.webp' width='502'
                                height='354'/>
                     </AALImageWrapper>
                 </ThirdPage>
@@ -318,7 +318,7 @@ const StandardAal = () => {
                 </FourthPageText>
                 <FourthImgWrapper>
                     <PatchImg ref={el => hardwareImgs.current.push(el)}>
-                        <Image alt='tracking patch' src='/aal/hardwarePatch.png' width='720' height='474'/>
+                        <Image alt='tracking patch' src='/aal/hardwarePatch.webp' width='720' height='474'/>
                     </PatchImg>
                 </FourthImgWrapper>
             </Section>

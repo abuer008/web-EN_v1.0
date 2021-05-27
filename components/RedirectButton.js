@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 export const RedirectButton = ({textColor, nextProject, link, checkAbout = false}) => {
 
     return (
-        <Link href={checkAbout ? `/about` : `/interactive-projects/${link}`}>
+        <Link href={checkAbout ? `/about` : `/${link}`}>
             <Wrapper>
                 <Text style={{color: textColor}}>{checkAbout ? `The story of the PORTFOLIO` : `Continue on the next project ${nextProject}`}</Text>
                 <IconBox>

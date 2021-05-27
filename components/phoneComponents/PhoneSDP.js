@@ -8,7 +8,7 @@ export const PhoneSDP = () => (
             <PlainTextWrapper black style={{marginTop: '10vh'}}>
                 <TitleWrapper>
                     <ImgWrapper>
-                        <Image alt='mockup of SDP' src='/works/mockup.distributor.png' width='495' height='793'
+                        <Image alt='mockup of SDP' src='/works/mockup.distributor.webp' width='495' height='793'
                                objectFit='cover'/>
                     </ImgWrapper>
                     <MainTitle>
@@ -40,7 +40,7 @@ export const PhoneSDP = () => (
                     complete salary distribution platform. </P>
             </PlainTextWrapper>
             <ImgWrapper style={{width: '80%'}}>
-                <Image alt='user research for SDP' src='/works/Stakeholders.png' width='661' height='790'/>
+                <Image alt='user research for SDP' src='/works/Stakeholders.webp' width='661' height='790'/>
             </ImgWrapper>
             <PlainTextWrapper black>
                 <P>We must develop and test in the specific platform. From the perspective of a designer, the
@@ -71,7 +71,15 @@ export const PhoneSDP = () => (
                 <Sub2>Basic typographic and color styles</Sub2>
             </PlainTextWrapper>
             <ImgWrapper style={{width: '80%', marginTop: '2.4em'}}>
-                <Image alt='basic design language' src='/works/design.language.png' width='600' height='218' />
+                <Image alt='basic design language' src='/works/design.language.webp' width='600' height='218' />
+            </ImgWrapper>
+        </ArtiWrapper>
+        <ArtiWrapper>
+            <PlainTextWrapper black>
+                <Sub2>Mockups</Sub2>
+            </PlainTextWrapper>
+            <ImgWrapper style={{width: '80%', marginTop: '2.4em'}}>
+                <Image alt='patterns' src='/works/Mockups.webp' width='1607' height='880' />
             </ImgWrapper>
         </ArtiWrapper>
     </>

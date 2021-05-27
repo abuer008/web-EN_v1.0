@@ -55,7 +55,7 @@ const StandardRevision = () => {
         isActive: true,
         imageStyle: {},
         alt: 'face with oil painting',
-        source: '/revision/ArtificialSynaesthesia.jpg',
+        source: '/revision/ArtificialSynaesthesia.webp',
         width: 450,
         height: 950,
         objectFit: 'contain'
@@ -128,6 +128,12 @@ const StandardRevision = () => {
         handleRedirect(redirect.current, sections.current[8])
 
     }, [])
+
+    useEffect(() => {
+        return () => {
+            // window.location.reload(true)
+        }
+    })
 
     return (
         <>
@@ -244,18 +250,18 @@ const StandardRevision = () => {
                 <PrototypeImgWrapper>
                     <PrototypeImg ref={el => subTextRef.current.push(el)}>
                         <Image alt='kinect camera and arduino board mounted on plastic helmut for functional prototype'
-                               src='/revision/prototype/IMG_0238.jpg' width='1440' height='774'/>
+                               src='/revision/prototype/IMG_0238.webp' width='1440' height='774'/>
                     </PrototypeImg>
                     <PrototypeImg ref={el => plainTextRef.current.push(el)}>
                         <Image alt='several magnet hubs for simulation of electric stimuli on the skin'
-                               src='/revision/prototype/magnetHub.png' width='1440' height='782'/>
+                               src='/revision/prototype/magnetHub.webp' width='1440' height='782'/>
                     </PrototypeImg>
                 </PrototypeImgWrapper>
             </PrototypeSection>
 
             <Description ref={el => sections.current.push(el)}>
                 <div ref={el => subTextRef.current.push(el)}>
-                    <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.png'
+                    <Image alt='round shape product laid on floor with colorful lights' src='/revision/cover0020.webp'
                            layout='fill' objectFit='cover'/>
                 </div>
                 <TextArea style={{top: '20%'}}>

@@ -87,7 +87,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                     <Link href='/'>
                         <ImgWrapper ref={img}>
                             <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
-                                   height='16'/>
+                                   height='16' />
                         </ImgWrapper>
                     </Link>
                     {menuList.map(menuItem => {
