@@ -52,7 +52,7 @@ export const projectsArray = [{
 }]
 
 export const interactionPageInfo = {
-    title: "The Attitude towards Interactive Design.",
+    title: "The Attitude towards Interaction Design.",
     subTitle: "Demonstrated with five separate projects.",
     explain: ""
 }

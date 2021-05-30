@@ -23,6 +23,10 @@ import {PhoneVisualData} from "../components/phoneComponents/PhoneVisualData";
 const DataVisualisation = () => {
     const phoneVersion = usePhoneVersion();
 
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
+
     return (
         <Layout>
             {phoneVersion ? <PhoneVisualData /> : <StandardVisualData />}
@@ -32,11 +36,6 @@ const DataVisualisation = () => {
 
 const StandardVisualData = () => {
 
-    useEffect(() => {
-        return () => {
-            // window.location.reload(true)
-        }
-    })
     return (
         <>
             <Reveal repeat trigger={<SectionTrigger/>}>

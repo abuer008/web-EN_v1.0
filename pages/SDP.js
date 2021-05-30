@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {useEffect} from 'react'
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,6 +11,9 @@ import {ToolsetItem} from "../components/work/ToolsetItem";
 
 const SDP = () => {
     const phoneVersion = usePhoneVersion()
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
 
     return (
         <Layout backgroundColor='#f5f5f5'>
@@ -22,6 +26,7 @@ const StandardSDP = () => {
     return (
         <Layout backgroundColor='#f5f5f5' showFooter>
             <ContentWrapper>
+                <BrBlank />
                 <HorizonWrapper>
                     <ImageWrapper>
                         <Image src='/works/mockup.distributor.webp' width='300' height='486'/>
@@ -231,13 +236,14 @@ const StandardSDP = () => {
                     <H3>{SDPTexts.final.dashboardTitle}</H3>
                     <SectionPlain>{SDPTexts.final.dashboardPlain}</SectionPlain>
                     <PrototypeWrapper>
-                        {/*<Image src='/works/' />*/}
+                        <Image src='/works/dashboard.webp' width='1440' height='1089' objectFit='cover' />
                     </PrototypeWrapper>
                 </Section>
             </ContentWrapper>
         </Layout>
     )
 }
+
 
 
 const ChallengeTitle = ({logoSrc, challengeTitle}) => {
@@ -262,14 +268,14 @@ const DesignWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  position: relative;
+  position: static;
   width: 80%;
   max-width: 950px;
-  top: 20vh;
-  left: 50%;
+  //top: 20vh;
+  //left: 50%;
   padding-bottom: 10%;
+  margin: auto;
 
-  transform: translate(-50%, 0%)
 `
 
 const Wrapper = styled.div`
@@ -279,6 +285,10 @@ const Wrapper = styled.div`
 const Br = styled.h4`
   padding-top: 20vh;
   border-bottom: 1px solid black;
+`
+
+const BrBlank = styled(Br)`
+    border: none;
 `
 
 const HorizonWrapper = styled.div`
@@ -353,7 +363,7 @@ const ResearchWrapper = styled.div`
 `
 
 const Section = styled.div`
-  position: relative;
+  position: static;
   top: 10vh;
 `
 

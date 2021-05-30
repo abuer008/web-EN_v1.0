@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import Image from 'next/image'
 import useMousePosition from "../utils/useMousePosition";
 import {useState, useEffect} from 'react';
 
 import {interactionPageInfo} from "../data/MainPageData";
 
-const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
+const ProjectTextItem = ({main = false, title, subTitle, explain, displayClass}) => {
 
     let [windowsWidth, setWindowsWidth] = useState(null)
     let [windowsHeight, setWindowsHeight] = useState(null)
@@ -23,24 +24,36 @@ const ProjectTextItem = ({title, subTitle, explain, displayClass}) => {
 
     return (
         <TextArea>
-            <MainTitle degX={convertY} degY={convertX} className={displayClass} style={
-                title === interactionPageInfo.title ?
-                    {
-                        fontSize: "6vw",
-                        lineHeight: "0.8em"
-                    }
+            {
+                main ?
+
+                    <ImgWrapper degX={convertY} degY={convertX}>
+                        <Image src='/ixd_EN.svg' width='772' height='400' />
+                    </ImgWrapper>
                     :
-                    {
-                        fontSize: "3.2vw",
-                        lineHeight: '1em'
-                    }
-            }>{title}</MainTitle>
+                    <MainTitle className={displayClass} style={
+                            {
+                                fontSize: "3.2vw",
+                                lineHeight: '1em'
+                            }
+                    }>{title}</MainTitle>
+            }
+
             <Warning>Please <strong>REFRESH</strong> the page</Warning>
             <MainSubTitle className={displayClass}>{subTitle}</MainSubTitle>
             <MainText>{explain}</MainText>
         </TextArea>
     )
 }
+
+const ImgWrapper = styled.div.attrs(props => ({
+    style: {
+        transform: `rotateX(${props.degX}deg) rotateY(${props.degY}deg)`,
+    }
+}))`
+  position: relative;
+  top: 7vh;
+`
 
 
 const TextArea = styled.div`
@@ -91,7 +104,7 @@ const TextArea = styled.div`
     width: 70vw;
     height: 40vw;
     top: 40%;
-    left: 60%;
+    //left: 60%;
   }
 
   @media all and (max-height: 900px) {

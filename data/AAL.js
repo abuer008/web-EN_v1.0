@@ -29,11 +29,11 @@ export const AALs = {
     },
     dataComparison: {
         heading: "Data comparison",
-        plainText: "In the actual application of the AAL concept, the biggest worry and barrier lies in personal information leakage. How to prevent the leakage of user’s sensitive data is the main concern of this project. Without active data transmission through the Internet is the key feature; the data would be isolated locally. They will be compared to the data obtained one day ago, or weeks ago, the changes in the user’s own data can be recorded to judge whether is there potential chronic diseases or possible health hazards; finally, constructive opinions or key information are passed to the hospital basis on user’s request. The figures on the left show real-time health risks and weekly statistics in the form of a dot matrix. Users can click to get a detailed health report in the specified time range, and the doctors and nursing provide an objective diagnosis by actively sharing the report."
+        plainText: "In a practical application of the AAL concept, the data would be isolated locally. They will be compared to data such as posture obtained a day or weeks ago to determine potential chronic disease features or possible health hazards; constructive comments or critical information will then be passed to the hospital. The integrated dataset on the left shows real-time health risks and weekly statistics in a dot matrix format. Users can click to get detailed health reports for a specified time frame, while doctors and nurses analyze the data to provide an objective basis for diagnosis."
     },
     output: {
         heading: "Explicit output",
-        plainText: "Most of our target users are older adults who need long-term care, and most of them doesn’t familiar with screen-based interactive products. From a design perspective, how to let users interact without barriers and understand the health risks found in the data is the main aim of the interface design. Therefore, I implemented the most basic and obvious element - text, to describe the important information. The left figure shows the abstract and comprehensive information with dot-matrix; the important health prediction is divided into three parts and clearly expressed in the text: 1. The comprehensive real-time health report and advice. 2. Posture related information. 3. Activities related information."
+        plainText: "For the elderly target audience, we reduced the complexity of interaction as much as possible, with as little interactive language and intuitive data presentation as possible. Therefore, in the actual interface design, we clearly use the most direct text elements to describe the key data processing results."
     },
     infographic: {
         heading: "Intuitive Infographic",
@@ -41,11 +41,11 @@ export const AALs = {
     },
     prototype: {
         heading: "Prototype",
-        plainText: "The first principle of interactive design for elderly is the understanding of content, so light grey background and neuromorphic elements are used to get closer to the real world, the important health improvement suggestions are expressed in the black text; and the dots abstractly contains a large amount of health data, users or nursing staff can perform advanced data analysis; unnecessary interactive elements and pages are reduced as much as possible; the relationship between individual function would be deeply understood through the dynamic feedback. With the improvements from a design perspective, users can understand important information with minimum interaction; the nursing staff promptly observe users of abnormal situations and provide high-quality care services with few human resources; the doctors can also provide reliable diagnosis and treatment for those difficult detected diseases."
+        plainText: "The low density of information allows users to receive and instantly understand health advice without any interaction. The dots dynamic animations give participants a general understanding of how information is collected and an intuitive sense of changes in their posture and potential risks. In the caregiver-targeted functional area, the dot plot contains a large amount of raw data distributed by date and time interval, which serves as a real basis for improving the quality of care and medical diagnosis."
     },
     conclusion: {
-        heading: "Conclusion",
-        plainText: "The concept of symbiosis with machines proposed in the previous project has practically applied in this project. To alleviate the increasing problems of elderly care, the idea of ambient assisted living is demonstrated, and the wearable devices are being illustrated and used to collect personal posture data. The AAL concept aims to predict an early stage of abnormal situations and diagnosis to save nursing resources and improve nursing quality. But, the product cannot solve the problem of elderly care services essentially. The lack of elderly care is not just the increase in the budget in Human Resources, but also the rapid development of contemporary society, the kinships are gradually alienated, which were pronounced in the next project."
+        heading: "Design Metrics",
+        plainText: "The AAL concept aims to predict early abnormalities and diagnoses to save care resources and improve the quality of care. However, the product cannot essentially solve the problem of elderly care services. The lack of elderly care results from the increase in the budget of the human resources department and, more importantly, the rapid development of contemporary society and the gradual alienation of relatives, which is declared in the next project."
     }
 }
 
@@ -65,8 +65,8 @@ export const outputContents = {
 }
 
 export const protoImgs = [
-    {source: '/aal/prototype/Start.Page.png', text: 'the lock screen'},
-    {source: '/aal/prototype/General.Info.Page.png', text: 'the main page'},
-    {source: '/aal/prototype/Health.Concerns.Page.png', text: 'the detail of health concerns'},
-    {source: '/aal/prototype/Monthly.report.Page.png', text: 'the monthly report'}
+    {source: '/aal/prototype/Start.Page.webp', text: 'the lock screen'},
+    {source: '/aal/prototype/General.Info.Page.webp', text: 'the main page'},
+    {source: '/aal/prototype/Health.Concerns.Page.webp', text: 'the detail of health concerns'},
+    {source: '/aal/prototype/Monthly.report.Page.webp', text: 'the monthly report'}
 ]

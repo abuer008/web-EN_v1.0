@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {useEffect} from 'react'
 import Image from 'next/image'
 import {PhonePflegeMangel} from "../components/phoneComponents/PhonePflegeMangel";
 import {usePhoneVersion} from "../components/usePhoneVersion";
@@ -10,6 +11,9 @@ import {pflegemangelData} from "../data/CardData";
 
 const PflegeMangel = () => {
     const phoneVersion = usePhoneVersion()
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
 
     return (
         <Layout isBlack={false} backgroundColor='#303030' overwrite showFooter>

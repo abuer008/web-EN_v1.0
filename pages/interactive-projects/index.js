@@ -22,9 +22,9 @@ const InteractiveProjects = () => {
 
     useEffect(() => {
         return () => {
-            window.location.reload(true)
+            window.history.go()
         }
-    })
+    }, [])
 
     return (
         <>
@@ -115,8 +115,8 @@ function StandardContents() {
                              explain={projectInfo.explain}
                              displayClass={titleVisible ? "fadeIn" : "fadeOut"}
             />
-            {!titleVisible && <ProjectTextItem title={interactionPageInfo.title}
-                                               subTitle={interactionPageInfo.subTitle}
+            {!titleVisible && <ProjectTextItem main title={interactionPageInfo.title}
+                                               // subTitle={interactionPageInfo.subTitle}
                                                explain={interactionPageInfo.explain}
                                                displayClass={titleVisible ? "fadeOut" : "fadeIn"}
             />}

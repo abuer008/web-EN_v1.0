@@ -20,6 +20,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const Connecting = () => {
     const phoneVersion = usePhoneVersion()
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
+
     return (
         <Layout isBlack={false} backgroundColor='black' overwrite>
             {phoneVersion ? <PhoneConnecting/> : <StandardConnecting/>}
@@ -192,10 +196,6 @@ const StandardConnecting = () => {
         handleStates(sections.current[4])
         handleStyling(sections.current[10])
         handleRedirect()
-
-        return () => {
-            // window.location.reload(true)
-        }
 
     }, [])
 

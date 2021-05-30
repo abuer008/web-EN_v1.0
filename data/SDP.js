@@ -46,7 +46,7 @@ export const SDPTexts = {
         operationPlain: 'The unique interaction design makes it intuitive for the user to understand the options for specific items, making it easy to get started even for first-time users.',
         creationTitle: 'New project creation process',
         creationPlain: 'The new project creation process allows operators accustomed to traditional project management processes to add new projects traditionally, incorporating semi-automatic input options to avoid errors.',
-        dashboardTitle: '',
+        dashboardTitle: 'The backend dashboard',
         dashboardPlain: ''
     }
 }

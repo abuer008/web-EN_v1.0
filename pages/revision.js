@@ -26,6 +26,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const Revision = () => {
     const phoneVersion = usePhoneVersion();
 
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
+
     return (
         <Layout isBlack={false} backgroundColor='black' overwrite>
             {phoneVersion && <PhoneRevision />}
@@ -54,10 +58,10 @@ const StandardRevision = () => {
     const imageSection = {
         isActive: true,
         imageStyle: {},
-        alt: 'face with oil painting',
-        source: '/revision/ArtificialSynaesthesia.webp',
+        alt: 'neil harbisson',
+        source: '/revision/neilHarbisson.webp',
         width: 450,
-        height: 950,
+        height: 650,
         objectFit: 'contain'
     }
 
@@ -129,11 +133,6 @@ const StandardRevision = () => {
 
     }, [])
 
-    useEffect(() => {
-        return () => {
-            // window.location.reload(true)
-        }
-    })
 
     return (
         <>

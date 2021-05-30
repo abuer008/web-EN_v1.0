@@ -17,6 +17,10 @@ import {PhoneSuperHuman} from "../components/phoneComponents/PhoneSuperHuman";
 const SuperHuman = () => {
     const phoneVersion = usePhoneVersion()
 
+    useEffect(() => {
+        return () => window.history.go()
+    }, [])
+
     return (
         <Layout>
             {phoneVersion ? <PhoneSuperHuman /> : <StandardSuperHuman />}
@@ -25,11 +29,6 @@ const SuperHuman = () => {
 }
 
 const StandardSuperHuman = () => {
-    useEffect(() => {
-        return () => {
-            // window.location.reload(true)
-        }
-    })
     return (
         <>
             <Reveal repeat trigger={<SectionTrigger/>}>
