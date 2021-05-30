@@ -71,7 +71,7 @@ const StandardPflegemangel = () => {
             <Section>Methods and Process</Section>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/diagrams-1 1.png' width='720' height='416'/>
+                    <Image src='/pflegemangel/diagrams1.webp' width='720' height='416'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>The research of ageing population in Europe</H3>
@@ -86,7 +86,7 @@ const StandardPflegemangel = () => {
 
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/diagrams-2 1.png' width='720' height='416'/>
+                    <Image src='/pflegemangel/diagrams2.webp' width='720' height='416'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>The definition of target audience</H3>
@@ -100,7 +100,7 @@ const StandardPflegemangel = () => {
                 </TextWrapper>
             </MediaWrapper>
             <ImgWrapper>
-                <Image src='/pflegemangel/diagrams-3 1.png' width='720' height='416'/>
+                <Image src='/pflegemangel/diagrams3.webp' width='720' height='416'/>
             </ImgWrapper>
             <MediaWrapper>
                 <ImgWrapper>
@@ -126,12 +126,12 @@ const StandardPflegemangel = () => {
                         solutions.</P>
                 </TextWrapper>
             </MediaWrapper>
-            <Image src='/pflegemangel/competitiveAnalysis.png' width='752' height='555'/>
+            <Image src='/pflegemangel/competitiveAnalysis.webp' width='752' height='555'/>
 
             <Section>Framing</Section>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/diagrams-4.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/diagrams4.webp' width='720' height='405'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>The crisis of elderly care services</H3>
@@ -144,7 +144,7 @@ const StandardPflegemangel = () => {
 
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/pflegeGrad.png' width='800' height='476'/>
+                    <Image src='/pflegemangel/pflegeGrad.webp' width='800' height='476'/>
                 </ImgWrapper>
                 <TextWrapper>
                     <H3>Target audience</H3>
@@ -169,7 +169,7 @@ const StandardPflegemangel = () => {
             <Section>Results - the systematic AAL (Ambient Assisted Living) solution</Section>
             <MediaWrapper>
             <ImgWrapper>
-                <Image src='/pflegemangel/solution1.png' width='720' height='405'/>
+                <Image src='/pflegemangel/solution1.webp' width='720' height='405'/>
             </ImgWrapper>
             <TextWrapper>
                 <H3>Intelligent care environment</H3>
@@ -181,18 +181,18 @@ const StandardPflegemangel = () => {
             </MediaWrapper>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/solution5.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/solution5.webp' width='720' height='405'/>
                 </ImgWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/solution3.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/solution3.webp' width='720' height='405'/>
                 </ImgWrapper>
             </MediaWrapper>
             <MediaWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/solution4.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/solution4.webp' width='720' height='405'/>
                 </ImgWrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/proposal.png' width='720' height='405'/>
+                    <Image src='/pflegemangel/proposal.webp' width='720' height='405'/>
                 </ImgWrapper>
             </MediaWrapper>
             <Section>Next Step</Section>

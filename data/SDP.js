@@ -47,7 +47,7 @@ export const SDPTexts = {
         creationTitle: 'New project creation process',
         creationPlain: 'The new project creation process allows operators accustomed to traditional project management processes to add new projects traditionally, incorporating semi-automatic input options to avoid errors.',
         dashboardTitle: 'The backend dashboard',
-        dashboardPlain: ''
+        dashboardPlain: 'In order to allow the staff to process the submitted projects and personnel management more efficiently, we designed a dedicated backend management platform for the distributor side to provide batch processing capabilities. This platform uses a highly integrated bootstrap framework to simplify the complexity of interface development.'
     }
 }
 

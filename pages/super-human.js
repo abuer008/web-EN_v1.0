@@ -65,7 +65,7 @@ const StandardSuperHuman = () => {
             </Reveal>
             <Reveal repeat trigger={<SectionTrigger/>}>
                 <VideoWrapper>
-                    <VideoArea videoSource='/superHuman/UIDemo.mp4' alt='virtual reality interface video demo'
+                    <VideoArea videoSource='/superHuman/UIDemo.mp4' alt='Augmented Reality interface video demo'
                                isPlaying={false} showControl={true}/>
                 </VideoWrapper>
                 <InterfaceWrapper>
@@ -76,6 +76,9 @@ const StandardSuperHuman = () => {
                 </InterfaceWrapper>
             </Reveal>
             <Reveal repeat trigger={<SectionTrigger/>}>
+                <div>
+                    <Image src='/superHuman/ARIllustration.webp' layout='fill' objectFit='cover' />
+                </div>
                 <InterfaceWrapper>
                     <TextFading>
                         <InterfaceTitle>{superHumanData.conclusion.heading}</InterfaceTitle>

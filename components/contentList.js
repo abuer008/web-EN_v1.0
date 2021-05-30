@@ -116,12 +116,13 @@ const BtnWrapper = styled.button`
           props => props.bg
   };
   color: white;
-  width: 70%;
+  width: 80%;
   padding: 15px 18px;
-  border-radius: 10px;
+  border-radius: 25px;
   transition: 0.3s;
   border-style: none;
   font-size: 1.2rem;
+  font-weight: bold;
 
   :hover {
     cursor: pointer;

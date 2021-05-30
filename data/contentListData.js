@@ -66,7 +66,7 @@ export const designContents = [
             CNplain: '贯彻实施独有的设计语言与风格，提供与维护设计库的一致性与可扩展性',
             text: 'Implement the unique design language and style, provide and maintain the consistency and scalability of the design outcomes',
             btnCNTxt: '税务代征平台',
-            cardName: 'Bonus Distribution Platform',
+            cardName: 'BDP',
             link: '/SDP',
             btnCr: '#333333',
             btnShadow: 'rgba(51, 51, 51, 0.3)'
@@ -104,7 +104,7 @@ export const implementData = [
             CNplain: '保持对前端技术的敏感性和设计目标的一致性，独特化的设计方法流程，保障最终的产品质量',
             text: 'Maintain sensitivity to front-end technology and consistency of design goals, providing a comprehensive user experience with a unique design process that guarantees the quality of the final product',
             btnCNTxt: '虚拟智能互联',
-            cardName: 'Virtual Connection of Kinship',
+            cardName: 'Virtual Kinship',
             link: '/connecting',
             btnCr: '#FF6A65',
             btnShadow: 'rgba(255, 106, 101, 0.38)',
@@ -125,7 +125,7 @@ export const metricsData = [
             CNplain: '使用HEART框架，SUS(System Usability Scale)和KPI等，系统化的收集用户反馈与提高产品交互体验',
             text: 'Use HEART framework, SUS (System Usability Scale) and KPI to collect user feedback systematically and continuously improve product interaction experience.',
             btnCNTxt: '税务代征平台',
-            cardName: 'Bonus Distribution Platform',
+            cardName: 'BDP',
             link: '/SDP',
             btnCr: '#333',
             btnShadow: 'rgba(51, 51, 51, 0.38)'
