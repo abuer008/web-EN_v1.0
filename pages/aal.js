@@ -7,6 +7,7 @@ import {TlText} from "../components/aal/TlText";
 import {TimeGraph} from '../components/aal/TimeGraph'
 import styled from 'styled-components'
 import Image from 'next/image'
+import Link from 'next/link'
 import ReactPlayer from "react-player"
 import {useState} from 'react'
 import {useRef, useEffect} from 'react'
@@ -116,8 +117,8 @@ const StandardAal = () => {
             opacity: 0,
             y: 100,
             duration: 1,
-            delay: 0.5,
-            stagger: 0.3
+            delay: 0.4,
+            stagger: 0.2
         })
     }
 
@@ -286,7 +287,9 @@ const StandardAal = () => {
                     <BigText ref={el => newText.current.push(el)}>{AALs.crisis.heading}</BigText>
                     <SmallText ref={el => newText.current.push(el)}>{AALs.crisis.plainText}</SmallText>
                     <SmallText style={{fontWeight: 'bold'}} ref={el => newText.current.push(el)}>{AALs.crisis.plainText2}</SmallText>
-                    <IconComponent pdfType='pdf' background='black' plainText='The research of elderly care services' href='/pflegemangel' />
+                    <Link href='/pflegemangel'>
+                    <Button ref={el => newText.current.push(el)}>The UX research of care service</Button>
+                    </Link>
                 </SecondPageText>
             </Section>
 
@@ -462,6 +465,21 @@ const StandardAal = () => {
             </Section>
         </>)
 }
+
+const Button = styled.h4`
+    background-color: #17A2B8;
+  color: white;
+  width: 200px;
+  height: 40px;
+  padding: 20px;
+  transition: 0.3s;
+  
+  :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(99, 165, 127, 0.4);
+  }
+`
 
 
 // --- Main styles ---
