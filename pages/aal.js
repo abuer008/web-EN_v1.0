@@ -18,7 +18,6 @@ import {OutputComponent} from "../components/aal/OutputComponent";
 import {RedirectButton} from "../components/RedirectButton";
 import {RefreshButton} from "../components/RefreshButton";
 import {PrototypeEl} from "../components/aal/PrototypeEl";
-import {IconComponent} from "../components/IconComponent";
 import {usePhoneVersion} from "../components/usePhoneVersion";
 import {PhoneAal} from "../components/phoneComponents/PhoneAal";
 

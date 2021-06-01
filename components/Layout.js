@@ -61,6 +61,7 @@ const Layout = ({
                   h4 {
                     font-size: 1.2em;
                   }
+                  
 
                   .roundImage {
                     border-radius: 5%;

@@ -19,7 +19,7 @@ const StandardContents = () => {
     })
 
     return (
-        <Layout showFooter>
+        <Layout backgroundColor='#fff' overwrite showFooter>
             <Landing>
                 <TitleWrapper>
                     <Image src='/work/work_ENtitle.svg' alt='makes idea realistic' width='635' height='230' />

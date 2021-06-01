@@ -26,7 +26,7 @@ const StandardSDP = () => {
     return (
         <Layout backgroundColor='#f5f5f5' showFooter>
             <ContentWrapper>
-                <BrBlank />
+                {/*<BrBlank />*/}
                 <HorizonWrapper>
                     <ImageWrapper>
                         <Image src='/works/mockup.distributor.webp' width='300' height='486'/>
@@ -292,8 +292,10 @@ const BrBlank = styled(Br)`
 `
 
 const HorizonWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
+  top: 15vh;
 `
 
 const ToolSetWrapper = styled.div`
