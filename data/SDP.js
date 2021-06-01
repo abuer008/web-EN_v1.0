@@ -54,26 +54,18 @@ export const SDPTexts = {
 export const ToolSetData = [
     {
         title: 'Sketch',
-        logoImg: '/works/sketchLogo.png',
-        width: '50',
-        height: '45'
+        logoImg: '/sketch.png',
     },
     {
         title: 'Anima for Sketch',
-        logoImg: '/works/animaToolkit.png',
-        width: '45',
-        height: '45'
+        logoImg: '/animakit.png',
     },
     {
         title: 'Bootstrap design system',
-        logoImg: '/works/bootstrapLogo.png',
-        width: '56',
-        height: '45'
+        logoImg: '/bootstrap.png',
     },
     {
         title: 'Mini program platform',
-        logoImg: '/works/wechatLogo.png',
-        width: '60',
-        height: '45'
+        logoImg: '/wechat.png'
     }
 ]

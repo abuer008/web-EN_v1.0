@@ -8,7 +8,6 @@ export const Footer = () => {
             <HorizontalWrapper>
                 <ListWrapper>
                     <PS>Site Map</PS>
-                    <B link='/' name='Home' />
                     <B link='/work' name='Work' />
                     <B link='/interactive-projects' name='Interaction design' />
                     <B link='/product-projects' name='Product design' />
@@ -19,7 +18,6 @@ export const Footer = () => {
 
                 <ListWrapper>
                     <PS>UX Projects</PS>
-                    <B link='/SDP' name='Bonus Distribution Platform' />
                     <B link='/revision' name='Re:Vision' />
                     <B link='/data-visualisation' name='Syrian civil war' />
                     <B link='/super-human' name='SuperHuman' />
@@ -29,9 +27,9 @@ export const Footer = () => {
                 </ListWrapper>
 
                 <ListWrapper>
-                    <PS>Product Design</PS>
-                    <PS>Mini-Projects</PS>
-                    <P></P>
+                    <PS>Work</PS>
+                    <B link='/SDP' name='Bonus Distribution Platform' />
+                    <B link='/festival-guide' name='Festival Guide' />
                 </ListWrapper>
             </HorizontalWrapper>
             <Break />
@@ -53,9 +51,9 @@ const Break = () => (
 )
 
 const P = styled.p`
-  height: 50%;
-    margin: auto 0;
-  padding: 10px 0;
+  //height: 50%;
+    margin: 0.7rem 0;
+  padding: 0;
   :hover {
     cursor: pointer;
   }
@@ -87,7 +85,7 @@ const ListWrapper = styled.div`
   flex-direction: column;
   padding: 50px 50px;
   //align-items: flex-start;
-  //justify-content: flex-start;
+  justify-content: flex-start;
 `
 
 const BreakWrapper = styled.div`

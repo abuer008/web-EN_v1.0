@@ -68,7 +68,7 @@ export const menuList = [
     },
     {
         id: 1,
-        title: "Interactive Projects",
+        title: "Interaction Design",
         destination: "/interactive-projects",
         isActive: true
     }, {

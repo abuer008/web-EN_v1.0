@@ -5,7 +5,7 @@ export const ToolsetItem = ({item}) => {
     return (
         <Wrapper>
             <ImgWrapper>
-                <Image alt={`${item.title} logo image`} src={item.logoImg} width={item.width} height={item.height} objectFit='cover' />
+                <Image alt={`${item.title} logo image`} src={item.logoImg} width='48' height='48' objectFit='cover' />
             </ImgWrapper>
             <Text>{item.title}</Text>
         </Wrapper>

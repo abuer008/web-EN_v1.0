@@ -91,8 +91,8 @@ const Works = () => {
                 <Text>
                     <H1 fgColor='#FF9066'>Festival Guide</H1>
                     <P>Germany has a long tradition of regional folk festivals, with more than 50 different folk festivals per year. The "Festival Guide" is a navigation application that bundles information about the different festivals and provides a comprehensive basic service for festival visitors. It also gathers crowd movements, predicts hazards such as mass panic in advance, and indicates the nearest service points for emergencies.</P>
-                    <Link href='#'>
-                        <Button bgColor='#FF9066'>Updating the project...</Button>
+                    <Link href='/festival-guide'>
+                        <Button bgColor='#FF9066'>Enter the project</Button>
                     </Link>
                 </Text>
             </Wrapper>

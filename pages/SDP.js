@@ -16,7 +16,7 @@ const SDP = () => {
     }, [])
 
     return (
-        <Layout backgroundColor='#f5f5f5'>
+        <Layout backgroundColor='#f5f5f5' overwrite showFooter>
             {phoneVersion ? <PhoneSDP/> : <StandardSDP/>}
         </Layout>
     )
@@ -24,7 +24,7 @@ const SDP = () => {
 
 const StandardSDP = () => {
     return (
-        <Layout backgroundColor='#f5f5f5' showFooter>
+        <>
             <ContentWrapper>
                 {/*<BrBlank />*/}
                 <BlankHorizonWrapper>
@@ -240,7 +240,7 @@ const StandardSDP = () => {
                     </PrototypeWrapper>
                 </Section>
             </ContentWrapper>
-        </Layout>
+        </>
     )
 }
 
