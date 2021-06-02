@@ -43,7 +43,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
         if (!phoneVersion) {
             handleNav()
         }
-    }, [])
+    }, [trigger.current])
 
     return (
         <>
@@ -65,7 +65,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                     {showMenu && <PhoneMenu/>}
                 </div>
                 :
-                <MenuWrapper isBlack={isBlack} ref={trigger} scrolling={scrolling}>
+                <MenuWrapper ref={trigger} isBlack={isBlack} style={{paddingTop: scrolling ? '0' : '1.4rem'}}>
                     <Link href='/'>
                         <MenuHeading>Bowei</MenuHeading>
                     </Link>
@@ -95,6 +95,7 @@ const MenuItems = styled.div`
 const Item = styled.h6`
     font-size: 1rem;
   width: 120px;
+  margin: 1.4rem 0;
   transition: 0.5s;
   :hover {
     cursor: pointer;
@@ -158,7 +159,6 @@ const MenuWrapper = styled.div`
   //max-width: 56vw;
   //left: 22%;
   position: fixed;
-  padding-top: ${props => props.scrolling ? '0rem' : '1.4rem'};
   transition: 0.3s;
   z-index: 1000;
   color: ${props => props.isBlack ? 'black' : 'white'};

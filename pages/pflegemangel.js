@@ -16,7 +16,7 @@ const PflegeMangel = () => {
     }, [])
 
     return (
-        <Layout isBlack={false} backgroundColor='#303030' overwrite showFooter>
+        <Layout isBlack={false} backgroundColor='#303030' overwrite showFooter UX>
             {phoneVersion ? <PhonePflegeMangel/> : <StandardPflegemangel/>}
         </Layout>
     )

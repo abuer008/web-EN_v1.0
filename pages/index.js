@@ -50,8 +50,7 @@ const StandardContents = () => {
 
     return (
         <Layout backgroundColor='#fff' overwrite>
-            <Tween from={{opacity: 0}} duration={1}>
-                <div>
+            <Tween from={{opacity: 0}} duration={1} delay={1}>
             <HeroWrapper>
             <Wrapper>
                 <H1 bg='#DC3545'>Strategic.</H1>
@@ -109,12 +108,12 @@ const StandardContents = () => {
                 </InnoListWrapper>
 
                 <Contact style={{opacity: showInno ? '0' : '1'}}>
-                    <GitWrapper>
-                        <Link href='https://github.com/abuer008'>
+                    <Link href='https://github.com/abuer008'>
+                        <GitWrapper>
                         <Image src='/github.png' width='36' height='36' />
-                        </Link>
                     </GitWrapper>
-                    <Email>
+                </Link>
+                <Email>
                         <Link href='mailto:x.bowei@aol.com'>
                         <P>x.bowei@aol.com</P>
                         </Link>
@@ -122,7 +121,6 @@ const StandardContents = () => {
                 </Contact>
 
             </HeroWrapper>
-                </div>
             </Tween>
             </Layout>
     )
