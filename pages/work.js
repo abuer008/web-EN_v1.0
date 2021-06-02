@@ -106,9 +106,27 @@ const Works = () => {
                     </Link>
                 </Text>
             </Wrapper>
+
+            <Wrapper>
+                <UXWrapper>
+                    <H1 fgColor='#17A2B8'>Pflegemangel</H1>
+                    <H2>UX research of care services</H2>
+                    <Link href='/pflegemangel'>
+                    <Button bgColor='#17A2B8'>Enter the project</Button>
+                    </Link>
+                </UXWrapper>
+            </Wrapper>
         </Layout>
     )
 }
+
+const UXWrapper = styled.div`
+    display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  align-items: center;
+`
 
 const Button = styled.div`
     background-color: ${props => props.bgColor};
@@ -146,6 +164,11 @@ const H1 = styled.h1`
     font-size: 3.2rem;
   margin: auto;
   color: ${props => props.fgColor};
+`
+
+const H2 = styled.h2`
+    font-weight: 600;
+  margin-top: auto;
 `
 
 const P = styled.p`

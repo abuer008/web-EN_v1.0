@@ -12,6 +12,8 @@ import * as LandingAnima from '../public/work/landingPageAnima.json';
 import {gsap} from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Tween } from 'react-gsap';
+import {HomeItem} from "../components/homeItem";
+import {innovateData, tactileData} from "../data/homeData";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -19,21 +21,27 @@ const StandardContents = () => {
 
     const [tactilePlayState, setTactilePlayState] = useState('stop')
     const [innovatePlayState, setInnovatePlayState] = useState('stop')
+    const [showTactile, setShowTactile] = useState(false)
+    const [showInno, setShowInno] = useState(false)
 
     const handleTactileEnter = () => {
         setTactilePlayState('play')
+        setShowTactile(true)
     }
 
     const handleTactileLeave = () => {
         setTactilePlayState('reverse')
+        setShowTactile(false)
     }
 
     const handleInnovateEnter = () => {
         setInnovatePlayState('play')
+        setShowInno(true)
     }
 
     const handleInnovateLeave = () => {
         setInnovatePlayState('reverse')
+        setShowInno(false)
     }
 
     useEffect(() => {
@@ -41,6 +49,7 @@ const StandardContents = () => {
 
     return (
         <Layout backgroundColor='#fff' overwrite>
+            <HeroWrapper>
             {/*<Landing>*/}
             {/*    <TitleWrapper>*/}
             {/*        <Image src='/work/work_ENtitle.svg' alt='makes idea realistic' width='635' height='230' />*/}
@@ -67,11 +76,13 @@ const StandardContents = () => {
                 <ButtonWrapper>
                     <Link href='/work'>
                     <Rect bg='#007BFF' onMouseEnter={handleTactileEnter} onMouseLeave={handleTactileLeave}>
+                        <H3 show={showTactile}>Enter</H3>
                         <H2>Tactile.</H2>
                     </Rect>
                     </Link>
                     <Link href='/interactive-projects'>
                     <Rect onMouseEnter={handleInnovateEnter} onMouseLeave={handleInnovateLeave}>
+                        <H3 show={showInno}>Enter</H3>
                         <H2>Innovate.</H2>
                     </Rect>
                     </Link>
@@ -80,7 +91,7 @@ const StandardContents = () => {
 
             <Tween
                 from={{x: '-100%'}}
-                duration={0.3}
+                duration={0.2}
                 playState={tactilePlayState}
             >
             <TactileBg />
@@ -88,27 +99,63 @@ const StandardContents = () => {
 
             <Tween
                 from={{x: '100%'}}
-                duration={0.3}
+                duration={0.2}
                 playState={innovatePlayState}
             >
             <InnovateBg />
             </Tween>
 
             <ListWrapper>
+                <HeroTitle>Tangible UX Design.</HeroTitle>
                 {
-
+                    tactileData.map((item, key) => {
+                        return <HomeItem key={key} index={key + 1} heading={item.heading} plain={item.plain} playState={tactilePlayState} movement='-100' />
+                    })
                 }
             </ListWrapper>
 
-        </Layout>
+                <InnoListWrapper>
+                    <HeroTitle>Innovative HMI.</HeroTitle>
+                    {
+                        innovateData.map((item, key) => {
+                            return <HomeItem key={key} index={key + 1} heading={item.heading} plain={item.plain} playState={innovatePlayState} movement='100'/>
+                        })
+                    }
+                </InnoListWrapper>
+
+            </HeroWrapper>
+            </Layout>
     )
 }
 
+const HeroWrapper = styled.div`
+  position: absolute;
+    width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
+`
+
+const HeroTitle = styled.h1`
+    font-size: 3.2rem;
+`
+
 const ListWrapper = styled.div`
   position: absolute;
+  color: white;
+  cursor: default;
   
     display: flex;
   flex-direction: column;
+  height: 80vh;
+  top: 10vh;
+  justify-content: space-evenly;
+  padding-left: 8rem;
+`
+
+const InnoListWrapper = styled(ListWrapper)`
+    left: 65vw;
+  padding: 0;
 `
 
 const TactileBg = styled.div`
@@ -147,14 +194,20 @@ const Rect = styled.div`
 `
 
 const H2 = styled.h2`
-    padding-top: 20px;
+    margin: 0.5rem;
+`
+const H3 = styled.h3`
+    padding-top: 1rem;
+  margin: 0;
+  transition: 0.3s;
+  opacity: ${props => props.show ? '1' : '0'}
 `
 
 const H1 = styled.h1`
     font-size: 2.4rem;
   color: #343A40;
   margin: auto;
-  padding: 0.2rem;
+  padding: 0.1rem;
   transition: 0.2s;
   
   :hover {
@@ -177,7 +230,7 @@ const Wrapper = styled.div`
   align-items: center;
   margin: auto;
   position: relative;
-  top: 30vh;
+  top: 28vh;
 `
 
 const TitleWrapper = styled.div`
