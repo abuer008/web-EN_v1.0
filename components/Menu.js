@@ -84,7 +84,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                 </div>
                 :
                 <MenuWrapper ref={trigger}>
-                    <Link href='/work'>
+                    <Link href='/'>
                         <ImgWrapper ref={img}>
                             <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
                                    height='16' />
@@ -106,6 +106,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
 const MenuItemActive = styled.a`
   width: 80px;
   text-align: left;
+  text-decoration: none;
 
   :hover {
     cursor: pointer;

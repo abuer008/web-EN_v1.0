@@ -5,14 +5,14 @@ module.exports = withTM({
         loader: 'imgix',
         path: '',
     },
-    async redirects() {
-        return [
-            {
-                source: '/',
-                destination: '/work',
-                permanent: true,
-            },
-        ]
-    },
+    // async redirects() {
+    //     return [
+    //         {
+    //             source: '/',
+    //             destination: '/work',
+    //             permanent: true,
+    //         },
+    //     ]
+    // },
 
 })
