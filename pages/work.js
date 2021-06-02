@@ -92,7 +92,7 @@ const Works = () => {
                         </ImgWrapper>
                         <Text>
                             <H1 fgColor='#FF9066'>Festival Guide</H1>
-                            <P>Germany has a long tradition of regional fairs, with more than 50 different fairs per year. The "Festival Guide" is a navigation application that bundles information about the different festivals and provides a comprehensive basic service for festival visitors. It also gathers crowd movements, predicts hazards such as mass panic in advance, and indicates the nearest service points for emergencies.</P>
+                            <P>Germany has a long tradition of regional fairs, with more than 50 different fairs per year. The "Festival Guide" is a navigation application that bundles information about the different events and provides a comprehensive basic service for festival visitors. It also gathers crowd movements, predicts hazards such as mass panic in advance, and indicates the nearest service points for emergencies.</P>
                             <Link href='/festival-guide'>
                                 <Button bgColor='#FF9066'>Enter the project</Button>
                             </Link>

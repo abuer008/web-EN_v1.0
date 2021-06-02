@@ -14,7 +14,7 @@ const FestivalGuide = () => {
             </HeroImg>
             <HeroText top='35'>
                 <H1>Festival Guide</H1>
-                <P>Germany has a long tradition of regional folk festivals, with more than 50 different folk festivals each year. The "Festival Guide" is a navigation application that consolidates information about the various festivals and provides a comprehensive basic service for festival-goers. It also collects crowd movements, predicts crowd hazards such as mass panic in advance, and shows the nearest service points in case of emergencies.</P>
+                <P>Germany has a long tradition of regional fairs, with more than 50 different fairs each year. The "Festival Guide" is a navigation application that consolidates information about the various events and provides a comprehensive basic service for festival-goers. It also collects crowd movements, predicts crowd hazards such as mass panic in advance, and shows the nearest service points in case of emergencies.</P>
             </HeroText>
             </HeroWrapper>
 
