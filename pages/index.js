@@ -51,6 +51,7 @@ const StandardContents = () => {
     return (
         <Layout backgroundColor='#fff' overwrite>
             <Tween from={{opacity: 0}} duration={1}>
+                <div>
             <HeroWrapper>
             <Wrapper>
                 <H1 bg='#DC3545'>Strategic.</H1>
@@ -121,6 +122,7 @@ const StandardContents = () => {
                 </Contact>
 
             </HeroWrapper>
+                </div>
             </Tween>
             </Layout>
     )
@@ -128,7 +130,7 @@ const StandardContents = () => {
 
 const Contact = styled.div`
     position: absolute;
-  width: 10vw;
+  width: 12vw;
   right: 0;
   bottom: 5vh;
   text-align: right;
@@ -151,7 +153,7 @@ const Name = styled.h4`
 
 const Email = styled.div`
     background-color: #343A40;
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.8rem;
   margin: 1rem 0;
   cursor: pointer;
   transition: 0.3s;
