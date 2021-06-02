@@ -50,25 +50,8 @@ const StandardContents = () => {
 
     return (
         <Layout backgroundColor='#fff' overwrite>
+            <Tween from={{opacity: 0}} duration={1}>
             <HeroWrapper>
-            {/*<Landing>*/}
-            {/*    <TitleWrapper>*/}
-            {/*        <Image src='/work/work_ENtitle.svg' alt='makes idea realistic' width='635' height='230' />*/}
-            {/*    </TitleWrapper>*/}
-            {/*    <BgWrapper>*/}
-            {/*        <div style={{position: 'absolute', top: '20vh'}}>*/}
-            {/*            /!*<Image src='/work/work_titleBG.svg' alt='illustration of landing page' width='1080' height='399' />*!/*/}
-            {/*            <StartAnima animaData={LandingAnima} direction={1} isStopped={false} speed={0.7} width='100%' height='auto' />*/}
-            {/*        </div>*/}
-            {/*    </BgWrapper>*/}
-            {/*</Landing>*/}
-
-            {/*<Wrapper>*/}
-            {/*    <ContentList data={designContents} title='Comprehensive design process' />*/}
-            {/*    <ContentList data={implementData} reverse title='Frontend implementation' />*/}
-            {/*    <ContentList data={metricsData} title='Design metrics' />*/}
-            {/*</Wrapper>*/}
-
             <Wrapper>
                 <H1 bg='#DC3545'>Strategic.</H1>
                 <H1 bg='#17A2B8'>Research.</H1>
@@ -138,6 +121,7 @@ const StandardContents = () => {
                 </Contact>
 
             </HeroWrapper>
+            </Tween>
             </Layout>
     )
 }
