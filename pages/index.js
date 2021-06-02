@@ -11,10 +11,30 @@ import * as LandingAnima from '../public/work/landingPageAnima.json';
 
 import {gsap} from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Tween } from 'react-gsap';
 
 gsap.registerPlugin(ScrollTrigger)
 
 const StandardContents = () => {
+
+    const [tactilePlayState, setTactilePlayState] = useState('stop')
+    const [innovatePlayState, setInnovatePlayState] = useState('stop')
+
+    const handleTactileEnter = () => {
+        setTactilePlayState('play')
+    }
+
+    const handleTactileLeave = () => {
+        setTactilePlayState('reverse')
+    }
+
+    const handleInnovateEnter = () => {
+        setInnovatePlayState('play')
+    }
+
+    const handleInnovateLeave = () => {
+        setInnovatePlayState('reverse')
+    }
 
     useEffect(() => {
     })
@@ -46,21 +66,64 @@ const StandardContents = () => {
                 <H1 bg='#E83E8C'>Code.</H1>
                 <ButtonWrapper>
                     <Link href='/work'>
-                    <Rect bg='#007BFF'>
+                    <Rect bg='#007BFF' onMouseEnter={handleTactileEnter} onMouseLeave={handleTactileLeave}>
                         <H2>Tactile.</H2>
                     </Rect>
                     </Link>
                     <Link href='/interactive-projects'>
-                    <Rect>
+                    <Rect onMouseEnter={handleInnovateEnter} onMouseLeave={handleInnovateLeave}>
                         <H2>Innovate.</H2>
                     </Rect>
                     </Link>
                 </ButtonWrapper>
             </Wrapper>
 
+            <Tween
+                from={{x: '-100%'}}
+                duration={0.3}
+                playState={tactilePlayState}
+            >
+            <TactileBg />
+            </Tween>
+
+            <Tween
+                from={{x: '100%'}}
+                duration={0.3}
+                playState={innovatePlayState}
+            >
+            <InnovateBg />
+            </Tween>
+
+            <ListWrapper>
+                {
+
+                }
+            </ListWrapper>
+
         </Layout>
     )
 }
+
+const ListWrapper = styled.div`
+  position: absolute;
+  
+    display: flex;
+  flex-direction: column;
+`
+
+const TactileBg = styled.div`
+  position: absolute;
+  top: 0;
+    width: 50.5vw;
+  height: 100vh;
+  background-color: #007BFF;
+  z-index: -1;
+`
+
+const InnovateBg = styled(TactileBg)`
+    background-color: #343A40;
+  left: 49.5vw;
+`
 
 const ButtonWrapper = styled.div`
     display: flex;
