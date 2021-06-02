@@ -22,7 +22,7 @@ const SuperHuman = () => {
     }, [])
 
     return (
-        <Layout>
+        <Layout showFooter>
             {phoneVersion ? <PhoneSuperHuman /> : <StandardSuperHuman />}
         </Layout>
     )
@@ -86,18 +86,6 @@ const StandardSuperHuman = () => {
                     </TextFading>
                 </InterfaceWrapper>
 
-            </Reveal>
-
-            <Reveal repeat trigger={<div/>}>
-                <TextFading>
-                    <RedirectWrapper>
-                        <RedirectButton nextProject='Ambient Assisted Living' link='aal'/>
-                    </RedirectWrapper>
-
-                    <RefreshWrapper>
-                        <RefreshButton/>
-                    </RefreshWrapper>
-                </TextFading>
             </Reveal>
         </>
     )

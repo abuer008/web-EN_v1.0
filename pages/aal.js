@@ -31,7 +31,7 @@ const AmbientAssistedLiving = () => {
     }, [])
 
     return (
-        <Layout backgroundColor='#efefef' overwrite>
+        <Layout backgroundColor='#efefef' overwrite showFooter>
             {phoneVersion ? <PhoneAal /> : <StandardAal />}
         </Layout>
     )
@@ -224,9 +224,9 @@ const StandardAal = () => {
 
     return (
         <>
-            <Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>
+            {/*<Section style={{backgroundColor: '#efefef', position: 'fixed', height: '100vh'}}/>*/}
             <Section ref={el => sectionRefs.current.push(el)}
-                     style={{position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0)', width: '100%', zIndex: '0'}}>
+                     style={{position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0)', width: '100%', zIndex: '-1'}}>
                 <VideoWrapper ref={video}>
                     <ReactPlayer
                         alt='point cloud human body with impaired parts'
@@ -452,15 +452,6 @@ const StandardAal = () => {
                             ref={el => conclusion.current.push(el)}>{AALs.conclusion.plainText}</EighthSmallText>
                     </EighthPageText>
                 </ConclusionWrapper>
-            </Section>
-
-            <Section style={{height: '20vh', zIndex: '2', bottom: '20vh'}} ref={redirect}>
-                <RedirectWrapper ref={el => redirectDrivens.current.push(el)}>
-                    <RedirectButton nextProject='The CONNECTING' link='connecting'/>
-                </RedirectWrapper>
-                <RefreshWrapper ref={el => redirectDrivens.current.push(el)}>
-                    <RefreshButton/>
-                </RefreshWrapper>
             </Section>
         </>)
 }

@@ -28,7 +28,7 @@ const DataVisualisation = () => {
     }, [])
 
     return (
-        <Layout>
+        <Layout showFooter>
             {phoneVersion ? <PhoneVisualData /> : <StandardVisualData />}
         </Layout>
     )
@@ -130,16 +130,6 @@ const StandardVisualData = () => {
                         <VDText heading={dataVisualisation[4].heading} plainText={dataVisualisation[4].plainText}/>
                         <IconComponent pdfType='github' background='black' plainText='Source code' href='https://github.com/abuer008/syrian-civil-war-visualisation.git'/>
                     </TextArea>
-                </TextFading>
-
-                <TextFading>
-                    <RedirectWrapper>
-                        <RedirectButton textColor='black' nextProject='SUPER HUMAN' link='super-human'/>
-                    </RedirectWrapper>
-
-                    <RefreshWrapper>
-                        <RefreshButton/>
-                    </RefreshWrapper>
                 </TextFading>
             </Reveal>
 

@@ -7,7 +7,7 @@ import VideoArea from "../components/revision/VideoArea";
 
 const FestivalGuide = () => {
     return (
-        <Layout backgroundColor='white' overwrite showFooter>
+        <Layout backgroundColor='white' overwrite showFooter UX>
             <HeroWrapper>
             <HeroImg>
                 <Image src='/festivalGuide/mocktitle.webp' width='1440' height='568' layout='responsive' objectFit='contain' />

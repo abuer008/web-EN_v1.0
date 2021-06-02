@@ -31,7 +31,7 @@ const Revision = () => {
     }, [])
 
     return (
-        <Layout isBlack={false} backgroundColor='black' overwrite>
+        <Layout isBlack={false} backgroundColor='black' overwrite showFooter>
             {phoneVersion && <PhoneRevision />}
             {!phoneVersion && <StandardRevision phoneVersion={phoneVersion} />}
         </Layout>
@@ -271,13 +271,13 @@ const StandardRevision = () => {
                 </TextArea>
             </Description>
 
-            <RedirectWrapper ref={el => redirect.current.push(el)}>
-                <RedirectButton textColor='white' nextProject='VISUAL DATA' link='data-visualisation'/>
-            </RedirectWrapper>
+            {/*<RedirectWrapper ref={el => redirect.current.push(el)}>*/}
+            {/*    <RedirectButton textColor='white' nextProject='VISUAL DATA' link='data-visualisation'/>*/}
+            {/*</RedirectWrapper>*/}
 
-            <Refresh ref={el => redirect.current.push(el)}>
-                <RefreshButton/>
-            </Refresh>
+            {/*<Refresh ref={el => redirect.current.push(el)}>*/}
+            {/*    <RefreshButton/>*/}
+            {/*</Refresh>*/}
         </>
     )
 }

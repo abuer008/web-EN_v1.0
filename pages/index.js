@@ -14,6 +14,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Tween } from 'react-gsap';
 import {HomeItem} from "../components/homeItem";
 import {innovateData, tactileData} from "../data/homeData";
+import {ImgWrapper} from "../components/phoneComponents/PhoneRevision";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -123,10 +124,63 @@ const StandardContents = () => {
                     }
                 </InnoListWrapper>
 
+                <Contact style={{opacity: showInno ? '0' : '1'}}>
+                    <GitWrapper>
+                        <Link href='https://github.com/abuer008'>
+                        <Image src='/github.png' width='36' height='36' />
+                        </Link>
+                    </GitWrapper>
+                    <Email>
+                        <Link href='mailto:x.bowei@aol.com'>
+                        <P>x.bowei@aol.com</P>
+                        </Link>
+                    </Email>
+                </Contact>
+
             </HeroWrapper>
             </Layout>
     )
 }
+
+const Contact = styled.div`
+    position: absolute;
+  width: 10vw;
+  right: 0;
+  bottom: 5vh;
+  text-align: right;
+  transition: 0.2s;
+`
+
+const GitWrapper = styled.div`
+    margin: 0 1rem;
+  transition: 0.3s;
+  :hover {
+    transform: scale(1.05);
+  }
+`
+
+const Name = styled.h4`
+    font-family: ubuntu, sans-serif;
+  font-weight: lighter;
+  margin: 0 1rem;
+`
+
+const Email = styled.div`
+    background-color: #343A40;
+  padding: 0.1rem 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.3s;
+  :hover {
+    transform: scale(1.05);
+  }
+`
+
+const P = styled.p`
+  font-family: Ubuntu, sans-serif;
+  font-weight: bold;
+    color: white;
+`
 
 const HeroWrapper = styled.div`
   position: absolute;

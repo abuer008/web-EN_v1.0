@@ -13,7 +13,8 @@ const Layout = ({
                     pixel = '33px',
                     backgroundPixel = '35px',
                     overwrite = false,
-                    showFooter = false
+                    showFooter = false,
+                    UX = false
                 }) => {
 
     const [show, setShow] = useState(false)
@@ -39,7 +40,7 @@ const Layout = ({
                         </footer>
                     </div>
                     :
-                    showFooter && <Footer/>
+                    showFooter && <Footer UX={UX}/>
                 }
                 <style jsx global>{`
 

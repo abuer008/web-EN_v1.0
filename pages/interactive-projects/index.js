@@ -120,9 +120,6 @@ function StandardContents() {
                                                explain={interactionPageInfo.explain}
                                                displayClass={titleVisible ? "fadeOut" : "fadeIn"}
             />}
-            <WebsitePlain>&copy; 2021 Bowei Xiao All Rights Reserved. For more information about this portfolio
-                please
-                visit <Link href='/about'><a>about</a></Link>.</WebsitePlain>
 
         </Layout>
     )

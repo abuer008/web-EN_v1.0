@@ -8,7 +8,7 @@ import {IconComponent} from "../components/IconComponent";
 
 const About = () => {
     return (
-        <Layout showFooter>
+        <Layout backgroundColor='#fff' overwrite>
             {/*<ContentWrapper>*/}
             {/*    <FrontTitle>Full stack process of the interactive portfolio</FrontTitle>*/}
             {/*    <FrontText>{aboutData.frontText}</FrontText>*/}
@@ -81,15 +81,15 @@ const About = () => {
             {/*    <p style={{textAlign: 'right', fontSize: '0.9em', fontWeight: '900'}}>&copy; 2021 Bowei Xiao</p>*/}
             {/*</ContentWrapper>*/}
             <ContentWrapper>
-                <WhoWrapper>
-                    <ImgWrapper>
-                        <Image src='/work/aboutBg.png' width='580' height='380' objectFit='cover' />
-                    </ImgWrapper>
-                    <WhoTextWrapper>
-                        <Who>Who Am I</Who>
-                        <WhoPlain>I am a full-stack designer specialising in user experience and interaction design. Delivering productive front-end products and providing an integrated process for product development.</WhoPlain>
-                    </WhoTextWrapper>
-                </WhoWrapper>
+                {/*<WhoWrapper>*/}
+                {/*    <ImgWrapper>*/}
+                {/*        <Image src='/work/aboutBg.png' width='580' height='380' objectFit='cover' />*/}
+                {/*    </ImgWrapper>*/}
+                {/*    <WhoTextWrapper>*/}
+                {/*        <Who>Who Am I</Who>*/}
+                {/*        <WhoPlain>I am a full-stack designer specialising in user experience and interaction design. Delivering productive front-end products and providing an integrated process for product development.</WhoPlain>*/}
+                {/*    </WhoTextWrapper>*/}
+                {/*</WhoWrapper>*/}
 
                 <ToolWrapper>
                     <Who>Tools</Who>

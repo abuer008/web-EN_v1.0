@@ -25,7 +25,7 @@ const Connecting = () => {
     }, [])
 
     return (
-        <Layout isBlack={false} backgroundColor='black' overwrite>
+        <Layout isBlack={false} backgroundColor='black' overwrite showFooter>
             {phoneVersion ? <PhoneConnecting/> : <StandardConnecting/>}
         </Layout>
     )
@@ -74,8 +74,8 @@ const StandardConnecting = () => {
 
     const conclusionTexts = useRef([])
 
-    const redirect = useRef([])
-    const redirectDriver = useRef(null)
+    // const redirect = useRef([])
+    // const redirectDriver = useRef(null)
 
     // new version of layout
 
@@ -87,9 +87,9 @@ const StandardConnecting = () => {
 
     const goToSection = section => {
         gsap.to(window, {
-            scrollTo: {y: section, autoKill: false},
+            scrollTo: {y: section, autoKill: true},
             ease: 'power1.out',
-            duration: 1.5
+            duration: 0.5
         })
     }
 
@@ -152,15 +152,15 @@ const StandardConnecting = () => {
         })
     }
 
-    const handleRedirect = () => {
-        gsap.from(redirect.current, {
-            opacity: 0,
-            scrollTrigger: {
-                trigger: redirectDriver.current,
-                toggleActions: 'play none none reverse'
-            }
-        })
-    }
+    // const handleRedirect = () => {
+    //     gsap.from(redirect.current, {
+    //         opacity: 0,
+    //         scrollTrigger: {
+    //             trigger: redirectDriver.current,
+    //             toggleActions: 'play none none reverse'
+    //         }
+    //     })
+    // }
 
     useEffect(() => {
         const drivens = [
@@ -184,10 +184,10 @@ const StandardConnecting = () => {
             pin: pinnedWatch.current,
             pinSpacing: false
         })
-        sections.current.forEach((el, i) => {
-            handleScroll(el)
-            handleAnimation(el, drivens[i])
-        })
+        // sections.current.forEach((el, i) => {
+        //     handleScroll(el)
+        //     handleAnimation(el, drivens[i])
+        // })
 
         connectingAnima.forEach((anima, i) => {
             handleLottie(sections.current[i + 4], anima)
@@ -195,7 +195,7 @@ const StandardConnecting = () => {
 
         handleStates(sections.current[4])
         handleStyling(sections.current[10])
-        handleRedirect()
+        // handleRedirect()
 
     }, [])
 
@@ -387,14 +387,6 @@ const StandardConnecting = () => {
                 </ConclusionTextWrapper>
             </Section>
 
-            <Section style={{height: '10vh'}} ref={redirectDriver}>
-                <RedirectWrapper ref={el => redirect.current.push(el)}>
-                    <RedirectButton checkAbout={true} textColor='white'/>
-                </RedirectWrapper>
-                <RefreshWrapper ref={el => redirect.current.push(el)}>
-                    <RefreshButton/>
-                </RefreshWrapper>
-            </Section>
 
         </>
     )

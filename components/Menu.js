@@ -15,38 +15,20 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
     const [event, setEvent] = useState(true)
     const [showing, setShowMenu] = useState(false)
     const [touching, setTouching] = useState(false)
+    const [scrolling, setScroll] = useState(false)
 
     const trigger = useRef(null)
     const menuItems = useRef([])
     const img = useRef(null)
 
-    const handleDisplay = () => {
-
-        const hideNav = gsap.timeline({duration: 0.4, paused: true})
-            .to(menuItems.current.reverse(), {
-                x: '-=100',
-                opacity: 0,
-                pointerEvents: 'none',
-                stagger: 0.1,
-                ease: 'power2.in',
-            }).progress(0)
-            .to(img.current, {
-                scale: 1.2,
-                ease: 'elastic.out(1.2, 0.45)'
-            }, '-=0.1').progress(0)
-
+    const handleNav = () => {
         ScrollTrigger.create({
-            start: 'top -=10%',
+            start: 'top -80',
             end: 999999,
             onUpdate: (self) => {
-                self.direction === 1 ? hideNav.play() : hideNav.reverse()
+                self.direction === 1 ? setScroll(true) : setScroll(false)
             }
         })
-    }
-
-    const handlePopup = () => {
-        showing ? setShowMenu(false) : setShowMenu(true)
-        showing ? handleShowMenu(true) : handleShowMenu(false)
     }
 
     const handleTouchStart = () => {
@@ -59,7 +41,7 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
 
     useEffect(() => {
         if (!phoneVersion) {
-            handleDisplay()
+            handleNav()
         }
     }, [])
 
@@ -83,25 +65,54 @@ function Menu({isBlack, phoneVersion, showMenu, handleShowMenu}) {
                     {showMenu && <PhoneMenu/>}
                 </div>
                 :
-                <MenuWrapper ref={trigger}>
+                <MenuWrapper isBlack={isBlack} ref={trigger} scrolling={scrolling}>
                     <Link href='/'>
-                        <ImgWrapper ref={img}>
-                            <Image src={isBlack ? '/safari-pinned-tab.svg' : '/safari-pinned-tab_white.svg'} width='16'
-                                   height='16' />
-                        </ImgWrapper>
+                        <MenuHeading>Bowei</MenuHeading>
                     </Link>
-                    {menuList.map(menuItem => {
-                        return <Link href={menuItem.destination} key={menuItem.id}>
-                            <MenuItemActive
-                                style={{color: isBlack ? 'black' : 'white', pointerEvents: event ? 'default' : 'none'}}
-                                ref={el => menuItems.current.push(el)}>{menuItem.title}</MenuItemActive>
+                    <MenuItems>
+                        <Link href='/work'>
+                            <Item>UXD</Item>
                         </Link>
-                    })}
+                        <Link href='/interactive-projects'>
+                            <Item>IxD</Item>
+                        </Link>
+                        <Link href='/about'>
+                            <Item>About</Item>
+                        </Link>
+                    </MenuItems>
                 </MenuWrapper>
             }
         </>
     )
 }
+
+const MenuItems = styled.div`
+    display: flex;
+  flex-direction: row;
+  width: 30vw;
+`
+
+const Item = styled.h6`
+    font-size: 1rem;
+  width: 120px;
+  transition: 0.5s;
+  :hover {
+    cursor: pointer;
+    color: #007BFF;
+  }
+`
+
+const MenuHeading = styled.h6`
+  width: 240px;
+    font-size: 1.2rem;
+  margin: 0;
+  cursor: pointer;
+  transition: 1s;
+  :hover {
+    cursor: pointer;
+    color: #007BFF;
+  }
+`
 
 const MenuItemActive = styled.a`
   width: 80px;
@@ -144,21 +155,23 @@ const PhoneMenuWrapper = styled.div`
 
 const MenuWrapper = styled.div`
   width: 100%;
-  max-width: 56vw;
-  left: 22%;
+  //max-width: 56vw;
+  //left: 22%;
   position: fixed;
-  padding-top: 4em;
+  padding-top: ${props => props.scrolling ? '0rem' : '1.4rem'};
+  transition: 0.3s;
   z-index: 1000;
+  color: ${props => props.isBlack ? 'black' : 'white'};
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
-  font-family: Roboto, sans-serif;
+  font-family: Ubuntu, sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
+  font-weight: bold;
+  font-size: 1rem;
   line-height: 14px;
   text-align: center;
 

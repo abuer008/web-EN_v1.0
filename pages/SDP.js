@@ -16,7 +16,7 @@ const SDP = () => {
     }, [])
 
     return (
-        <Layout backgroundColor='#f5f5f5' overwrite showFooter>
+        <Layout backgroundColor='#f5f5f5' overwrite showFooter UX>
             {phoneVersion ? <PhoneSDP/> : <StandardSDP/>}
         </Layout>
     )
