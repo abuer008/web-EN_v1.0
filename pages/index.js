@@ -15,6 +15,7 @@ import { Tween } from 'react-gsap';
 import {HomeItem} from "../components/homeItem";
 import {innovateData, tactileData} from "../data/homeData";
 import {ImgWrapper} from "../components/phoneComponents/PhoneRevision";
+import {useSelector} from "react-redux";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,6 +25,8 @@ const StandardContents = () => {
     const [innovatePlayState, setInnovatePlayState] = useState('stop')
     const [showTactile, setShowTactile] = useState(false)
     const [showInno, setShowInno] = useState(false)
+
+    const { language } = useSelector(state => state.language)
 
     const handleTactileEnter = () => {
         setTactilePlayState('play')
@@ -118,6 +121,8 @@ const StandardContents = () => {
                         <P>x.bowei@aol.com</P>
                         </Link>
                     </Email>
+                    <P2>2021 &copy; boweisdesign.com</P2>
+                    { language === 'CN' && <Link href='https://beian.miit.gov.cn/'><P2>ICP备案号：沪ICP备2021014985号-1</P2></Link>}
                 </Contact>
 
             </HeroWrapper>
@@ -128,18 +133,22 @@ const StandardContents = () => {
 
 const Contact = styled.div`
     position: absolute;
-  width: 12vw;
+  width: 17rem;
   right: 0;
-  bottom: 5vh;
+  bottom: 0;
   text-align: right;
   transition: 0.2s;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 `
 
 const GitWrapper = styled.div`
     margin: 0 1rem;
   transition: 0.3s;
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 `
 
@@ -151,7 +160,10 @@ const Name = styled.h4`
 
 const Email = styled.div`
     background-color: #343A40;
-  padding: 0.1rem 0.8rem;
+  padding: 0 1.2rem;
+  width: 50%;
+  //position: absolute;
+  right: 0;
   margin: 1rem 0;
   cursor: pointer;
   transition: 0.3s;
@@ -164,6 +176,18 @@ const P = styled.p`
   font-family: Ubuntu, sans-serif;
   font-weight: bold;
     color: white;
+`
+
+const P2 = styled(P)`
+  color: #343A40;
+  font-weight: lighter;
+  font-size: 0.85rem;
+  margin: 0 1rem;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+  
+  //position: absolute;
+  bottom: 0;
 `
 
 const HeroWrapper = styled.div`
