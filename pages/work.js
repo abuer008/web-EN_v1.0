@@ -153,7 +153,7 @@ const UXWrapper = styled.div`
   align-items: center;
 `
 
-const Button = styled.div`
+export const Button = styled.div`
     background-color: ${props => props.bgColor};
   color: white;
   

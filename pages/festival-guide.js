@@ -12,7 +12,7 @@ const FestivalGuide = () => {
             <HeroImg>
                 <Image src='/festivalGuide/mocktitle.webp' width='1440' height='568' layout='responsive' objectFit='contain' />
             </HeroImg>
-            <HeroText top='35'>
+            <HeroText color='white' top='35'>
                 <H1>Festival Guide</H1>
                 <P>Germany has a long tradition of regional fairs, with more than 50 different fairs each year. The "Festival Guide" is a navigation application that consolidates information about the various events and provides a comprehensive basic service for festival-goers. It also collects crowd movements, predicts crowd hazards such as mass panic in advance, and shows the nearest service points in case of emergencies.</P>
             </HeroText>
@@ -64,11 +64,11 @@ const FestivalGuide = () => {
             <HeroImg>
                 <Image src='/festivalGuide/designTitle.webp' width='1440' height='539' layout='responsive' />
             </HeroImg>
-                <HeroText top='15' black>
+                <HeroText top='15' color='black'>
                     <H1>Tangible Design</H1>
                     <Sub style={{margin: '0'}}>User Flows - Wireframes - Prototype</Sub>
                 </HeroText>
-                <HeroText black top='40'>
+                <HeroText top='40'>
                     <Sub2>The toolset were been used:</Sub2>
                     <ToolSet>
                         {
@@ -140,14 +140,14 @@ const ToolSet = styled.div`
   width: 70%;
 `
 
-const Sub = styled.h3`
+export const Sub = styled.h3`
     font-size: 1.7rem;
-  margin: auto;
+  margin: auto 0;
 `
 
-const Sub2 = styled.h3``
+export const Sub2 = styled.h3``
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: static;
   //height: 70vh;
   width: 90%;
@@ -157,10 +157,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 `
 
-const HeroWrapper = styled.div`
+export const HeroWrapper = styled.div`
   position: relative;
     height: 80vh;
 `
@@ -168,22 +168,22 @@ const HeroWrapper = styled.div`
 const ImgWrapper = styled.div`
 `
 
-const HeroImg = styled.div`
+export const HeroImg = styled.div`
   //position: absolute;
   width: 100vw;
 `
 
-const Text = styled.div`
+export const Text = styled.div`
   position: relative;
     max-width: 500px;
 `
 
-const HeroText = styled.div`
+export const HeroText = styled.div`
     position: absolute;
   max-width: 500px;
-  left: 55vw;
+  left: 57.7vw;
   top: ${props => props.top ? `${props.top}%` : '0'};
-  color: ${props => props.black ? 'black' : 'white'};
+  color: ${props => props.color };
 `
 
 const DesignText = styled.div`
@@ -193,12 +193,12 @@ const DesignText = styled.div`
   margin-bottom: 5rem;
 `
 
-const H1 = styled.h1`
+export const H1 = styled.h1`
     font-size: 3.5rem;
   margin: auto;
 `
 
-const P = styled.p``
+export const P = styled.p``
 const P2 = styled(P)`
     padding: 20px 0;
 `
