@@ -22,8 +22,8 @@ import {ContentList} from "../components/contentList";
 import {designContents, implementData, metricsData} from "../data/contentListData";
 
 const Arrow = ({className, style, onClick}) => (
-    <div className={className} onClick={onClick} style={{padding: '2rem', width: '100%', position: 'absolute', left: '90vw'}} >
-        <Image src='/Arrow.svg' width='57' height='48' />
+    <div className={className} onClick={onClick} style={{padding: '2rem', position: 'absolute', right: '0', width: '5%'}} >
+        <Image src='/Arrow.svg' width='83' height='70' />
     </div>
 )
 
@@ -34,7 +34,7 @@ const Works = () => {
 
     const settings = {
         dots: true,
-        dotsClass: 'slick-dots slick-thumb',
+        // dotsClass: 'slick-dots slick-thumb',
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -59,7 +59,6 @@ const Works = () => {
         <Layout backgroundColor='white' overwrite>
             {!phoneVersion ?
 
-
                 <Slider {...settings}>
 
                     <div>
@@ -71,13 +70,13 @@ const Works = () => {
                                 delay={0.3}
                             >
                                 <ImgWrapper>
-                                    <Image src='/works/BDPtitlePhoto.webp' width='810' height='765'/>
+                                    <Image src='/works/BDPtitlePhoto.webp' width='810' height='607' objectFit='cover'/>
                                 </ImgWrapper>
                             </Tween>
                         </Reveal>
                         <Text>
                             <H1 fgColor='#333333'>Bonus Distribution Platform</H1>
-                            <P>The tax incentives of the Hainan Freeport offer a variety of tax avoidance possibilities for enterprises and individuals. The main functions of the collection platform are paying corporate income tax on behalf of enterprises through a project-specific management platform and distributing project dividends to employees, thereby reducing tax expenses.</P>
+                            <P>The main functions of the distribution platform are paying corporate income tax on behalf of enterprises through a project-specific management platform and distributing project dividends to employees, thereby reducing tax expenses.</P>
                             <Link href='/SDP'>
                                 <Button bgColor='#333333'>Enter the project</Button>
                             </Link>
@@ -88,11 +87,11 @@ const Works = () => {
                     <div>
                     <Wrapper>
                         <ImgWrapper>
-                            <Image src='/festivalGuide/fgTitlePhoto.webp' width='810' height='765' />
+                            <Image src='/festivalGuide/fgTitlePhoto.webp' width='810' height='607' />
                         </ImgWrapper>
                         <Text>
                             <H1 fgColor='#FF9066'>Festival Guide</H1>
-                            <P>Germany has a long tradition of regional fairs, with more than 50 different fairs per year. The "Festival Guide" is a navigation application that bundles information about the different events and provides a comprehensive basic service for festival visitors. It also gathers crowd movements, predicts hazards such as mass panic in advance, and indicates the nearest service points for emergencies.</P>
+                            <P>The "Festival Guide" is a navigation application that bundles information about the different events and provides a comprehensive basic service for festival visitors. Meanwhile, it also gathers crowd movements, predicts hazards such as mass panic in advance, and indicates the nearest service points for emergencies.</P>
                             <Link href='/festival-guide'>
                                 <Button bgColor='#FF9066'>Enter the project</Button>
                             </Link>
@@ -102,13 +101,16 @@ const Works = () => {
 
                     <div>
                     <Wrapper>
-                        <UXWrapper>
+                        <ImgWrapper>
+                            <Image src='/pflegemangel/titlePhoto.webp' width='810' height='607'/>
+                        </ImgWrapper>
+                        <Text>
                             <H1 fgColor='#17A2B8'>Pflegemangel</H1>
-                            <H2>UX research of care services</H2>
+                            <P>As pre-research for the ambient assisted living project, we conducted various UX methods such as interviews, research, and competitive analysis to demonstrate the complete process and methodology from early research to the final product.</P>
                             <Link href='/pflegemangel'>
                                 <Button bgColor='#17A2B8'>Enter the project</Button>
                             </Link>
-                        </UXWrapper>
+                        </Text>
                     </Wrapper>
                     </div>
 
@@ -123,7 +125,18 @@ const Works = () => {
     )
 }
 
+
+const UXImg = styled.div`
+    position: absolute;
+`
+
+const UWrapper = styled.div`
+    position: absolute;
+`
+
 const Dot = styled.div`
+  position: absolute;
+  bottom: 5rem;
     height: 4px;
   width: 25px;
   border-radius: 4px;
@@ -159,19 +172,22 @@ const Button = styled.div`
 `
 
 const Wrapper = styled.div`
-  position: relative;
+  //position: absolute;
+  //bottom: 0;
     display: flex;
   flex-direction: row;
   align-items: center;
-  height: 80vh;
-  padding-bottom: 10vh;
+  justify-content: space-between;
+  height: 95vh;
+  margin: auto 0;
+  //padding-bottom: 10vh;
 `
 
 const Text = styled.div`
   position: inherit;
     max-width: 500px;
   width: 40vw;
-  //padding: 20px;
+  padding-right: 10rem;
 `
 
 const H1 = styled.h1`
@@ -191,7 +207,7 @@ const P = styled.p`
 
 const ImgWrapper = styled.div`
   position: inherit;
-    height: 70vh;
+    height: 70%;
 `
 
 export default Works

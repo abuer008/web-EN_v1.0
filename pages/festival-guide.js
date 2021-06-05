@@ -20,7 +20,7 @@ const FestivalGuide = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/festivalGuide/whyImg.png' width='630' height='500' />
+                    <Image src='/festivalGuide/whyImg.webp' width='630' height='500' />
                 </ImgWrapper>
 
                 <Text>
@@ -35,7 +35,7 @@ const FestivalGuide = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/festivalGuide/whatImg.png' width='630' height='500' />
+                    <Image src='/festivalGuide/whatImg.webp' width='630' height='500' />
                 </ImgWrapper>
                 <Text>
                     <H1>What</H1>
@@ -47,7 +47,7 @@ const FestivalGuide = () => {
 
             <Wrapper style={{alignItems: 'flex-start'}}>
                 <ImgWrapper>
-                    <Image src='/festivalGuide/howImg.png' width='630' height='1160' />
+                    <Image src='/festivalGuide/howImg.webp' width='630' height='1160' />
                 </ImgWrapper>
                 <Text style={{top: '60px'}}>
                     <H1>How</H1>
@@ -62,7 +62,7 @@ const FestivalGuide = () => {
 
             <HeroWrapper>
             <HeroImg>
-                <Image src='/festivalGuide/designTitle.png' width='1440' height='539' layout='responsive' />
+                <Image src='/festivalGuide/designTitle.webp' width='1440' height='539' layout='responsive' />
             </HeroImg>
                 <HeroText top='15' black>
                     <H1>Tangible Design</H1>
