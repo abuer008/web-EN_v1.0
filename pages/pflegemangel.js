@@ -49,7 +49,7 @@ const StandardPflegemangel = () => {
         <>
             <HeroWrapper>
                 <HeroImg>
-                    <Image src='/pflegemangel/heroBg.png' width='1440' height='568' layout='responsive' objectFit='contain' />
+                    <Image src='/pflegemangel/heroBg.webp' width='1440' height='568' layout='responsive' objectFit='contain' />
                 </HeroImg>
                 <HeroText color='#17A2B8' top='35'>
                     <H1>Pflegemangel</H1>
@@ -59,7 +59,7 @@ const StandardPflegemangel = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/interviewImg.png' width='630' height='500' />
+                    <Image src='/pflegemangel/interviewImg.webp' width='630' height='500' />
                 </ImgWrapper>
                 <Text>
                     <H1>Interview</H1>
@@ -70,7 +70,7 @@ const StandardPflegemangel = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/whatImg.png' width='630' height='500' />
+                    <Image src='/pflegemangel/whatImg.webp' width='630' height='500' />
                 </ImgWrapper>
                 <Text>
                     <H1>Goals</H1>
@@ -96,7 +96,7 @@ const StandardPflegemangel = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/pflegemangel/alterstructur.png' width='630' height='700' />
+                    <Image src='/pflegemangel/alterstructur.webp' width='630' height='700' />
                 </ImgWrapper>
                 <Text>
                     <H1>Process</H1>
@@ -105,7 +105,7 @@ const StandardPflegemangel = () => {
                 </Text>
             </Wrapper>
             <MImg>
-                <Image src='/pflegemangel/targetStatistic.png' width='1060' height='720' />
+                <Image src='/pflegemangel/targetStatistic.webp' width='1060' height='720' />
             </MImg>
             <PmWrapper>
                 <HeroText>
@@ -113,7 +113,7 @@ const StandardPflegemangel = () => {
                     <P>Through user observation, interviews with nursing homes, and hands-on experience, we fully understand the comprehensive care environment and conditions in the home. And the different care issues are described through set scenarios to <Strong>reflect the pain points and opportunities of elderly care objectively</Strong>.</P>
                 </HeroText>
             <MImg>
-                <Image src='/pflegemangel/scenarios.png' width='1122' height='832' />
+                <Image src='/pflegemangel/scenarios.webp' width='1122' height='832' />
             </MImg>
             </PmWrapper>
 
@@ -125,7 +125,7 @@ const StandardPflegemangel = () => {
             </PmWrapper>
             <Wrapper>
                 <MImg>
-                    <Image src='/pflegemangel/competitors.png' width='1060' height='782' />
+                    <Image src='/pflegemangel/competitors.webp' width='1060' height='782' />
                 </MImg>
             </Wrapper>
 
@@ -149,10 +149,10 @@ const StandardPflegemangel = () => {
                 </Text>
             </Wrapper>
             <MImg>
-                <Image src='/pflegemangel/proposals1.png' width='1060' height='657' />
+                <Image src='/pflegemangel/proposals1.webp' width='1060' height='657' />
             </MImg>
             <MImg>
-                <Image src='/pflegemangel/proposals2.png' width='1060' height='597' />
+                <Image src='/pflegemangel/proposals2.webp' width='1060' height='597' />
             </MImg>
 
             <Wrapper style={{marginBottom: '5rem'}}>
