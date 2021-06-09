@@ -34,7 +34,7 @@ const StandardSDP = () => {
                 </FloatImg>
                 <HeroText color='#343A40' top='25'>
                     <H1>BDP</H1>
-                    <P>The main functions of the distribution platform are paying corporate income tax on behalf of enterprises through a project-specific management platform and distributing project dividends to employees, thereby reducing tax expenses.</P>
+                    <P>BDP is a project management mini-program specially designed for Hainan Yushun. Through the management platform, the customer from the enterprise can publish and modified projects and entrust the tax collection agency located in Hainan Freeport to distribute the project dividends to the participating employees with more favourable tax policies. How to let company users create projects more efficiently through the WeChat mini-program platform, communicate seamlessly with the distributor staff, and meet the needs of more random and casual scenarios is the project's main purpose.</P>
                 </HeroText>
             </HeroWrapper>
 
