@@ -30,7 +30,7 @@ const StandardSDP = () => {
             <HeroWrapper>
                 <Bg />
                 <FloatImg>
-                    <Image src='/works/headerBg.png' width='630' height='557' />
+                    <Image src='/works/headerBg.webp' width='630' height='557' />
                 </FloatImg>
                 <HeroText color='#343A40' top='25'>
                     <H1>BDP</H1>
@@ -51,7 +51,7 @@ const StandardSDP = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/works/whyImg.png' width='630' height='500' />
+                    <Image src='/works/whyImg.webp' width='630' height='500' />
                 </ImgWrapper>
                 <Text>
                     <Sub>Pain points based on interviews</Sub>
@@ -81,7 +81,7 @@ const StandardSDP = () => {
 
             <Wrapper>
                 <ImgWrapper>
-                    <Image src='/works/stakeholders.png' width='630' height='500' />
+                    <Image src='/works/Stakeholders.webp' width='630' height='500' />
                 </ImgWrapper>
                 <Text>
                     <H1>User Analysis</H1>
@@ -102,7 +102,7 @@ const StandardSDP = () => {
 
             <HeroWrapper>
                 <HeroImg>
-                    <Image src='/works/sdpTangibleBg.png' width='1440' height='539' layout='responsive' />
+                    <Image src='/works/sdpTangibleBg.webp' width='1440' height='539' layout='responsive' />
                 </HeroImg>
                 <HeroText top='40'>
                     <H1>Tangible Design</H1>
@@ -135,7 +135,7 @@ const StandardSDP = () => {
 
             <Wrapper>
                 <MImg>
-                    <Image src='/works/userflows.png' width='1100' height='500' objectFit='cover' />
+                    <Image src='/works/userflows.webp' width='1100' height='500' objectFit='cover' />
                     <Text style={{ position: 'relative', left: '50vw', margin: '2rem'}}>
                         <Link href='/works/userflows.png'>
                             <a style={{textDecoration: 'none'}} target='_blank'>
@@ -148,7 +148,7 @@ const StandardSDP = () => {
 
             <Wrapper style={{alignItems: 'flex-start', marginTop: '5%'}}>
                 <ImgWrapper>
-                    <Image src='/works/typo.png' width='630' height='633' />
+                    <Image src='/works/typo.webp' width='630' height='633' />
                 </ImgWrapper>
                 <Text>
                     <H1>Design Language</H1>
@@ -159,13 +159,13 @@ const StandardSDP = () => {
 
             <Wrapper>
                 <MImg>
-                    <Image src='/works/colorStyles.png' width='1123' height='509' />
+                    <Image src='/works/colorStyles.webp' width='1123' height='509' />
                 </MImg>
             </Wrapper>
 
             <Wrapper style={{alignItems: 'flex-start', position: 'relative', justifyContent: 'flex-start', left: '7vw', marginTop: '10%'}}>
                 <ImgWrapper>
-                    <Image src='/works/prototyping1.png' width='566' height='1264' />
+                    <Image src='/works/prototyping1.webp' width='566' height='1264' />
                 </ImgWrapper>
                 <HeroText style={{left: '50%'}}>
                     <H1>Prototyping</H1>
@@ -180,7 +180,7 @@ const StandardSDP = () => {
 
             <Wrapper style={{position: 'relative', justifyContent: 'flex-start', left: '7vw'}}>
                 <ImgWrapper>
-                    <Image src='/works/prototyping2.png' width='849' height='1818' />
+                    <Image src='/works/prototyping2.webp' width='849' height='1818' />
                 </ImgWrapper>
                 <HeroText style={{top: '10%', left: '50%'}}>
                     <Sub>The three home pages</Sub>
@@ -190,7 +190,7 @@ const StandardSDP = () => {
 
             <Wrapper style={{position: 'relative', justifyContent: 'flex-start', left: '7vw'}}>
                 <ImgWrapper>
-                    <Image src='/works/prototyping3.png' width='566' height='464' />
+                    <Image src='/works/prototyping3.webp' width='566' height='464' />
                 </ImgWrapper>
                 <HeroText style={{top: '10%', left: '50%'}}>
                     <Sub>Project management</Sub>
@@ -200,7 +200,7 @@ const StandardSDP = () => {
 
             <HeroWrapper style={{marginTop: '10%'}}>
                 <HeroImg>
-                    <Image src='/works/dashboard.png' width='1440' height='655' layout='responsive' />
+                    <Image src='/works/dashboard.webp' width='1440' height='655' layout='responsive' />
                 </HeroImg>
                 <HeroText top='-10' style={{left: '56.7%'}}>
                     <Sub>The back-end dashboard</Sub>
