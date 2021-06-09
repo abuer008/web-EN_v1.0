@@ -135,11 +135,11 @@ const StandardSDP = () => {
 
             <Wrapper>
                 <MImg>
-                    <Image src='/works/userflows.webp' width='1100' height='500' objectFit='cover' />
-                    <Text style={{ position: 'relative', left: '50vw', margin: '2rem'}}>
-                        <Link href='/works/userflows.png'>
+                    <Image src='/works/userflows_short.png' width='1112' height='1138' objectFit='cover' />
+                    <Text style={{ position: 'relative', left: '40vw', margin: '2rem'}}>
+                        <Link href='/works/flowcharts.png'>
                             <a style={{textDecoration: 'none'}} target='_blank'>
-                    <Button bgColor='#A9BBC9'>Enter the userflows</Button>
+                    <Button bgColor='#A9BBC9'>Enter the full userflows</Button>
                             </a>
                         </Link>
                     </Text>
