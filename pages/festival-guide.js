@@ -133,7 +133,7 @@ const FlowImgWrapper = styled.div`
 
 const Strong = styled.strong``
 
-const ToolSet = styled.div`
+export const ToolSet = styled.div`
     display: flex;
   flex-direction: row;
   

@@ -11,15 +11,6 @@ export const SDPTexts = {
         title: 'The pain points',
         plain: ''
     },
-    challenges: {
-        title: 'Challenges',
-        c1Title: 'Simple',
-        c1Plain: 'A simplified registration and authentication process is an effective way to attract new customers (Adoption).',
-        c2Title: 'Reduce',
-        c2Plain: 'Repeated manual data entry is the main cause of errors.',
-        c3Title: 'Unified',
-        c3Plain: 'Frequent switching of the platforms in the current user flow decrease the user experience.'
-    },
     wireframe: {
         title: 'Wireframe',
         plain: 'The functional partitioning, the general layout and functionality of each page were shown in the wireframe clearly. Through several discussion, the whole product structure is roughly divided into three sections.',
@@ -67,5 +58,42 @@ export const ToolSetData = [
     {
         title: 'Mini program platform',
         logoImg: '/wechat.png'
+    }
+]
+
+export const challengesData = [
+    {
+        title: 'Simple',
+        logoSrc: '/works/simpleLogo.png',
+        text: 'A simplified registration and authentication process is an effective way to attract new customers (Adoption).'
+    },
+    {
+        title: 'Reduce',
+        logoSrc: '/works/reduceLogo.png',
+        text: 'Repeated manual data entry is the main cause of errors.'
+    },
+    {
+        title: 'Unified',
+        logoSrc: '/works/unifiedLogo.png',
+        text: 'Frequent switching of the platforms in the current user flow decrease the user experience.'
+    }
+]
+
+export const userflowData = [
+    {
+        title: 'Registration and validation process',
+        text: 'Securing the account while obtaining important information about the user, such as ID number, bank details, etc.'
+    },
+    {
+        title: 'Project creation process',
+        text: 'How to simplify information entry and automate the generation of the required excel sheets.'
+    },
+    {
+        title: 'Project management process',
+        text: 'A mobile platform that allows staff to monitor the status of projects in real-time and communicate instantly with project creators.'
+    },
+    {
+        title: 'Income balance for employees',
+        text: 'The employee was able to review real-time and historical income records based on project management from the distribution side.'
     }
 ]

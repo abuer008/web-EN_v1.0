@@ -4,7 +4,9 @@ import Layout from '../components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import {SDPTexts, ToolSetData} from "../data/SDP";
+import {Button} from './work'
+import {HeroWrapper, HeroImg, HeroText, H1, P, Text, Wrapper, Sub, Sub2, ToolSet} from "./festival-guide";
+import {challengesData, SDPTexts, ToolSetData, userflowData} from "../data/SDP";
 import {usePhoneVersion} from "../components/usePhoneVersion";
 import {PhoneSDP} from "../components/phoneComponents/PhoneSDP";
 import {ToolsetItem} from "../components/work/ToolsetItem";
@@ -16,7 +18,7 @@ const SDP = () => {
     }, [])
 
     return (
-        <Layout backgroundColor='#f5f5f5' overwrite showFooter UX>
+        <Layout backgroundColor='ffffff' overwrite showFooter UX>
             {phoneVersion ? <PhoneSDP/> : <StandardSDP/>}
         </Layout>
     )
@@ -25,408 +27,257 @@ const SDP = () => {
 const StandardSDP = () => {
     return (
         <>
-            <ContentWrapper>
-                {/*<BrBlank />*/}
-                <BlankHorizonWrapper>
-                    <ImageWrapper>
-                        <Image src='/works/mockup.distributor.webp' width='300' height='486'/>
-                    </ImageWrapper>
-                    <Section style={{width: '60%', top: '5vh'}}>
-                        <SectionTitle>
-                            {SDPTexts.introduction.title}
-                        </SectionTitle>
-                        <SectionPlain>{SDPTexts.introduction.plain}</SectionPlain>
-                        <Subtitle>
-                            The Toolset were been used:
-                        </Subtitle>
-                        <ToolSetWrapper>
-                            {
-                                ToolSetData.map((item, key) => {
-                                    return <ToolsetItem key={key} item={item}/>
-                                })
-                            }
-                        </ToolSetWrapper>
-                    </Section>
-                </BlankHorizonWrapper>
+            <HeroWrapper>
+                <Bg />
+                <FloatImg>
+                    <Image src='/works/headerBg.png' width='630' height='557' />
+                </FloatImg>
+                <HeroText color='#343A40' top='25'>
+                    <H1>BDP</H1>
+                    <P>The main functions of the distribution platform are paying corporate income tax on behalf of enterprises through a project-specific management platform and distributing project dividends to employees, thereby reducing tax expenses.</P>
+                </HeroText>
+            </HeroWrapper>
 
-                <Br>research</Br>
+            <Wrapper>
+                <ImgWrapper>
+                    <Image src='/pflegemangel/interviewImg.webp' width='630' height='500' />
+                </ImgWrapper>
+                <Text>
+                    <H1>Surveys</H1>
+                    <Sub>Interviews with stakeholders</Sub>
+                    <P>We had a long-term communication with the company engaging the salary distribution services, discussed the existing business model and identified noticeable obstacles and errors that occurred in the traditional user flows. After interviewing the different roles of the target audience, we statistically framed the needs of all potential stakeholders and the challenges to design the complete distribution platform.</P>
+                </Text>
+            </Wrapper>
 
-                <Section>
-                    <SectionTitle>{SDPTexts.research.title}</SectionTitle>
-                    <SectionPlain>{SDPTexts.research.plain}</SectionPlain>
-                    <Wrapper>
-                        <PainPointWrapper>
-                            <Dot color='red'/>
-                            <SubTitle>{SDPTexts.painPoints.title}</SubTitle>
-                        </PainPointWrapper>
-                        <H3>1. Manual workload</H3>
-                        <SectionPlain>Users have to manually enter and export all the employee information related to
-                            the project each time they create a project, which sometimes leads to input errors and a lot
-                            of time spent identifying input errors in the list when handing over to the management
-                            platform.</SectionPlain>
-                        <H3>2. Expensive learning curve</H3>
-                        <SectionPlain>The overly complex project creation process takes new users a lot of time to
-                            familiarise themselves with and understand.</SectionPlain>
-                        <H3>3. Lack of mobile support</H3>
-                        <SectionPlain>Lack of support for mobile devices to meet casual business needs.</SectionPlain>
-                    </Wrapper>
-                </Section>
+            <Wrapper>
+                <ImgWrapper>
+                    <Image src='/works/whyImg.png' width='630' height='500' />
+                </ImgWrapper>
+                <Text>
+                    <Sub>Pain points based on interviews</Sub>
+                    <Sub2>Manual workload</Sub2>
+                    <P>Users have to manually enter and export all the employee information related to the project each time they create a project, which sometimes leads to input errors and a lot of time spent identifying input errors in the list when handing over to the management platform.</P>
+                    <Sub2>Expensive learning process</Sub2>
+                    <P>The overly complex project creation process takes new users a lot of time to familiarise themselves with and understand.</P>
+                    <Sub2>Lack of mobile support</Sub2>
+                    <P>Lack of support for mobile devices to meet casual business needs.</P>
+                </Text>
+            </Wrapper>
 
-                <Section>
-                    <SectionTitle>The UX analysis</SectionTitle>
-                    <SectionPlain>We experienced the product in actual use and carefully analysed possible user
-                        experience issues in the user-centred process by simulating the actual task objectives and
-                        combining them with a few user survey.</SectionPlain>
-                    <SectionPlain>In order to solve the pain points of customers and users, we have systematically
-                        analysed the existing user processes and the various nodes through the customer journey
-                        map.</SectionPlain>
-                    <CustomerJourney>
-                        <Image alt='the current customer journey analysis' src='/works/currentCustomerJourney.webp'
-                               width='1772' height='1925'/>
-                    </CustomerJourney>
+            <Wrapper>
+                <Text style={{left: '22.3vw'}}>
+                    <H1>UX analysis</H1>
+                    <Sub>Research on existed platform</Sub>
+                    <P>We experienced the product in actual use and carefully analysed possible user experience issues in the user-centred process by simulating the actual task objectives and combining them with a few user survey.</P>
+                    <P>In order to solve the pain points of customers and users, we have systematically analysed the existing user processes and the various nodes through the customer journey map.</P>
+                </Text>
+            </Wrapper>
 
-                    <SubTitle style={{paddingTop: '5%'}}>Examples of detailed UX issues</SubTitle>
-                    <IssuesWrapper>
-                        <ImgWrapper>
-                            <Image src='/works/oldRegister.JPG' width='800' height='504' objectFit='cover'/>
-                        </ImgWrapper>
-                        <TextWrapper>
-                            <H4>Complex and disorganized registration process</H4>
-                            <SectionPlain>Due to legal restrictions, a strict registration process is unavoidable.
-                                However, an unstructured registration process and too many visual elements harm the user
-                                experience.</SectionPlain>
-                        </TextWrapper>
-                    </IssuesWrapper>
+            <Wrapper>
+                <MImg>
+                    <Image src='/works/currentCustomerJourney.webp' width='1192' height='1293' layout='responsive' />
+                </MImg>
+            </Wrapper>
 
-                    <IssuesWrapper>
-                        <ImgWrapper>
-                            <Image src='/works/projectDashboard.JPG' width='936' height='560' objectFit='cover'/>
-                        </ImgWrapper>
-                        <TextWrapper>
-                            <H4>Home page of platform</H4>
-                            <SectionPlain>Existing platforms include too many features and information on their
-                                homepages to serve target audiences with different requirements, making it difficult for
-                                new users to find the right feature they need.</SectionPlain>
-                        </TextWrapper>
-                    </IssuesWrapper>
-                    <IssuesWrapper>
-                        <ImgWrapper>
-                            <Image src='/works/projectCreateProcess.JPG' width='463' height='304' objectFit='cover'/>
-                        </ImgWrapper>
-                        <TextWrapper>
-                            <H4>Project creation page</H4>
-                            <SectionPlain>The lack of hierarchical input fields and clear instructions increases the
-                                difficulty of typing correctly.</SectionPlain>
-                        </TextWrapper>
-                    </IssuesWrapper>
-                </Section>
+            <Wrapper>
+                <ImgWrapper>
+                    <Image src='/works/stakeholders.png' width='630' height='500' />
+                </ImgWrapper>
+                <Text>
+                    <H1>User Analysis</H1>
+                    <Sub>The new stakeholders</Sub>
+                    <P>After thoughtful user research and product analysis, we have proposed a new solution - involving employees as stakeholders in the entire product process. We are also interested in taking potential additional stakeholders into account based on satisfying the product service and pointing the way to the sustainable development of future products.</P>
+                </Text>
+            </Wrapper>
+            <Wrapper>
+                <Text style={{left: '13.3vw'}}><Sub>The Challenges</Sub></Text>
+            </Wrapper>
+            <Wrapper style={{width: '60%', marginBottom: '20%'}}>
+                {
+                    challengesData.map((item, key) => {
+                        return <ChallengeTitle logoSrc={item.logoSrc} challengeTitle={item.title} challengeText={item.text} key={key} />
+                    })
+                }
+            </Wrapper>
 
-                <Br>Solutions</Br>
+            <HeroWrapper>
+                <HeroImg>
+                    <Image src='/works/sdpTangibleBg.png' width='1440' height='539' layout='responsive' />
+                </HeroImg>
+                <HeroText top='40'>
+                    <H1>Tangible Design</H1>
+                    <Sub>Design language and components</Sub>
+                </HeroText>
 
-                <Section>
-                    <SectionTitle>The new stakeholders</SectionTitle>
-                    <SectionPlain>After thoughtful user research and product analysis, we have proposed a new solution -
-                        involving employees as stakeholders in the entire product process. We are also interested in
-                        taking potential additional stakeholders into account based on satisfying the product service
-                        and pointing the way to the sustainable development of future products.</SectionPlain>
-                    <ResearchWrapper>
-                        <Image src='/works/Stakeholders.webp' width='661' height='790'/>
-                    </ResearchWrapper>
+                <Text style={{left: '57.7vw'}}>
+                    <Sub2>The toolset were been used: </Sub2>
+                    <ToolSet>
+                        {
+                            ToolSetData.map((item, key) => {
+                                return <ToolsetItem key={key} item={item} />
+                            })
+                        }
+                    </ToolSet>
+                </Text>
+            </HeroWrapper>
+            <Wrapper style={{marginTop: '10%'}}>
+                <Text style={{left: '22.3vw'}}>
+                    <Sub>Basic User flow and Wireframes</Sub>
+                </Text>
+            </Wrapper>
+            <Wrapper>
+                {
+                    userflowData.map((item, key) => {
+                        return <Userflow item={item} key={key} />
+                    })
+                }
+            </Wrapper>
 
-                    <Wrapper>
-                        <PainPointWrapper>
-                            <Dot color='orange'/>
-                            <SubTitle>The Challenges</SubTitle>
-                        </PainPointWrapper>
+            <Wrapper>
+                <MImg>
+                    <Image src='/works/userflows.png' width='1100' height='500' objectFit='cover' />
+                    <Text style={{ position: 'relative', left: '50vw', margin: '2rem'}}>
+                        <Link href='/works/userflows.png'>
+                            <a style={{textDecoration: 'none'}} target='_blank'>
+                    <Button bgColor='#A9BBC9'>Enter the userflows</Button>
+                            </a>
+                        </Link>
+                    </Text>
+                </MImg>
+            </Wrapper>
 
-                        <ChallengeWrapper>
-                            <SubChallengeWrapper color='#47484F'>
-                                <ChallengeTitle logoSrc='/works/simple.logo.svg'
-                                                challengeTitle={SDPTexts.challenges.c1Title}/>
-                                <SectionPlain>{SDPTexts.challenges.c1Plain}</SectionPlain>
-                            </SubChallengeWrapper>
-                            <SubChallengeWrapper color='#3E97EA'>
-                                <ChallengeTitle logoSrc='/works/reduce.logo.svg'
-                                                challengeTitle={SDPTexts.challenges.c2Title}/>
-                                <SectionPlain>{SDPTexts.challenges.c2Plain}</SectionPlain>
-                            </SubChallengeWrapper>
-                            <SubChallengeWrapper color='#FD6240'>
-                                <ChallengeTitle logoSrc='/works/unified.logo.svg'
-                                                challengeTitle={SDPTexts.challenges.c3Title}/>
-                                <SectionPlain>{SDPTexts.challenges.c3Plain}</SectionPlain>
-                            </SubChallengeWrapper>
-                        </ChallengeWrapper>
-                    </Wrapper>
-                </Section>
+            <Wrapper style={{alignItems: 'flex-start', marginTop: '5%'}}>
+                <ImgWrapper>
+                    <Image src='/works/typo.png' width='630' height='633' />
+                </ImgWrapper>
+                <Text>
+                    <H1>Design Language</H1>
+                    <Sub>Color and Typography styles</Sub>
+                    <P>The complete design language were started with basic color styles, as defining a consistent design style is important for the aesthetic sense of the final product.</P>
+                </Text>
+            </Wrapper>
 
-                <Section>
-                    <SectionTitle>redesign userflow and wireframe</SectionTitle>
-                    <SectionPlain>{SDPTexts.wireframe.plain}</SectionPlain>
-                    <ul>
-                        <li>
-                        <H4>{SDPTexts.wireframe.c1Title}</H4>
-                        <SectionPlain>{SDPTexts.wireframe.c1Plain}</SectionPlain>
-                        </li>
-                        <li>
-                        <H4>{SDPTexts.wireframe.c2Title}</H4>
-                        <SectionPlain>{SDPTexts.wireframe.c2Plain}</SectionPlain>
-                        </li>
-                        <li>
-                        <H4>{SDPTexts.wireframe.c3Title}</H4>
-                        <SectionPlain>{SDPTexts.wireframe.c3Plain}</SectionPlain>
-                        </li>
-                    </ul>
-                    <Wireframe>
-                        {/*<Link href='/works/wireframe.png'>*/}
-                            <Image src='/works/wireframe.webp' width='1192' height='1099'/>
-                        {/*</Link>*/}
-                    </Wireframe>
-                </Section>
+            <Wrapper>
+                <MImg>
+                    <Image src='/works/colorStyles.png' width='1123' height='509' />
+                </MImg>
+            </Wrapper>
 
-                {/*<Link href='/works/wireframe.png'>*/}
-                {/*    <Wireframe>*/}
-                {/*        <SubTitle>Wireframe</SubTitle>*/}
-                {/*        <Image src='/works/wireframe.png' width='1192' height='1099'/>*/}
-                {/*    </Wireframe>*/}
-                {/*</Link>*/}
-                <Br>Tangible design</Br>
-                <Section>
-                    <SectionTitle>{SDPTexts.prototype.title}</SectionTitle>
-                    <SectionPlain>{SDPTexts.prototype.plain}</SectionPlain>
-                    <DesignWrapper>
-                        <H3>Typography</H3>
-                        <Image src='/works/typography.webp' width='2632' height='1778'/>
-                    </DesignWrapper>
-                    <DesignWrapper>
-                        <H3>Reuseable components</H3>
-                        <Image src='/works/symbols.webp' width='2430' height='882' />
-                    </DesignWrapper>
-                    <PrototypeWrapper width='80%'>
-                        <Image src='/works/Mockups.webp' width='1607' height='880' />
-                    </PrototypeWrapper>
-                </Section>
+            <Wrapper style={{alignItems: 'flex-start', position: 'relative', justifyContent: 'flex-start', left: '7vw', marginTop: '10%'}}>
+                <ImgWrapper>
+                    <Image src='/works/prototyping1.png' width='566' height='1264' />
+                </ImgWrapper>
+                <HeroText style={{left: '50%'}}>
+                    <H1>Prototyping</H1>
+                    <Sub>Login process</Sub>
+                    <P>In the traditional platform, users must repeatedly enter their account password at each login. In contrast, in the development environment of the mini-program, the platform account can be directly linked to the account of social media, eliminating the need for account and password input.</P>
+                </HeroText>
+                <HeroText style={{top: '65%', left: '50%'}}>
+                    <Sub>Initial certification process</Sub>
+                    <P>Clearly divides mobile phone authentication, ID card authentication and business authentication into three steps, collecting the necessary user information while ID authenticating and preparing for employee list automatic generation.</P>
+                </HeroText>
+            </Wrapper>
 
-                <Section style={{padding: '10vh 0'}}>
-                    <SectionTitle>{SDPTexts.final.title}</SectionTitle>
-                    <H3>{SDPTexts.final.loginTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.loginPlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/registerProcess.webp' width='1720' height='1197' objectFit='cover' />
-                    </PrototypeWrapper>
-                    <H3>{SDPTexts.final.validationTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.validationPlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/validationProcess.webp' width='2075' height='1198' objectFit='cover' />
-                    </PrototypeWrapper>
-                    <H3>{SDPTexts.final.homeTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.homePlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/homePages.webp' width='2529' height='1197' objectFit='cover' />
-                    </PrototypeWrapper>
-                    <H3>{SDPTexts.final.operationTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.operationPlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/projectOperation.webp' width='1721' height='1197' objectFit='cover' />
-                    </PrototypeWrapper>
-                    <H3>{SDPTexts.final.creationTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.creationPlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/creationProcess.webp' width='1721' height='1197' objectFit='cover' />
-                    </PrototypeWrapper>
-                    <H3>{SDPTexts.final.dashboardTitle}</H3>
-                    <SectionPlain>{SDPTexts.final.dashboardPlain}</SectionPlain>
-                    <PrototypeWrapper>
-                        <Image src='/works/dashboard.webp' width='1440' height='1089' objectFit='cover' />
-                    </PrototypeWrapper>
-                </Section>
-            </ContentWrapper>
+            <Wrapper style={{position: 'relative', justifyContent: 'flex-start', left: '7vw'}}>
+                <ImgWrapper>
+                    <Image src='/works/prototyping2.png' width='849' height='1818' />
+                </ImgWrapper>
+                <HeroText style={{top: '10%', left: '50%'}}>
+                    <Sub>The three home pages</Sub>
+                    <P>Customised homepages with specific colours and functions for different user audiences allow the users to focus on the features and modules they need, maximising the efficiency of project management.</P>
+                </HeroText>
+            </Wrapper>
+
+            <Wrapper style={{position: 'relative', justifyContent: 'flex-start', left: '7vw'}}>
+                <ImgWrapper>
+                    <Image src='/works/prototyping3.png' width='566' height='464' />
+                </ImgWrapper>
+                <HeroText style={{top: '10%', left: '50%'}}>
+                    <Sub>Project management</Sub>
+                    <P>The unique interaction design makes it intuitive for the user to understand the options for specific items, making it easy to get started even for first-time users.</P>
+                </HeroText>
+            </Wrapper>
+
+            <HeroWrapper style={{marginTop: '10%'}}>
+                <HeroImg>
+                    <Image src='/works/dashboard.png' width='1440' height='655' layout='responsive' />
+                </HeroImg>
+                <HeroText top='-10' style={{left: '56.7%'}}>
+                    <Sub>The back-end dashboard</Sub>
+                    <P>In order to allow the staff to process the submitted projects and personnel management more efficiently, we designed a dedicated backend management platform for the distributor side to provide batch processing capabilities. This platform uses a highly integrated bootstrap framework to simplify the complexity of interface development.</P>
+                </HeroText>
+            </HeroWrapper>
+
         </>
     )
 }
 
 
 
-const ChallengeTitle = ({logoSrc, challengeTitle}) => {
-    return (
+const ChallengeTitle = ({logoSrc, challengeTitle, challengeText}) => (
+    <VerticalWrapper>
         <HorizonWrapper>
-            <LogoWrapper>
-                <Image src={logoSrc} width='58' height='58'/>
-            </LogoWrapper>
-            <H2>{challengeTitle}</H2>
+            <Image src={logoSrc} width='60' height='60' />
+            <ChallengeH1>{challengeTitle}</ChallengeH1>
         </HorizonWrapper>
-    )
-}
+        <P>{challengeText}</P>
+    </VerticalWrapper>
+)
 
-const H2 = styled.h2`
-  font-size: 2em;
-  margin: auto 0;
-`
-const LogoWrapper = styled.div``
+const Userflow = ({item}) => (
+    <UFWrapper>
+        <Sub2>{item.title}</Sub2>
+        <P>{item.text}</P>
+    </UFWrapper>
+)
 
-const DesignWrapper = styled.div`
-    width: 70%;
-`
-
-const ContentWrapper = styled.div`
-  position: static;
-  width: 80%;
-  max-width: 950px;
-  //top: 20vh;
-  //left: 50%;
-  padding-bottom: 10%;
-  margin: auto;
-
+const UFWrapper = styled.div`
+    width: 200px;
+  height: 200px;
+  padding: 10px;
 `
 
-const Wrapper = styled.div`
-  padding: 2em;
-`
-
-const Br = styled.h4`
-  padding-top: 20vh;
-  border-bottom: 1px solid black;
-`
-
-const BrBlank = styled(Br)`
-    border: none;
-`
-
-const HorizonWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
-`
-const BlankHorizonWrapper = styled(HorizonWrapper)`
-    top: 20vh;
-`
-
-const ToolSetWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-`
-
-const Subtitle = styled.h5`
-`
-
-const ImageWrapper = styled.div`
-  position: relative;
-  width: 200%;
-`
-
-// ---------------------
-
-const IssuesWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  //width: 80%;
-  padding: 2em;
-`
-
-const ImgWrapper = styled.div`
-  min-width: 250px;
-`
-
-const TextWrapper = styled.div`
-  padding: 1em 2em 2em;
-`
-
-const H4 = styled.h4`
-  margin: auto;
-`
-
-// ----------------------------
-
-const ChallengeWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 1em;
-`
-
-const SubChallengeWrapper = styled.div`
-  width: 250px;
+const VerticalWrapper = styled.div`
+    width: 200px;
+  height: 200px;
+  background-color: #343A40;
   color: white;
-  background-color: ${props => props.color};
-  box-shadow: 0 3px 15px 0 rgba(71, 72, 79, 0.3);
-  padding: 1.4em;
-  margin: 1em;
-  border-radius: 30px;
+  padding: 30px;
   transition: 0.3s;
   
   :hover {
-    transform: scale(1.1);
+    transform: scale(1.1)
   }
 `
 
-
-// ----------------------------
-
-const ResearchWrapper = styled.div`
-  position: relative;
-  padding: 0 40% 10% 0;
-`
-
-const Section = styled.div`
-  position: static;
-  top: 10vh;
-`
-
-const Wireframe = styled.div`
-  position: relative;
-  //padding: 10% 0;
-  margin-top: 5%;
-  width: 80%;
-
-  :hover {
-    cursor: pointer;
-  }
-`
-
-const PrototypeWrapper = styled.div`
-    width: ${props => props.width};
-  margin: 5% 0;
-`
-
-const CustomerJourney = styled.div`
-
-`
-
-const PainPointWrapper = styled.div`
-  display: flex;
+const HorizonWrapper = styled.div`
+    display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
 `
 
-const Dot = styled.div`
-  background-color: ${props => props.color};
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  padding: 0;
-
-  border-radius: 10px;
+const ChallengeH1 = styled.h3`
+    font-size: 1.2rem;
 `
 
-const SectionTitle = styled.h2`
-  font-weight: 300;
-  font-size: 2.5em;
+const MImg = styled.div`
+    width: 70%;
+  margin: auto;
 `
 
-const H3 = styled.h3`
-  font-size: 1.7em;
-  font-weight: bold;
+const ImgWrapper = styled.div``
+
+const Bg = styled.div`
+    width: 100%;
+  height: 568px;
+  background-color: #EBEBEB;
 `
 
-const SubTitle = styled.h4`
-  margin: 0;
-  font-weight: 500;
-  padding-left: 10px;
-
+const FloatImg = styled.div`
+    position: absolute;
+  top: 25%;
+  left: 7%;
 `
 
-const SectionPlain = styled.p`
-  width: 80%;
-  line-height: 1.4em;
-`
 
 export default SDP
