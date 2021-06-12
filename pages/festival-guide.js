@@ -106,7 +106,7 @@ const FestivalGuide = () => {
                     <Image src='/festivalGuide/prototype.png' width='1440' height='468' layout='responsive' />
                 </HeroImg>
                 <VideoWrapper>
-                    <VideoArea videoSource='/festivalGuide/prototypeVideo.mp4' alt='festival guide for the Kieler Woche' showControl/>
+                    <VideoArea videoSource='/festivalGuide/prototypeVideo.mp4' alt='festival guide for the Kieler Woche' isPlaying={true} loop={true}/>
                 </VideoWrapper>
             </FlowWrapper>
         </Layout>
