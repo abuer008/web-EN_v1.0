@@ -219,10 +219,10 @@ const A = styled.a`
 
 const Button = styled.div`
   min-width: 12vw;
-  height: 7vh;
+  height: 5rem;
   background: black;
-  border-radius: 1.2em;
-  margin: 2em 0;
+  //border-radius: 1.2em;
+  margin: 3em 0;
 
   display: flex;
   flex-direction: row;

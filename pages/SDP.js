@@ -10,6 +10,7 @@ import {challengesData, SDPTexts, ToolSetData, userflowData} from "../data/SDP";
 import {usePhoneVersion} from "../components/usePhoneVersion";
 import {PhoneSDP} from "../components/phoneComponents/PhoneSDP";
 import {ToolsetItem} from "../components/work/ToolsetItem";
+import VideoArea from "../components/revision/VideoArea";
 
 const SDP = () => {
     const phoneVersion = usePhoneVersion()
@@ -189,12 +190,18 @@ const StandardSDP = () => {
             </Wrapper>
 
             <Wrapper style={{position: 'relative', justifyContent: 'flex-start', left: '7vw'}}>
-                <ImgWrapper>
-                    <Image src='/works/prototyping3.webp' width='566' height='464' />
-                </ImgWrapper>
+                <DemoWrapper>
+                    <DemoItem>
+                    <VideoArea videoSource='/works/prototypeDemo2.mp4' alt='enterprise project management' isPlaying={true} loop={true} />
+                    </DemoItem>
+                    <DemoItem>
+                        <VideoArea videoSource='/works/prototypeDemo1.mp4' alt='distributor project management' isPlaying={true} loop={true} />
+                    </DemoItem>
+                </DemoWrapper>
                 <HeroText style={{top: '10%', left: '50%'}}>
                     <Sub>Project management</Sub>
                     <P>The unique interaction design makes it intuitive for the user to understand the options for specific items, making it easy to get started even for first-time users.</P>
+                    <P>Depending on the role of the users and the status of the project, the project can be operated in different ways to meet the most direct operational needs of the user.</P>
                 </HeroText>
             </Wrapper>
 
@@ -230,6 +237,16 @@ const Userflow = ({item}) => (
         <P>{item.text}</P>
     </UFWrapper>
 )
+
+const DemoItem = styled.div`
+    width: 283px;
+  height: 464px;
+`
+
+const DemoWrapper = styled.div`
+    display: flex;
+  flex-direction: row;
+`
 
 const UFWrapper = styled.div`
     width: 200px;

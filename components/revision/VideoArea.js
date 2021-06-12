@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player";
 import styled from 'styled-components';
 
-const VideoArea = ({videoSource, alt, isPlaying, showControl = false, light = false}) => {
+const VideoArea = ({videoSource, alt, isPlaying, showControl = false, light = false, loop = false}) => {
 
     return (
         <>
@@ -13,6 +13,7 @@ const VideoArea = ({videoSource, alt, isPlaying, showControl = false, light = fa
                 width='100%'
                 height='100%'
                 light={light}
+                loop={loop}
             />
         </>
     )

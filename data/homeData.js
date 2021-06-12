@@ -1,6 +1,6 @@
 export const tactileData = [
     {
-        heading: 'Bonus Distribution Platform.',
+        heading: 'BDP.',
         plain: 'UX analysis and the customised design styles for business requirement.'
     },
 
