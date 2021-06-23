@@ -28,11 +28,11 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
 
     const handleTitle = el => {
         el.style.opacity = 0
-        el.style.scale = 2
+        // el.style.scale = 2
 
         gsap.to(el, {
             opacity: 1,
-            scale: 1,
+            // scale: 1,
             ease: 'power3.inOut',
             duration: 2
         })
@@ -49,7 +49,7 @@ const RevisionSection = ({children = {}, titleSection = {}, imageSection = {}}) 
                 <React.Fragment>
                         <Image alt={titleSection.alt} src={titleSection.source} layout='fill' objectFit='cover' className='titleImage'/>
                     <Title  ref={titleRef}>
-                        <Image alt='revision title icon' src='/revision/revision_stylingTitle.svg' width={285} height={69} />
+                        <Image alt='revision title icon' src='/revision/revision_stylingTitle.svg' width='285' height='69' />
                         <Text>Perceptual abilities expanding</Text>
                     </Title>
                 </React.Fragment>
@@ -94,7 +94,7 @@ const Title = styled.div`
 
 const Text = styled.h4`
   font-family: Roboto, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: auto;
 `
 
