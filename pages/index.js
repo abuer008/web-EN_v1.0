@@ -117,11 +117,11 @@ const StandardContents = () => {
                     </GitWrapper>
                 </Link>
                 <Email>
-                        <Link href='mailto:x.bowei@aol.com'>
-                        <P>x.bowei@aol.com</P>
+                        <Link href='https://boweixiao.com/'>
+                        <P>New portfolio 2022 is now available</P>
                         </Link>
                     </Email>
-                    <P2>2021 &copy; boweisdesign.com</P2>
+                    <P2>{new Date().getFullYear()} &copy; bowei</P2>
                     { language === 'CN' && <Link href='https://beian.miit.gov.cn/'><P2>ICP备案号：沪ICP备2021014985号-1</P2></Link>}
                 </Contact>
 
